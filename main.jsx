@@ -23,6 +23,9 @@ import AsistenciasD from './src/components/views/Rol-coordinador/asistencias.jsx
 import Calendario from './src/components/views/Rol-estudiante/calendario.jsx'
 import Asistenciafor from './src/components/views/Rol-coordinador/asistenciasEstudiantes.jsx'
 import Tarea from './src/components/views/Rol-coordinador/AdministrarAreas.jsx'
+import Registrardocente from './src/components/views/Rol-coordinador/registrardocente.jsx'
+
+
 
 
 
@@ -136,7 +139,13 @@ element:<Himno/>
   path:"Areas",
   element:<Tarea/>
 
+},
+
+{
+  path:"/Registrardocente",
+  element:<Registrardocente/>
 }
+
 
 
 
