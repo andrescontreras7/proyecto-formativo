@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Aside from './AsideCO';
+import Asidecon from './asidecon';
 
 
 const Gestionaru = () => {
@@ -33,9 +33,9 @@ const Gestionaru = () => {
   return (
     <>
       <div className='flex  min-h-screen bg-[#A6DCF1]'>
-        <Aside />
+        <Asidecon/>
         <div className='flex flex-col mx-auto w-2/3 p-4 bg-[#A6DCF1]'>
-          <input
+          <in
             type='text'
             name='search'
             placeholder='Buscar por nombre, apellido, correo, etc.'

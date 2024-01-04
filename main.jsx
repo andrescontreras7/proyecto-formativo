@@ -25,6 +25,7 @@ import Asistenciafor from './src/components/views/Rol-coordinador/asistenciasEst
 import Tarea from './src/components/views/Rol-coordinador/AdministrarAreas.jsx'
 import ObservadorOpc from './src/components/views/Rol-coordinador/ObservadorOpc.jsx'
 import RegistroObservador from './src/components/views/Rol-coordinador/registroObservador.jsx'
+import Recuperar from './src/components/views/Rol-coordinador/recuperarcon.jsx'
 
 
 
@@ -42,36 +43,36 @@ import RegistroObservador from './src/components/views/Rol-coordinador/registroO
 
 
 const router = createBrowserRouter([
-{
-path:"/login",
-element :<Formulario/>
-},
-{
-path:"/DetallesAsignatura",
-element :<AsignaturasDetalles/>,
-children:[{
-//estas serian las rutas hijas de una ruta principal
-    path:"Tematicas",
-    element:<Tematicas/> 
+  {
+    path:"/login",
+    element :<Formulario/>
+  },
+  {
+    path:"/DetallesAsignatura",
+    element :<AsignaturasDetalles/>,
+    children:[{
+      //estas serian las rutas hijas de un aruta principal
+      path:"Tematicas",
+      element:<Tematicas/> 
+      
+    },
+    {
+      path:"Informacion",
+      element:<InformacionA/>
+    },
+    {
+      path:"Asistencias",
+      element:<Asistencia/>
+    },
+    {
+      path:"Calificaciones",
+      element:<Calificaciones/>
+    },
     
-},
-{
-  path:"Informacion",
-  element:<InformacionA/>
-},
-{
-  path:"Asistencias",
-  element:<Asistencia/>
-},
-{
-  path:"Calificaciones",
-  element:<Calificaciones/>
-},
-
-
-]
+    
+  ]
   
-
+  
 },
 
 
@@ -80,20 +81,20 @@ children:[{
   element :<Home/>
 },
 {
-path:"/Himno",
-element:<Himno/>
+  path:"/Himno",
+  element:<Himno/>
 },
 {
   path:"/Observaciones",
   element :<Observaciones/>
 },
 {
-    path:"/Horario",
-    element :<Horario/>
+  path:"/Horario",
+  element :<Horario/>
 },
 {
-    path:"/Asignaturas",
-    element :<Asignaturas/>,
+  path:"/Asignaturas",
+  element :<Asignaturas/>,
   
 },
 {
@@ -111,16 +112,21 @@ element:<Himno/>
 {
   path: "/Informacion",
   element: <Informacion/>
+},
+{
+  path: "Recuperar",
+  element: <Recuperar/>
   },
+
 // roles coordinador
-  {
-    path:"Gestion",
-    element:<Gestionaru/>
-  },
-  {
-    path:"Panel",
-    element:<Panel/>
-  },
+{
+  path:"Gestionaru",
+  element:<Gestionaru/>
+},
+{
+  path:"Panel",
+  element:<Panel/>
+},
 {
   path:"AsitenciasD",
   element:<AsistenciasD/>
@@ -132,7 +138,7 @@ element:<Himno/>
 {
   path:"AsistenciasEstudiantes",
   element:<Asistenciafor/>
-
+  
 },
 {
   path:"Areas",
@@ -157,15 +163,13 @@ element:<Himno/>
 
 
 
-  
-
-
 
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    
-    <RouterProvider   router ={router}/>
+  
+  <RouterProvider   router ={router}/>
   </React.StrictMode>,
-)
+  )
+  

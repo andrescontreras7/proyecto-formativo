@@ -82,7 +82,8 @@ const Aside = () => {
         <BsQuote className='text-white  text-3xl lg:text-lg'/><Link to={'/Himno'} className="text-center text-zinc-100 text-base font-semibold hidden lg:inline-block" >Himno intitucional</Link>
         </li>
         <li className="hover:scale-[1.09] transition-[2s] items-center gap-2 inline-flex">
-        <BsGear className='text-white text-3xl lg:text-lg' /> <a href=""className="text-center text-zinc-100 text-base font-semibold font-semibold hidden lg:inline-block" >Configuracion </a>
+        <BsGear className='text-white text-3xl lg:text-lg' /><Link to={'/Gestionaru'} className="text-center text-zinc-100 text-base font-semibold font-semibold hidden lg:inline-block" >Configuracion </Link>
+        
         </li>
         
         <li className="hover:scale-[1.09] transition-[2s] items-center  inline-flex ">
