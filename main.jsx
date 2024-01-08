@@ -25,7 +25,7 @@ import Asistenciafor from './src/components/views/Rol-coordinador/asistenciasEst
 import Tarea from './src/components/views/Rol-coordinador/AdministrarAreas.jsx'
 import ObservadorOpc from './src/components/views/Rol-coordinador/ObservadorOpc.jsx'
 import RegistroObservador from './src/components/views/Rol-coordinador/registroObservador.jsx'
-
+import Registrardocente from './src/components/views/Rol-coordinador/registrardocente.jsx'
 
 
 
@@ -147,6 +147,11 @@ element:<Himno/>
 {
   path:"RegistrarObservacion",
   element:<RegistroObservador/>
+
+},
+{
+  path:"Registrardocente",
+  element:<Registrardocente/>
 
 }
 
