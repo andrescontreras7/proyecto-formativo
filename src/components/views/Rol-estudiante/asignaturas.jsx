@@ -21,7 +21,7 @@ return(
             <Aside/>
         </aside>
     
-<div className=" max-[1455px]:ml-20  mr-4 m-auto flex overflow-y-scroll   flex-wrap gap-8 w-4/5   justify-start items-center ">
+<div className=" max-[1455px]:ml-20 h-[100vh] mr-4 m-auto flex overflow-y-scroll   flex-wrap gap-8 w-4/5   justify-start items-center ">
   <nav className="w-full">
   
     <div className= " flex justify-between  uppercase font-black text-white   bg-[#925FE2] bg-opacity-50  p-[0.9rem] font   rounded-3xl mr-20 mt-8">

@@ -25,8 +25,11 @@ import Asistenciafor from './src/components/views/Rol-coordinador/asistenciasEst
 import Tarea from './src/components/views/Rol-coordinador/AdministrarAreas.jsx'
 import ObservadorOpc from './src/components/views/Rol-coordinador/ObservadorOpc.jsx'
 import RegistroObservador from './src/components/views/Rol-coordinador/registroObservador.jsx'
-
-
+import ObservadorG from './src/components/views/Rol-coordinador/ObservadorGeneral.jsx'
+import AsistenciaDocente from './src/components/views/Rol-coordinador/AsistenciasDocentes.jsx'
+import InformeObservador from './src/components/views/Rol-coordinador/InformesObservador.jsx'
+import Registrardocente from './src/components/views/Rol-coordinador/RegistrarDocentes.jsx'
+import Permisoscor from './src/components/views/Rol-coordinador/Permisos.jsx'
 
 
 
@@ -148,7 +151,38 @@ element:<Himno/>
   path:"RegistrarObservacion",
   element:<RegistroObservador/>
 
+},
+{
+  path:"ObservadorGeneral",
+  element:<ObservadorG/>
+
+},
+{
+  path:"AsistenciasDocentes",
+  element:<AsistenciaDocente/>
+
+},
+{
+  path:"Informes",
+  element:<InformeObservador/>
+
+},
+{
+  path:"Registrardocente",
+  element:<Registrardocente/>
+
+},
+{
+  path:"Permisos",
+  element:<Permisoscor/>
+
 }
+
+
+
+
+
+
 
 
 

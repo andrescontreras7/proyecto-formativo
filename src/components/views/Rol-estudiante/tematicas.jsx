@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { BsChevronRight } from "react-icons/bs";
 import AnimatedPage from '../../animatedPage';
+import { BsFileEarmarkArrowDown } from "react-icons/bs";
+import { IoFolderOpenOutline } from "react-icons/io5";
 
 const Accordion = ({ title, children }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -51,9 +53,49 @@ const Tematicas = () => {
            </Accordion>
             <div className='bg-gray-500 h-[1px] w-full'>  </div>
             <Accordion title="Primer Periodo">
-              
-              Contenido del Primer Periodo loer Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas ipsa doloremque repudiandae minus ab et a amet sed quisquam, alias veritatis fugiat natus laborum iste laboriosam debitis nostrum aut itaque!loerlore
-              LoLorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam assumenda, explicabo ex eveniet quibusdam nemo commodi, blanditiis, possimus non tenLorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam assumenda, explicabo ex eveniet quibusdam nemo commodi, blanditiis, possimus non tenetur fuga provident officiis? Error harum velit quas, molestias amet fugit.etur fuga provident officiis? Error harum velit quas, molestias amet fugit.rem ipsum dolor sit amet consectetur adipisicing elit. Aliquam assumenda, explicabo ex eveniet quibusdam nemo commodi, blanditiis, possimus non tenetur fuga provident officiis? Error harum velit quas, molestias amet fugit.
+             <div className='text-left w-full text-gray-900 mb-2  border-[1px] p-4 rounded-md font-normal'>
+                  <div className='inline-flex  gap-2 items-center'>
+                     <div className='bg-blue-500 p-2 m-2 rounded-md'>
+                     <IoFolderOpenOutline  className='text-4xl text-white' />
+                     </div>
+                      <h1 className=' uppercase'>Carpeta  
+                        <span className='block mt-1 text-indigo-900 font-semibold '>Lista de ejercicios</span>
+                      </h1>
+                      {" "}
+                  </div> 
+                <div className='border-[1px] text-gray-900  mt-2 m-2 bg-indigo-100 p-2 rounded-md'>
+                    <div className='p-2'> 
+                        <p>  Investigar en grupo de 5 estudiantes los siguientes temas: 
+                        </p>
+                        <ul className='m-4'>
+                          <li> limites trigonometricos</li>
+                          <li>propiedades y teorema de limites</li>
+                          <li>definicion formal e informal de limites</li>
+                        </ul>
+                    </div>
+                </div>
+               <div className='w-full text-right mt-8'>
+                <button  className='m-auto border-[1px] border-blue-800 rounded-md  text-left p-1 '> Marcar como hecha </button>
+               </div>
+             </div>
+             <div className='text-left w-full text-gray-900  border-[1px] mb-2 p-4 rounded-md font-normal'>
+                  <div className='inline-flex   gap-2 items-center'>
+                     <div className='bg-pink-500 p-2 m-2 rounded-md'>
+                      <BsFileEarmarkArrowDown className='text-4xl text-white' />
+                     </div>
+                      <h1 className=' uppercase'>Tarea  
+                        <span className='block mt-1 text-indigo-900 font-semibold '>Investigacion de limites</span>
+                      </h1>
+                      {" "}
+                  </div> 
+                <div className='border-[1px] mt-2 m-2 bg-indigo-100 p-2 rounded-md'>
+                 <p>   En esta docuemnto encontraran los ejerccios dispuestos de calculo, para ele xamen del primer corte de la asignatura  </p>
+                </div>
+               <div className='w-full text-right mt-8'>
+                <button  className='m-auto border-[1px] border-blue-800 rounded-md  text-left p-1 '> Marcar como hecha </button>
+               </div>
+             </div>
+             
             </Accordion>
             
             <div className='bg-gray-500  h-[1px] w-full'>  </div>

@@ -6,9 +6,9 @@ const InformacionA = () => {
 
   return (
     <AnimatedPage>
-       <div className="flex justify-start items-center  ">
-      <div className="bg-purple-300 bg-opacity-30 rounded-lg shadow-xl p-8">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">Matemáticas Avanzadas</h1>
+       <div className="flex bg-indigo-100 p-4 rounded-md justify-start items-center  ">
+      <div className="bg-white  rounded-lg shadow-xl p-8">
+        <h1 className="text-3xl font-bold mb-4 text-blue-900">Matemáticas Avanzadas</h1>
         <p className="text-gray-800 text-lg mb-6">Horario: Lunes a Viernes, 9:00 AM - 11:00 AM</p>
         <p className="text-gray-800 text-lg mb-6">Profesor: Carlos Rigoberto</p>
         <div>

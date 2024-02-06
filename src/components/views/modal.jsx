@@ -2,7 +2,7 @@ import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useState } from 'react'
 import { Link } from 'react-router-dom';
 
-export default function Modal() {
+export default function Modal({children, titulo}) {
   let [isOpen, setIsOpen] = useState(true)
 
   function closeModal() {
@@ -46,22 +46,12 @@ export default function Modal() {
                   
                                     
                     <div>
-                    <h1 className='font-semibold text-xl border-2 border-b-slate-800 text-indigo-500 p-2 mt-2 uppercase'>
-                        Andres cavadia
+                    <h1 className='font-semibold text-xl border-b-[1px] border-b-slate-800 text-indigo-500 p-2 mt-2 uppercase'>
+                        {titulo}
                     </h1>
                     <ul className='p-4 text-lg my-auto font-Roboto font-semibold text-gray-700'>
-                        <li className='p-2'>
-                        <Link> Editar Estudiante</Link>
-                        </li>
-                        <li className='p-2'>
-                        <Link> Observaciones</Link>
-                        </li>
-                        <li className='p-2'>
-                        <Link>Eliminar</Link>
-                        </li>
-                        <li className='p-2'>
-                        <Link> Informacion del estudiante</Link>
-                        </li>
+                       
+                        {children}
 
                     </ul>
                     </div>
@@ -72,7 +62,7 @@ export default function Modal() {
                       className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                       onClick={closeModal}
                     >
-                      Got it, thanks!
+                      Cerrar
                     </button>
                   </div>
                 </Dialog.Panel>

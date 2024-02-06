@@ -5,7 +5,7 @@ import { Fragment, useState } from 'react'
 import { Link } from 'react-router-dom';
 
 
-const RegistroObservador = () => {
+const RegistroObservador = ({children }) => {
     let [isOpen, setIsOpen] = useState(true);
   
     function closeModal() {

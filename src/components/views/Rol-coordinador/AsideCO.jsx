@@ -54,7 +54,7 @@ const Aside = () => {
 
         <AnimatedCursos> 
             <li className="hover:scale-[1.09] transition-[2s] items-center gap-2 inline-flex">
-                <LuBookOpen className='text-white  '/> <Link to={'/Asignaturas'} className="text-center text-zinc-100 text-base font-semibold" >Observador </Link>
+                <LuBookOpen className='text-white  '/> <Link to={'/ObservadorGeneral'} className="text-center text-zinc-100 text-base font-semibold" >Observador </Link>
             </li>
         </AnimatedCursos>
 
@@ -66,7 +66,7 @@ const Aside = () => {
         
         <AnimatedCursos> 
             <li className=" hover:scale-[1.09] transition-[2s] items-center gap-2 inline-flex">
-                <LiaBookSolid className='text-white  '/><Link to={'/'} className="text-center text-zinc-100 text-base font-semibold" >Asistencia docentes</Link>
+                <LiaBookSolid className='text-white  '/><Link to={'/AsistenciasDocentes'} className="text-center text-zinc-100 text-base font-semibold" >Asistencia docentes</Link>
             </li>
         </AnimatedCursos>
       
@@ -75,7 +75,7 @@ const Aside = () => {
         </li>
         
         <li className="hover:scale-[1.09] transition-[2s] items-center gap-2 inline-flex">
-            <BsEnvelope className='text-white  '/> <Link to={'/'} className="text-center text-zinc-100 text-base font-semibold" >Permisos</Link>
+            <BsEnvelope className='text-white  '/> <Link to={'/Permisos'} className="text-center text-zinc-100 text-base font-semibold" >Permisos</Link>
         </li>
       
        
