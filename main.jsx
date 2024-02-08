@@ -30,6 +30,8 @@ import AsistenciaDocente from './src/components/views/Rol-coordinador/Asistencia
 import InformeObservador from './src/components/views/Rol-coordinador/InformesObservador.jsx'
 import Registrardocente from './src/components/views/Rol-coordinador/RegistrarDocentes.jsx'
 import Permisoscor from './src/components/views/Rol-coordinador/Permisos.jsx'
+import Coordinador from './src/components/views/Rol-coordinador/coordinador.jsx'
+import Registroasistencias from './src/components/views/Rol-coordinador/registroAsistencias.jsx'
 
 
 
@@ -175,6 +177,17 @@ element:<Himno/>
 {
   path:"Permisos",
   element:<Permisoscor/>
+
+},
+
+{
+  path:"Coordinador",
+  element:<Coordinador/>
+
+},
+{
+  path:"Registroasistencias",
+  element:<Registroasistencias/>
 
 }
 

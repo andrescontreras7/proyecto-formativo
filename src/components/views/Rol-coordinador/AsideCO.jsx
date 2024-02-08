@@ -34,14 +34,14 @@ const Aside = () => {
     </button>
 <div className=" hidden lg:flex flex-col   w-[233px] h-screen     bg-gradient-to-t from-indigo-700 via-indigo-500 to-indigo-400 ">
 
-    <Link className="flex justify-center items-center mb-12 mt-4  " to={'/Home'}> 
+    <Link className="flex justify-center items-center mb-12 mt-4  " to={'/coordinador'}> 
         <img src="https://iedsangabriel.com/assets/img/logo.png" alt="" />   
     </Link>
    
     <ul className="flex-col  justify-start space-y-2  pl-3   gap-4 inline-flex items">
         <AnimatedCursos> 
             <li className=" hover:scale-[1.09] transition-[2s] items-center gap-2  inline-flex">
-                <LuPanelLeft className='text-white  '/><Link to={'/Home'} className="text-center text-zinc-100 text-base font-semibold" >Inicio </Link>
+                <LuPanelLeft className='text-white  '/><Link to={'/coordinador'} className="text-center text-zinc-100 text-base font-semibold" >Inicio </Link>
             </li>
 
         </AnimatedCursos>
