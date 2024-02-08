@@ -30,6 +30,10 @@ import AsistenciaDocente from './src/components/views/Rol-coordinador/Asistencia
 import InformeObservador from './src/components/views/Rol-coordinador/InformesObservador.jsx'
 import Registrardocente from './src/components/views/Rol-coordinador/RegistrarDocentes.jsx'
 import Permisoscor from './src/components/views/Rol-coordinador/Permisos.jsx'
+import Recuperar from './src/components/views/Rol-coordinador/recuperarcon.jsx'
+import Recuperar1 from './src/components/views/Rol-estudiante/recuperarconEs.jsx'
+
+
 
 
 
@@ -45,10 +49,15 @@ import Permisoscor from './src/components/views/Rol-coordinador/Permisos.jsx'
 
 
 const router = createBrowserRouter([
+  {
+    path:"/Hoome",
+    element :<Home/>
+    },
 {
 path:"/login",
 element :<Formulario/>
 },
+// roles Estudiante
 {
 path:"/DetallesAsignatura",
 element :<AsignaturasDetalles/>,
@@ -76,7 +85,6 @@ children:[{
   
 
 },
-
 
 {
   path:"/Home",
@@ -115,10 +123,22 @@ element:<Himno/>
   path: "/Informacion",
   element: <Informacion/>
   },
+  {
+    path:"Passs",
+    element:<Recuperar1/>
+  },
+
+
+
 // roles coordinador
+
   {
     path:"Gestion",
     element:<Gestionaru/>
+  },
+  {
+    path:"Recuperar",
+    element:<Recuperar/>
   },
   {
     path:"Panel",

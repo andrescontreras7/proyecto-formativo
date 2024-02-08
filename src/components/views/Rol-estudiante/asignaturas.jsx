@@ -28,7 +28,44 @@ return(
         <HiArrowSmallLeft className="text-3xl" />   <h1 className=" text-center ">   Cursos actuales </h1> <button className="flex low gap-2">Proximos cursos <HiArrowSmallRight className="text-3xl"/></button>
     </div>
 <div></div>
-    <input type="search " className="p-2 rounded-3xl font-normal pr-10 mt-16 ml-20 mb-12 bg-[#F6F6F6] "  placeholder="Buscar asignatura" name="" id="" />
+<div className="flex items-center mb-4 ">
+  
+  <input
+    type="search"
+    id="filtro"
+    className="p-2 rounded-3xl font-normal pr-10 bg-[#F6F6F6]"
+    placeholder="Buscar asignatura"
+    name=""
+  />
+  <div className="flex items-center mb-4">
+  <label htmlFor="filtro2" className="block text-gray-700 text-lg font-bold mr-4">Filtra:</label>
+  <input
+    type="search"
+    id="filtro2"
+    className="p-2 rounded-3xl font-normal pr-10 bg-[#F6F6F6]"
+    placeholder="Buscar asignatura"
+    name=""
+  />
+</div>
+
+<div className="flex items-center mb-12">
+  <label htmlFor="filtro3" className="block text-gray-700 text-lg font-bold mr-4">Filtra:</label>
+  <input
+    type="search"
+    id="filtro3"
+    className="p-2 rounded-3xl font-normal pr-10 bg-[#F6F6F6]"
+    placeholder="Buscar asignatura"
+    name=""
+  />
+</div>
+</div>
+
+
+
+
+
+
+
   </nav>
   
         <div className="flex mb-20  flex-wrap gap-8 z-0  ">
