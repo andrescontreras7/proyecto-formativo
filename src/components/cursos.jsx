@@ -5,10 +5,13 @@ const Cursos = ({titulo, profesor, src}) =>{
 
     return(
 <>
-<div className=" flex     flex-col hover:scale-105 transition-[2s]  w-[30%] h-2/5  ">
-           <Link to={"/DetallesAsignatura/Informacion"}>
-                <img src="s.jpg" alt=""   className="  h-[65%]" />
-           </Link>
+<div className=" flex  bg-white rounded-xl shadow-md shadow-slate-400  flex-col hover:scale-105 transition-[2s]  w-[30%] h-2/5  ">
+       <div className="rounded-xl">
+       <div className=" shadow-md  m-4 rounded-xl h-[30vh]">
+         <Link  to={"/DetallesAsignatura/Informacion"}>
+                <img src="s.jpg" alt=""    className=" rounded-xl w-[100%]  p-2 h-[100%]" />
+        </Link>
+         </div>
            <div className="bg-white   h-[35%]">
                 <p className= "mt-4 ml-2  text-gray-400 font-semibold text-[0.7rem]">
                     1-28 july 2023
@@ -23,6 +26,7 @@ const Cursos = ({titulo, profesor, src}) =>{
            
         </div>
 
+       </div>
 
 
 </>

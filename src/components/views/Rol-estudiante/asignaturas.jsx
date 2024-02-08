@@ -24,11 +24,13 @@ return(
 <div className=" max-[1455px]:ml-20 h-[100vh] mr-4 m-auto flex overflow-y-scroll   flex-wrap gap-8 w-4/5   justify-start items-center ">
   <nav className="w-full">
   
-    <div className= " flex justify-between  uppercase font-black text-white   bg-[#925FE2] bg-opacity-50  p-[0.9rem] font   rounded-3xl mr-20 mt-8">
-        <HiArrowSmallLeft className="text-3xl" />   <h1 className=" text-center ">   Cursos actuales </h1> <button className="flex low gap-2">Proximos cursos <HiArrowSmallRight className="text-3xl"/></button>
+    <div className= " flex justify-between text-gray-900  uppercase font-   bg-[#11868e] bg-opacity-50  p-[0.9rem] font   rounded-xl mr-20 mt-8">
+        <HiArrowSmallLeft className="text-3xl "  />   <h1 className=" text-center ">   Cursos actuales </h1> <button className="flex low gap-2"> <HiArrowSmallRight className="text-3xl"/></button>
     </div>
-<div></div>
-    <input type="search " className="p-2 rounded-3xl font-normal pr-10 mt-16 ml-20 mb-12 bg-[#F6F6F6] "  placeholder="Buscar asignatura" name="" id="" />
+        <div className="mt-10 ml-2">
+            <input type="search " className="my-2 mt-10 border-2 p-3 rounded-md bg-[#F5F5F5] border-1 border-[#11868e] text-black outline outline-transparent focus:outline-[#39A900] focus:outline-[2px]"   placeholder="Buscar asignatura" name="" id="" />
+        </div>
+    
   </nav>
   
         <div className="flex mb-20  flex-wrap gap-8 z-0  ">
