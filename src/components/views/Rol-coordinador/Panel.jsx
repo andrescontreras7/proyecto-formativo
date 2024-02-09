@@ -16,6 +16,7 @@ const Panel = () => {
                 ¿Qué desea hacer hoy?</h1>
             </div>
             <div className=' flex flex-wrap justify-center'>
+            <Link to="/Registrardocente">
               <button className='w-[15vw] h-[25vh] m-4 flex flex-col bg-[#A6DCF1] items-center justify-center rounded-2xl transition-all duration-300 hover:bg-[#7365b2]'>
                 <div className='bg-white flex justify-center items-center w-[50%] h-[60%] rounded-full'>
                   <img className='w-20' src="/public/registarprofesor.png" alt="Docente" />
@@ -23,6 +24,9 @@ const Panel = () => {
                 
                 <p className='font-semibold font-Roboto   mt-2'>Registrar Docente</p>
               </button>
+              </Link>
+
+
               <button className='w-[15vw] h-[25vh] m-4 flex flex-col bg-[#A6DCF1] items-center justify-center rounded-2xl transition-all duration-300 hover:bg-[#7365b2]'>
                 <div className='bg-white flex justify-center items-center  w-[50%] h-[60%] rounded-full'>
                   <img className='w-16' src="/public/administardocente.png" alt="Docente" />

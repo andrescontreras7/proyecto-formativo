@@ -1,14 +1,20 @@
 import React from 'react';
 import { GoArrowLeft } from "react-icons/go";
+import { Link } from 'react-router-dom';
+
 
 const Registrardocente = () => {
   return (
     <div className="bg-sky-200 flex flex-col justify-center items-center px-16 py-12 max-md:px-5">
       <div className="flex w-full max-w-[1182px] flex-col items-stretch mt-2 mb-6 max-md:max-w-full">
         <div className="flex items-stretch justify-between gap-2.5 max-md:max-w-full max-md:flex-wrap">
+        <Link to="/Panel">
+
           <button class="bg-violet-500 bg-opacity-30 flex basis-[0%] flex-col justify-center items-center px-7 py-2 rounded-3xl transition-transform transform motion-reduce:transition-none motion-reduce:transform-none hover:translate-y-1">
             <GoArrowLeft class="text-black" fontSize={35} />
           </button>
+          </Link>
+
 
           <div className="justify-center text-black text-center text-xl font-semibold whitespace-nowrap bg-violet-500 bg-opacity-30 grow pl-5 pr-16 py-5 rounded-3xl items-start max-md:max-w-full max-md:pr-5">
             Registrar usuarios
