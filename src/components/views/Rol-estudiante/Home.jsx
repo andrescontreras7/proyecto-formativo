@@ -25,7 +25,7 @@ const  Home = () => {
           <p className='text-white font-normal text-[1rem]' > Nos complace volverte a ver</p>
         </div>
         <div className='w-1/2' >
-          <img src="Scholarcap scroll.png" alt=""   className='  h-72 ' />
+          <img src="Scholarcap scroll.png" alt="" draggable="false"   className='  h-72 ' />
         </div>
        </div>
 

@@ -18,7 +18,7 @@ const Coordinador = () => {
           </div>
 
           <div className='w-1/2 lg:w-auto'>
-            <img src="Scholarcap scroll.png" alt="" className='h-72' />
+            <img src="Scholarcap scroll.png" alt="" draggable="false" className='h-72' />
           </div>
         </div>
 
@@ -73,6 +73,8 @@ const Coordinador = () => {
                       loading="lazy"
                       srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/6dfecb29216232462caf2acccebc4fc65e5eb978ff9e000af410f4fa20e511ab?apiKey=e6a49df5c7c7454db0095562764e4f8c&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/6dfecb29216232462caf2acccebc4fc65e5eb978ff9e000af410f4fa20e511ab?apiKey=e6a49df5c7c7454db0095562764e4f8c&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/6dfecb29216232462caf2acccebc4fc65e5eb978ff9e000af410f4fa20e511ab?apiKey=e6a49df5c7c7454db0095562764e4f8c&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/6dfecb29216232462caf2acccebc4fc65e5eb978ff9e000af410f4fa20e511ab?apiKey=e6a49df5c7c7454db0095562764e4f8c&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/6dfecb29216232462caf2acccebc4fc65e5eb978ff9e000af410f4fa20e511ab?apiKey=e6a49df5c7c7454db0095562764e4f8c&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/6dfecb29216232462caf2acccebc4fc65e5eb978ff9e000af410f4fa20e511ab?apiKey=e6a49df5c7c7454db0095562764e4f8c&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/6dfecb29216232462caf2acccebc4fc65e5eb978ff9e000af410f4fa20e511ab?apiKey=e6a49df5c7c7454db0095562764e4f8c&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/6dfecb29216232462caf2acccebc4fc65e5eb978ff9e000af410f4fa20e511ab?apiKey=e6a49df5c7c7454db0095562764e4f8c&"
                       className="aspect-[1.03] w-[97px]"
+                      draggable="false" 
+                      
                     />
                   </div>
                 </div>

@@ -34,7 +34,7 @@ const Aside = () => {
 <div className="flex flex-col    w-[233px] lg:inline-block h-screen   bg-gradient-to-t from-indigo-700 via-indigo-500 to-indigo-400 ">
 
     <Link className="justify-center items-center mb-12 mt-4 hidden lg:flex " to={'/Home'}> 
-        <img src="https://iedsangabriel.com/assets/img/logo.png" alt="" />   
+        <img src="https://iedsangabriel.com/assets/img/logo.png" alt="" draggable="false" />   
     </Link>
    
     <ul className="flex-col   space-y-2  pl-3   gap-4 inline-flex items justify-center max-[1020px]:my-auto">

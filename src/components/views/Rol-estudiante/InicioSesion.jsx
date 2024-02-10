@@ -13,7 +13,7 @@ function Formulario() {
    
   <div className='flex  items-center justify-between h-screen bg-gradient-to-r from-indigo-400 to-indigo-800 '>
    <div className=' h-screen w-[170px]    '>
-      <img className='ml-8 mt-8  w-32  ' src="https://iedsangabriel.com/assets/img/logo.png" alt="" />
+      <img className='ml-8 mt-8  w-32  ' src="https://iedsangabriel.com/assets/img/logo.png" alt="" draggable="false" />
     </div>
  
     <div className="flex flex-col  md:flex-row justify-center items-center">
@@ -33,7 +33,7 @@ function Formulario() {
     </div>
 
     <div>
-      <img className="  mr-44 hidden sm:block" src="profesor.png" alt="" />
+      <img className="  mr-44 hidden sm:block" src="profesor.png" alt="" draggable="false" />
     </div>
  
    </div>

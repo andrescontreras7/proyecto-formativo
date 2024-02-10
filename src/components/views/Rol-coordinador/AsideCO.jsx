@@ -35,7 +35,7 @@ const Aside = () => {
 <div className=" hidden lg:flex flex-col   w-[233px] h-screen     bg-gradient-to-t from-indigo-700 via-indigo-500 to-indigo-400 ">
 
     <Link className="flex justify-center items-center mb-12 mt-4  " to={'/coordinador'}> 
-        <img src="https://iedsangabriel.com/assets/img/logo.png" alt="" />   
+        <img src="https://iedsangabriel.com/assets/img/logo.png" alt="" draggable="false" />   
     </Link>
    
     <ul className="flex-col  justify-start space-y-2  pl-3   gap-4 inline-flex items">
