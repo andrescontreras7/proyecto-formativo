@@ -74,7 +74,7 @@ const apellidos = ["Gomez", "Rodriguez", "Perez", "Fernandez", "Lopez", "Martine
                     <td style={celdaEstilo}>{index + 1}</td>
                     <td style={celdaEstilo}>{`${nombreAleatorio()} ${apellidoAleatorio()}`}</td>
                     <td style={celdaEstilo}>
-                      <div className="w-8 h-8 bg-blue font-black text-purple-600">Activar</div>
+                      <button className="w-8 h-8 bg-blue font-black text-purple-600">Activar</button>
                     </td>
                     <td style={celdaEstilo}>Mis Cursos</td>
                     <td style={celdaEstilo}>Asignaturas Actuales</td>

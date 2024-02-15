@@ -34,53 +34,53 @@ const Aside = () => {
     </button>
 <div className=" hidden lg:flex flex-col   w-[233px] h-screen     bg-gradient-to-t from-indigo-700 via-indigo-500 to-indigo-400 ">
 
-    <Link className="flex justify-center items-center mb-12 mt-4  " to={'/coordinador'}> 
+    <Link className="flex justify-center items-center mb-12 mt-4  " to={'/coordinador'} draggable="false"> 
         <img src="https://iedsangabriel.com/assets/img/logo.png" alt="" draggable="false" />   
     </Link>
    
     <ul className="flex-col  justify-start space-y-2  pl-3   gap-4 inline-flex items">
         <AnimatedCursos> 
             <li className=" hover:scale-[1.09] transition-[2s] items-center gap-2  inline-flex">
-                <LuPanelLeft className='text-white  '/><Link to={'/coordinador'} className="text-center text-zinc-100 text-base font-semibold" >Inicio </Link>
+                <LuPanelLeft className='text-white  '/><Link to={'/coordinador'} draggable="false" className="text-center text-zinc-100 text-base font-semibold" >Inicio </Link>
             </li>
 
         </AnimatedCursos>
        
         <AnimatedCursos> 
              <li className=" hover:scale-[1.09] transition-[2s] items-center gap-2 inline-flex">
-            <BiUser className='text-white' /> <Link  to={'/Panel'}  className="text-center text-zinc-100 text-base font-semibold" >Panel de control </Link>
+            <BiUser className='text-white' /> <Link  to={'/Panel'} draggable="false" className="text-center text-zinc-100 text-base font-semibold" >Panel de control </Link>
             </li>
         </AnimatedCursos>
 
         <AnimatedCursos> 
             <li className="hover:scale-[1.09] transition-[2s] items-center gap-2 inline-flex">
-                <LuBookOpen className='text-white  '/> <Link to={'/ObservadorGeneral'} className="text-center text-zinc-100 text-base font-semibold" >Observador </Link>
+                <LuBookOpen className='text-white  '/> <Link to={'/ObservadorGeneral'} draggable="false" className="text-center text-zinc-100 text-base font-semibold" >Observador </Link>
             </li>
         </AnimatedCursos>
 
         <AnimatedCursos> 
             <li className="hover:scale-[1.09] transition-[2s] items-center gap-2 inline-flex">
-                <BsCalendar3 className='text-white  '/><Link to={'/AsitenciasD'} className="text-center text-zinc-100 text-base font-semibold" >Asistencia estudiante </Link>
+                <BsCalendar3 className='text-white  '/><Link to={'/AsitenciasD'} draggable="false" className="text-center text-zinc-100 text-base font-semibold" >Asistencia estudiante </Link>
             </li>
         </AnimatedCursos> 
         
         <AnimatedCursos> 
             <li className=" hover:scale-[1.09] transition-[2s] items-center gap-2 inline-flex">
-                <LiaBookSolid className='text-white  '/><Link to={'/AsistenciasDocentes'} className="text-center text-zinc-100 text-base font-semibold" >Asistencia docentes</Link>
+                <LiaBookSolid className='text-white  '/><Link to={'/AsistenciasDocentes'} draggable="false" className="text-center text-zinc-100 text-base font-semibold" >Asistencia docentes</Link>
             </li>
         </AnimatedCursos>
       
         <li className="hover:scale-[1.09] transition-[2s] items-center gap-2 inline-flex">
-        <BsGear className='text-white ' /> <a href=""className="text-center text-zinc-100 text-base font-semibold font-semibold" >Configuracion </a>
+        <BsGear className='text-white ' /> <a href="" draggable="false"className="text-center text-zinc-100 text-base font-semibold font-semibold" >Configuracion </a>
         </li>
         
         <li className="hover:scale-[1.09] transition-[2s] items-center gap-2 inline-flex">
-            <BsEnvelope className='text-white  '/> <Link to={'/Permisos'} className="text-center text-zinc-100 text-base font-semibold" >Permisos</Link>
+            <BsEnvelope className='text-white  '/> <Link to={'/Permisos'} draggable="false" className="text-center text-zinc-100 text-base font-semibold" >Permisos</Link>
         </li>
       
        
         <li className="hover:scale-[1.09] transition-[2s] items-center  inline-flex ">
-            <BsPower className='text-white  '/><a className="text-center  text-white text-opacity-75 text-base ml-2  font-semibold" href="">Cerrar Sesión</a>
+            <BsPower className='text-white  '/><a className="text-center  text-white text-opacity-75 text-base ml-2  font-semibold" href="" draggable="false">Cerrar Sesión</a>
         </li>
 
        

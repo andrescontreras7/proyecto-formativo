@@ -32,7 +32,7 @@ import Registrardocente from './src/components/views/Rol-coordinador/RegistrarDo
 import Permisoscor from './src/components/views/Rol-coordinador/Permisos.jsx'
 import Coordinador from './src/components/views/Rol-coordinador/coordinador.jsx'
 import Registroasistencias from './src/components/views/Rol-coordinador/registroAsistencias.jsx'
-
+import Horaslabor from './src/components/views/Rol-coordinador/horaslabor.jsx'
 
 
 
@@ -189,7 +189,13 @@ element:<Himno/>
   path:"Registroasistencias",
   element:<Registroasistencias/>
 
+},
+{
+  path:"Horaslabor",
+  element:<Horaslabor/>
+
 }
+
 
 
 

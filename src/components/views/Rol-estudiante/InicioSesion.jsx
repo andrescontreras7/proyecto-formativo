@@ -23,8 +23,8 @@ function Formulario() {
           <form action="" className=' w-full flex flex-col justify-center items-center'>
               <input className=' w-full  mt-3 mb-3 border-2 p-2 rounded-3xl border-violet-600 shadow-md' type="text" placeholder='Digite su correo' />
               <input id='s' className=' w-full  mt-3 border-2 p-2 rounded-3xl border-violet-600 shadow-md' type="text" placeholder='Digite su contraseña' />
-              <button className='bg-indigo-700  w-2/3  mt-8 p-1 font-bold text-white text-2xl rounded-3xl'><a href="/Home">Ingresar</a></button>
-              <a className='w-3/5 items-center text-center' href="">
+              <button className='bg-indigo-700  w-2/3  mt-8 p-1 font-bold text-white text-2xl rounded-3xl'><a href="/Home" draggable="false">Ingresar</a></button>
+              <a className='w-3/5 items-center text-center' href="" draggable="false">
                   ¿Olvidó su contraseña?
               </a>
           </form>

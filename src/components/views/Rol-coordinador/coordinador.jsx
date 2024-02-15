@@ -47,10 +47,12 @@ const Coordinador = () => {
                         Registro de horas laboradas
                       </div>
 
-                      <button className="justify-center px-7 py-1.5 mt-8 text-sky-200 bg-indigo-700 rounded-xl max-md:px-5">
-                        Ver Mas
+                      <Link to="/horaslabor" draggable="false">
+                        <button className="justify-center px-7 py-1.5 mt-8 text-sky-200 bg-indigo-700 rounded-xl max-md:px-5">
+                          Ver Mas
+                        </button>
+                      </Link>
 
-                      </button>
 
                     </div>
 
@@ -62,7 +64,7 @@ const Coordinador = () => {
                       <div className="leading-6 text-indigo-700">
                         Registro de Asistencias
                       </div>
-                      <Link to="/Registroasistencias">
+                      <Link to="/Registroasistencias" draggable="false">
                         <button className="justify-center px-7 py-1.5 mt-8 text-sky-200 whitespace-nowrap bg-indigo-700 rounded-xl max-md:px-5">
                           Ver Más
                         </button>
@@ -73,8 +75,8 @@ const Coordinador = () => {
                       loading="lazy"
                       srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/6dfecb29216232462caf2acccebc4fc65e5eb978ff9e000af410f4fa20e511ab?apiKey=e6a49df5c7c7454db0095562764e4f8c&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/6dfecb29216232462caf2acccebc4fc65e5eb978ff9e000af410f4fa20e511ab?apiKey=e6a49df5c7c7454db0095562764e4f8c&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/6dfecb29216232462caf2acccebc4fc65e5eb978ff9e000af410f4fa20e511ab?apiKey=e6a49df5c7c7454db0095562764e4f8c&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/6dfecb29216232462caf2acccebc4fc65e5eb978ff9e000af410f4fa20e511ab?apiKey=e6a49df5c7c7454db0095562764e4f8c&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/6dfecb29216232462caf2acccebc4fc65e5eb978ff9e000af410f4fa20e511ab?apiKey=e6a49df5c7c7454db0095562764e4f8c&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/6dfecb29216232462caf2acccebc4fc65e5eb978ff9e000af410f4fa20e511ab?apiKey=e6a49df5c7c7454db0095562764e4f8c&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/6dfecb29216232462caf2acccebc4fc65e5eb978ff9e000af410f4fa20e511ab?apiKey=e6a49df5c7c7454db0095562764e4f8c&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/6dfecb29216232462caf2acccebc4fc65e5eb978ff9e000af410f4fa20e511ab?apiKey=e6a49df5c7c7454db0095562764e4f8c&"
                       className="aspect-[1.03] w-[97px]"
-                      draggable="false" 
-                      
+                      draggable="false"
+
                     />
                   </div>
                 </div>
