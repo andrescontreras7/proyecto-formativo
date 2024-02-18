@@ -10,7 +10,7 @@ const Coordinador = () => {
       <div className='flex-grow overflow-y-auto'>
 
         <div className='w-[18%] max-w-[20%] lg:max-w-[10%]'></div>
-        <div className='w-[90%] mx-auto mt-20 flex flex-col lg:flex-row justify-start items-start gap-8 rounded-2xl bg-gradient-to-t from-indigo-700 via-indigo-500 to-indigo-400 pl-8'> {/* Agregado pl-8 para mover los contenedores de asistencias a la izquierda */}
+        <div className='w-[80%] mx-auto mt-20 flex flex-col lg:flex-row justify-start items-start gap-8 rounded-2xl bg-gradient-to-t from-indigo-700 via-indigo-500 to-indigo-400 pl-8'> {/* Agregado pl-8 para mover los contenedores de asistencias a la izquierda */}
           <div className='flex flex-col gap-2 items-start ml-16 mt-8'>
             <p className='text-white font-light mb-2 lg:mb-10 text-lg lg:text-base'>Septiembre 3 de 2023</p>
             <h1 className='text-white font-bold text-[2.5rem]'>Bienvenido Coordinar (a)</h1>

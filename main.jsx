@@ -33,6 +33,7 @@ import Permisoscor from './src/components/views/Rol-coordinador/Permisos.jsx'
 import Coordinador from './src/components/views/Rol-coordinador/coordinador.jsx'
 import Registroasistencias from './src/components/views/Rol-coordinador/registroAsistencias.jsx'
 import Horaslabor from './src/components/views/Rol-coordinador/horaslabor.jsx'
+import Docente from './src/components/views/Rol-docente/docente.jsx'
 
 
 
@@ -194,7 +195,15 @@ element:<Himno/>
   path:"Horaslabor",
   element:<Horaslabor/>
 
+},
+
+{
+  path:"Docente",
+  element:<Docente/>
+
 }
+
+
 
 
 
