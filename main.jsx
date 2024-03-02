@@ -34,7 +34,8 @@ import Coordinador from './src/components/views/Rol-coordinador/coordinador.jsx'
 import Registroasistencias from './src/components/views/Rol-coordinador/registroAsistencias.jsx'
 import Horaslabor from './src/components/views/Rol-coordinador/horaslabor.jsx'
 import Docente from './src/components/views/Rol-docente/docente.jsx'
-
+import Cursos from './src/components/views/Rol-docente/cursos.jsx'
+import Obser_estudiante from './src/components/views/Rol-docente/obser_estudiante.jsx'
 
 
 
@@ -200,6 +201,17 @@ element:<Himno/>
 {
   path:"Docente",
   element:<Docente/>
+
+},
+
+{
+  path:"Cursos",
+  element:<Cursos/>
+
+},
+{
+  path:"Observadorestudiante",
+  element:<Obser_estudiante/>
 
 }
 

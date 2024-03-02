@@ -46,7 +46,7 @@ const AsideDO = () => {
        
         <AnimatedCursos> 
              <li className=" hover:scale-[1.09] transition-[2s] items-center gap-2 inline-flex">
-            <LuBookOpen className='text-white' /> <Link  to={'/  '} draggable="false" className="text-center text-zinc-100 text-base font-semibold" >Mis cursos </Link>
+            <LuBookOpen className='text-white' /> <Link  to={'/Cursos'} draggable="false" className="text-center text-zinc-100 text-base font-semibold" >Mis cursos </Link>
             </li>
         </AnimatedCursos>
 
@@ -69,7 +69,7 @@ const AsideDO = () => {
         </AnimatedCursos>
       
         <li className="hover:scale-[1.09] transition-[2s] items-center gap-2 inline-flex">
-        <LiaPenSolid className='text-white ' /> <Link to={'/  '}  draggable="false"className="text-center text-zinc-100 text-base font-semibold font-semibold" >Observador</Link>
+        <LiaPenSolid className='text-white ' /> <Link to={'/Observadorestudiante'}  draggable="false"className="text-center text-zinc-100 text-base font-semibold font-semibold" >Observador</Link>
         </li>
         
         <li className="hover:scale-[1.09] transition-[2s] items-center gap-2 inline-flex">
