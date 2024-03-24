@@ -83,7 +83,7 @@ const Aside = () => {
         </li>
         
         <li className="hover:scale-[1.09] transition-[2s] items-center gap-2 inline-flex">
-        <BsGear className='text-white text-3xl lg:text-lg' /> <a href="/Asidecon " className="text-center text-zinc-100 text-base font-semibold font-semibold hidden lg:inline-block" >Configuracion </a>
+        <BsGear className='text-white text-3xl lg:text-lg' /> <a href="/Recuperar " className="text-center text-zinc-100 text-base font-semibold font-semibold hidden lg:inline-block" >Configuracion </a>
         </li>
         
         <li className="hover:scale-[1.09] transition-[2s] items-center  inline-flex ">

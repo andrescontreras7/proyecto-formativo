@@ -32,6 +32,8 @@ import Registrardocente from './src/components/views/Rol-coordinador/RegistrarDo
 import Permisoscor from './src/components/views/Rol-coordinador/Permisos.jsx'
 import Recuperar from './src/components/views/Rol-coordinador/recuperarcon.jsx'
 import Recuperar1 from './src/components/views/Rol-estudiante/recuperarconEs.jsx'
+import Listado from './src/components/views/Rol-coordinador/listadoes.jsx'
+import NotasView from './src/components/views/Rol-docente/notasestudiantes.jsx'
 
 
 
@@ -195,6 +197,18 @@ element:<Himno/>
 {
   path:"Permisos",
   element:<Permisoscor/>
+
+},
+{
+  path:"Listado",
+  element:<Listado/>
+
+},
+
+//////RolDocente///////
+{
+  path:"NotasView",
+  element:<NotasView/>
 
 }
 

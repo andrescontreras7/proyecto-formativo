@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { BiUser, BiLock, BiShow, BiHide } from 'react-icons/bi';
-
 import Asidecon from '../../_asideconfi';
+
 
 const Recuperar = () => {
   const [currentPassword, setCurrentPassword] = useState('');
