@@ -14,7 +14,7 @@ const Navbar = () => {
         <div></div>
         <div className='flex items-center gap-2 mr-10'>
           <div className='h-10 w-10 overflow-hidden rounded-full'>
-            <img src="https://iedsangabriel.com/assets/img/logo.png" alt="" className='w-full h-full object-cover' />
+            <img src="https://iedsangabriel.com/assets/img/logo.png" alt="" draggable="false" className='w-full h-full object-cover' />
           </div>
           <div>
             <h4 className='text-white font-bold'>Andres Cavadia</h4>
