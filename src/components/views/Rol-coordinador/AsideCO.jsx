@@ -69,10 +69,14 @@ const Aside = () => {
                 <LiaBookSolid className='text-white  '/><Link to={'/AsistenciasDocentes'} draggable="false" className="text-center text-zinc-100 text-base font-semibold" >Asistencia docentes</Link>
             </li>
         </AnimatedCursos>
+        
       
+       
         <li className="hover:scale-[1.09] transition-[2s] items-center gap-2 inline-flex">
+        <BsGear className='text-white ' /> <a href="/Recuperar"className="text-center text-zinc-100 text-base font-semibold font-semibold" >Configuracion </a>
         <BsGear className='text-white ' /> <a href="" draggable="false"className="text-center text-zinc-100 text-base font-semibold font-semibold" >Configuracion </a>
         </li>
+      
         
         <li className="hover:scale-[1.09] transition-[2s] items-center gap-2 inline-flex">
             <BsEnvelope className='text-white  '/> <Link to={'/Permisos'} draggable="false" className="text-center text-zinc-100 text-base font-semibold" >Permisos</Link>

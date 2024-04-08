@@ -30,6 +30,14 @@ import AsistenciaDocente from './src/components/views/Rol-coordinador/Asistencia
 import InformeObservador from './src/components/views/Rol-coordinador/InformesObservador.jsx'
 import Registrardocente from './src/components/views/Rol-coordinador/RegistrarDocentes.jsx'
 import Permisoscor from './src/components/views/Rol-coordinador/Permisos.jsx'
+import Recuperar from './src/components/views/Rol-coordinador/recuperarcon.jsx'
+import Recuperar1 from './src/components/views/Rol-estudiante/recuperarconEs.jsx'
+import Listado from './src/components/views/Rol-coordinador/listadoes.jsx'
+import NotasView from './src/components/views/Rol-docente/notasestudiantes.jsx'
+
+
+
+
 import Coordinador from './src/components/views/Rol-coordinador/coordinador.jsx'
 import Registroasistencias from './src/components/views/Rol-coordinador/registroAsistencias.jsx'
 import Horaslabor from './src/components/views/Rol-coordinador/horaslabor.jsx'
@@ -49,10 +57,15 @@ import Obser_estudiante from './src/components/views/Rol-docente/obser_estudiant
 
 
 const router = createBrowserRouter([
+  {
+    path:"/Hoome",
+    element :<Home/>
+    },
 {
 path:"/login",
 element :<Formulario/>
 },
+// roles Estudiante
 {
 path:"/DetallesAsignatura",
 element :<AsignaturasDetalles/>,
@@ -80,7 +93,6 @@ children:[{
   
 
 },
-
 
 {
   path:"/Home",
@@ -119,10 +131,22 @@ element:<Himno/>
   path: "/Informacion",
   element: <Informacion/>
   },
+  {
+    path:"Passs",
+    element:<Recuperar1/>
+  },
+
+
+
 // roles coordinador
+
   {
     path:"Gestion",
     element:<Gestionaru/>
+  },
+  {
+    path:"Recuperar",
+    element:<Recuperar/>
   },
   {
     path:"Panel",
@@ -180,6 +204,17 @@ element:<Himno/>
   path:"Permisos",
   element:<Permisoscor/>
 
+},
+{
+  path:"Listado",
+  element:<Listado/>
+
+},
+
+//////RolDocente///////
+{
+  path:"NotasView",
+  element:<NotasView/>
 },
 
 {

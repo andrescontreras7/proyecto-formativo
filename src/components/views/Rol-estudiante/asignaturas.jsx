@@ -27,6 +27,45 @@ return(
     <div className= " flex justify-between text-gray-900  uppercase font-   bg-[#11868e] bg-opacity-50  p-[0.9rem] font   rounded-xl mr-20 mt-8">
         <HiArrowSmallLeft className="text-3xl "  />   <h1 className=" text-center ">   Cursos actuales </h1> <button className="flex low gap-2"> <HiArrowSmallRight className="text-3xl"/></button>
     </div>
+<div></div>
+<div className="flex items-center mb-4 ">
+  
+  <input
+    type="search"
+    id="filtro"
+    className="p-2 rounded-3xl font-normal pr-10 bg-[#F6F6F6]"
+    placeholder="Buscar asignatura"
+    name=""
+  />
+  <div className="flex items-center mb-4">
+  <label htmlFor="filtro2" className="block text-gray-700 text-lg font-bold mr-4">Filtra:</label>
+  <input
+    type="search"
+    id="filtro2"
+    className="p-2 rounded-3xl font-normal pr-10 bg-[#F6F6F6]"
+    placeholder="Buscar asignatura"
+    name=""
+  />
+</div>
+
+<div className="flex items-center mb-12">
+  <label htmlFor="filtro3" className="block text-gray-700 text-lg font-bold mr-4">Filtra:</label>
+  <input
+    type="search"
+    id="filtro3"
+    className="p-2 rounded-3xl font-normal pr-10 bg-[#F6F6F6]"
+    placeholder="Buscar asignatura"
+    name=""
+  />
+</div>
+</div>
+
+
+
+
+
+
+
         <div className="mt-10 ml-2">
             <input type="search " className="my-2 mt-10 border-2 p-3 rounded-md bg-[#F5F5F5] border-1 border-[#11868e] text-black outline outline-transparent focus:outline-[#39A900] focus:outline-[2px]"   placeholder="Buscar asignatura" name="" id="" />
         </div>

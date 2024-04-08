@@ -81,7 +81,9 @@ const Aside = () => {
         <li className="hover:scale-[1.09] transition-[2s] items-center gap-2 inline-flex">
         <BsQuote className='text-white  text-3xl lg:text-lg'/><Link to={'/Himno'} draggable="false" className="text-center text-zinc-100 text-base font-semibold hidden lg:inline-block" >Himno intitucional</Link>
         </li>
+        
         <li className="hover:scale-[1.09] transition-[2s] items-center gap-2 inline-flex">
+        <BsGear className='text-white text-3xl lg:text-lg' /> <a href="/Recuperar " className="text-center text-zinc-100 text-base font-semibold font-semibold hidden lg:inline-block" >Configuracion </a>
         <BsGear className='text-white text-3xl lg:text-lg' /> <a href="" draggable="false"className="text-center text-zinc-100 text-base font-semibold font-semibold hidden lg:inline-block" >Configuracion </a>
         </li>
         

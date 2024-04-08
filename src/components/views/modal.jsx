@@ -49,7 +49,7 @@ export default function Modal({children, titulo}) {
                     <h1 className='font-semibold text-xl border-b-[1px] border-b-slate-800 text-indigo-500 p-2 mt-2 uppercase'>
                         {titulo}
                     </h1>
-                    <ul className='p-4 text-lg my-auto font-Roboto font-semibold text-gray-700'>
+                    <ul className='p-8 text-lg my-auto font-Roboto font-semibold text-gray-700'>
                        
                         {children}
 
