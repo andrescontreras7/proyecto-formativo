@@ -11,7 +11,7 @@ const Obser_estudiante = () => {
         </div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex bg-[#AEE4F5] rounded-3xl shadow-3xl shadow-[0_8px_48px_8px_rgba(0,0,0,0.08)] w-[1032px] p-[32px] h-[700px] justify-center items-center">
           <div className="flex flex-col text-xl font-semibold text-center text-black max-w-[741px]">
-            <div className="text-3xl mb-14">Menú Observador</div>
+            <div className="text-3xl mb-14 ">Menú Observador</div>
             <button className="mt-2 px-16 py-8 rounded-3xl border-4 border-indigo-700 border-solid shadow-2xl bg-violet-500 bg-opacity-30 max-md:px-5 max-md:max-w-full">
               Observador de Convivencia
             </button>

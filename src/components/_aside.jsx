@@ -84,11 +84,10 @@ const Aside = () => {
         
         <li className="hover:scale-[1.09] transition-[2s] items-center gap-2 inline-flex">
         <BsGear className='text-white text-3xl lg:text-lg' /> <a href="/Recuperar " className="text-center text-zinc-100 text-base font-semibold font-semibold hidden lg:inline-block" >Configuracion </a>
-        <BsGear className='text-white text-3xl lg:text-lg' /> <a href="" draggable="false"className="text-center text-zinc-100 text-base font-semibold font-semibold hidden lg:inline-block" >Configuracion </a>
         </li>
         
         <li className="hover:scale-[1.09] transition-[2s] items-center  inline-flex ">
-            <BsPower className='text-white text-3xl lg:text-lg '/><a className="text-center  text-white text-opacity-75 text-base ml-2  font-semibold hidden lg:inline-block" href="" draggable="false">Cerrar Sesión</a>
+            <BsPower className='text-white text-3xl lg:text-lg '/><Link to={'/login'}  className="text-center  text-white text-opacity-75 text-base ml-2  font-semibold hidden lg:inline-block" href="" draggable="false">Cerrar Sesión</Link>
         </li>
 
        

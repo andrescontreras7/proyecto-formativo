@@ -31,21 +31,21 @@ const Cursos = () => {
         </div>
       </div>
       {/* scroll para las tarjetas */}
-      <div className="justify text-center overflow-y-auto " style={{ margin: 'auto', display: 'flex', marginLeft: '-800px', gap: '20px', maxHeight: '50vh', padding: '0 20px' }}>
+      <div className="justify text-center overflow-y-auto  " style={{ margin: 'auto', display: 'flex', marginLeft: '-800px', gap: '20px', maxHeight: '50vh', padding: '0 20px' }}>
         {/* Columna 1 */}
         <div>
           {/* Fila 1 */}
           <div className="flex flex-col">
             {/* Card 1 */}
-            <button className="rounded-lg overflow-hidden mb-5">
+            <button className="rounded-lg overflow-hidden mb-5 shadow-xl">
               <img src="public/español.png" alt="" className="w-full h-auto object-cover" style={{ maxHeight: '200px' }} draggable="false" />
             </button>
             {/* Card 2 */}
-            <button className="rounded-lg overflow-hidden mb-5">
+            <button className="rounded-lg overflow-hidden mb-5 shadow-xl">
               <img src="public\naturales.png" alt="" className="w-full h-auto object-cover" style={{ maxHeight: '200px' }} draggable="false" />
             </button>
             {/* Card 3 */}
-            <button className="rounded-lg overflow-hidden mb-5">
+            <button className="rounded-lg overflow-hidden mb-5 shadow-xl">
               <img src="public\ingles.png" alt="" className="w-full h-auto object-cover" style={{ maxHeight: '200px' }} draggable="false" />
             </button>
           </div>
@@ -56,15 +56,15 @@ const Cursos = () => {
           {/* Fila 2 */}
           <div className="flex flex-col">
             {/* Card 4 */}
-            <button className="rounded-lg overflow-hidden mb-5">
+            <button className="rounded-lg overflow-hidden mb-5 shadow-xl">
               <img src="public\ingles.png" alt="" className="w-full h-auto object-cover" style={{ maxHeight: '200px' }} draggable="false" />
             </button>
             {/* Card 5 */}
-            <button className="rounded-lg overflow-hidden mb-5">
+            <button className="rounded-lg overflow-hidden mb-5 shadow-xl">
               <img src="public/español.png" alt="" className="w-full h-auto object-cover" style={{ maxHeight: '200px' }} draggable="false" />
             </button>
             {/* Card 6 */}
-            <button className="rounded-lg overflow-hidden mb-5">
+            <button className="rounded-lg overflow-hidden mb-5 shadow-xl">
               <img src="public\ingles.png" alt="" className="w-full h-auto object-cover" style={{ maxHeight: '200px' }} draggable="false" />
             </button>
           </div>
@@ -75,7 +75,7 @@ const Cursos = () => {
           {/* Fila 3 */}
           <div className="flex flex-col">
             {/* Card 7 */}
-            <button className="rounded-lg overflow-hidden mb-5">
+            <button className="rounded-lg overflow-hidden mb-5 shadow-xl">
               <img src="public/español.png" alt="" className="w-full h-auto object-cover" style={{ maxHeight: '200px' }} draggable="false" />
             </button>
             {/* Card 8 */}
@@ -83,7 +83,7 @@ const Cursos = () => {
               <img src="public/español.png" alt="" className="w-full h-auto object-cover" style={{ maxHeight: '200px' }} draggable="false" />
             </button>
             {/* Card 9 */}
-            <button className="rounded-lg overflow-hidden mb-5">
+            <button className="rounded-lg overflow-hidden mb-5 shadow-xl">
               <img src="public\ingles.png" alt="" className="w-full h-auto object-cover" style={{ maxHeight: '200px' }} draggable="false" />
             </button>
           </div>

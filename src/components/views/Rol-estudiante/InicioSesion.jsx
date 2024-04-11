@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { BiArrowBack } from 'react-icons/bi';
 
 function Formulario() {
-  const [email, setEmail] = useState('');
+  const [correo, setCorreo] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
 
@@ -10,12 +10,12 @@ function Formulario() {
     e.preventDefault();
 
     try {
-      const response = await fetch('https://url-de-tu-backend.com/login', {
+      const response = await fetch('http://localhost:3001/appi/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ correo, password }),
       });
 
       if (!response.ok) {
@@ -23,7 +23,7 @@ function Formulario() {
       }
 
       const data = await response.json();
-      // Aquí deberías guardar el token de sesión en el estado o almacenamiento local
+     
 
       // Redirigir al usuario a la página de inicio
       window.location.href = '/Home';
@@ -46,7 +46,7 @@ function Formulario() {
               <div className="bg-indigo-700 text-white inline-block rounded-3xl w-auto px-4"><BiArrowBack /></div>   Iniciar  <span className='text-indigo-700 '>Sesion</span>
             </h1>
             <form onSubmit={handleSubmit} className='w-full flex flex-col justify-center items-center'>
-              <input className='w-full mt-3 mb-3 border-2 p-2 rounded-3xl border-violet-600 shadow-md' type="email" placeholder='Digite su correo' value={email} onChange={(e) => setEmail(e.target.value)} />
+              <input className='w-full mt-3 mb-3 border-2 p-2 rounded-3xl border-violet-600 shadow-md' type="email" placeholder='Digite su correo' value={correo} onChange={(e) => setCorreo(e.target.value)} />
               <input id='s' className='w-full mt-3 border-2 p-2 rounded-3xl border-violet-600 shadow-md' type="password" placeholder='Digite su contraseña' value={password} onChange={(e) => setPassword(e.target.value)} />
               <button type="submit" className='bg-indigo-700 w-2/3 mt-8 p-1 font-bold text-white text-2xl rounded-3xl'>Ingresar</button>
               {error && <p>{error}</p>}

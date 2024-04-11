@@ -6,7 +6,6 @@ import { GoChevronDown } from "react-icons/go";
 const Horaslabor = () => {
   return (
     <div className='bg-[#A6DCF1] min-h-screen flex flex-col justify-center items-center relative'>
-      {/* Barra azul */}
       <div className='bg-violet-500 bg-opacity-40 px-5 py-5 rounded-xl absolute top-5 left-80 right-1 max-w-6xl flex justify-between'>
         <Link to="/Coordinador" draggable="false">
           <button className="max-w-max flex items-center focus:outline-none rounded-full p-1">
@@ -19,7 +18,7 @@ const Horaslabor = () => {
       </div>
 
       {/* Contenedor de la tabla */}
-      <div className='max-w-max p-5 rounded-lg border bg-white z-10 mt-1 mr-20'> {/* Ajuste cambiado a mr-5 */}
+      <div className='max-w-max p-5 rounded-2xl border bg-white z-10 mt-1 mr-20'>
         {/* Contenido de la tabla */}
         <table className="border-collapse border-gray-300 mx-auto my-4 w-auto">
           <thead>

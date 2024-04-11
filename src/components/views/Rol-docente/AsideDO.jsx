@@ -82,7 +82,7 @@ const AsideDO = () => {
       
        
         <li className="hover:scale-[1.09] transition-[2s] items-center  inline-flex ">
-            <BsPower className='text-white  '/><Link to={'/  '} className="text-center  text-white text-opacity-75 text-base ml-2  font-semibold" href="" draggable="false">Cerrar Sesión</Link>
+            <BsPower className='text-white  '/><Link to={'/Login'} className="text-center  text-white text-opacity-75 text-base ml-2  font-semibold" href="" draggable="false">Cerrar Sesión</Link>
         </li>
 
        

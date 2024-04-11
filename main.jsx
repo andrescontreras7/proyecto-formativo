@@ -34,17 +34,13 @@ import Recuperar from './src/components/views/Rol-coordinador/recuperarcon.jsx'
 import Recuperar1 from './src/components/views/Rol-estudiante/recuperarconEs.jsx'
 import Listado from './src/components/views/Rol-coordinador/listadoes.jsx'
 import NotasView from './src/components/views/Rol-docente/notasestudiantes.jsx'
-
-
-
-
 import Coordinador from './src/components/views/Rol-coordinador/coordinador.jsx'
 import Registroasistencias from './src/components/views/Rol-coordinador/registroAsistencias.jsx'
 import Horaslabor from './src/components/views/Rol-coordinador/horaslabor.jsx'
 import Docente from './src/components/views/Rol-docente/docente.jsx'
 import Cursos from './src/components/views/Rol-docente/cursos.jsx'
 import Obser_estudiante from './src/components/views/Rol-docente/obser_estudiante.jsx'
-
+import Desempeño from './src/components/views/Rol-coordinador/desempeño.jsx'
 
 
 
@@ -248,7 +244,15 @@ element:<Himno/>
   path:"Observadorestudiante",
   element:<Obser_estudiante/>
 
+},
+{
+  path:"desempeño",
+  element:<Desempeño/>
+
 }
+
+
+
 
 
 
