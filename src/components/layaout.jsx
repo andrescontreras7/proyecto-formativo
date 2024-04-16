@@ -4,8 +4,8 @@ import Navbar from "./_navbar";
 
 const Layout = ({ children }) => {
     return (
-        <div className="flex h-full   bg-[#C5DFF8]">
-            <aside className="w-[15%]    ">
+        <div className="flex h-full   bg-[#A0BFE0]">
+            <aside className="w-[13%]     ">
                 <Aside />
             </aside>
             <div className="m-auto flex-col xl:w-[83%]   w-[80%]">
@@ -13,13 +13,11 @@ const Layout = ({ children }) => {
                     <nav className=' fixed top-0 left-50 w-full   bg-white shadow'>
                         <Navbar />
                     </nav>
-                    <main className='h-screen mx-auto '>
+                    <main className='h-screen  m-auto shadow-xl shadow-gray-500   '>
                         <div>{children}</div>
                     </main>
                 </div>
-                <footer className='fixed  bottom-0 left-50 w-full bg-[#7895CB] '>
-                    <p className='text-center'>Powered by Andres cavadia</p>
-                </footer>
+             
             </div>
         </div>
     );

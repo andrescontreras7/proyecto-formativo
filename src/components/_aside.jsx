@@ -31,7 +31,7 @@ const Aside = () => {
     >
           |||
     </button> */}
-<div className="xl:h-screen  max-[1280px]:h-screen    w-[90%]      bg-[#4A55A2]  ">
+<div className="xl:h-screen  max-[1280px]:h-screen    w-[100%]      bg-[#4A55A2]  ">
 
     <Link className="justify-center items-center mb-4 mt- hidden lg:flex  " to={'/Home'} draggable="false"> 
         <img src="https://iedsangabriel.com/assets/img/logo.png" alt="" draggable="false" />   

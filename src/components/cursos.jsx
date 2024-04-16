@@ -5,7 +5,7 @@ const Cursos = ({titulo, profesor, src}) =>{
 
     return(
 <>
-<div className=" flex bg-[#C5DFF8]  rounded-xl shadow-md shadow-slate-400   flex-col hover:scale-105 transition-[2s]  w-[30%] h-2/5  ">
+<div className=" flex bg-[#C5DFF8]  rounded-xl shadow-md shadow-[#4A55A2]   flex-col hover:scale-105 transition-[2s]  w-[25rem] h-2/5  ">
        <div className="rounded-xl">
        <div className=" shadow-md  m-4 rounded-xl h-[30vh]">
          <Link  to={"/DetallesAsignatura/Informacion"}>
