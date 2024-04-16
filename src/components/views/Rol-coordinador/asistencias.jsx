@@ -2,10 +2,11 @@
 import React, { useState } from 'react';
 import Aside from './AsideCO';
 import { Link } from 'react-router-dom';
+
 const AsistenciasD = () => {
   const [matricula, setMatricula] = useState(28);
   const [asistencias, setAsistencias] = useState({
-    presente: '27',
+    presente: '27',   
     retardos: '1',
     ausencias: '1',
   });
@@ -22,18 +23,18 @@ const AsistenciasD = () => {
     <div className='flex h-screen bg-[#A6DCF1]'>
       <Aside />
 
-      <div className='ml-4 p-4 w-10/12 overflow-y-auto text-white'>
+      <div id="contenedor" className='ml-4 p-4 w-10/12 overflow-y-auto text-white'>
         <div>
           <input type='text' placeholder='Buscar...' className='border p-2 rounded' />
         </div>
 
-        <div className='flex flex-col mt-2'>
+        <div  className='flex flex-col  mt-2'>
           <div className='text-right'>
             <p className='text-black mr-4 text-lg'>{obtenerFechaActual()}</p>
             <h5 className='text-2xl font-bold text-indigo-700 mb-2 '>¡Bienvenido!</h5>
           </div>
 
-         <Link to="/AsistenciasEstudiantes">
+         <Link to="/AsistenciasEstudiantes" >
              <div className=' rounded-3xl   mt-4 p-8 bg-gradient-to-r from-indigo-400 to-indigo-500 text-center mb-4'>
             <h2 className='text-left  text-3xl font-semibold mb-4 tracking-wider text-white'>Lenguaje 3°A</h2>
             <div className='flex justify-between'>

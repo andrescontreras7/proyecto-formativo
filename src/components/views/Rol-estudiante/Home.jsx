@@ -11,11 +11,11 @@ const  Home = () => {
 
   return (
 <>
-  <div className='h-screen  flex  bg-[#A6DCF1] '>
+  <div className='h-full   bg-[#A6DCF1] '>
     <div className=' w-[18%] l max-[1990px]:w-[20%]  max-[1375px]:w-[10%] '>
       <Aside/>
     </div>
-    <div className='w-[80%]   h-[20rem] min-[2000px]:mt-[2rem]   '>
+    <div className='w-[80%] h-screen min-[2000px]:mt-[2rem]   '>
       <_navbar/>
    
       <div className='w-[90%] min-[1990px]:justify-around ]   mt-20   flex items-center gap-2 min-[1990px]:h-[26rem]  justify-around  rounded-2xl bg-gradient-to-t from-indigo-700 via-indigo-500 to-indigo-400 '>

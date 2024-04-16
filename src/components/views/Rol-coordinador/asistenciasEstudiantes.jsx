@@ -17,10 +17,10 @@ const Asistenciafor = () => {
      <aside className='w-[15%]'>
       <Aside />
      </aside>
-      <div className=' h-screen m-auto w-screen  bg-[#A6DCF1] '>
-      <div className="flex h-[] items-center  bg-purple-500 bg-opacity-30 mt-4    w-[80vw] rounded-xl  m-auto mb-4">
+      <div  className=' h-screen m-auto w-screen bg-[#ACE2E1] '>
+      <div className="flex h-[] items-center rounded-md bg-[#51829B]  bg-opacity-30 mt-4    w-[80vw]   m-auto mb-4">
           <FiArrowLeft className="text-blue-500 text-2xl mr-2 cursor-pointer" />
-          <h1 className=" p-2 text-2xl font-bold">Captura de Asistencia</h1>
+          <h1 className=" p-2 text-2xl text-center font-bold">Captura de Asistencia</h1>
         </div>
       <div className="bg-[#AEE4F5]  overflow-y-auto lg:h-[80%] w-[80%] shadow-[0_8px_10px_8px_rgba(0,0,0,0.08)]  rounded-3xl container mx-auto mt-8 p-8 ">
        

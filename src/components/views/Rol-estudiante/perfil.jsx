@@ -3,14 +3,15 @@ import { BiUser, BiLock, BiShow, BiHide } from 'react-icons/bi';
 import { FiEdit, FiSettings } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import _aside from '../../_aside';
+import Layout from '../../layaout';
 const Perfil = () => {
   return (
-    <div className="bg-[#A6DCF1] h-screen flex ">
-      <div className='w-[15%]'>
-        <_aside />
-      </div>
-      <div className="bg-white h-[90%]   shadow-[0_8px_20px_20px_rgba(0,0,0,0.08)] rounded-xl m-auto  p-20 ml-10 w-[80%] flex flex-col margin-bottom">
-        <div className="mb-4 text-center border-[1px]  border-gray-200 rounded-xl ">
+    <Layout>
+        <div className=" w-full  bg-[#A0BFE0] flex  h-screen ">
+    
+      <div className="bg-white  justify-center shadow-[0_8px_20px_20px_rgba(0,0,0,0.08)] rounded-xl m-auto   w-[80%]  flex-col ">
+       <div className=''>
+       <div className="mb-2 text-center border-[1px]  border-gray-200 rounded-xl ">
           <BiUser className="text-6xl mx-auto" />
           <h2 className="text-xl font-bold">Juan Alberto Hoyos</h2>
           <button className="text-black-500 flex m-auto  gap-2 justify-center  bg-blue-950 rounded-md text-white w-[40%]  text-center">
@@ -55,8 +56,11 @@ const Perfil = () => {
           <div>
           </div>
         </div>
+       </div>
       </div>
     </div>
+    </Layout>
+  
   );
 };
 export default Perfil

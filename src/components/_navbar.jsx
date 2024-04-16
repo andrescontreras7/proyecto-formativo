@@ -9,8 +9,8 @@ const Navbar = () => {
   };
 
   return (
-    <div>
-      <nav className='bg-[#A6DCF1] flex fixed top-0 w-[80%] z-10 max-[1335px]:bg-red-800 justify-between items-center'>
+    <div className='w-full'>
+      <nav className=' bg-[#4A55A2] flex fixed top-0 w-[80%] xl:w-[83%]    max-[1335px]:bg-red-800 justify-between items-center'>
         <div></div>
         <div className='flex items-center gap-2 mr-10'>
           <div className='h-10 w-10 overflow-hidden rounded-full'>
