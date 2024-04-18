@@ -1,28 +1,86 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FiArrowLeft, FiEdit, FiMonitor, FiBarChart2 } from 'react-icons/fi';
 import Aside from './AsideCO'
 import Modal from '../modal';
-import { Fragment, useState } from 'react'
+import { Fragment, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
+import Layout from '../../layaout';
+import { HiArrowSmallLeft } from "react-icons/hi2";
+import s_axios from "../../../../config/axios";
+import { CRMcontext } from '../../../../context/CRMcontext';
+
+
+
+
 
 const Asistenciafor = () => {
+
+
+    const [asistencia, setAsistencia] = useState([]);
     const [modal, setModal] = useState(false);
+    const [auth, guardarToken] = useContext(CRMcontext)
+    console.log(auth)
+
 
     const ModalOpen = () => {
       setModal(!modal);
     };
+
+//solictud al enpoint de la appi para traer los datos 
+
+if (auth.token !=""  ) {
+    const consulta = async () => {
+     try {
+      const asistenciaConsulta  = await s_axios.get('/asistenciaEstudiantes' , {
+          headers : {
+          authorization : `Bearer ${auth.token}`
+        }
+
+      });
+       //guardar datos en la varibale de estado
+       setAsistencia(asistenciaConsulta.data);
+   
+      
+     } catch (error) {
+
+      //error con autorizacion
+      if(error.response.status === 500){
+        window.location.href = "/login";
+         }
+
+
+     
+    }
+
+    useEffect(() => {
+      consulta();
+    },[])
+  }
+}
+else{
+   
+}
+
+
+
+
   
   return (
-    <div className="flex bg-indigo-100 min-h-screen">
-     <aside className='w-[15%]'>
-      <Aside />
-     </aside>
-      <div  className=' h-screen m-auto w-screen bg-[#ACE2E1] '>
-      <div className="flex h-[] items-center rounded-md bg-[#51829B]  bg-opacity-30 mt-4    w-[80vw]   m-auto mb-4">
-          <FiArrowLeft className="text-blue-500 text-2xl mr-2 cursor-pointer" />
-          <h1 className=" p-2 text-2xl text-center font-bold">Captura de Asistencia</h1>
-        </div>
-      <div className="bg-[#AEE4F5]  overflow-y-auto lg:h-[80%] w-[80%] shadow-[0_8px_10px_8px_rgba(0,0,0,0.08)]  rounded-3xl container mx-auto mt-8 p-8 ">
+    <Layout>
+       <div className="flex bg-indigo-100 ">
+        
+    
+      <div  className=' h-screen m-auto w-full bg-[#A0BFE0] '>
+        
+      <div className="w-[100%]  m-auto border-b-2 border-solid border-[#5762ba]   ">
+                <div className= " flex items-center gap-2  text-gray-900  uppercase font-bold   p-[0.9rem] font   rounded-xl mr-20 mt-8">
+                  <HiArrowSmallLeft className="text-3xl "  />   
+                  <h1 className="  ">  Asistencias estudiantes  </h1> 
+                </div>
+              
+            </div>
+    
+      <div className="bg-[#C5DFF8]  overflow-y-auto lg:h-[80%] w-[80%] shadow-[0_8px_10px_8px_rgba(0,0,0,0.08)]  rounded-3xl container mx-auto mt-8 p-8 ">
        
 
         <div className="mb-4">
@@ -32,7 +90,7 @@ const Asistenciafor = () => {
             <p className="text-green-500 font-bold">Presente: <span className="bg-green-500 text-white rounded-full px-2">27</span></p>
             <p className="text-yellow-500 font-bold">Presente con Retardos: <span className="bg-yellow-500 text-white rounded-full px-2">1</span></p>
             <p className="text-orange-500 font-bold">Ausente: <span className="bg-orange-500 text-white rounded-full px-2">1</span></p>
-            <p className="text-blue-500 font-bold">Asistencia: <span className="bg-blue-500 text-white rounded-full px-2">100%</span></p>
+            <p className="text-blue-500 font-bold">Asistencia: <span className="bg-[#7895CB] text-white rounded-full px-2">100%</span></p>
           </div>
         </div>
 
@@ -75,7 +133,7 @@ const Asistenciafor = () => {
                   Presente
                 </td>
                 <td className="p-2">
-                  <button onClick={ModalOpen} className="bg-blue-500 text-white p-2 rounded">
+                  <button onClick={ModalOpen} className="bg-[#7895CB] text-white p-2 rounded">
                     <FiEdit className="text-xl" />
                   </button>
                 </td>
@@ -89,7 +147,7 @@ const Asistenciafor = () => {
                   Presente
                 </td>
                 <td className=" p-2">
-                  <button className="bg-blue-500 text-white p-2 rounded">
+                  <button className="bg-[#7895CB] text-white p-2 rounded">
                     <FiEdit className="text-xl" />
                   </button>
                 </td>
@@ -102,7 +160,7 @@ const Asistenciafor = () => {
                   Presente
                 </td>
                 <td className=" p-2">
-                  <button className="bg-blue-500 text-white p-2 rounded">
+                  <button className="bg-[#7895CB] text-white p-2 rounded">
                     <FiEdit className="text-xl" />
                   </button>
                 </td>
@@ -116,7 +174,7 @@ const Asistenciafor = () => {
                   Presente
                 </td>
                 <td className="p-2">
-                  <button className="bg-blue-500 text-white p-2 rounded">
+                  <button className="bg-[#7895CB] text-white p-2 rounded">
                     <FiEdit className="text-xl" />
                   </button>
                 </td>
@@ -130,7 +188,7 @@ const Asistenciafor = () => {
                   Presente
                 </td>
                 <td className="p-2">
-                  <button className="bg-blue-500 text-white p-2 rounded">
+                  <button className="bg-[#7895CB] text-white p-2 rounded">
                     <FiEdit className="text-xl" />
                   </button>
                 </td>
@@ -144,7 +202,7 @@ const Asistenciafor = () => {
                   Presente
                 </td>
                 <td className="p-2">
-                  <button className="bg-blue-500 text-white p-2 rounded">
+                  <button className="bg-[#7895CB] text-white p-2 rounded">
                     <FiEdit className="text-xl" />
                   </button>
                 </td>
@@ -158,7 +216,7 @@ const Asistenciafor = () => {
                   Presente
                 </td>
                 <td className=" p-2">
-                  <button className="bg-blue-500 text-white p-2 rounded">
+                  <button className="bg-[#7895CB] text-white p-2 rounded">
                     <FiEdit className="text-xl" />
                   </button>
                 </td>
@@ -172,7 +230,7 @@ const Asistenciafor = () => {
                   Presente
                 </td>
                 <td className="p-2">
-                  <button className="bg-blue-500 text-white p-2 rounded">
+                  <button className="bg-[#7895CB] text-white p-2 rounded">
                     <FiEdit className="text-xl" />
                   </button>
                 </td>
@@ -186,7 +244,7 @@ const Asistenciafor = () => {
                   Presente
                 </td>
                 <td className="p-2">
-                  <button className="bg-blue-500 text-white p-2 rounded">
+                  <button className="bg-[#7895CB] text-white p-2 rounded">
                     <FiEdit className="text-xl" />
                   </button>
                 </td>
@@ -203,6 +261,9 @@ const Asistenciafor = () => {
       </div>
       </div>
       </div>
+
+    </Layout>
+   
     
 
   );

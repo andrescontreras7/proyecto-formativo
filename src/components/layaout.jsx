@@ -5,11 +5,11 @@ import Navbar from "./_navbar";
 const Layout = ({ children }) => {
     return (
         <div className="flex h-full   bg-[#A0BFE0]">
-            <aside className="w-[13%]     ">
+            <aside className=" w-[13%] max-[1400px]:w-[16%]   ">
                 <Aside />
             </aside>
-            <div className="m-auto flex-col xl:w-[83%]   w-[80%]">
-                <div>
+            <div className="  w-[85%] flex-col max-[1400px]:w-[83%]  ">
+                <div className=''>
                     <nav className=' fixed top-0 left-50 w-full   bg-white shadow'>
                         <Navbar />
                     </nav>

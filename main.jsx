@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import ReactDOM from 'react-dom/client'
 import './src/assets/css/index.css'
 import { Router, RouterProvider, createBrowserRouter } from 'react-router-dom'
@@ -41,7 +41,7 @@ import Docente from './src/components/views/Rol-docente/docente.jsx'
 import Cursos from './src/components/views/Rol-docente/cursos.jsx'
 import Obser_estudiante from './src/components/views/Rol-docente/obser_estudiante.jsx'
 import Desempeño from './src/components/views/Rol-coordinador/desempeño.jsx'
-
+import { CRMcontext, CRMprovider  } from './context/CRMcontext.jsx'
 
 
 
@@ -53,6 +53,7 @@ import Desempeño from './src/components/views/Rol-coordinador/desempeño.jsx'
 
 
 const router = createBrowserRouter([
+  
   {
     path:"/Hoome",
     element :<Home/>
@@ -278,7 +279,12 @@ element:<Himno/>
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    
-    <RouterProvider   router ={router}/>
+    <CRMcontext.Consumer>
+      {value => (
+        <CRMprovider value={value}>
+          <RouterProvider router={router} />
+        </CRMprovider>
+      )}
+    </CRMcontext.Consumer>
   </React.StrictMode>,
-)
+); 
