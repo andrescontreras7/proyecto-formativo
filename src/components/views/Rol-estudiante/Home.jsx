@@ -11,7 +11,7 @@ const  Home = () => {
 
   return (
 <>
-<Layout>
+<Layout >
      <div className='bg-[#A0BFE0]     w-full h-screen   '>
      
      <div className='p-2 h-full overflow-y-scroll '>

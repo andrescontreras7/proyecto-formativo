@@ -6,26 +6,20 @@ import { HiArrowSmallLeft } from "react-icons/hi2";
 
 const Notas = () => {
     return (
-      <Layout>
+      <Layout titulo={"Notas"} icono={<HiArrowSmallLeft className='text-xl'/>}>
        
         <div>
         {/* Contenedor principal */}
-        <div className='bg-[#A0BFE0] flex overflow-y-scroll w-full h-screen'>
+        <div className='bg-[#A0BFE0]  w-full pb-2   h-[87vh] max-[1400px]:h-[84vh]  flex justify-center rounded-lg shadow-xl shadow-slate-700  '>
    
        
-          <section className='w-[100%] p-2   m-auto h-full '>
-          <div className="w-[90%] mt-10    ">
-                <div className= " flex items-center gap-2  text-gray-900  uppercase font-bold   p-[0.9rem] font   rounded-xl mr-20 mt-8">
-                  <HiArrowSmallLeft className="text-3xl "  />   
-                  <h1 className="  ">   Notas  </h1> 
-                </div>
-              
-          </div>
+          <section className='w-[100%] p-2    m-auto h-full '>
+        
           
          
             <div>
               {/* Encabezado */}
-              <div className='bg-[#7895CB] w-[90%] m-auto rounded-lg h-[4rem]' >
+              <div className='bg-[#7895CB] w-[90%] m-auto rounded-lg h-[4rem]  ' >
                <div className=''>
                 
                <select className="p-2 rounded-md ml-2 mr-4 mt-4 placeholder-gray-800 font-semibold focus:outline-none pr-10  border-solid bg-[#C5DFF8] shadow-md shadow-[#4A55A2]        "> 
@@ -54,7 +48,7 @@ const Notas = () => {
                 <p className='text-4xl text-center font-semibold text-gray-800 mt-8'>4.45</p>
               </div>
 
-              <article className=' mt-4 overflow-y-scroll h-[57vh]'>
+              <article className=' mt-4 overflow-y-scroll h-[53vh]  max-[1400px]:h-[46vh]'>
               <div className='w-[90%] bg-[#7895CB] rounded-xl mt-8 m-auto h-[46vh]'>
                 <div className='m-4'>
                   <h1 className='font-semibold text-indigo-500 text-xl uppercase'>Educacion artistica y valores</h1>

@@ -8,6 +8,7 @@ import Layout from '../../layaout';
 import { HiArrowSmallLeft } from "react-icons/hi2";
 import s_axios from "../../../../config/axios";
 import { CRMcontext } from '../../../../context/CRMcontext';
+import { LuAtSign } from 'react-icons/lu';
 
 
 
@@ -19,7 +20,7 @@ const Asistenciafor = () => {
     const [asistencia, setAsistencia] = useState([]);
     const [modal, setModal] = useState(false);
     const [auth, guardarToken] = useContext(CRMcontext)
-    console.log(auth)
+
 
 
     const ModalOpen = () => {
@@ -28,7 +29,15 @@ const Asistenciafor = () => {
 
 //solictud al enpoint de la appi para traer los datos 
 
-if (auth.token !=""  ) {
+const jwtT  =  localStorage.getItem('Jsowebtoken ')
+  
+  
+ 
+if (!jwtT) {
+  console.log("inicia sesion para acceder")
+  window.location.href = '/login'
+}
+else{
     const consulta = async () => {
      try {
       const asistenciaConsulta  = await s_axios.get('/asistenciaEstudiantes' , {
@@ -39,6 +48,7 @@ if (auth.token !=""  ) {
       });
        //guardar datos en la varibale de estado
        setAsistencia(asistenciaConsulta.data);
+       console.log(asistencia)
    
       
      } catch (error) {
@@ -56,9 +66,7 @@ if (auth.token !=""  ) {
       consulta();
     },[])
   }
-}
-else{
-   
+
 }
 
 
@@ -72,8 +80,8 @@ else{
     
       <div  className=' h-screen m-auto w-full bg-[#A0BFE0] '>
         
-      <div className="w-[100%]  m-auto border-b-2 border-solid border-[#5762ba]   ">
-                <div className= " flex items-center gap-2  text-gray-900  uppercase font-bold   p-[0.9rem] font   rounded-xl mr-20 mt-8">
+      <div className="w-[100%]  m-auto    ">
+                <div className= " flex items-center gap-2  text-gray-900  uppercase font-bold   p-[0.9rem] font   rounded-xl mr-20 mt-12">
                   <HiArrowSmallLeft className="text-3xl "  />   
                   <h1 className="  ">  Asistencias estudiantes  </h1> 
                 </div>

@@ -9,7 +9,7 @@ const Cursos = ({titulo, profesor, src}) =>{
        <div className="rounded-xl">
        <div className=" shadow-md  m-4 rounded-xl h-[30vh]">
          <Link  to={"/DetallesAsignatura/Informacion"}>
-                <img src="s.jpg" alt=""    className=" rounded-xl w-[100%]  p-2 h-[100%]" />
+                <img src={src} alt=""    className=" rounded-xl w-[100%]  p-2 h-[100%]" />
         </Link>
          </div>
            <div className=" bg-[#C5DFF8]  h-[35%]">

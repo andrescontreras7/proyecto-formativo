@@ -17,18 +17,19 @@ function Formulario() {
 
     const respuesta = await s_axios.post('/login', credenciales);
     const {token} = respuesta.data.token;
-    const {rol } = respuesta.data.token.rol;
+    console.log(respuesta.data.token.rol)
    
-    //almacenar en localstorage el token de sesion
-    localStorage.setItem('token ' , token);
-  
+   
     //guardar token en contexto
     guardarToken({
       token:token,
       autenticado: true
     })
-
- 
+    
+     //almacenar en localstorage el token de sesion
+     localStorage.setItem('Jsowebtoken ' , token);
+     window.location.href = '/coordinador';
+   
 
 
   } catch (error) {
@@ -39,13 +40,6 @@ function Formulario() {
       text: error.response.data.error
     })
   }
-
-
-
-
-
-
-
  }
 
   //almacenar lo que el usuario escribe
