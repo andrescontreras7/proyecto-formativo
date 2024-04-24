@@ -1,35 +1,51 @@
 import React, { useContext, useState } from 'react';
-import { BiArrowBack } from 'react-icons/bi';
+import { useNavigate } from 'react-router-dom'; 
 import Swal from 'sweetalert2'
 import s_axios from '../../../../config/axios';
-import { CRMcontext } from '../../../../context/CRMcontext';
+import { counterContext } from "../../../../context/CRMcontext";
+
+
 function Formulario() {
+ 
+
   const [credenciales, setCredenciales ] = useState({});
-  const [auth, guardarToken] = useContext(CRMcontext)
+  const {auth, guardarToken } = useContext(counterContext);
+  const navigate = useNavigate(); 
 
 
  //iniciar sesion 
  const InicioSesion = async (e) => {
+  
   e.preventDefault();
 
   try {
+   
 
 
     const respuesta = await s_axios.post('/login', credenciales);
-    const {token} = respuesta.data.token;
-    console.log(respuesta.data.token.rol)
+    const {token} = respuesta.data.token
+    const rol = respuesta.data.token.rol
+    console.log(rol);
    
    
-    //guardar token en contexto
-    guardarToken({
-      token:token,
-      autenticado: true
-    })
+   
+   
     
      //almacenar en localstorage el token de sesion
-     localStorage.setItem('Jsowebtoken ' , token);
-     window.location.href = '/coordinador';
+     localStorage.setItem('Jsowebtoken ',token);
+
+      //guardar token en contexto
+   await guardarToken({
+      autenticado: true,
+      token: token,
+      rol: rol
+      
+    })
+    rol === "estudiante" ? navigate('/Home') : rol === "docente" ? navigate('/coordinador') : null;
+
+  
    
+
 
 
   } catch (error) {
@@ -41,6 +57,8 @@ function Formulario() {
     })
   }
  }
+ 
+
 
   //almacenar lo que el usuario escribe
   const leerDatos = (e) => {
@@ -49,11 +67,12 @@ function Formulario() {
       [e.target.name]: e.target.value,
     })
 
-
-  }
+}
+  
 
   return (
     <>
+  
       <div className='flex items-center justify-between h-screen bg-[#657ca8]  '>
         <div className='h-screen w-[170px]'>
           <img className='ml-8 mt-8 w-32' src="https://iedsangabriel.com/assets/img/logo.png" alt="" draggable="false" />

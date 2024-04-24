@@ -24,10 +24,10 @@ const Navbar = () => {
             
           </div>
           <div className='ml-10 text-2xl'>
-            <button id='b' className='flex flex-col justify-center items-center mr-20' >
+            <div id='b' className='flex flex-col justify-center items-center mr-20' >
             <NavMenu />
             
-            </button>
+            </div>
           </div>
           </ul>
         </li>

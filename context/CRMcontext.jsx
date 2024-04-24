@@ -1,21 +1,5 @@
-import React,{useState} from "react";
+import { createContext } from "react";
 
+export const counterContext = createContext();
 
-
-const CRMcontext = React.createContext([{}, () => {}]);
-
-const CRMprovider = props => {
-  const [auth, guardarToken] = useState({
-    token: "",
-    autenticado: false,
-   
-  });
-
-  return (
-    <CRMcontext.Provider value={[auth, guardarToken]}>
-      {props.children}
-    </CRMcontext.Provider>
-  );
-}
-
-export {CRMcontext, CRMprovider};
+export default counterContext;

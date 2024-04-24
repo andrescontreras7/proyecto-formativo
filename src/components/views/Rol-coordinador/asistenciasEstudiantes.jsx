@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { useNavigate } from 'react-router-dom'; 
 import { FiArrowLeft, FiEdit, FiMonitor, FiBarChart2 } from 'react-icons/fi';
 import Aside from './AsideCO'
 import Modal from '../modal';
@@ -7,8 +8,9 @@ import { Link } from 'react-router-dom';
 import Layout from '../../layaout';
 import { HiArrowSmallLeft } from "react-icons/hi2";
 import s_axios from "../../../../config/axios";
-import { CRMcontext } from '../../../../context/CRMcontext';
 import { LuAtSign } from 'react-icons/lu';
+import {counterContext} from '../../../../context/CRMcontext'
+import Swal from 'sweetalert2'
 
 
 
@@ -19,7 +21,11 @@ const Asistenciafor = () => {
 
     const [asistencia, setAsistencia] = useState([]);
     const [modal, setModal] = useState(false);
-    const [auth, guardarToken] = useContext(CRMcontext)
+    
+    const { auth } = useContext(counterContext)
+    const navigate = useNavigate(); 
+    console.log(auth)
+ 
 
 
 
@@ -27,48 +33,35 @@ const Asistenciafor = () => {
       setModal(!modal);
     };
 
+
+
 //solictud al enpoint de la appi para traer los datos 
 
-const jwtT  =  localStorage.getItem('Jsowebtoken ')
-  
-  
- 
-if (!jwtT) {
-  console.log("inicia sesion para acceder")
-  window.location.href = '/login'
-}
-else{
-    const consulta = async () => {
-     try {
-      const asistenciaConsulta  = await s_axios.get('/asistenciaEstudiantes' , {
-          headers : {
-          authorization : `Bearer ${auth.token}`
+useEffect(() => {
+  const consulta = async () => {
+    try {
+      const asistenciaConsulta  = await s_axios.get('/asistenciaEstudiantes' ,{
+        headers : {
+          Authorization : `Bearer ${auth.token}`
         }
-
       });
-       //guardar datos en la varibale de estado
-       setAsistencia(asistenciaConsulta.data);
-       console.log(asistencia)
-   
-      
-     } catch (error) {
-
-      //error con autorizacion
-      if(error.response.status === 500){
-        window.location.href = "/login";
-         }
-
-
+      setAsistencia(asistenciaConsulta.data.data);
      
+    } catch (error) {
+      console.log(error);
+      if(error.response.status === 403){
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'No tienes permisos para acceder a este contenido',
+          footer: '<a href>Why do I have this issue?</a>'
+        })
+        navigate('/')
+      }
     }
-
-    useEffect(() => {
-      consulta();
-    },[])
   }
-
-}
-
+  consulta();
+}, []);
 
 
 
