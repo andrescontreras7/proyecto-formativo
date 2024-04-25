@@ -36,7 +36,7 @@ const Asignaturas = () => {
   }, []);
 
   return (
-    <Layaout titulo={"Asignaturas "} icono={<HiArrowSmallLeft className='text-xl' />}>
+    <Layaout titulo={"Asignaturas "} icono={<HiArrowSmallLeft className='text-xl' />}  >
       <div className="bg-[#A0BFE0] w-full h-[88vh] max-[1400px]:h-[85vh] flex justify-center rounded-md">
         <div className="flex flex-col gap-10 w-full h-[98%] p-2 rounded-md shadow-xl shadow-slate-700 mt-2">
           <nav className="w-full">

@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import Aside from './AsideCO';
 import { Link } from 'react-router-dom';
+import Layaout from "../../layaout";
+import { HiArrowSmallLeft } from "react-icons/hi2";
 
 const AsistenciasD = () => {
   const [matricula, setMatricula] = useState(28);
@@ -20,8 +22,9 @@ const AsistenciasD = () => {
   };
 
   return (
-    <div className='flex h-screen bg-[#A6DCF1]'>
-      <Aside />
+    <Layaout titulo={"Asignaturas "} icono={<HiArrowSmallLeft className='text-xl' />}>
+    <div className="bg-[#A0BFE0] w-full h-[88vh] max-[1400px]:h-[85vh] flex justify-center rounded-md">
+    
 
       <div id="contenedor" className='ml-4 p-4 w-10/12 overflow-y-auto text-white'>
         <div>
@@ -240,6 +243,10 @@ const AsistenciasD = () => {
         </div>
       </div>
     </div>
+
+
+    </Layaout>
+   
   );
 };
 

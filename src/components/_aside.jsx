@@ -153,7 +153,7 @@ const Aside = ({rol}) => {
       </li>
       
       <li className="hover:scale-[1.09] transition-[2s] items-center  inline-flex ">
-          <BsPower className='text-white text-3xl lg:text-lg '/><Link to={'/login'}  className="text-center  text-white text-opacity-75 text-base ml-2  font-semibold hidden min-[1140px]:inline-block" href="" draggable="false">Cerrar Sesión</Link>
+          <BsPower className='text-white text-3xl lg:text-lg '/><Link to={'/login'}  className="text-center  text-white text-opacity-75 text-base ml-2  font-semibold hidden min-[1140px]:inline-block" onClick={manejarCierreSesion} >Cerrar Sesión</Link>
       </li>
 
       

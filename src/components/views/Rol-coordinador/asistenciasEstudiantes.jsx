@@ -67,21 +67,14 @@ useEffect(() => {
 
   
   return (
-    <Layout>
-       <div className="flex bg-indigo-100 ">
-        
+    <Layout titulo={"Asistencias estudiantes  "} icono={<HiArrowSmallLeft className='text-xl' />}>
+    <div className="bg-[#A0BFE0] w-full h-[88vh] max-[1400px]:h-[84vh] flex justify-center rounded-md">
     
-      <div  className=' h-screen m-auto w-full bg-[#A0BFE0] '>
-        
-      <div className="w-[100%]  m-auto    ">
-                <div className= " flex items-center gap-2  text-gray-900  uppercase font-bold   p-[0.9rem] font   rounded-xl mr-20 mt-12">
-                  <HiArrowSmallLeft className="text-3xl "  />   
-                  <h1 className="  ">  Asistencias estudiantes  </h1> 
-                </div>
-              
-            </div>
     
-      <div className="bg-[#C5DFF8]  overflow-y-auto lg:h-[80%] w-[80%] shadow-[0_8px_10px_8px_rgba(0,0,0,0.08)]  rounded-3xl container mx-auto mt-8 p-8 ">
+      <div  className=' flex m-auto w-full bg-[#A0BFE0] '>
+      
+    
+      <div className="bg-[#C5DFF8]  overflow-y-auto max-[1400px]:h-[80vh] w-[90%] shadow-[0_8px_10px_8px_rgba(0,0,0,0.08)]  rounded-md m-auto  p-8 ">
        
 
         <div className="mb-4">
