@@ -1,8 +1,7 @@
 import React from 'react';
-import Aside from './AsideCO';
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useState } from 'react'
-import { Link } from 'react-router-dom';
+
 
 
 const RegistroObservador = ({children }) => {

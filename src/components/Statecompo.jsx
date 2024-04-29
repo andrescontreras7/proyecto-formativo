@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { counterContext } from '../../context/CRMcontext';
 
+
 const Statecom = ({ children }) => {
   const [auth, guardarToken] = useState(() => {
     const savedAuth = localStorage.getItem('auth');
@@ -19,7 +20,7 @@ const Statecom = ({ children }) => {
   const cerrarSesion = () => {
     localStorage.removeItem('auth'); 
     console.log("token borrado pa")
-    guardarToken(initialState);
+   
   };
 
   return (

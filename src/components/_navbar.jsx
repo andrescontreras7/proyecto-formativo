@@ -1,40 +1,74 @@
 import React, { useState } from 'react';
-
-import { BsList } from "react-icons/bs";
+import {Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Link, Button} from "@nextui-org/react";
+import { GoBell } from "react-icons/go";
 import NavMenu from "./menu";
-const Navbar = () => {
+const Navbars = () => {
 
-  return (
-    <div className='w-full  '>
-      <nav className=' bg-[#4A55A2] h-[5%] flex  w-[100%] max-[1400px]:w-[100%]   max-[1335px]:bg-red-800 justify-between items-center'>
-        <div className='p-1'>
-         <button> <BsList  className='text-3xl font-normal text-gray-800'/> </button>
+
+    const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  
+    const menuItems = [
+      "Profile",
+      "Dashboard",
+      "Activity",
+      "Analytics",
+      "System",
+      "Deployments",
+      "My Settings",
+      "Team Settings",
+      "Help & Feedback",
+      "Log Out",
+    ];
+  
+    return (
+      <Navbar isBordered className='h-[6vh] flex justify-end' onMenuOpenChange={setIsMenuOpen}>
+        <NavbarContent>
+          <NavbarMenuToggle
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            className="sm:hidden"
+          />
         
-        </div>
-        <li className=' list-none'>
-          <ul className='flex'>
-          <div className='h-10 w-10 overflow-hidden rounded-full'>
-            <img src="https://iedsangabriel.com/assets/img/logo.png" alt="" draggable="false" className='w-full h-full object-cover' />
-          </div>
-          
-          <div>
+        </NavbarContent>
+  
+        
+        <NavbarContent justify="end">
+          <NavbarItem className="hidden lg:flex">
+            <Link href="#">Login</Link>
+          </NavbarItem>
+          <NavbarItem>
             
-            <h4 className='text-white font-bold'>Andres Cavadia</h4>
-            <p className='text-gray-800 font-bold'>Estudiante</p>
+            <Button as={Link} color="primary" href="#" variant="flat">
+              Sign Up
+            </Button>
             
-          </div>
-          <div className='ml-10 text-2xl'>
-            <div id='b' className='flex flex-col justify-center items-center mr-20' >
-            <NavMenu />
-            
-            </div>
-          </div>
-          </ul>
-        </li>
-      </nav> 
-     
-    </div>
-  );
-}
+          </NavbarItem>
+          <NavbarItem>
+            <Link color="foreground" href="#">
+            <GoBell className='text-xl hover:scale-105' />
+            </Link>
+          </NavbarItem>
+         
+          <NavMenu />
+        </NavbarContent>
+        <NavbarMenu>
+          {menuItems.map((item, index) => (
+            <NavbarMenuItem key={`${item}-${index}`}>
+              <Link
+                color={
+                  index === 2 ? "primary" : index === menuItems.length - 1 ? "danger" : "foreground"
+                }
+                className="w-full"
+                href="#"
+                size="lg"
+              >
+                {item}
+              </Link>
+            </NavbarMenuItem>
+          ))}
+        </NavbarMenu>
+      </Navbar>
+    );
+  }
 
-export default Navbar;
+export default Navbars;
+

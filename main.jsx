@@ -42,11 +42,12 @@ import Cursos from './src/components/views/Rol-docente/cursos.jsx';
 import Obser_estudiante from './src/components/views/Rol-docente/obser_estudiante.jsx';
 import Desempeño from './src/components/views/Rol-coordinador/desempeño.jsx';
 import Statecom from "./src/components/Statecompo.jsx";
-
+import {NextUIProvider} from '@nextui-org/react'
 // Define las rutas de la app de React
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Statecom>
+    <NextUIProvider>
     <BrowserRouter>
     <Routes>
   <Route path="/Hoome" element={<Home/>} />
@@ -90,9 +91,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <Route path="/Cursos" element={<Cursos />} />
   <Route path="/Observadorestudiante" element={<Obser_estudiante />} />
   <Route path="/desempeño" element={<Desempeño />} />
-    </Routes>
 
+    </Routes>
       </BrowserRouter>
+    </NextUIProvider>
     </Statecom>
   </React.StrictMode>
 );

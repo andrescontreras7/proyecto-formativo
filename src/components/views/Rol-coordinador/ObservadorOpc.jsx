@@ -1,5 +1,4 @@
 import React from 'react';
-import Aside from './AsideCO';
 import RegistroObservador from './registroObservador';
 import { Fragment, useState } from 'react'
 

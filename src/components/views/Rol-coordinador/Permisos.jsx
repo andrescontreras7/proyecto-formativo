@@ -1,6 +1,4 @@
 import React from "react";
-import Aside from './AsideCO';
-
 const Permisoscor = () => {
     // Funciones para generar nombres y apellidos aleatorios
 const nombreAleatorio = () => nombres[Math.floor(Math.random() * nombres.length)];

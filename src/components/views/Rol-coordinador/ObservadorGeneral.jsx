@@ -1,7 +1,7 @@
 import React from 'react';
-import Aside from './AsideCO';
 import RegistroObservador from './registroObservador';
 import { Fragment, useState } from 'react'
+import Layout from '../../layaout';
 
 const ObservadorG = () => {
   const [modal, setModal] = useState(false);
@@ -10,26 +10,16 @@ const ObservadorG = () => {
     setModal(!modal);
   };
   return (
-    <div>
-      <div className='flex h-screen bg-[#A6DCF1]'>
-        <aside className='w-[15%]'>
-            <Aside/>
-        </aside>
+    <Layout titulo={"Observador Academico"}>
+
+     
+<div className=' pb-2 w-full bg-[#ffffff]   h-[86vh]    shadow-[0_8px_20px_12px_rgba(0,0,0,0.08)]   rounded-md '>
+        
         <div  className='w-[80%] mx-auto'>
-            <div className=' bg-[#925FE2] p-1 bg-opacity-40 h-[7vh] mt-2 rounded-2xl'>
-                <h1 className='text-center font-Roboto font-semibold text-gray-800 uppercase mt-2'>Observador Estudiantil</h1>
-            </div>
+            
             <div className='p-4'>
                 
-                <select name="" className= 'mt-4 bg-white w-28 m-4  p-2 border-[1px] rounded-md border-gray-500'  id="">
-                    <option value="">Grado</option>
-                    <option value="">5A</option>
-                    <option value="">7A</option>
-                    <option value="">9B</option>
-                    <option value="">9B</option>
-                    <option value="">9B</option>
-                    <option value="">9B</option>
-                </select> 
+            
              
                 <select name="" className= 'mt-4 bg-white w-28 m-4 p-2 border-[1px] rounded-md border-gray-500'  id="">
                     <option value="">Periodo</option>
@@ -128,7 +118,8 @@ const ObservadorG = () => {
         </div>
       </div>
       
-    </div>
+  
+    </Layout>
   );
 }
 

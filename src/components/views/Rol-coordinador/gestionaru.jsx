@@ -1,6 +1,4 @@
 import { useState } from 'react';
-import Aside from './AsideCO';
-
 
 const Gestionaru = () => {
   const [formData, setFormData] = useState({

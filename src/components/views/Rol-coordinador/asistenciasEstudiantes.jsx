@@ -1,41 +1,84 @@
-import React, { useContext } from 'react';
+import React, { useContext,useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'; 
 import { FiArrowLeft, FiEdit, FiMonitor, FiBarChart2 } from 'react-icons/fi';
-import Aside from './AsideCO'
-import Modal from '../modal';
-import { Fragment, useState, useEffect } from 'react'
-import { Link } from 'react-router-dom';
 import Layout from '../../layaout';
 import { HiArrowSmallLeft } from "react-icons/hi2";
 import s_axios from "../../../../config/axios";
 import { LuAtSign } from 'react-icons/lu';
 import {counterContext} from '../../../../context/CRMcontext'
 import Swal from 'sweetalert2'
+import DataTable, { createTheme }from 'react-data-table-component';
+import Input from '../../input';
 
 
 
 
 
 const Asistenciafor = () => {
+  const [modal, setModal] = useState(false);
+
+  const ModalOpen = () => {
+    setModal(!modal);
+  };
+
+
+const colu = [
+	{
+		name: 'codigo',
+		sortable: true,
+		selector: (row) => row.cod_asi,
+	},
+	{
+		name: 'fecha Asistencia',
+		sortable: true,
+		selector: (row) => row.fec_asi,
+	},
+	{
+		name: 'detalle asistencia',
+		sortable: true,
+		selector: (row) => row.det_asi,
+	},
+	{
+		name: 'Estudiante',
+		sortable: true,
+        selector: (row) => row.estudiante.estudnombre ,
+	},
+	{
+		name: 'grado',
+		sortable: true,
+
+
+
+      
+	},
+	{
+		name: 'acciones',
+		sortable: true,
+    cell: (row) => (
+      <div>
+        <button onClick={ModalOpen}> <FiEdit className="text-2xl" /></button>   
+      </div>
+    )
+     
+	}
+];
+
 
 
     const [asistencia, setAsistencia] = useState([]);
-    const [modal, setModal] = useState(false);
+
     
     const { auth } = useContext(counterContext)
     const navigate = useNavigate(); 
-    console.log(auth)
+
  
 
 
 
-    const ModalOpen = () => {
-      setModal(!modal);
-    };
+  
 
 
-
-//solictud al enpoint de la appi para traer los datos 
+//solictud al enpoints de la appi para traer los datos 
 
 useEffect(() => {
   const consulta = async () => {
@@ -45,7 +88,9 @@ useEffect(() => {
           Authorization : `Bearer ${auth.token}`
         }
       });
-      setAsistencia(asistenciaConsulta.data.data);
+      const lol = asistenciaConsulta.data.data
+      console.log(lol)
+      setAsistencia(lol);
      
     } catch (error) {
       console.log(error);
@@ -61,6 +106,7 @@ useEffect(() => {
     }
   }
   consulta();
+  
 }, []);
 
 
@@ -68,191 +114,46 @@ useEffect(() => {
   
   return (
     <Layout titulo={"Asistencias estudiantes  "} icono={<HiArrowSmallLeft className='text-xl' />}>
-    <div className="bg-[#A0BFE0] w-full h-[88vh] max-[1400px]:h-[84vh] flex justify-center rounded-md">
+    <div className="bg-[#ffffff] w-full h-[88vh] max-[1400px]:h-[84vh] flex justify-center rounded-md">
     
     
-      <div  className=' flex m-auto w-full bg-[#A0BFE0] '>
-      
-    
-      <div className="bg-[#C5DFF8]  overflow-y-auto max-[1400px]:h-[80vh] w-[90%] shadow-[0_8px_10px_8px_rgba(0,0,0,0.08)]  rounded-md m-auto  p-8 ">
-       
-
-        <div className="mb-4">
-          <h2 className="  float-right  text-lg font-bold">Fecha: 27 de Diciembre de 2023</h2>
-       
-          <div className="flex items-center space-x-4">
-            <p className="text-green-500 font-bold">Presente: <span className="bg-green-500 text-white rounded-full px-2">27</span></p>
-            <p className="text-yellow-500 font-bold">Presente con Retardos: <span className="bg-yellow-500 text-white rounded-full px-2">1</span></p>
-            <p className="text-orange-500 font-bold">Ausente: <span className="bg-orange-500 text-white rounded-full px-2">1</span></p>
-            <p className="text-blue-500 font-bold">Asistencia: <span className="bg-[#7895CB] text-white rounded-full px-2">100%</span></p>
-          </div>
-        </div>
-
-        <div className="mb-8">
-          <h4 className="text-md font-bold mb-2">Se encuentran 28 estudiantes</h4>
-          <table className="min-w-full ">
-            <thead>
-              <tr className='mr-20 ' >
-                <th className="mr-20 p-2">No.L</th>
-                <th className=" p-2">NOMBRE</th>
-                <th className=" p-2"> MATRICULA</th>
-                <th className=" p-2">ASISTENCIA</th>
-                <th className=" p-2">ACCIONES</th>
-              </tr>
-            </thead>
-            <tbody className='text-center'>
-                {modal && <Modal titulo={"Andres cavadia"}>
-                 
-                        <li className='p-2'>
-                        <Link> Editar Estudiante</Link>
-                        </li>
-                        <li className='p-2'>
-                        <Link> Observaciones</Link>
-                        </li>
-                        <li className='p-2'>
-                        <Link>Eliminar</Link>
-                        </li>
-                        <li className='p-2'>
-                        <Link> Informacion del estudiante</Link>
-                        </li>
-
-                  </Modal>}
-          
-              <tr className=' border-t-2 border-gray-400' >
-               <td className=" p-2">1 </td>
-                <td className=" text-cente p-2">Camilo andres </td>
-                <td className="p-2">123456</td>
-                <td className="p-2">
-                  <span className="bg-green-500 rounded-full h-4 w-4 inline-block mr-2"></span>
-                  Presente
-                </td>
-                <td className="p-2">
-                  <button onClick={ModalOpen} className="bg-[#7895CB] text-white p-2 rounded">
-                    <FiEdit className="text-xl" />
-                  </button>
-                </td>
-              </tr>
-              <tr className=' border-t-2 border-gray-400' > 
-              <td className="p-2">2 </td>
-                <td className="p-2">Scheril de jesus</td>
-                <td className= " p-2">123456</td>
-                <td className="p-2">
-                  <span className="bg-orange-500 rounded-full h-4 w-4 inline-block mr-2"></span>
-                  Presente
-                </td>
-                <td className=" p-2">
-                  <button className="bg-[#7895CB] text-white p-2 rounded">
-                    <FiEdit className="text-xl" />
-                  </button>
-                </td>
-              </tr>
-              <tr className=' border-t-2 border-gray-400' >  <td className="">3 </td>
-                <td className=" p-2">Alexer maestre</td>
-                <td className=" p-2">123456</td>
-                <td className=" p-2">
-                  <span className="bg-yellow-500 rounded-full h-4 w-4 inline-block mr-2"></span>
-                  Presente
-                </td>
-                <td className=" p-2">
-                  <button className="bg-[#7895CB] text-white p-2 rounded">
-                    <FiEdit className="text-xl" />
-                  </button>
-                </td>
-              </tr>
-              <tr className=' border-t-2 border-gray-400' > 
-              <td className=" p-2">4 </td>
-                <td className="p-2">Juan Pablo travis</td>
-                <td className="p-2">123456</td>
-                <td className="p-2">
-                  <span className="bg-green-500 rounded-full h-4 w-4 inline-block mr-2"></span>
-                  Presente
-                </td>
-                <td className="p-2">
-                  <button className="bg-[#7895CB] text-white p-2 rounded">
-                    <FiEdit className="text-xl" />
-                  </button>
-                </td>
-              </tr>
-              <tr className=' border-t-2 border-gray-400' > 
-              <td className=" p-2">5 </td>
-                <td className=" p-2">Omar Andres</td>
-                <td className="p-2">123456</td>
-                <td className="p-2">
-                  <span className="bg-green-500 rounded-full h-4 w-4 inline-block mr-2"></span>
-                  Presente
-                </td>
-                <td className="p-2">
-                  <button className="bg-[#7895CB] text-white p-2 rounded">
-                    <FiEdit className="text-xl" />
-                  </button>
-                </td>
-              </tr>
-              <tr className=' border-t-2 border-gray-400' > 
-              <td className="p-2">6 </td>
-                <td className=" p-2">JJ Muñoz</td>
-                <td className=" p-2">123456</td>
-                <td className=" p-2">
-                  <span className="bg-green-500 rounded-full h-4 w-4 inline-block mr-2"></span>
-                  Presente
-                </td>
-                <td className="p-2">
-                  <button className="bg-[#7895CB] text-white p-2 rounded">
-                    <FiEdit className="text-xl" />
-                  </button>
-                </td>
-              </tr>
-              <tr className=' border-t-2 border-gray-400' > 
-              <td className="p-2">7 </td>
-                <td className=" p-2">Santiago alavarez</td>
-                <td className=" p-2">123456</td>
-                <td className=" p-2">
-                  <span className="bg-green-500 rounded-full h-4 w-4 inline-block mr-2"></span>
-                  Presente
-                </td>
-                <td className=" p-2">
-                  <button className="bg-[#7895CB] text-white p-2 rounded">
-                    <FiEdit className="text-xl" />
-                  </button>
-                </td>
-              </tr>
-              <tr className=' border-t-2 border-gray-400' >
-              <td className=" p-2">8 </td>
-                <td className="p-2">Faver Marin</td>
-                <td className=" p-2">123456</td>
-                <td className=" p-2">
-                  <span className="bg-green-500 rounded-full h-4 w-4 inline-block mr-2"></span>
-                  Presente
-                </td>
-                <td className="p-2">
-                  <button className="bg-[#7895CB] text-white p-2 rounded">
-                    <FiEdit className="text-xl" />
-                  </button>
-                </td>
-              </tr>
-              <tr className=' border-t-2 border-gray-400' >
-              <td className="p-2">9 </td>
-                <td className=" p-2">john de la rosa</td>
-                <td className="p-2">123456</td>
-                <td className=" p-2">
-                  <span className="bg-green-500 rounded-full h-4 w-4 inline-block mr-2"></span>
-                  Presente
-                </td>
-                <td className="p-2">
-                  <button className="bg-[#7895CB] text-white p-2 rounded">
-                    <FiEdit className="text-xl" />
-                  </button>
-                </td>
-              </tr>
-              <tr className=' border-t-2 border-gray-400' ></tr>
-            </tbody>
-          </table>
-        </div>
-
-        
-
+      <div  className='   w-full  rounded-md shadow-[0_8px_10px_8px_rgba(0,0,0,0.08)] '>
+      <div  className=' w-full  p-2 '>
+        <h1 className='font-semibold text-xl  text-gray-700 p-2'>Filtros</h1>
+        <hr />
+      <div className='flex gap-6 overflow-auto  mt-2 bg-[#6f99e1] bg-opacity-25 max-sm:w-full max-sm:m-1  rounded-md p-4 m-10'>
+     
+          <Input/>
+          <Input/>
+          <Input/>
+          <Input/>
 
 
       </div>
+    </div>
+      <div className=" shadow-[0_8px_10px_8px_rgba(0,0,0,0.08)] w-[90%]   rounded-md m-auto  p-2 ">
+   
+          
+      <DataTable
+      theme='solarized'
+        title={"Asistencias estudiantes"}
+        columns={colu}
+        data={asistencia}
+        selectableRows
+        pagination
+        noHeader
+        striped
+        highlightOnHover
+        fixedHeader
+        
+        
+     
+           
+      />
+      
+      </div>
+     
+   
       </div>
       </div>
 

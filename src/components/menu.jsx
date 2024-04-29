@@ -1,6 +1,6 @@
 import { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
-
+import Logo from "../components/logo"
 import { Link } from 'react-router-dom'
 import { BsBell } from "react-icons/bs";
 export default function NavMenu() {
@@ -8,7 +8,7 @@ export default function NavMenu() {
   return (
     <Popover className="relative">
       <Popover.Button className="inline-flex transition-all hover:scale-110 items-center gap-x-1 text-sm font-semibold leading-4">
-        <BsBell className='w-6 h-6 text-gray-800 ' />
+        <Logo> </Logo>
       </Popover.Button>
 
       <Transition

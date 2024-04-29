@@ -1,34 +1,21 @@
 
 import React from 'react';
 import { FiArrowLeft, FiEdit, FiMonitor, FiBarChart2 } from 'react-icons/fi';
-import Aside from './AsideCO'
-import { Fragment, useState } from 'react'
-import { Link } from 'react-router-dom';
 
+import { Link } from 'react-router-dom';
+import Layout from '../../layaout';
 
 const AsistenciaDocente = () => {
   
   return (
-    <div className="flex bg-indigo-100 min-h-screen">
-     <aside className='w-[15%]'>
-      <Aside />
-     </aside>
-      <div className=' h-screen m-auto w-screen  bg-[#A6DCF1] '>
-      <div className="flex h-[] items-center  bg-purple-500 bg-opacity-30 mt-4    w-[80vw] rounded-xl  m-auto mb-4">
+  <Layout titulo={"Asistencia Docente"}>
+        <div className=' pb-2 w-full bg-[#ffffff]   h-[87vh]    shadow-[0_8px_20px_12px_rgba(0,0,0,0.08)]   rounded-md' >
+    
+ 
 
-      <Link to="/Panel">
-            <button>
-                <img
-                loading="lazy"
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/c30b563c1b498bb6ee6166c046b0c99187a1cfb9c2ddcb702766aa4a24c16412?apiKey=83a41f7c3fac45f48041df59c87c3d79&"
-                className="aspect-[1.22] object-contain object-center w-7 stroke-[3px] stroke-black overflow-hidden shrink-0 max-w-full"
-                />
-            </button>
-            </Link>
-
-          <h1 className=" p-2 text-2xl font-bold">Captura de Asistencia Docentes</h1>
-        </div>
-      <div className="bg-[#AEE4F5]  overflow-y-auto lg:h-[80%] w-[80%] shadow-[0_8px_10px_8px_rgba(0,0,0,0.08)]  rounded-3xl container mx-auto mt-8 p-8 ">
+     
+           
+      <div className="bg-[#AEE4F5]  overflow-y-auto lg:h-[80%] w-[80%] shadow-[0_8px_10px_8px_rgba(0,0,0,0.08)]  rounded-3xl container m-auto  ">
        
 
         <div className="mb-4">
@@ -211,10 +198,10 @@ const AsistenciaDocente = () => {
 
       </div>
       </div>
-      </div>
-    
+   
+     </Layout>
 
-  );
+  );  
 };
 
 export default AsistenciaDocente;

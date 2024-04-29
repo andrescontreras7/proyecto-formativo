@@ -1,97 +1,81 @@
-import { useState } from 'react'
-import Aside from '../../_aside';
-import _navbar from '../../_navbar';
+import React, { useContext } from 'react';
+import { Doughnut } from 'react-chartjs-2';
+import 'chart.js/auto';
+import { counterContext } from "../../../../context/CRMcontext";
 import Layout from '../../layaout';
-import { Link } from 'react-router-dom';
 
+const Home = () => {
+  const { auth } = useContext(counterContext);
+  console.log(auth)
+  const datos = [30, 50, 20];
 
-
-const  Home = () => {
-
+  const data = {
+    labels: ['faltas', 'asitencias', 'tardanzas'],
+    datasets: [
+      {
+        data: datos,
+        backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)'],
+        borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)'],
+        borderWidth: 1,
+      },
+    ],
+  };
 
   return (
 <>
-<Layout >
-     <div className='bg-[#A0BFE0]     w-full h-screen   '>
-     
-     <div className='p-2 h-full overflow-y-scroll '>
-
-       <div className='w-[18%] max-w-[20%] lg:max-w-[10%]'></div>
-       <div className='w-[95%]  mx-auto mt-20 flex flex-col lg:flex-row justify-start items-start gap-8 rounded-2xl bg-[#7895CB] pl-8'> {/* Agregado pl-8 para mover los contenedores de asistencias a la izquierda */}
-         <div className='flex flex-col gap-2 items-start ml-16 mt-8'>
-           <p className='text-white font-light mb-2 lg:mb-10 text-lg lg:text-base'>Septiembre 3 de 2023</p>
-           <h1 className='text-white font-bold text-[2.5rem]'>Bienvenido Estudiante (a)</h1>
-           <p className='text-white font-normal text-lg lg:text-base'>Nos complace volverte a ver</p>
-         </div>
-
-         <div className='w-1/2 lg:w-auto'>
-           <img src="Scholarcap scroll.png" alt="" draggable="false" className='h-72' />
-         </div>
-       </div>
-
-       <div className='mt-16 mx-auto max-w-6xl'>
-         <h1 className='font-semibold text-2xl'>¿Qué quieres consultar?</h1>
-         <div className='flex flex-wrap gap-8 justify-start mt-8'>
-
-           <button className='shadow- bg-[#7895CB] flex justify-center flex-col items-center shadow-[0_8px_40px_20px_rgba(0,0,0,0.08)] rounded-3xl h-[14rem] w-[16rem] lg:w-1/5 mr-4'> {/* Ajuste en el margen derecho de mr-8 a mr-4 */}
-             <h1 className='font-medium text-2xl'>Registrar huellas</h1>
-           </button>
-           <button className='shadow-3xl bg-[#7895CB] flex justify-center flex-col items-center shadow-[0_8px_40px_20px_rgba(0,0,0,0.08)] rounded-3xl h-[14rem] w-[16rem] lg:w-1/5 mr-4'> {/* Ajuste en el margen derecho de mr-8 a mr-4 */}
-             <h1 className='font-medium text-2xl'>Asistencias</h1>
-           </button>
-           <button className='shadow-3xl bg-[#7895CB] flex justify-center flex-col items-center shadow-[0_8px_40px_20px_rgba(0,0,0,0.08)] rounded-3xl h-[14rem] w-[16rem] lg:w-1/5 mr-4'> {/* Ajuste en el margen derecho de mr-8 a mr-4 */}
-             <h1 className='font-medium text-2xl'>Asistencias</h1>
-           </button>
-           <button className='shadow-3xl bg-[#7895CB] flex justify-center flex-col items-center shadow-[0_8px_40px_20px_rgba(0,0,0,0.08)] rounded-3xl h-[14rem] w-[16rem] lg:w-1/5 mr-4'> {/* Ajuste en el margen derecho de mr-8 a mr-4 */}
-             <h1 className='font-medium text-2xl'>Asistencias</h1>
-           </button>
-           <div className="max-w-[754px]">
-             <div className="flex gap-5 max-md:flex-col max-md:gap-0 max-md:">
-               <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
-                 <div className="flex grow gap-5 justify-between items-start self-stretch px-8 py-6 w-full text-lg font-semibold rounded-3xl shadow-2xl border-4 border-indigo-700 border-solid bg-violet-500 bg-opacity-30 max-md:px-5 max-md:mt-6">
-                   <div className="flex flex-col flex-1 mt-1">
-                     <div className="ml-2.5 w-60 leading-6 text-indigo-700">
-                       Registro de horas laboradas
-                     </div>
-
-                     <Link to="/horaslabor" draggable="false">
-                       <button className="justify-center px-7 py-1.5 mt-8 text-sky-200 bg-indigo-700 rounded-xl max-md:px-5">
-                         Ver Mas
-                       </button>
-                     </Link>
-
-
-                   </div>
-
-                 </div>
-               </div>
-               <div className="flex flex-col ml-20 w-6/12 max-md:ml-0 max-md:w-full">
-                 <div className="flex grow gap-5 justify-between items-start self-stretch px-8 py-6 w-full text-lg font-semibold rounded-3xl border-4 border-indigo-700 border-solid shadow-2xl bg-violet-500 bg-opacity-30 max-md:px-5 max-md:mt-6">
-                   <div className="flex flex-col mt-1">
-                     <div className="leading-6 text-indigo-700">
-                       Registro de Asistencias
-                     </div>
-                     <Link to="/Registroasistencias" draggable="false">
-                       <button className="justify-center px-7 py-1.5 mt-8 text-sky-200 whitespace-nowrap bg-indigo-700 rounded-xl max-md:px-5">
-                         Ver Más
-                       </button>
-                     </Link>
-
-                   </div>
-                   <img
-                     loading="lazy"
-                     srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/6dfecb29216232462caf2acccebc4fc65e5eb978ff9e000af410f4fa20e511ab?apiKey=e6a49df5c7c7454db0095562764e4f8c&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/6dfecb29216232462caf2acccebc4fc65e5eb978ff9e000af410f4fa20e511ab?apiKey=e6a49df5c7c7454db0095562764e4f8c&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/6dfecb29216232462caf2acccebc4fc65e5eb978ff9e000af410f4fa20e511ab?apiKey=e6a49df5c7c7454db0095562764e4f8c&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/6dfecb29216232462caf2acccebc4fc65e5eb978ff9e000af410f4fa20e511ab?apiKey=e6a49df5c7c7454db0095562764e4f8c&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/6dfecb29216232462caf2acccebc4fc65e5eb978ff9e000af410f4fa20e511ab?apiKey=e6a49df5c7c7454db0095562764e4f8c&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/6dfecb29216232462caf2acccebc4fc65e5eb978ff9e000af410f4fa20e511ab?apiKey=e6a49df5c7c7454db0095562764e4f8c&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/6dfecb29216232462caf2acccebc4fc65e5eb978ff9e000af410f4fa20e511ab?apiKey=e6a49df5c7c7454db0095562764e4f8c&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/6dfecb29216232462caf2acccebc4fc65e5eb978ff9e000af410f4fa20e511ab?apiKey=e6a49df5c7c7454db0095562764e4f8c&"
-                     className="aspect-[1.03] w-[97px]"
-                     draggable="false"
-
-                   />
-                 </div>
-               </div>
-             </div>
-           </div>
-         </div>
-       </div>
-     </div>
+<Layout titulo={""} >
+     <div className=' pb-2 w-full bg-[#ffffff]   h-[88vh]    shadow-[0_8px_20px_12px_rgba(0,0,0,0.08)]   rounded-md       '>
+        <div className='  h-[100%] w-full  overflow-y-auto   '>
+          <div className='    '>
+          <div className='p-2 mt-4'>
+            <h1 className=' text-3xl text-gray-700 mt-2  m-2 font-bold'>Bienvenido, <span className=' text-[#4A55A2] '>{auth.nombre}</span> 👋 </h1>
+            <hr />
+          </div>
+            <div className='  grid grid-cols-4 max-sm:grid-cols-2 max-2xl:grid-cols-3 max-2xl:grid-rows-3     justify-center grid-rows-3 gap-4 p-4  '>
+              <div className=' flex shadow-md row-span-3  duration-300 hover:translate-y-[-10px] hover:border-[#4A55A2]  bg-[#E2EDEA]  border border-gray-300    rounded-md  '> 
+                <div className='flex flex-col m-auto p-4   gap-4 '>
+                  <h1 className=' font-bold text-4xl text-gray-600 text-left  '>300</h1>
+                  <p className='font-semibold text-gray-700 text-left '>Total de <span className='text-[#4A55A2] font-bold'>Estudiantes</span> en plataforma</p>
+                </div>
+                <div className=' flex   m-auto  '>
+                  <div>
+                  <img className='w-20' src="../../../../public/estudiante 1.png" alt="" />
+                  </div>
+                </div>
+              </div>
+              <div className=' flex shadow-md  duration-300 hover:translate-y-[-10px] hover:border-[#4A55A2]  bg-[#E2EDEA]  border border-gray-300    rounded-md  '> 
+                <div className='flex flex-col m-auto p-4   gap-4 '>
+                  <h1 className=' font-bold text-4xl text-gray-600 text-left  '>20</h1>
+                  <p className='font-semibold text-gray-700 text-left '>Total de <span className='text-[#4A55A2] font-bold'>Docentes </span> en plataforma</p>
+                </div>
+                <div className=' flex   m-auto  '>
+                  <div>
+                  <img className='w-20' src="../../../../public/estudiante 1.png" alt="" />
+                  </div>
+                </div>
+              </div>
+              <button  className='flex max-2xl:col-start-2  p-4 duration-300 hover:translate-y-[-10px] hover:border-[#4A55A2] shadow-md  bg-[#E2EDEA] border border-gray-300   flex-col items-center  rounded-md   '> 
+                <div>
+                <h1 className='font-medium text-xl text-left    '>Estadisticas</h1>
+                  <p className='font-normal text-gray-700 text-left'>Lo culpa asperioresss accusantium quae excepturi.</p> 
+                </div>
+              </button>
+              <div  className=' p-4 row-span-3 shadow-md  max-sm:col-span-1 max-2xl:row-span-3 max-2xl:col-start-3 max-2xl:row-start-1  duration-300  hover:border-[#4A55A2]    bg-[#74b7fa] bg-opacity-20    border border-gray-300    rounded-md   '> 
+              <h1 className='font-medium text-xl text-center mb-4    '>Tus asistencias </h1>
+              <div className='m-2  '>
+              <Doughnut data={data}  />;
+                 
+                </div>
+              </div>
+              <button className='row-start-2 row-span-2 col-start-2 col-span-2 max-2xl:col-span-1  p-4   duration-300 hover:translate-y-[-10px] hover:border-[#4A55A2] shadow-md  bg-[#74b7fa] bg-opacity-20  border border-gray-300   flex-col items-center  rounded-md  '> 
+                <div>
+                <h1 className='font-medium text-xl text-left  '>Registrar huellas</h1>
+                  <p className='font-normal text-gray-700 text-left'>Lo culpa asperiores accusantium quae excepturzzzzi.</p>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
    </div> 
   </Layout>
  
