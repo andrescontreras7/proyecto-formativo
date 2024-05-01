@@ -1,7 +1,7 @@
 import React from 'react';
 import _aside from '../../_aside';
 import { useState, useEffect } from "react";
-
+import Layout from '../../layaout';
 const Observaciones = () => {
   const [modal, setModal] = useState(false);
 
@@ -9,11 +9,12 @@ const Observaciones = () => {
     setModal(!modal);
   };
   return (
-    <div>
-      <div className='flex h-screen bg-[#A6DCF1] '>
-      <aside className="w-[15%]  ">
-        <_aside />
-      </aside>
+
+    <Layout titulo={"Observaciones"}>
+  
+  <div className="bg-[#ffffff]  shadow-[0_8px_20px_12px_rgba(0,0,0,0.08)] w-full h-[85vh] 2xl:h-[87vh] flex justify-center rounded-md">
+     
+   
       <div className='w-[80%]   '>
         <section className='w-[90%] h-2/3 shadow-[0_8px_20px_20px_rgba(0,0,0,0.08)] rounded-2xl m-auto mt-10 '>
           <div className='p-4'>
@@ -81,8 +82,8 @@ const Observaciones = () => {
       
       
       </div>
-      </div>
-  
+
+  </Layout>
   );
 }
 

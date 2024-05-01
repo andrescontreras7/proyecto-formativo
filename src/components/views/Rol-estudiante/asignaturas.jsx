@@ -38,8 +38,8 @@ const Asignaturas = () => {
 
   return (
     <Layaout titulo={"Asignaturas "} icono={<HiArrowSmallLeft className='text-xl' />}  >
-      <div className="bg-[#ffff]  w-full h-[88vh] max-[1400px]:h-[85vh] flex justify-center rounded-md">
-        <div className="flex flex-col gap-2 w-full h-[96%] p-2 rounded-md shadow-md mt-2">
+  <div className="bg-[#ffffff]  shadow-[0_8px_20px_12px_rgba(0,0,0,0.08)] w-full h-[85vh] 2xl:h-[87vh] flex justify-center rounded-md">
+        <div className="flex flex-col gap-2 w-full h-[96%] p-2 rounded-md  mt-2">
           <nav className="w-full">
             <div className="flex items-center mt-2 ">
               <div className="flex gap-4  m-auto">

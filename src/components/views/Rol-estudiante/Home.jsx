@@ -24,8 +24,8 @@ const Home = () => {
   return (
 <>
 <Layout titulo={""} >
-     <div className=' pb-2 w-full bg-[#ffffff]   h-[88vh]    shadow-[0_8px_20px_12px_rgba(0,0,0,0.08)]   rounded-md       '>
-        <div className='  h-[100%] w-full  overflow-y-auto   '>
+<div className="bg-[#ffffff]  shadow-[0_8px_20px_12px_rgba(0,0,0,0.08)] w-full h-[89vh] flex justify-center rounded-md">
+       <div className='   w-full  overflow-y-auto   '>
           <div className='    '>
           <div className='p-2 mt-4'>
             <h1 className=' text-3xl text-gray-700 mt-2  m-2 font-bold'>Bienvenido, <span className=' text-[#4A55A2] '>{auth.nombre}</span> 👋 </h1>
