@@ -4,34 +4,25 @@ import { counterContext } from '../../context/CRMcontext';
 import s_axios from '../../config/axios';
 export default function App() {
 
-    const [grupo, setGrupo] = useState([]);
-    const auth = useContext(counterContext);
+    const [grado, setGrado] = useState([]);
+    const {auth} = useContext(counterContext);
 
     useEffect(() => {  
 
         const consulta = async () => {
             try {
-              const asistenciaConsulta  = await s_axios.get('/grado' ,{
+              const gradoConsulta  = await s_axios.get('/grados' ,{
                 headers : {
                   Authorization : `Bearer ${auth.token}`
                 }
               });
-              const lol = asistenciaConsulta.data.data
+              const lol = gradoConsulta.data.data
               console.log(lol)
-              setGrupo(lol);
+              setGrado(lol);
               
              
             } catch (error) {
-              console.log(error);
-              if(error.response.status === 403){
-                Swal.fire({
-                  icon: 'error',
-                  title: 'Oops...',
-                  text: 'No tienes permisos para acceder a este contenido',
-                  footer: '<a href>Why do I have this issue?</a>'
-                })
-                navigate('/')
-              }
+              console.log(error)
             }
           }
           consulta();
@@ -48,16 +39,16 @@ export default function App() {
     
   return (
     <Select
-        key={grupo.grupcod}
+        key={grado.grado_id}
       label="Grado"
       placeholder="Filtrar por grado"
       description=""
       
       className="max-w-xs"
     >
-     {grupo.map(grupos =>  (
-         <SelectItem key={grupos.grupcod} value="">
-               {grupos.grupgrado}  
+     {grado.map(grados =>  (
+         <SelectItem key={grados.grado_id} value="">
+               {grados.nombre_grado}  
          </SelectItem>
        
       )

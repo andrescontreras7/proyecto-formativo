@@ -2,46 +2,45 @@ import React, { useContext } from 'react';
 import ReactDOM from 'react-dom/client';
 import './src/assets/css/index.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from './src/components/views/Rol-estudiante/Home.jsx';
-import Horario from './src/components/views/Rol-estudiante/horario.jsx';
-import Asignaturas from './src/components/views/Rol-estudiante/asignaturas.jsx';
-import Formulario from './src/components/views/Rol-estudiante/InicioSesion.jsx';
-import AsignaturasDetalles from './src/components/views/Rol-estudiante/AsignaturasDetalles.jsx';
-import Correo from './src/components/views/Rol-estudiante/correo.jsx';
-import Tematicas from './src/components/views/Rol-estudiante/tematicas.jsx';
-import InformacionA from './src/components/views/Rol-estudiante/informacionA.jsx';
-import Observaciones from './src/components/views/Rol-estudiante/observaciones.jsx';
-import Asistencia from './src/components/views/Rol-estudiante/asistencia.jsx';
-import Himno from './src/components/views/Rol-estudiante/himno.jsx';
-import Calificaciones from './src/components/views/Rol-estudiante/calificaciones.jsx';
-import Notas from './src/components/views/Rol-estudiante/notas.jsx';
-import Perfil from './src/components/views/Rol-estudiante/perfil.jsx';
-import Informacion from './src/components/views/Rol-estudiante/informacionES.jsx';
-import Gestionaru from './src/components/views/Rol-coordinador/gestionaru.jsx';
-import Panel from './src/components/views/Rol-coordinador/Panel.jsx';
-import AsistenciasD from './src/components/views/Rol-coordinador/asistencias.jsx';
-import Calendario from './src/components/views/Rol-estudiante/calendario.jsx';
-import Asistenciafor from './src/components/views/Rol-coordinador/asistenciasEstudiantes.jsx';
-import Tarea from './src/components/views/Rol-coordinador/AdministrarAreas.jsx';
-import ObservadorOpc from './src/components/views/Rol-coordinador/ObservadorOpc.jsx';
-import RegistroObservador from './src/components/views/Rol-coordinador/registroObservador.jsx';
-import ObservadorG from './src/components/views/Rol-coordinador/ObservadorGeneral.jsx';
-import AsistenciaDocente from './src/components/views/Rol-coordinador/AsistenciasDocentes.jsx';
-import InformeObservador from './src/components/views/Rol-coordinador/InformesObservador.jsx';
-import Registrardocente from './src/components/views/Rol-coordinador/RegistrarDocentes.jsx';
-import Permisoscor from './src/components/views/Rol-coordinador/Permisos.jsx';
-import Recuperar from './src/components/views/Rol-coordinador/recuperarcon.jsx';
-import Recuperar1 from './src/components/views/Rol-estudiante/recuperarconEs.jsx';
-import Listado from './src/components/views/Rol-coordinador/listadoes.jsx';
-import NotasView from './src/components/views/Rol-docente/notasestudiantes.jsx';
-import Coordinador from './src/components/views/Rol-coordinador/coordinador.jsx';
-import Registroasistencias from './src/components/views/Rol-coordinador/registroAsistencias.jsx';
-import Horaslabor from './src/components/views/Rol-coordinador/horaslabor.jsx';
-import Docente from './src/components/views/Rol-docente/docente.jsx';
-import Cursos from './src/components/views/Rol-docente/cursos.jsx';
-import Obser_estudiante from './src/components/views/Rol-docente/obser_estudiante.jsx';
-import Desempeño from './src/components/views/Rol-coordinador/desempeño.jsx';
+import Home from './src/views/Rol-estudiante/Home.jsx';
+import Horario from './src/views/Rol-estudiante//horario.jsx';
+import Asignaturas from './src/views/Rol-estudiante//asignaturas.jsx';
+import Formulario from './src/views/Rol-estudiante//InicioSesion.jsx';
+import AsignaturasDetalles from './src/views/Rol-estudiante//AsignaturasDetalles.jsx';
+import Correo from './src/views/Rol-estudiante//correo.jsx';
+import Tematicas from './src/views/Rol-estudiante//tematicas.jsx';
+import InformacionA from './src/views/Rol-estudiante//informacionA.jsx';
+import Observaciones from './src/views/Rol-estudiante//observaciones.jsx';
+import Asistencia from './src/views/Rol-estudiante//asistencia.jsx';
+import Himno from './src/views/Rol-estudiante//himno.jsx';
+import Calificaciones from './src/views/Rol-estudiante//calificaciones.jsx';
+import Notas from './src/views/Rol-estudiante//notas.jsx';
+import Perfil from './src/views/Rol-estudiante//perfil.jsx';
+import Informacion from './src/views/Rol-estudiante//informacionES.jsx';
+import Gestionaru from './src/views/Rol-coordinador/gestionaru.jsx';
+import Panel from './src/views/Rol-coordinador/Panel.jsx';
+import AsistenciasD from './src/views/Rol-coordinador/asistencias.jsx';
+import Calendario from './src/views/Rol-estudiante//calendario.jsx';
+import Asistenciafor from './src/views/Rol-coordinador/asistenciasEstudiantes.jsx';
+import Tarea from './src/views/Rol-coordinador/AdministrarAreas.jsx';
+import ObservadorOpc from './src/views/Rol-coordinador/ObservadorOpc.jsx';
+import RegistroObservador from './src/views/Rol-coordinador/registroObservador.jsx';
+import ObservadorG from './src/views/Rol-coordinador/ObservadorGeneral.jsx';
+import AsistenciaDocente from './src/views/Rol-coordinador/AsistenciasDocentes.jsx';
+import InformeObservador from './src/views/Rol-coordinador/InformesObservador.jsx';
+import Registrardocente from './src/views/Rol-coordinador/RegistrarDocentes.jsx';
+import Permisoscor from './src/views/Rol-coordinador/Permisos.jsx';
+import Recuperar from './src/views/Rol-coordinador/recuperarcon.jsx';
+import Listado from './src/views/Rol-coordinador/listadoes.jsx';
+import NotasView from './src/views/Rol-estudiante/notas.jsx';
+import Coordinador from './src/views/Rol-coordinador/coordinador.jsx';
+import Registroasistencias from './src/views/Rol-coordinador/registroAsistencias.jsx';
+import Horaslabor from './src/views/Rol-coordinador/horaslabor.jsx';
+import Cursos from './src/views/Rol-docente/cursos.jsx';
+import Obser_estudiante from './src/views/Rol-docente/obser_estudiante.jsx';
+import Desempeño from './src/views/Rol-coordinador/desempeño.jsx';
 import Statecom from "./src/components/Statecompo.jsx";
+import RegistrarAlumno from './src/views/Rol-coordinador/registrarAlumno.jsx';
 import {NextUIProvider} from '@nextui-org/react'
 // Define las rutas de la app de React
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -67,7 +66,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <Route path="/Notas" element={<Notas />} />
   <Route path="/perfil" element={<Perfil />} />
   <Route path="/Informacion" element={<Informacion />} />
-  <Route path="/Passs" element={<Recuperar1 />} />
   <Route path="/Gestion" element={<Gestionaru />} />
   <Route path="/Recuperar" element={<Recuperar />} />
   <Route path="/Panel" element={<Panel />} />
@@ -87,10 +85,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <Route path="/Coordinador" element={<Coordinador />} />
   <Route path="/Registroasistencias" element={<Registroasistencias />} />
   <Route path="/Horaslabor" element={<Horaslabor />} />
-  <Route path="/Docente" element={<Docente />} />
   <Route path="/Cursos" element={<Cursos />} />
   <Route path="/Observadorestudiante" element={<Obser_estudiante />} />
   <Route path="/desempeño" element={<Desempeño />} />
+  <Route path="/registrarAlumno" element={<RegistrarAlumno />} />
 
     </Routes>
       </BrowserRouter>
