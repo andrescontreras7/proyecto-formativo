@@ -1,13 +1,13 @@
 import React from 'react';
+import Layout from "../../layaout";
 
 const Desempeño = () => {
     return (
+        <Layout titulo={"Desempeño"}  >
         <div className='bg-[#A6DCF1] h-screen flex'>
 
             <div className='flex-grow overflow-y-auto'>
-                <div className='bg-violet-500 bg-opacity-40 px-5 py-3 rounded-xl absolute top-5 left-80 right-1 max-w-6xl flex justify-between' style={{ marginLeft: '65px' }}>
-                    <div className="text-black text-xl font-semibold max-w-max mx-auto">Desempeño de estudiantes</div>
-                </div>
+                
 
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex bg-gradient-to-br from-blue-200 via-blue-300 to-blue-400 rounded-3xl shadow-3xl shadow-[0 8px 48px 8px rgba(0,0,0,0.08)] w-[1100px] p-[32px] h-[750px] justify-center items-center relative">
                     {/* Cuadro azul */}
@@ -60,7 +60,7 @@ const Desempeño = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div></Layout>
     );
 };
 
