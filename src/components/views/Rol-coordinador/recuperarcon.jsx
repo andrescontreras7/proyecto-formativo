@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Layout from '../../layaout';
 import { BiUser, BiLock, BiShow, BiHide } from 'react-icons/bi';
 import Asidecon from '../../_asideconfi';
 
@@ -34,10 +35,10 @@ const Recuperar = () => {
   };
 
   return (
-    <div className="bg-[#A6DCF1] h-screen flex ">
+    <div className="bg-black h-screen flex ">
       <Asidecon />
-      <div className="flex-1 bg-[#B3D6DD] p-20 ">
-        <div className=" bg-[#B3D6DD] p-8 rounded-md shadow-md h-full">
+      <div className="flex-1 bg-[#ffffff] p-20 ">
+        <div className=" bg-white-500 p-8 rounded-md shadow-md h-full">
           <div className="flex items-center justify-center mb-10 text-black ">
             <BiUser className="text-5xl mr-8" />
             <h1 className="text-2xl font-bold">Julian Londoño</h1>

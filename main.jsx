@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import ReactDOM from 'react-dom/client';
 import './src/assets/css/index.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+//Rol estudiante
 import Home from './src/components/views/Rol-estudiante/Home.jsx';
 import Horario from './src/components/views/Rol-estudiante/horario.jsx';
 import Asignaturas from './src/components/views/Rol-estudiante/asignaturas.jsx';
@@ -17,6 +18,8 @@ import Calificaciones from './src/components/views/Rol-estudiante/calificaciones
 import Notas from './src/components/views/Rol-estudiante/notas.jsx';
 import Perfil from './src/components/views/Rol-estudiante/perfil.jsx';
 import Informacion from './src/components/views/Rol-estudiante/informacionES.jsx';
+import Recuperar1 from './src/components/views/Rol-estudiante/recuperarconEs.jsx';
+//Rol Coodinador
 import Gestionaru from './src/components/views/Rol-coordinador/gestionaru.jsx';
 import Panel from './src/components/views/Rol-coordinador/Panel.jsx';
 import AsistenciasD from './src/components/views/Rol-coordinador/asistencias.jsx';
@@ -31,8 +34,8 @@ import InformeObservador from './src/components/views/Rol-coordinador/InformesOb
 import Registrardocente from './src/components/views/Rol-coordinador/RegistrarDocentes.jsx';
 import Permisoscor from './src/components/views/Rol-coordinador/Permisos.jsx';
 import Recuperar from './src/components/views/Rol-coordinador/recuperarcon.jsx';
-import Recuperar1 from './src/components/views/Rol-estudiante/recuperarconEs.jsx';
 import Listado from './src/components/views/Rol-coordinador/listadoes.jsx';
+//Rol docente
 import NotasView from './src/components/views/Rol-docente/notasestudiantes.jsx';
 import Coordinador from './src/components/views/Rol-coordinador/coordinador.jsx';
 import Registroasistencias from './src/components/views/Rol-coordinador/registroAsistencias.jsx';

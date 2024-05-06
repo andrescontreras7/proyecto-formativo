@@ -13,7 +13,7 @@ const Listado = () => {
   };
 
   return (
-    <div className="flex bg-indigo-100 min-h-screen">
+    <div className="flex bg-[#74b7fa] min-h-screen">
       <div className="h-screen m-auto w-screen bg-[#A6DCF1]">
         <div className="flex h-[] items-center bg-purple-500 bg-opacity-30 mt-4 w-[80vw] rounded-xl m-auto mb-4">
           <FiArrowLeft className="text-blue-500 text-2xl mr-2 cursor-pointer" />
@@ -87,7 +87,7 @@ const Listado = () => {
                   <td className="p-2">3°</td>
                   <td className="p-2">14-02-2001</td>
                   <td className="p-2">Juan Isaza</td>
-                  <td className="p-2">Esposo</td>
+                  <td className="p-2">papa</td>
                   <td className="p-2">30433733784</td>
                   <td className="p-2">calle 5b # 14-f15</td>
                   <td className="p-2">
@@ -102,7 +102,7 @@ const Listado = () => {
                   <td className="p-2">3°</td>
                   <td className="p-2">14-02-2001</td>
                   <td className="p-2">Juan Isaza</td>
-                  <td className="p-2">Esposo</td>
+                  <td className="p-2">Abuelo</td>
                   <td className="p-2">30433733784</td>
                   <td className="p-2">calle 5b # 14-f15</td>
                   <td className="p-2">
@@ -117,7 +117,7 @@ const Listado = () => {
                   <td className="p-2">3°</td>
                   <td className="p-2">14-02-2001</td>
                   <td className="p-2">Juan Isaza</td>
-                  <td className="p-2">Esposo</td>
+                  <td className="p-2">mama</td>
                   <td className="p-2">30433733784</td>
                   <td className="p-2">calle 5b # 14-f15</td>
                   <td className="p-2">
@@ -132,7 +132,7 @@ const Listado = () => {
                   <td className="p-2">3°</td>
                   <td className="p-2">14-02-2001</td>
                   <td className="p-2">Juan Isaza</td>
-                  <td className="p-2">Esposo</td>
+                  <td className="p-2">abuela</td>
                   <td className="p-2">30433733784</td>
                   <td className="p-2">calle 5b # 14-f15</td>
                   <td className="p-2">
@@ -147,7 +147,7 @@ const Listado = () => {
                   <td className="p-2">3°</td>
                   <td className="p-2">14-02-2001</td>
                   <td className="p-2">Juan Isaza</td>
-                  <td className="p-2">Esposo</td>
+                  <td className="p-2">mama</td>
                   <td className="p-2">30433733784</td>
                   <td className="p-2">calle 5b # 14-f15</td>
                   <td className="p-2">
@@ -162,7 +162,7 @@ const Listado = () => {
                   <td className="p-2">3°</td>
                   <td className="p-2">14-02-2001</td>
                   <td className="p-2">Juan Isaza</td>
-                  <td className="p-2">Esposo</td>
+                  <td className="p-2">vecina</td>
                   <td className="p-2">30433733784</td>
                   <td className="p-2">calle 5b # 14-f15</td>
                   <td className="p-2">
@@ -177,7 +177,7 @@ const Listado = () => {
                   <td className="p-2">3°</td>
                   <td className="p-2">14-02-2001</td>
                   <td className="p-2">Juan Isaza</td>
-                  <td className="p-2">Esposo</td>
+                  <td className="p-2">Espos</td>
                   <td className="p-2">30433733784</td>
                   <td className="p-2">calle 5b # 14-f15</td>
                   <td className="p-2">
@@ -192,7 +192,7 @@ const Listado = () => {
                   <td className="p-2">3°</td>
                   <td className="p-2">14-02-2001</td>
                   <td className="p-2">Juan Isaza</td>
-                  <td className="p-2">Esposo</td>
+                  <td className="p-2">padrastro </td>
                   <td className="p-2">30433733784</td>
                   <td className="p-2">calle 5b # 14-f15</td>
                   <td className="p-2">
@@ -207,7 +207,7 @@ const Listado = () => {
                   <td className="p-2">3°</td>
                   <td className="p-2">14-02-2001</td>
                   <td className="p-2">Juan Isaza</td>
-                  <td className="p-2">Esposo</td>
+                  <td className="p-2">ti</td>
                   <td className="p-2">30433733784</td>
                   <td className="p-2">calle 5b # 14-f15</td>
                   <td className="p-2">
@@ -222,7 +222,7 @@ const Listado = () => {
                   <td className="p-2">3°</td>
                   <td className="p-2">14-02-2001</td>
                   <td className="p-2">Juan Isaza</td>
-                  <td className="p-2">Esposo</td>
+                  <td className="p-2">ti</td>
                   <td className="p-2">30433733784</td>
                   <td className="p-2">calle 5b # 14-f15</td>
                   <td className="p-2">
@@ -237,7 +237,7 @@ const Listado = () => {
                   <td className="p-2">3°</td>
                   <td className="p-2">14-02-2001</td>
                   <td className="p-2">Juan Isaza</td>
-                  <td className="p-2">Esposo</td>
+                  <td className="p-2">Tio</td>
                   <td className="p-2">30433733784</td>
                   <td className="p-2">calle 5b # 14-f15</td>
                   <td className="p-2">
