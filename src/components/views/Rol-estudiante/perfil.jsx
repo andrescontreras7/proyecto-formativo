@@ -7,9 +7,9 @@ import Layout from '../../layaout';
 const Perfil = () => {
   return (
     <Layout>
-        <div className=" w-full  bg-[#A0BFE0] flex  h-screen ">
+
     
-      <div className="bg-white  justify-center shadow-[0_8px_20px_20px_rgba(0,0,0,0.08)] rounded-xl m-auto   w-[80%]  flex-col ">
+      <div className="bg-white  justify-center shadow-[0_8px_20px_20px_rgba(0,0,0,0.08)] rounded-xl m-auto     flex-col ">
        <div className=''>
        <div className="mb-2 text-center border-[1px]  border-gray-200 rounded-xl ">
           <BiUser className="text-6xl mx-auto" />
@@ -58,7 +58,7 @@ const Perfil = () => {
         </div>
        </div>
       </div>
-    </div>
+   
     </Layout>
   
   );

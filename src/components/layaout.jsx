@@ -17,13 +17,13 @@ const Layout = ({ children, titulo, icono }) => {
     
 /* validacion del token de autenticacion, accedo a el mediante el contexto que cree para luego validar que haya iniciado session
 mediante el token de autenticacion */
-    useEffect(() => {    
+  /*  useEffect(() => {    
         if (!auth.token) {
         
             navigate('/');
         }
     }, [auth, navigate]);
-
+*/
    
 
 

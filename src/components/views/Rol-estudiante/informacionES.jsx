@@ -9,7 +9,7 @@ const Informacion = () => {
 
   return (
     <Layout titulo={"Informacion del perfil"}>
-      <div className="flex flex-col sm:flex-row bg-[#ffffff] shadow-[0_8px_20px_12px_rgba(0,0,0,0.08)] rounded-md h-[85vh] 2xl:h-[87vh] justify-center items-center">
+      <div className="flex flex-col sm:flex-row bg-[#ffffff] overflow-y-scroll shadow-[0_8px_20px_12px_rgba(0,0,0,0.08)] rounded-md h-[85vh] 2xl:h-[87vh] justify-center items-center">
        
 
         <div className='flex flex-col p-4 sm:w-1/2'>
@@ -21,7 +21,7 @@ const Informacion = () => {
                 id="nombre"
                 type="text"
                 className="w-full p-2 border rounded bg-white"
-                placeholder="Ingresa tu nombre"
+                
               />
             </div>
 
@@ -32,7 +32,7 @@ const Informacion = () => {
                 id="apellido"
                 type="text"
                 className="w-full p-2 border rounded bg-white"
-                placeholder="Ingresa tu apellido"
+                
               />
             </div>
 
@@ -43,7 +43,7 @@ const Informacion = () => {
                 id="email"
                 type="email"
                 className="w-full p-2 border rounded bg-white"
-                placeholder="Ingresa tu correo electrónico"
+                
               />
             </div>
 
@@ -54,7 +54,7 @@ const Informacion = () => {
                 id="direccion"
                 type="text"
                 className="w-full p-2 border rounded bg-white"
-                placeholder="Ingresa tu dirección"
+               
               />
             </div>
 
@@ -65,7 +65,7 @@ const Informacion = () => {
                 id="barrio"
                 type="text"
                 className="w-full p-2 border rounded bg-white"
-                placeholder="Ingresa tu barrio"
+                
               />
             </div>
 
@@ -76,7 +76,7 @@ const Informacion = () => {
                 id="celular"
                 type="text"
                 className="w-full p-2 border rounded bg-white"
-                placeholder="Ingresa tu número de celular"
+                
               />
             </div>
           </div>
