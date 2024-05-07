@@ -39,8 +39,8 @@ const Aside = ({rol}) => {
 
  
 <div className="xl:h-screen  max-[1280px]:h-screen     w-[100%]      bg-[#626cb8]  ">
-     <Link className="justify-center items-center mb-10  hidden sm:flex  " to={'/Home'} draggable="false"> 
-        <img src="https://iedsangabriel.com/assets/img/logo.png" className='mt-2' alt="" draggable="false" />   
+     <Link className="justify-center items-center mb-4 hidden sm:flex p-2  " to={'/Home'} draggable="false"> 
+        <img src="../../public/registrarasignatura.png" className='mt-2 h-full w-[8rem]  ' alt="" draggable="false" />   
     </Link>
 {rol === 1 && (
       <ul className="flex-col md:space-y-2 space-y-2    max-[1280px]:items-center  pl-3   gap-4 inline-flex items justify-center max-[1020px]:my-auto">

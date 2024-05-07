@@ -17,7 +17,7 @@ const Layout = ({ children, titulo, icono }) => {
     
 /* validacion del token de autenticacion, accedo a el mediante el contexto que cree para luego validar que haya iniciado session
 mediante el token de autenticacion */
-  /*  useEffect(() => {    
+/*useEffect(() => {    
         if (!auth.token) {
         
             navigate('/');
@@ -29,7 +29,7 @@ mediante el token de autenticacion */
 
 
     return (
-        <div className="flex h-[100%] overflow-y-scroll bg-[#F3F3F4] "> 
+        <div className="flex h-[100%]  bg-[#F3F3F4] "> 
             <aside className="w-[15%] max-sm:hidden  max-[1400px]:w-[17%]">
                 <Aside rol={auth.rol}    />
             </aside>
@@ -41,7 +41,7 @@ mediante el token de autenticacion */
                             <button>{icono}</button> <h1 className='font-semibold text-2xl  text-gray-800 '>     {titulo}</h1>
                         </div>
                     </nav>
-                    <main className='   w-[97%] m-auto '> 
+                    <main className='   w-[97%] m-auto  '> 
                         <div>{children}</div>
                         
                     </main>
