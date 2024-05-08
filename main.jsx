@@ -41,6 +41,8 @@ import Obser_estudiante from './src/views/Rol-docente/obser_estudiante.jsx';
 import Desempeño from './src/views/Rol-coordinador/desempeño.jsx';
 import Statecom from "./src/components/Statecompo.jsx";
 import RegistrarAlumno from './src/views/Rol-coordinador/registrarAlumno.jsx';
+import Tematicas2 from './src/views/Rol-estudiante/tematicas2.jsx';
+import Infomateria from './src/views/Rol-estudiante/infomateria.jsx';
 import {NextUIProvider} from '@nextui-org/react'
 // Define las rutas de la app de React
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -89,6 +91,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <Route path="/Observadorestudiante" element={<Obser_estudiante />} />
   <Route path="/desempeño" element={<Desempeño />} />
   <Route path="/registrarAlumno" element={<RegistrarAlumno />} />
+  <Route path="/Tematicas2" element={<Tematicas2 />} />
+  <Route path="/Infomateria" element={<Infomateria />} />
+
+
+  
 
     </Routes>
       </BrowserRouter>
