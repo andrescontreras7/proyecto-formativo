@@ -4,20 +4,20 @@ import { counterContext } from '../../context/CRMcontext';
 import s_axios from '../../config/axios';
 export default function App({nom, ac}) {
 
-    const [grado, setGrado] = useState([]);
+    const [grupo, setGrupo] = useState([]);
     const {auth} = useContext(counterContext);
 
     useEffect(() => {  
 
         const consulta = async () => {
             try {
-              const gradoConsulta  = await s_axios.get('/grados' ,{
+              const grupoConsulta  = await s_axios.get('/grupo' ,{
                 headers : {
                   Authorization : `Bearer ${auth.token}`
                 }
               });
-              const lol = gradoConsulta.data.data
-              setGrado(lol);
+              const lol = grupoConsulta.data.data
+              setGrupo(lol);
               
              
             } catch (error) {
@@ -40,16 +40,16 @@ export default function App({nom, ac}) {
     <Select
     onChange={ac}
       name={nom}
-      key={grado.grado_id}
-      label="Grado"
-      placeholder="Filtrar por grado"
+      key={grupo.grupcod}
+      label="Grupos"
+      placeholder="Filtrar por grupo"
       description=""
       
       className="max-w-xs"
     >
-     {grado.map(grados =>  (
-         <SelectItem key={grados.grado_id} value="">
-               {grados.nombre_grado}  
+     {grupo.map(grupos =>  (
+         <SelectItem key={grupos.grupcod} value="">
+               {grupos.grupsalon}  
          </SelectItem>
        
       )
