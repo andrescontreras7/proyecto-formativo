@@ -9,7 +9,7 @@ import Formulario from './src/views/Rol-estudiante//InicioSesion.jsx';
 import AsignaturasDetalles from './src/views/Rol-estudiante//AsignaturasDetalles.jsx';
 import Correo from './src/views/Rol-estudiante//correo.jsx';
 import Tematicas from './src/views/Rol-estudiante//tematicas.jsx';
-import InformacionA from './src/views/Rol-estudiante//informacionA.jsx';
+import InformacionMateria from './src/views/Rol-estudiante/infomateria.jsx';
 import Observaciones from './src/views/Rol-estudiante//observaciones.jsx';
 import Asistencia from './src/views/Rol-estudiante//asistencia.jsx';
 import Himno from './src/views/Rol-estudiante//himno.jsx';
@@ -55,7 +55,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <Route path="/" element={<Formulario />} />
   <Route path="/DetallesAsignatura" element={<AsignaturasDetalles />}>
     <Route path="/DetallesAsignatura/Tematicas" element={<Tematicas />} />
-    <Route path="/DetallesAsignatura/Informacion" element={<InformacionA />} />
+    <Route path="/DetallesAsignatura/Informacion" element={<InformacionMateria />} />
     <Route path="/DetallesAsignatura/Asistencias" element={<Asistencia />} />
     <Route path="/DetallesAsignatura/Calificaciones" element={<Calificaciones />} />
   </Route>

@@ -6,9 +6,9 @@ import Layout from '../../components/layaout';
 const Infomateria = () => {
 
     return (
-        <Layout titulo={"Informacion asignaturas"} icono={<HiArrowSmallLeft className='text-xl' />}  >
-            <div className="flex justify-start items-start pt-10 pb-20">
-                <div className="flex flex-col px-5 max-w-[50%]">
+      
+        <div className='h-[80vh] overflow-y-scroll '>
+                    <div className="flex flex-col   p-10  w-[50rem] ">
                     <div className="w-full text-2xl text-black">
                         Nombre de la Materia:
                     </div>
@@ -81,8 +81,9 @@ const Infomateria = () => {
                         </div>
                     </div>
                 </div>
-            </div>
-        </Layout>
+  
+        </div>
+     
     );
 }
 
