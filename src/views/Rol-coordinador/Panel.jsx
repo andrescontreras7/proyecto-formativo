@@ -45,7 +45,7 @@ const Panels = () => {
                                 </div>
                             </div>
                         </li>
-                        <Link to="/Listado" className="flex     items-center duration-300  border  border-gray-700  border-gray-700 hover:bg-[#8EA7E9] hover:border-none hover:border-none ">
+                        <Link to="/Listado" className="flex     items-center duration-300  border   border-gray-700 hover:bg-[#8EA7E9] hover:border-none hover:border-none ">
                             <div className='flex gap-2  items-center'>
                                 <div className=' border cursor-pointer    border-indigo-200 p-[5px] rounded-sm  '>
                                 <img className='w-11' src="public\lista.png" alt="Docente" />

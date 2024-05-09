@@ -42,57 +42,66 @@ import Desempeño from './src/views/Rol-coordinador/desempeño.jsx';
 import Statecom from "./src/components/Statecompo.jsx";
 import RegistrarAlumno from './src/views/Rol-coordinador/registrarAlumno.jsx';
 import {NextUIProvider} from '@nextui-org/react'
+import PrivateRoute from './src/components/private.jsx';
+import RegistroAsignatura from './src/views/Rol-coordinador/Registrar_asignatura.jsx';
 // Define las rutas de la app de React
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <Statecom>
+<React.StrictMode>
+  <Statecom>
     <NextUIProvider>
-    <BrowserRouter>
-    <Routes>
-  <Route path="/Hoome" element={<Home/>} />
-  <Route path="/" element={<Formulario />} />
-  <Route path="/DetallesAsignatura" element={<AsignaturasDetalles />}>
-    <Route path="/DetallesAsignatura/Tematicas" element={<Tematicas />} />
-    <Route path="/DetallesAsignatura/Informacion" element={<InformacionA />} />
-    <Route path="/DetallesAsignatura/Asistencias" element={<Asistencia />} />
-    <Route path="/DetallesAsignatura/Calificaciones" element={<Calificaciones />} />
-  </Route>
-  <Route path="/Home" element={<Home />} />
-  <Route path="/Himno" element={<Himno />} />
-  <Route path="/Observaciones" element={<Observaciones />} />
-  <Route path="/Horario" element={<Horario />} />
-  <Route path="/Asignaturas" element={<Asignaturas />} />
-  <Route path="/Correo" element={<Correo />} />
-  <Route path="/Notas" element={<Notas />} />
-  <Route path="/perfil" element={<Perfil />} />
-  <Route path="/Informacion" element={<Informacion />} />
-  <Route path="/Gestion" element={<Gestionaru />} />
-  <Route path="/Recuperar" element={<Recuperar />} />
-  <Route path="/Panel" element={<Panel />} />
-  <Route path="/AsitenciasD" element={<AsistenciasD />} />
-  <Route path="/Calendario" element={<Calendario />} />
-  <Route path="/AsistenciasEstudiantes" element={<Asistenciafor />} />
-  <Route path="/Areas" element={<Tarea />} />
-  <Route path="/Observador" element={<ObservadorOpc />} />
-  <Route path="/RegistrarObservacion" element={<RegistroObservador />} />
-  <Route path="/ObservadorGeneral" element={<ObservadorG />} />
-  <Route path="/AsistenciasDocentes" element={<AsistenciaDocente />} />
-  <Route path="/Informes" element={<InformeObservador />} />
-  <Route path="/Registrardocente" element={<Registrardocente />} />
-  <Route path="/Permisos" element={<Permisoscor />} />
-  <Route path="/Listado" element={<Listado />} />
-  <Route path="/NotasView" element={<NotasView />} />
-  <Route path="/Coordinador" element={<Coordinador />} />
-  <Route path="/Registroasistencias" element={<Registroasistencias />} />
-  <Route path="/Horaslabor" element={<Horaslabor />} />
-  <Route path="/Cursos" element={<Cursos />} />
-  <Route path="/Observadorestudiante" element={<Obser_estudiante />} />
-  <Route path="/desempeño" element={<Desempeño />} />
-  <Route path="/registrarAlumno" element={<RegistrarAlumno />} />
+      <BrowserRouter>
+      <Routes>
+      <Route path="/login" element={<Formulario />} />
+      <Route path="/rA" element={<RegistroAsignatura/>} />
 
-    </Routes>
+      </Routes>
+      <PrivateRoute>
+        <Routes>
+            <Route path="/Hoome" element={<Home/>} />
+            
+         
+            <Route path="/DetallesAsignatura" element={<AsignaturasDetalles />}>
+              <Route path="/DetallesAsignatura/Tematicas" element={<Tematicas />} />
+              <Route path="/DetallesAsignatura/Informacion" element={<InformacionA />} />
+              <Route path="/DetallesAsignatura/Asistencias" element={<Asistencia />} />
+              <Route path="/DetallesAsignatura/Calificaciones" element={<Calificaciones />} />
+            </Route>
+            <Route path="/Home" element={<Home />} />
+            <Route path="/Himno" element={<Himno />} />
+            <Route path="/Observaciones" element={<Observaciones />} />
+            <Route path="/Horario" element={<Horario />} />
+            <Route path="/Asignaturas" element={<Asignaturas />} />
+            <Route path="/Correo" element={<Correo />} />
+            <Route path="/Notas" element={<Notas />} />
+            <Route path="/perfil" element={<Perfil />} />
+            <Route path="/Informacion" element={<Informacion />} />
+            <Route path="/Gestion" element={<Gestionaru />} />
+            <Route path="/Recuperar" element={<Recuperar />} />
+            <Route path="/Panel" element={<Panel />} />
+            <Route path="/AsitenciasD" element={<AsistenciasD />} />
+            <Route path="/Calendario" element={<Calendario />} />
+            <Route path="/AsistenciasEstudiantes" element={<Asistenciafor />} />
+            <Route path="/Areas" element={<Tarea />} />
+            <Route path="/Observador" element={<ObservadorOpc />} />
+            <Route path="/RegistrarObservacion" element={<RegistroObservador />} />
+            <Route path="/ObservadorGeneral" element={<ObservadorG />} />
+            <Route path="/AsistenciasDocentes" element={<AsistenciaDocente />} />
+            <Route path="/Informes" element={<InformeObservador />} />
+            <Route path="/Registrardocente" element={<Registrardocente />} />
+            <Route path="/Permisos" element={<Permisoscor />} />
+            <Route path="/Listado" element={<Listado />} />
+            <Route path="/NotasView" element={<NotasView />} />
+            <Route path="/Coordinador" element={<Coordinador />} />
+            <Route path="/Registroasistencias" element={<Registroasistencias />} />
+            <Route path="/Horaslabor" element={<Horaslabor />} />
+            <Route path="/Cursos" element={<Cursos />} />
+            <Route path="/Observadorestudiante" element={<Obser_estudiante />} />
+            <Route path="/desempeño" element={<Desempeño />} />
+            <Route path="/registrarAlumno" element={<RegistrarAlumno />} />       
+        </Routes>  
+        </PrivateRoute>
       </BrowserRouter>
     </NextUIProvider>
-    </Statecom>
-  </React.StrictMode>
+  </Statecom>
+</React.StrictMode>
 );
