@@ -39,17 +39,19 @@ const AsignaturasDetalles = () => {
      
 <nav className="p-2  ">
         
-   <div className='flex justify-center bg-[#74b7fa] bg-opacity-25 rounded-sm mb-2  '>
+   <div className='flex justify-center bg-[#626cb8]  rounded-md mb-2  '>
    <Tabs className/>
 
   </div>
 </nav>
        
-
-     <Outlet>
-      
-     </Outlet>
-    
+        <div>
+          
+              <Outlet >
+              
+              </Outlet>
+        </div>
+            
   </div>
  
 
