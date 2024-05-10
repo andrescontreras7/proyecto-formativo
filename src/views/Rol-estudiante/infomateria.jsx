@@ -1,90 +1,66 @@
-import React from 'react';
-import { HiArrowSmallLeft } from "react-icons/hi2";
+import React from "react";
+//import { HiArrowSmallLeft } from "react-icons/hi2";
 import { CiEdit } from "react-icons/ci";
-import Layout from '../../components/layaout';
+//import Layout from '../../components/layaout';
 
 const Infomateria = () => {
+  return (
+    <div className="h-[80vh] overflow-y-scroll ">
 
-    return (
-      
-        <div className='h-[80vh] overflow-y-scroll '>
-                    <div className="flex flex-col   p-10  w-[50rem] ">
-                    <div className="w-full text-2xl text-black">
-                        Nombre de la Materia:
-                    </div>
-                    <div className="flex gap-5 mt-2.5 text-xl font-light text-center text-black flex-wrap relative">
-                        <div className="grow justify-center items-start px-3 py-5 rounded-xl border border-black border-solid w-fit relative">
-                            Matemáticas avanzadas 1
-                            <button className="absolute top-0 right-0 mr-3 mt-3">
-                                <CiEdit size={30} /> 
-                            </button>
-                        </div>
-                    </div>
-                    <div className="mt-4 w-full text-2xl text-black">
-                        Horario:
-                    </div>
-                    <div className="flex gap-5 mt-3 text-xl font-light text-center text-black flex-wrap relative">
-                        <div className="grow justify-center items-start px-3 py-5 rounded-xl border border-black border-solid w-fit relative">
-                            Lunes y Miércoles de 10:00 AM a 11:30 AM
-                            <button className="absolute top-0 right-0 mr-3 mt-3" >
-                                <CiEdit size={30} /> 
-                            </button>
-                        </div>
-                    </div>
-                    <div className="mt-5 w-full text-2xl text-black">
-                        Profesor:
-                    </div>
-                    <div className="flex gap-5 mt-4 text-xl font-light text-center text-black flex-wrap relative">
-                        <div className="grow justify-center items-start px-3.5 py-5 rounded-xl border border-black border-solid w-fit relative">
-                            Dr. María Rodríguez
-                            <button className="absolute top-0 right-0 mr-3 mt-3" >
-                                <CiEdit size={30} /> 
-                            </button>
-                        </div>
-                    </div>
-                    <div className="mt-5 w-full text-2xl text-black">
-                        Contenido del Curso:
-                    </div>
-                    <div className="mt-3">
-                        <div className="flex gap-5 flex-col md:flex-row">
-                            <div className="flex flex-col w-[84%]">
-                                <div className="grow items-start px-3 pt-3 pb-5 text-xl italic font-light text-black rounded-xl border border-black border-solid">
-                                    Temas Actuales:
-                                    <ul>
-                                        <li>
-                                            <span className="italic">Álgebra Lineal</span>
-                                        </li>
-                                        <li>
-                                            <span className="italic">Cálculo Diferencial</span>
-                                        </li>
-                                        <li>
-                                            <span className="italic">Ecuaciones Diferenciales</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div className="flex flex-col w-[16%]"></div>
-                        </div>
-                    </div>
-                    <div className="mt-6 w-full text-2xl text-black">
-                        Recursos de Estudio:
-                    </div>
-                    <div className="flex gap-5 mt-2 text-xl font-light text-slate-500 flex-wrap relative">
-                        <div className="grow justify-center px-1.5 py-4 underline rounded-xl border border-black border-solid w-fit relative">
-                            Libro de texto recomendado: &quot;Matemáticas Avanzadas: Conceptos y
-                            Aplicaciones&quot;
-                            <br />
-                            Sitio web recomendado:{" "}
-                            <button className="absolute top-0 right-0 mr-3 mt-3" >
-                                <CiEdit size={30} /> 
-                            </button>
-                        </div>
-                    </div>
+
+        <div className="grid grid-cols-1  grid-rows-6 ">
+        <div className="  p-2 ">
+                <h1 className=" font-semibold text-gray-700 mb-2">Nombre de la materia</h1>
+                <div className="inline-flex gap-4 max-lg:w-full w-[50%]  items-center">
+                    <input type="text" className="border p-2 w-full rounded-md " name="name" placeholder="matematicas avanzada" />
+                    <button className="inline-flex border p-2 rounded-md">
+                        editar
+                    </button>
                 </div>
-  
+            </div>
+            <div className="  p-2 ">
+                <h1 className=" font-semibold text-gray-700 mb-2">Horario</h1>
+                <div className="inline-flex gap-4 max-lg:w-full w-[50%]  items-center">
+                    <input type="text" className="border p-2 w-full rounded-md  " name="name" placeholder="Profesora maria rodriguez" />
+                    <button className="inline-flex border p-2 rounded-md">
+                        editar
+                    </button>
+                </div>
+            </div>
+
+            <div className="  p-2 ">
+                <h1 className=" font-semibold text-gray-700 mb-2">Profesor</h1>
+                <div className="inline-flex gap-4 max-lg:w-full w-[50%]  items-center">
+                    <input type="text" className="border p-2 w-full rounded-md " name="name" placeholder="matematicas avanzada" />
+                    <button className="inline-flex border p-2 rounded-md">
+                        editar
+                    </button>
+                </div>
+            </div>
+
+            <div className=" row-span-2  p-2 ">
+                <h1 className=" font-semibold text-gray-700 mb-2 ">Contenido del curso</h1>
+                <div className="inline-flex h-full gap-4 max-lg:w-full w-[50%]  items-start">
+                    <input type="text" className="border p-2 h-[70%]  w-full rounded-md " name="name" placeholder="Temas actuales" />
+                    <button className="inline-flex border m-a p-2 rounded-md">
+                        editar
+                    </button>
+                </div>
+            </div>
+            <div className="   p-2 ">
+                <h1 className=" font-semibold text-gray-700 mb-2">Horario</h1>
+                <div className="inline-flex gap-4 max-lg:w-full w-[60%]  items-center">
+                    <input type="text" className="border p-4 w-full rounded-md  " name="name" placeholder="Profesora maria rodriguez" />
+                    
+                    <button className="inline-flex border p-2 rounded-md">
+                        editar
+                    </button>
+                </div>
+            </div>
         </div>
-     
-    );
-}
+    
+    </div>
+  );
+};
 
 export default Infomateria;
