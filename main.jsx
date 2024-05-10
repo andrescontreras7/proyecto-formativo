@@ -17,7 +17,6 @@ import Calificaciones from './src/views/Rol-estudiante//calificaciones.jsx';
 import Notas from './src/views/Rol-estudiante//notas.jsx';
 import Perfil from './src/views/Rol-estudiante//perfil.jsx';
 import Informacion from './src/views/Rol-estudiante//informacionES.jsx';
-import Gestionaru from './src/views/Rol-coordinador/gestionaru.jsx';
 import Panel from './src/views/Rol-coordinador/Panel.jsx';
 import AsistenciasD from './src/views/Rol-coordinador/asistencias.jsx';
 import Calendario from './src/views/Rol-estudiante//calendario.jsx';
@@ -68,7 +67,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <Route path="/Notas" element={<Notas />} />
   <Route path="/perfil" element={<Perfil />} />
   <Route path="/Informacion" element={<Informacion />} />
-  <Route path="/Gestion" element={<Gestionaru />} />
+
   <Route path="/Recuperar" element={<Recuperar />} />
   <Route path="/Panel" element={<Panel />} />
   <Route path="/AsitenciasD" element={<AsistenciasD />} />
