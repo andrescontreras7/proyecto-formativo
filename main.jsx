@@ -41,6 +41,8 @@ import Obser_estudiante from './src/views/Rol-docente/obser_estudiante.jsx';
 import Desempeño from './src/views/Rol-coordinador/desempeño.jsx';
 import Statecom from "./src/components/Statecompo.jsx";
 import RegistrarAlumno from './src/views/Rol-coordinador/registrarAlumno.jsx';
+import Tematicas2 from './src/views/Rol-estudiante/tematicas2.jsx';
+import Infomateria from './src/views/Rol-estudiante/infomateria.jsx';
 import {NextUIProvider} from '@nextui-org/react'
 import PrivateRoute from './src/components/private.jsx';
 import RegistroAsignatura from './src/views/Rol-coordinador/Registrar_asignatura.jsx';
@@ -51,7 +53,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <NextUIProvider>
       <BrowserRouter>
       <Routes>
-      <Route path="/login" element={<Formulario />} />
+      <Route path="/" element={<Formulario />} />
       <Route path="/rA" element={<RegistroAsignatura/>} />
 
       </Routes>

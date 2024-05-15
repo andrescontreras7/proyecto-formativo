@@ -45,36 +45,36 @@ const Aside = ({rol}) => {
 {rol === 1 && (
       <ul className="flex-col md:space-y-2 space-y-2    max-[1280px]:items-center  pl-3   gap-4 inline-flex items justify-center max-[1020px]:my-auto">
      <AnimatedCursos> 
-         <li className=" hover:scale-[1.09] transition-[2s]  items-center gap-2  inline-flex">
-             <LuPanelLeft className='text-white text-3xl  sm:text-lg  '/><Link to={'/coordinador'} draggable="false" className="text-center text-zinc-100 text-base font-semibold hidden min-[1140px]:inline-block" >Inicio </Link>
-         </li>
+         <Link to={'/coordinador'}  className=" hover:scale-[1.09] transition-[2s]  items-center gap-2  inline-flex">
+             <LuPanelLeft className='text-white text-3xl  sm:text-lg  '/><li draggable="false" className="text-center text-zinc-100 text-base font-semibold hidden min-[1140px]:inline-block" >Inicio </li>
+         </Link>
 
      </AnimatedCursos>
      
 
     
      <AnimatedCursos> 
-          <li className=" hover:scale-[1.09] transition-[2s] items-center gap-2 inline-flex">
-         <BiUser className='text-white  text-3xl lg:text-lg' /> <Link  to={'/Panel'} draggable="false" className="text-center text-zinc-100 text-base font-semibold hidden min-[1140px]:inline-block" >Panel de control </Link>
-         </li>
+          <Link  to={'/Panel'} className=" hover:scale-[1.09] transition-[2s] items-center gap-2 inline-flex">
+                 <BiUser className='text-white  text-3xl lg:text-lg' /> <li   draggable="false" className="text-center text-zinc-100 text-base font-semibold hidden min-[1140px]:inline-block" >Panel de control </li>
+         </Link>
      </AnimatedCursos>
 
      <AnimatedCursos> 
-         <li className="hover:scale-[1.09] transition-[2s] items-center gap-2 inline-flex">
-             <LuBookOpen className='text-white  text-3xl lg:text-lg  '/> <Link to={'/ObservadorGeneral'} draggable="false" className="text-center text-zinc-100 text-base font-semibold hidden min-[1140px]:inline-block" >Observador </Link>
-         </li>
+         <Link to={'/ObservadorGeneral'} className="hover:scale-[1.09] transition-[2s] items-center gap-2 inline-flex">
+             <LuBookOpen className='text-white  text-3xl lg:text-lg  '/> <li to={'/ObservadorGeneral'} draggable="false" className="text-center text-zinc-100 text-base font-semibold hidden min-[1140px]:inline-block" >Observador </li>
+         </Link>
      </AnimatedCursos>
 
      <AnimatedCursos> 
-         <li className="hover:scale-[1.09] transition-[2s] items-center gap-2 inline-flex">
-             <BsCalendar3 className='text-white  text-3xl lg:text-lg  '/><Link to={'/AsitenciasD'} draggable="false" className="text-center text-zinc-100 text-base font-semibold hidden min-[1140px]:inline-block" >Asistencia estudiante </Link>
-         </li>
+        <Link to={'/AsitenciasD'}className="hover:scale-[1.09] transition-[2s] items-center gap-2 inline-flex">
+             <BsCalendar3 className='text-white  text-3xl lg:text-lg  '/><li draggable="false" className="text-center text-zinc-100 text-base font-semibold hidden min-[1140px]:inline-block" >Asistencia estudiante </li>
+         </Link>
      </AnimatedCursos> 
      
      <AnimatedCursos> 
-         <li className=" hover:scale-[1.09] transition-[2s] items-center gap-2 inline-flex">
-             <LiaBookSolid className='text-white  text-3xl lg:text-lg  '/><Link to={'/AsistenciasDocentes'} draggable="false" className="text-center text-zinc-100 text-base font-semibold hidden min-[1140px]:inline-block" >Asistencia docentes</Link>
-         </li>
+        <Link to={'/AsistenciasDocentes'} className=" hover:scale-[1.09] transition-[2s] items-center gap-2 inline-flex">
+             <LiaBookSolid className='text-white  text-3xl lg:text-lg  '/><li  draggable="false" className="text-center text-zinc-100 text-base font-semibold hidden min-[1140px]:inline-block" >Asistencia docentes</li>
+         </Link>
      </AnimatedCursos>
      
    
@@ -84,9 +84,9 @@ const Aside = ({rol}) => {
      </li>
    
      
-     <li className="hover:scale-[1.09] transition-[2s] items-center gap-2 inline-flex">
-         <BsEnvelope className='text-white  text-3xl lg:text-lg  '/> <Link to={'/Permisos'} draggable="false" className="text-center text-zinc-100 text-base font-semibold hidden min-[1140px]:inline-block" >Permisos</Link>
-     </li>
+     <Link to={'/Permisos'}  className="hover:scale-[1.09] transition-[2s] items-center gap-2 inline-flex">
+         <BsEnvelope className='text-white  text-3xl lg:text-lg  '/> <li to={'/Permisos'} draggable="false" className="text-center text-zinc-100 text-base font-semibold hidden min-[1140px]:inline-block" >Permisos</li>
+     </Link>
    
     
      <li className="hover:scale-[1.09] transition-[2s] items-center  inline-flex ">

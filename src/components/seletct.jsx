@@ -2,7 +2,7 @@ import React,{useState, useContext, useEffect}  from "react";
 import {Select, SelectItem} from "@nextui-org/react";
 import { counterContext } from '../../context/CRMcontext';
 import s_axios from '../../config/axios';
-export default function App() {
+export default function App({nom, ac}) {
 
     const [grado, setGrado] = useState([]);
     const {auth} = useContext(counterContext);
@@ -17,7 +17,6 @@ export default function App() {
                 }
               });
               const lol = gradoConsulta.data.data
-              console.log(lol)
               setGrado(lol);
               
              
@@ -39,7 +38,9 @@ export default function App() {
     
   return (
     <Select
-        key={grado.grado_id}
+    onChange={ac}
+      name={nom}
+      key={grado.grado_id}
       label="Grado"
       placeholder="Filtrar por grado"
       description=""
@@ -47,7 +48,7 @@ export default function App() {
       className="max-w-xs"
     >
      {grado.map(grados =>  (
-         <SelectItem key={grados.grado_id} value="">
+         <SelectItem key={grados.grado_id} value={grados.grado_id}>
                {grados.nombre_grado}  
          </SelectItem>
        

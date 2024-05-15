@@ -7,7 +7,7 @@ const PrivateRoute = ({ children }) => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        if (!auth.token) navigate('/Login');
+        if (!auth.token) navigate('/');
     }, [auth, navigate]);
 
     return auth.token ? children : null;
