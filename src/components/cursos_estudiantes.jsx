@@ -8,7 +8,9 @@ export default function Curso({ titulo, descripcion, imagen, enlace }) {
         <img src={imagen} alt={titulo} className="w-full h-64 object-cover" />
         <div className="p-4">
           <h2 className="font-bold text-2xl mb-2">{titulo}s</h2>
-          <p className="text-gray-700">{descripcion}</p>
+          <div className='h-12 text-nowrap'>
+            <p className="text-gray-700  overflow-hidden text-ellipsis  ">{descripcion}</p>
+          </div>
         </div>
       </div>
     </Link>

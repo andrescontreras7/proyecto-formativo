@@ -19,7 +19,7 @@ const Cursos = () => {
           <div className="flex flex-wrap gap-4 ">
             <Componente titulo='Matemáticas' descripcion='Lorem ipsum dol' imagen='https://th.bing.com/th/id/R.324437d5a5ab0ebffaa6eb7d2a8d1cf6?rik=IExfZ4%2b11%2bp4sQ&pid=ImgRaw&r=0' to='/cursos/matematicas' />
             <Componente titulo='Matemáticas' descripcion='Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde q' src='public\matematicas.png' to='/cursos/matematicas' />
-            <Componente titulo='Matemáticas' descripcion='Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde q' src='public\matematicas.png' to='/cursos/matematicas' />
+            <Componente titulo='Matemáticas' descripcion='Lorem ipsum dolor sit amet consectetur adipisicing eli sssssssssssssssdddddddddddddddddddddddddddddddddddt. Unde q' src='public\matematicas.png' to='/cursos/matematicas' />
             <Componente titulo='Matemáticas' descripcion='breve descripcion ' src='public\matematicas.png' to='/cursos/matematicas' />
             <Componente titulo='Matemáticas' descripcion='Lorem ipsum dol' src='public\matematicas.png' to='/cursos/matematicas' />
           </div>

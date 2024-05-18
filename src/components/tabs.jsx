@@ -10,24 +10,30 @@ export default function tabs() {
 
   return (
     
-    <div className="p-2">
-      <Tabs classNames={{ Tabs: "bg-red-800" }} aria-label="Tabs sizes">
+    <div className="p-2 ">
+      <Tabs classNames={{ Tabs: "bg-red-100" }} aria-label="Tabs sizes">
         <Tab 
-          key="photos"
-          title={<Link className="text-gray-800 font-mono" to={"Asistencias"}>Asistencias</Link>} 
-          classNames={{ tab: "w-full lg:w-72 font-bold uppercase text-lg", cursor: "bg-[#74b7fa] bg-opacity-40" }}
+          key="Asistencias"
+          title={<Link className="text-gray-800 font-mono " to={"Asistencias"}>Asistencias</Link>} 
+          classNames={{ tab: "w-full lg:w-72  font-bold uppercase text-lg", cursor: "bg-[#626cb8] bg-opacity-60" }}
         />
         <Tab 
-          key="music" 
+          key="informacion" 
           title={<Link className="text-gray-800 font-mono" to={"Informacion"}>Informacion</Link>} 
-          classNames={{ tab: "w-full lg:w-72 font-bold uppercase text-lg", cursor: "bg-[#74b7fa] bg-opacity-40" }}
+          classNames={{ tab: "w-full lg:w-72 font-bold uppercase text-lg", cursor: "bg-[#626cb8] bg-opacity-60" }}
         />
         <Tab 
-          key="videos" 
+          key="calificaciones" 
           title={<Link className="text-gray-800 font-mono" to={"Calificaciones"}>Calificaciones</Link>} 
-          classNames={{ tab: "w-full lg:w-72 font-bold uppercase text-lg", cursor: "bg-[#74b7fa] bg-opacity-40" }}
+          classNames={{ tab: "w-full lg:w-72 font-bold uppercase text-lg", cursor: "bg-[#626cb8] bg-opacity-60" }}
+        />
+         <Tab 
+          key="tematicas" 
+          title={<Link className="text-gray-800 font-mono" to={"Tematicas"}>Tematicas</Link>} 
+          classNames={{ tab: "w-full lg:w-72 font-bold uppercase text-lg", cursor: "bg-[#626cb8] bg-opacity-60" }}
         />
       </Tabs>
+      
     </div>
   );
 }

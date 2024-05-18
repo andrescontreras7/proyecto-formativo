@@ -33,7 +33,7 @@ useEffect(() => {
             <aside className="w-[15%] max-sm:hidden  max-[1400px]:w-[17%]">
                 <Aside rol={auth.rol}    />
             </aside>
-            <div className="w-[95%]  flex-col max-[1400px]:w-[95%]">
+            <div className="w-[95%]  flex-col max-[1400px]:w-[100%]">
                 <div className='h-full'> 
                     <nav className=' w-[100%]  flex-col justify-center items-center '>
                         <Navbar />

@@ -3,7 +3,7 @@ import { Select, SelectItem } from "@nextui-org/react";
 import { counterContext } from '../../context/CRMcontext';
 import s_axios from '../../config/axios';
 
-export default function App({ nom, ac, p }) {
+export default function App({ register, des, name }) {
   const [grupo, setGrupo] = useState([]);
   const { auth } = useContext(counterContext);
 
@@ -25,11 +25,11 @@ export default function App({ nom, ac, p }) {
 
   return (
     <Select
-      onChange={ac}
-      name={nom}
+
       key={grupo.grupcod}
       label="Grupos"
-      placeholder={p}
+      placeholder={des}
+      {...register(name)}
       className="max-w-xs"
     >
       {grupo.map(grupos => (

@@ -1,112 +1,193 @@
 import React from 'react';
 import Layout from "../../components/layaout"
 import Select from '../../components/seletct';
-import {useState, useEffect} from "react"
+import { useState, useContext} from "react"
 import SelectGrupo from "../../components/selectGrupo"
 import SelectRol from "../../components/selectRol"
-
-
+import { useForm } from 'react-hook-form';
+import  SelectDocumento from "../../components/selectDocumento"
+import {counterContext} from '../../../context/CRMcontext'
+import Selecs from "../../components/select_acudiente"
 export default function RegistrarAlumno() {
-  const [data, setData] = useState({
-    nombre :"",
-    apellido:"",
-    correo: "",
-    numero:"",
-    grupo:"",
-    grado:"",
-    direccion:"",
-    rol:""
+
+  const { register, handleSubmit,watch,reset, formState: { errors } } = useForm()
+
+  const { auth } = useContext(counterContext)
 
 
-
-  })
-  const [modal, setModal] = useState(false)
-  const [vista, setVista] = useState(false)
-  const validarDatos = () =>{
-
-  /*  const {nombre,apellido,numero, grado} = data
-
-    let valido = !nombre.length || !numero.length || !apellido.length; 
-
-    return valido;
-*/
-  
-  }
-  const actualizarState = (e) => {
-    let value = e.target.value;
-  
-    setData({
-      ...data,
-      [e.target.name] : value
+  const onSubmit = data => {
+    fetch('http://localhost:3001/appi/estudiante/create', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${auth.token}`
+      },
+      body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+ 
+    })
+    .catch(error => {
+      console.error('Error creando el alumno:', error);
     });
-   
-    if(e.target.name === 'rol'){
-      if(value === "2"){
-        setModal(true);
-        setVista(false);
-      } else if(value === "1"){
-        setVista(true);
-        setModal(false);
-      } else {
-        setModal(false);
-        setVista(false);
-      }
-    }
   }
-
-
-
-
 
   return (
-    <Layout titulo={"Registro de usuarios"}  >
-      <div className="bg-white w-full h-[85vh] 2xl:h-[86vh] flex justify-center items-start  rounded-md">
-        <form className="w-3/4 space-y-8 mt-10">
-          <h2 className="text-2xl font-semibold text-center">FORMULARIO</h2>
-          <div className="grid grid-cols-2 gap-4">
+    <Layout titulo={"Registro de usuarios"}>
+    <div className="bg-[#ffffff] shadow-[0_8px_20px_12px_rgba(0,0,0,0.08)] w-full h-[85vh] 2xl:h-[87vh] flex justify-center rounded-md">
+      <form onSubmit={handleSubmit(onSubmit)} className="w-3/4 space-y-8 mt-10">
+        <h2 className="text-2xl font-semibold text-center">Registro de Alumno</h2>
+        <div className="grid grid-cols-2 gap-4">
+          <div className='flex flex-col'>
+        
             <input className="w-full p-2 border border-gray-300 rounded-md" type="text" placeholder="Nombre del estudiante"
-            name='nombre'
-            onChange={actualizarState} />
-            <input className="w-full p-2 border border-gray-300 rounded-md" type="text" placeholder="Apellido del estudiante" name='apellido' 
-               onChange={actualizarState}/>
+              {...register("estudnombre", {
+                required: {
+                  value: true,
+                  message: "El campo nombre es requerido"
+                },
+                minLength: {
+                  value: 2,
+                  message: "El nombre debe ser mayor a dos caracteres"
+                },
+                maxLength: {
+                  value: 20,
+                  message: "El nombre debe ser menor a 20 caracteres"
+                }
+              })}
+            />
+          
+          
+            {errors.estudnombre && <p className="text-red-500">{errors.estudnombre.message}</p>}
           </div>
-          <div className="grid grid-cols-2 gap-4">
-            <input className="w-full p-2 border border-gray-300 rounded-md" type="text" placeholder="Correo electrónico" 
-            name='correo'
-            onChange={actualizarState}/>
-            <input className="w-full p-2 border border-gray-300 rounded-md" type="number" placeholder="Número de teléfono"
-            onChange={actualizarState}
-            name="numero " />
+          <div className='flex flex-col'>
+            <input className="w-full p-2 border border-gray-300 rounded-md" type="text" placeholder="Apellido del estudiante"
+              {...register("estudapellido", {
+                required: {
+                  value: true,
+                  message: "El campo apellido es requerido"
+                },
+                minLength: {
+                  value: 2,
+                  message: "El apellido debe ser mayor a dos caracteres"
+                },
+                maxLength: {
+                  value: 20,
+                  message: "El apellido debe ser menor a 20 caracteres"
+                }
+              })}
+            />
+            {errors.estudapellido && <p className="text-red-500">{errors.estudapellido.message}</p>}
           </div>
-
-          <div className="grid grid-cols-3 gap-4">
-            <input className="w-full p-2 border border-gray-300 rounded-md" type="text" placeholder="Correo electrónico" 
-            name='direccion'
-            onChange={actualizarState}/>
-            <input className="w-full p-2 border border-gray-300 rounded-md" type="text" placeholder="Direccion"
-            onChange={actualizarState}
-            name="numero " />
-             <SelectRol ac={actualizarState} nom={"rol"} />
+        </div>
+       
+          
+     
+        <div className="grid grid-cols-3 gap-4">
+       
+        <div className='flex flex-col'>
+            <input className="w-full p-2 border border-gray-300 rounded-md" type="number" placeholder="cedula"
+              {...register("estudid", {
+                required: {
+                  value: true,
+                  message: "El campo cedula es requerido"
+                },
+                pattern: {
+                  value: /^[0-9]*$/,
+                  message: "La cedula no es valida"
+                }
+              
+              
+              })}
+            />
+            {errors.estudid && <p className="text-red-500">{errors.estudid.message}</p>}
           </div>
-         
-          {modal && (
-            <div className="grid grid-cols-2 gap-4">
-              <Select ac={actualizarState}  nom={"grado"} />
-              <SelectGrupo ac={actualizarState} nom={"grupo"}  p={"seleccione el grupo del estudiante "}/>
-            </div>
-          )}
-        {vista && (
-            <button className='border p-2 border-red-700 rounded-md'>Registrar huella</button>
-         
-        )}
-
-          <input 
-          className="w-full p-2 bg-blue-700 text-white rounded-md" 
-          type="submit" 
-          value="Agregar estudiante" 
-          disabled={ validarDatos() }    />
-        </form>
-      </div>
-    </Layout>
+      
+          <div className='flex flex-col'>
+            <input className="w-full p-2 border border-gray-300 rounded-md" type="text" placeholder="Correo"
+              {...register("estudcorreo", {
+                required: {
+                  value: true,
+                  message: "El campo Correo es requerido"
+                },
+                pattern: {
+                  value: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+                  message: "El correo no es valido"
+                }
+              })}
+            />
+            {errors.estudcorreo && <p className="text-red-500">{errors.estudcorreo.message}</p>}
+          </div>
+          <div className='flex flex-col'>
+            <input className="w-full p-2 border border-gray-300 rounded-md" type="number" placeholder="Número"
+              {...register("estudtelefono", {
+                valueAsNumber: true,
+                min: {
+                  value: 666666,
+                  message: "El número debe ser mayor a 6 dígitos"
+                }
+              })}
+            />
+            {errors.estudtelefono && <p className="text-red-500 font-bold ">{errors.estudtelefono.message}</p>}
+          </div>
+        </div>
+        <div className="grid grid-cols-3 gap-4">
+      
+          <div className='flex flex-col'>
+            <input className="w-full p-2 border border-gray-300 rounded-md" type="password" placeholder="Contraseña"
+              {...register("password", {
+                required: {
+                  value: true,
+                  message: "El campo contraseña es requerido"
+                },
+                minLength: {
+                  value: 5,
+                  message: "La contraseña debe tener al menos 5 caracteres"
+                }
+              })}
+            />
+            {errors.password && <p className="text-red-500">{errors.password.message}</p>}
+          </div>
+          <div className='flex flex-col'>
+            <input className="w-full p-2 border border-gray-300 rounded-md" type="text" placeholder="direccion"
+              {...register("estuddireccion", {
+                required: {
+                  value: true,
+                  message: "El campo direccion es requerido"
+                },
+                minLength: {
+                  value: 5,
+                  message: "La direccion debe tener al menos 5 caracteres"
+                }
+              })}
+            />
+            {errors.estuddireccion && <p className="text-red-500">{errors.estuddireccion.message}</p>}
+          </div>
+          <div className='flex flex-col'>
+            <input className="w-full p-2 border border-gray-300 rounded-md" type="password" placeholder="Confirmar contraseña"
+              {...register("Confirmar", {
+                required: {
+                  value: true,
+                  message: "El campo confirmar contraseña es requerido"
+                },
+                validate: (value) => value === watch('password') || "Las contraseñas no coinciden"
+              })}
+            />
+            {errors.Confirmar && <p className="text-red-500">{errors.Confirmar.message}</p>}
+          </div>
+        </div>
+        <div className="grid grid-cols-3 gap-4">
+            
+            <Selecs register={register} des={"Selecione el acudiente"}  />
+            <Select register={register} des={"Selecione el grado"} name="grado" />
+            <SelectGrupo register={register} des={"Seleccione el grupo"} name="grupoFK" />
+        </div>
+        <input className="w-full p-2 bg-blue-700 text-white rounded-md" type="submit" value="Agregar estudiante" />
+        
+      </form>
+    </div>
+  </Layout>
   );
 }

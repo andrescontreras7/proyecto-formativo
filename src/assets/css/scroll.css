@@ -15,15 +15,15 @@
     
 }
 *:hover::-webkit-scrollbar-thumb{
-    color:rgb(91, 132, 190);
+    color:rgb(91, 113, 184, 1);
     
  
 }
 *:hover::-webkit-scrollbar-thumb:hover{
     width: 20px;
-    border: 8px solid indigo ;
+    border: 8px solid #5b71b8cc ;
     
-    color:rebeccapurple;
+    color:rgba(91, 113, 184, 0.822);
 
 }
 
