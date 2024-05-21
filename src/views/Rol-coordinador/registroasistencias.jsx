@@ -12,7 +12,7 @@ const RegistroAsistencias = () => {
                 <div className="flex flex-col px-4">
                     <div className="flex gap-3 self-start text-lg font-semibold text-center text-black"></div>
                     <div className="flex flex-col mt-2 w-full">
-                        <div className="px-4 py-6 rounded-xl bg-[#626cb8] bg-opacity-40">
+                        <div className="px-4 py-6 rounded-xl bg-[#626cb8] bg-opacity-40 mt-2">
                             <div className="flex gap-3">
                                 <div className="flex flex-col w-1/3">
                                     <div className="flex flex-col grow text-base text-center text-black">
@@ -144,15 +144,34 @@ const RegistroAsistencias = () => {
                         <div className="text-sm font-medium text-gray-900">{index % 7 === 0 ? "Lunes" : index % 7 === 1 ? "Martes" : index % 7 === 2 ? "Miércoles" : index % 7 === 3 ? "Jueves" : index % 7 === 4 ? "Viernes" : index % 7 === 5 ? "Sábado" : "Domingo"}</div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
-                        <div className="text-sm text-gray-900">08:00 AM</div>
+                        <div className="text-sm text-gray-900">{`${(8 + index % 7).toString().padStart(2, '0')}:00 AM`}</div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
-                        <div className="text-sm text-gray-900">04:00 PM</div>
+                        <div className="text-sm text-gray-900">{`${(16 + index % 7).toString().padStart(2, '0')}:00 PM`}</div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
-                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                            Presente
-                        </span>
+                        {index % 7 === 0 ? (
+                            <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1 text-green-500" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm2.5-12a.5.5 0 00-.354.146l-3.5 3.5a.5.5 0 00.708.708L11 9.707l2.646-2.647a.5.5 0 00-.354-.853z" clip-rule="evenodd" />
+                                </svg>
+                                Presente
+                            </span>
+                        ) : index % 7 === 1 || index % 7 === 3 ? (
+                            <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm2.5-12a.5.5 0 00-.354.146l-3.5 3.5a.5.5 0 00.708.708L11 9.707l2.646-2.647a.5.5 0 00-.354-.853z" clip-rule="evenodd" />
+                                </svg>
+                                Tardanza
+                            </span>
+                        ) : (
+                            <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1 text-red-500" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm2.5-12a.5.5 0 00-.354.146l-3.5 3.5a.5.5 0 00.708.708L11 9.707l2.646-2.647a.5.5 0 00-.354-.853z" clip-rule="evenodd" />
+                                </svg>
+                                Ausente
+                            </span>
+                        )}
                     </td>
                 </tr>
             ))}
