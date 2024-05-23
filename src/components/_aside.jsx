@@ -84,8 +84,8 @@ const Aside = ({rol}) => {
      </li>
    
      
-     <Link to={'/Permisos'}  className="hover:scale-[1.09] transition-[2s] items-center gap-2 inline-flex">
-         <BsEnvelope className='text-white  text-3xl lg:text-lg  '/> <li to={'/Permisos'} draggable="false" className="text-center text-zinc-100 text-base font-semibold hidden min-[1140px]:inline-block" >Permisos</li>
+     <Link to={'/Gestionar'}  className="hover:scale-[1.09] transition-[2s] items-center gap-2 inline-flex">
+         <BsEnvelope className='text-white  text-3xl lg:text-lg  '/> <li to={'/Gestionar'} draggable="false" className="text-center text-zinc-100 text-base font-semibold hidden min-[1140px]:inline-block" >Permisos</li>
      </Link>
    
     

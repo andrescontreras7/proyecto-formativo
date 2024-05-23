@@ -28,7 +28,7 @@ import ObservadorG from './src/views/Rol-coordinador/ObservadorGeneral.jsx';
 import AsistenciaDocente from './src/views/Rol-coordinador/AsistenciasDocentes.jsx';
 import InformeObservador from './src/views/Rol-coordinador/InformesObservador.jsx';
 import Registrardocente from './src/views/Rol-coordinador/RegistrarDocentes.jsx';
-import Permisoscor from './src/views/Rol-coordinador/Permisos.jsx';
+import GestionarPermisos from './src/views/Rol-coordinador/GestionarPermisos.jsx';
 import Recuperar from './src/views/Rol-coordinador/recuperarcon.jsx';
 import Listado from './src/views/Rol-coordinador/listadoes.jsx';
 import NotasView from './src/views/Rol-estudiante/notas.jsx';
@@ -45,6 +45,7 @@ import Infomateria from './src/views/Rol-estudiante/infomateria.jsx';
 import {NextUIProvider} from '@nextui-org/react'
 import PrivateRoute from './src/components/private.jsx';
 import RegistroAsignatura from './src/views/Rol-coordinador/Registrar_asignatura.jsx';
+import Listadocentes from './src/views/Rol-coordinador/Listadocentes.jsx';
 // Define las rutas de la app de React
 ReactDOM.createRoot(document.getElementById('root')).render(
 <React.StrictMode>
@@ -89,16 +90,18 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <Route path="/AsistenciasDocentes" element={<AsistenciaDocente />} />
             <Route path="/Informes" element={<InformeObservador />} />
             <Route path="/Registrardocente" element={<Registrardocente />} />
-            <Route path="/Permisos" element={<Permisoscor />} />
+            <Route path="/Gestionar" element={<GestionarPermisos />} />
             <Route path="/Listado" element={<Listado />} />
             <Route path="/NotasView" element={<NotasView />} />
             <Route path="/Coordinador" element={<Coordinador />} />
-            <Route path="/Registroasistencias" element={<Registroasistencias />} />
+            <Route path="/Registroasistencias" element={<Registroasistencias />} /> //por linkear 
             <Route path="/Horaslabor" element={<Horaslabor />} />
             <Route path="/Cursos" element={<Cursos />} />
             <Route path="/Observadorestudiante" element={<Obser_estudiante />} />
             <Route path="/desempeño" element={<Desempeño />} />
-            <Route path="/registrarAlumno" element={<RegistrarAlumno />} />       
+            <Route path="/registrarAlumno" element={<RegistrarAlumno />} />   
+            <Route path="/listadocentes" element={<Listadocentes />} /> //por linkear       
+    
         </Routes>  
         </PrivateRoute>
       </BrowserRouter>
