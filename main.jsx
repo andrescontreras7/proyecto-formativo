@@ -81,7 +81,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <Route path="/Panel" element={<Panel />} />
             <Route path="/AsitenciasD" element={<AsistenciasD />} />
             <Route path="/Calendario" element={<Calendario />} />
-            <Route path="/AsistenciasEstudiantes" element={<Asistenciafor />} />
+            <Route path="/AsistenciasEstudiantes/:id"  element={<Asistenciafor />} />
             <Route path="/Areas" element={<Tarea />} />
             <Route path="/Observador" element={<ObservadorOpc />} />
             <Route path="/RegistrarObservacion" element={<RegistroObservador />} />
