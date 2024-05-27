@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import {Modal, ModalContent, ModalHeader, ModalFooter, Button, useDisclosure, ModalBody} from "@nextui-org/react";
-
+import { BiDotsVerticalRounded } from "react-icons/bi";
 export default function App({objeto, id}) {
   const {isOpen, onOpen, onClose} = useDisclosure();
   const [data, setData] = useState(["pedro", "modal"]);
@@ -29,7 +29,9 @@ export default function App({objeto, id}) {
             onPress={() => handleOpen()}
             className=" p-0 m-0  "
           >
-            acciones
+            <div>
+                <BiDotsVerticalRounded className=" size-6" />
+            </div>
         
           </Button>
   

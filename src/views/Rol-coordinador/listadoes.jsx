@@ -7,6 +7,7 @@ import {counterContext} from '../../../context/CRMcontext'
 import Modal from "../../components/modal"
 import Select from '../../components/seletct';
 import { useForm } from 'react-hook-form';
+
 import { Link } from 'react-router-dom';
 const Listado = () => {
   const [estudiantes, setEstudiantes] = useState([]);
@@ -17,21 +18,25 @@ const Listado = () => {
   useEffect(() => {
     fetchEstudiantes(auth).then(data => { 
       setEstudiantes(data.data);
+
     });
   }, [auth]); 
   
 
   const colu = [
-    { name: 'Cedula', sortable: true, selector: (row) => row.estudid },  //
-    { name: 'Nombre', sortable: true, selector: (row) => row.estudnombre },
-    { name: 'Apellido del estudiante ', sortable: true, selector: (row) => row.estudapellido },
-    { name: 'Correo', sortable: true,selector: (row) => row.estudcorreo },
-    { name: 'telefono', sortable: true,selector: (row) => row.estudtelefono },
-    { name: 'acudiente', sortable: true,selector: (row) => row.acudiente ? row.acudiente.nom_acu : ''},
-    { name: 'grupo', sortable: true, selector: (row) => row.grupo ? row.grupo.grupsalon : '' },
-    { name: 'acciones', sortable: true, selector: (row) =>  <button type="button" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> <Modal objeto={row} id={row.estudid} />   </button>},
+    { name: 'CEDULA', sortable: true, selector: (row) => row.estudid },  //
+    { name: 'NOMBRE', sortable: true, selector: (row) => row.estudnombre },
+    { name: 'APELLIDO ESTUDIANTE ', sortable: true, selector: (row) => row.estudapellido },
+    { name: 'CORREO', sortable: true,selector: (row) => row.estudcorreo },
+    { name: 'TELEFONO ESTUDIANTE', sortable: true,selector: (row) => row.estudtelefono },
+    { name: 'ACUDIENTE', sortable: true,selector: (row) => row.acudiente ? row.acudiente.nom_acu : ''},
+    { name: 'GRUPO', sortable: true, selector: (row) => row.grupo ? row.grupo.grupsalon : '' },
+    {name: 'ESTADO', sortable: true, selector: (row) =>  <div className= {row.activo ? 'bg-green-400 p-2 rounded-xl text-white font-semibold' : 'bg-red-400' + ' bg-opacity-100 p-2 rounded-xl text-white font-semibold'}>    { row.activo !== null && row.activo !== undefined ? row.activo ? "Activo" : "Inactivo" : ""}  </div> },
+    { name: 'ACCIONES', sortable: true, selector: (row) =>  <button type="button" className="absolute bottom-12 right-16  font-bold px-4 rounded">  <Modal objeto={row} id={row.estudid} />   </button>},
+   
   ];
   console.log()
+  
 
   return (
     <Layout titulo={"Listado de estudiantes"} icono={<FiArrowLeft className='text-2xl font-bold' />}>
@@ -50,7 +55,7 @@ const Listado = () => {
           <div className='p-2'>
             <DataTable
               theme='solarized'
-              title={"Asistencias estudiantes"}
+              title={"Asistencias estudiantes       c  "}
               columns={colu}
               data={estudiantes}
               selectableRows
