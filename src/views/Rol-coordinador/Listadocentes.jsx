@@ -1,10 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { HiArrowSmallLeft } from 'react-icons/hi2';
 import Layout from '../../components/layaout';
 import DataTable from 'react-data-table-component';
+import { getDocente } from '../../endpoints/useGet';
+import { counterContext } from '../../../context/CRMcontext';
 
 const Listadocentes = () => {
   const [filterText, setFilterText] = useState('');
+  const [docentes, setDocentes] = useState([]);
+  const { auth } = useContext(counterContext);
+
+  useEffect(() => {
+    fetchFuncionarios(auth).then(data => { 
+      setDocentes(data.data);
+    });
+  }, [auth]);
+
+  const fetchFuncionarios = async (auth) => {
+    try {
+      const data = await getDocente(auth);
+      return data;
+    } catch (error) {
+      console.error('Error obteniendo los funcionarios:', error);
+    }
+  };
 
   const handleEdit = (row) => {
     console.log('Editar:', row);
@@ -14,20 +33,29 @@ const Listadocentes = () => {
     console.log('Eliminar:', row);
   };
 
+  const filteredDocentes = docentes.filter(docente => {
+    const initials = docente.funcnombre
+      .split(' ')
+      .map(word => word.charAt(0).toLowerCase()) // Obtener la primera letra de cada palabra del nombre
+      .join(''); // Unir las iniciales
+    return initials.includes(filterText.toLowerCase());
+  });
+  
+
   const columns = [
     {
       name: 'Nombre',
-      selector: (row) => row.nombre,
+      selector: (row) => `${row.funcnombre} ${row.funcapellido}`,
       sortable: true,
     },
     {
       name: 'Correo Electrónico',
-      selector: (row) => row.correo,
+      selector: (row) => row.funccorreo,
       sortable: true,
     },
     {
       name: 'Rol',
-      selector: (row) => row.rol,
+      selector: (row) => row.funcrol,
       sortable: true,
     },
     {
@@ -56,79 +84,12 @@ const Listadocentes = () => {
     },
   ];
 
-  const data = [
-    {
-      id: 1,
-      nombre: 'Juan Pérez',
-      correo: 'juan@example.com',
-      rol: 'Profesor',
-      estado: 'Activo',
-    },
-    {
-      id: 2,
-      nombre: 'María López',
-      correo: 'maria@example.com',
-      rol: 'Asistente',
-      estado: 'Inactivo',
-    },
-    {
-      id: 3,
-      nombre: 'Carlos García',
-      correo: 'carlos@example.com',
-      rol: 'Profesor',
-      estado: 'Activo',
-    },
-    {
-      id: 4,
-      nombre: 'Laura Martínez',
-      correo: 'laura@example.com',
-      rol: 'Asistente',
-      estado: 'Inactivo',
-    },
-    {
-      id: 5,
-      nombre: 'Ana Rodríguez',
-      correo: 'ana@example.com',
-      rol: 'Profesor',
-      estado: 'Activo',
-    },
-    {
-      id: 6,
-      nombre: 'Pedro González',
-      correo: 'pedro@example.com',
-      rol: 'Asistente',
-      estado: 'Inactivo',
-    },
-    {
-      id: 7,
-      nombre: 'Sofía Sánchez',
-      correo: 'sofia@example.com',
-      rol: 'Profesor',
-      estado: 'Activo',
-    },
-    {
-      id: 8,
-      nombre: 'Diego Pérez',
-      correo: 'diego@example.com',
-      rol: 'Asistente',
-      estado: 'Inactivo',
-    },
-  ];
-
-  const filteredItems = data.filter(
-    (item) =>
-      item.nombre.toLowerCase().includes(filterText.toLowerCase()) ||
-      item.correo.toLowerCase().includes(filterText.toLowerCase()) ||
-      item.rol.toLowerCase().includes(filterText.toLowerCase()) ||
-      item.estado.toLowerCase().includes(filterText.toLowerCase())
-  );
-
   return (
     <Layout titulo={'Listado de docentes '} icono={<HiArrowSmallLeft className="text-xl" />}>
       <div className="pb-2 w-full bg-[#ffffff] h-[86vh] shadow-[0_8px_20px_12px_rgba(0,0,0,0.08)] rounded-md">
         <DataTable
           columns={columns}
-          data={filteredItems}
+          data={filteredDocentes}
           pagination
           paginationPerPage={6}
           paginationRowsPerPageOptions={[6]}
