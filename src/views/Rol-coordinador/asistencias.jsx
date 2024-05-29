@@ -6,13 +6,17 @@ import { HiArrowSmallLeft } from "react-icons/hi2";
 import Input from '../../components/input';
 import Select from '../../components/seletct';
 import Componente from '../../components/componente';
+import { useForm } from 'react-hook-form';
 import { useState, useEffect, useContext } from 'react';
 import { counterContext } from "../../../context/CRMcontext";
 import s_axios from "../../../config/axios";
 
+
 const AsistenciasD = () => {
   const [asignatura, setAsignatura] = useState([]);
   const {auth} = useContext(counterContext);
+  const { register, handleSubmit,watch,reset, formState: { errors } } = useForm()
+
 
   useEffect(() => {
     const consulta = async () => {
@@ -48,7 +52,7 @@ const AsistenciasD = () => {
           <hr />
           <div className='flex gap-6 mt-2 bg-[#6f99e1] bg-opacity-25 rounded-md p-4 w-auto m-10'>
             {/* Aquí se colocan los componentes de entrada para los filtros */}
-            <Select/>
+            <Select register={register} des={"Selecione el grado"} name="grado"/>
             <Input/>
             <Input/>
             <Input/>

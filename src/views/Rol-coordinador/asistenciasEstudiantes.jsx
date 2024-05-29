@@ -8,13 +8,16 @@ import { counterContext } from "../../../context/CRMcontext";
 import Swal from "sweetalert2";
 import DataTable, { createTheme } from "react-data-table-component";
 import Input from "../../components/input";
+import { useParams } from 'react-router-dom';
 
 const Asistenciafor = () => {
+  const { id } = useParams();
   const [modal, setModal] = useState(false);
 
   const ModalOpen = () => {
     setModal(!modal);
   };
+  console.log(id)
 
   const colu = [
     {

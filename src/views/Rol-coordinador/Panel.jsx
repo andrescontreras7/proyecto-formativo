@@ -12,7 +12,7 @@ const Panels = () => {
         <div className="p-2 rounded-md ">
             <h2 className="text-xl font-bold text-gray-600 bg-[#74b7fa] bg-opacity-20 p-2 uppercase  rounded-sm mb-4">Opciones</h2>
             <ul className="space-y-7 rounded- shadow-md   bg-[#74b7fa] bg-opacity-20  p-2  ">
-                        <li className="flex items-center duration-300 cursor-pointer border   border-purple-800 hover:bg-[#626cb8] hover:border-none  ">
+                        <li className="flex items-center duration-300 cursor-pointer border   border-purple-800 hover:bg-[#8EA7E9] hover:border-none  ">
                             <div className='flex gap-2   items-center'>
                                 <div className=' border cursor-pointer    border-indigo-200 p-[5px] rounded-sm  '>
                                     <img className=' w-11' src="/public/registarprofesor.png" alt="Docente" draggable="false" />
@@ -23,7 +23,7 @@ const Panels = () => {
                                 </div>
                             </div>
                         </li>
-                        <li className="flex items-center duration-300 cursor-pointer border   border-pur#626cb8 hover:bg-[#626cb8] hover:border-none   ">
+                        <li className="flex items-center duration-300 cursor-pointer border   border-purple-800 hover:bg-[#8EA7E9] hover:border-none   ">
                             <div className='flex gap-2   items-center'>
                                 <div className=' border cursor-pointer p-[5px] rounded-sm  '>
                                     <img className='w-11 ' src="/public/registrarasignatura.png" alt="Docente" draggable="false" />
@@ -45,13 +45,24 @@ const Panels = () => {
                                 </div>
                             </div>
                         </li>
-                        <Link to="/Listado" className="flex     items-center duration-300  border   border-gray-700 hover:bg-[#8EA7E9] hover:border-none hover:border-none ">
+                        <Link to="/Listado" className="flex     items-center duration-300  border   border-gray-700 hover:bg-[#8EA7E9] hover:border-none ">
                             <div className='flex gap-2  items-center'>
                                 <div className=' border cursor-pointer    border-indigo-200 p-[5px] rounded-sm  '>
                                 <img className='w-11' src="public\lista.png" alt="Docente" />
                                 </div>
                                 <div>
                                 <h1 className='font-medium text-[1.0rem] text-gray-900'> Listado de estudiante </h1>
+                                    <p className='font-normal text-xs text-gray-800'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde q</p>
+                                </div>
+                            </div>
+                        </Link>
+                           <Link to="/Listadocentes" className="flex     items-center duration-300  border   border-gray-700 hover:bg-[#8EA7E9] hover:border-none ">
+                            <div className='flex gap-2  items-center'>
+                                <div className=' border cursor-pointer    border-indigo-200 p-[5px] rounded-sm  '>
+                                <img className='w-11' src="public\instructor.png" alt="Docente" />
+                                </div>
+                                <div>
+                                <h1 className='font-medium text-[1.0rem] text-gray-900'> Listado de docente </h1>
                                     <p className='font-normal text-xs text-gray-800'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde q</p>
                                 </div>
                             </div>
