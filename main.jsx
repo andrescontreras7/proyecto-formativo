@@ -110,4 +110,4 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </NextUIProvider>
   </Statecom>
 </React.StrictMode>
-);
+); 
