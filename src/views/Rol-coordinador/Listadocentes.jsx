@@ -1,17 +1,18 @@
-import React, { useState, useEffect, useContext } from 'react';
-import { HiArrowSmallLeft } from 'react-icons/hi2';
-import Layout from '../../components/layaout';
-import DataTable from 'react-data-table-component';
-import { getDocente } from '../../endpoints/useGet';
-import { counterContext } from '../../../context/CRMcontext';
+import React, { useState, useEffect, useContext } from "react";
+import { HiArrowSmallLeft } from "react-icons/hi2";
+import Layout from "../../components/layaout";
+import DataTable from "react-data-table-component";
+import { getDocente } from "../../endpoints/useGet";
+import { counterContext } from "../../../context/CRMcontext";
+import Modal from "../../components/modal";
 
 const Listadocentes = () => {
-  const [filterText, setFilterText] = useState('');
+  const [filterText, setFilterText] = useState("");
   const [docentes, setDocentes] = useState([]);
   const { auth } = useContext(counterContext);
 
   useEffect(() => {
-    fetchFuncionarios(auth).then(data => { 
+    fetchFuncionarios(auth).then((data) => {
       setDocentes(data.data);
     });
   }, [auth]);
@@ -21,71 +22,63 @@ const Listadocentes = () => {
       const data = await getDocente(auth);
       return data;
     } catch (error) {
-      console.error('Error obteniendo los funcionarios:', error);
+      console.error("Error obteniendo los funcionarios:", error);
     }
   };
 
   const handleEdit = (row) => {
-    console.log('Editar:', row);
+    console.log("Editar:", row);
   };
 
   const handleDelete = (row) => {
-    console.log('Eliminar:', row);
+    console.log("Eliminar:", row);
   };
 
-  const filteredDocentes = docentes.filter(docente => {
+  const filteredDocentes = docentes.filter((docente) => {
     const initials = docente.funcnombre
-      .split(' ')
-      .map(word => word.charAt(0).toLowerCase()) // Obtener la primera letra de cada palabra del nombre
-      .join(''); // Unir las iniciales
+      .split(" ")
+      .map((word) => word.charAt(0).toLowerCase())
+      .join("");
     return initials.includes(filterText.toLowerCase());
   });
-  
 
   const columns = [
     {
-      name: 'Nombre',
+      name: "Nombre",
       selector: (row) => `${row.funcnombre} ${row.funcapellido}`,
       sortable: true,
     },
     {
-      name: 'Correo Electrónico',
+      name: "Correo Electrónico",
       selector: (row) => row.funccorreo,
       sortable: true,
     },
     {
-      name: 'Rol',
+      name: "Rol",
       selector: (row) => row.funcrol,
       sortable: true,
     },
     {
-      name: 'Estado',
+      name: "Estado",
       selector: (row) => row.estado,
       sortable: true,
     },
     {
-      name: 'Acciones',
+      name: "Acciones",
       cell: (row) => (
-        <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
-          <button
-            onClick={() => handleEdit(row)}
-            className="bg-blue-500 text-white py-1 px-3 rounded hover:bg-blue-700 transition duration-300 w-full sm:w-auto"
-          >
-            Editar
-          </button>
-          <button
-            onClick={() => handleDelete(row)}
-            className="bg-red-500 text-white py-1 px-3 rounded hover:bg-red-700 transition duration-300 w-full sm:w-auto"
-          >
-            Eliminar
-          </button>
+        <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2 mr-4">
+          <Modal objeto={row} id={row.funcid} />
+          
         </div>
       ),
     },
   ];
 
   return (
-    <Layout titulo={'Listado de docentes '} icono={<HiArrowSmallLeft className="text-xl" />}>
+    <Layout
+      titulo={"Listado de docentes "}
+      icono={<HiArrowSmallLeft className="text-xl" />}
+    >
       <div className="pb-2 w-full bg-[#ffffff] h-[86vh] shadow-[0_8px_20px_12px_rgba(0,0,0,0.08)] rounded-md">
         <DataTable
           columns={columns}
@@ -109,6 +102,21 @@ const Listadocentes = () => {
             </div>
           }
         />
+        <div className="w-full flex p-2 justify-between items-end ml-3 mt-[-2.5%]">
+          <div className="shadow-md duration-300 hover:translate-y-[-10px] hover:border-[#4A55A2] bg-[#626cb881] border border-gray-300 rounded-md">
+            <div className="flex flex-col m-auto p-4 gap-4">
+              <h1 className="font-bold text-7xl text-gray-600 text-center">
+                {docentes.length}
+              </h1>
+              <p className="font-semibold text-gray-700 text-left">
+                Total de{" "}
+                <span className="text-[#4856bd] font-bold">
+                  Docentes registrados{" "}
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </Layout>
   );

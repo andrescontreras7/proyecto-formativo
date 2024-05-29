@@ -100,7 +100,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <Route path="/Observadorestudiante" element={<Obser_estudiante />} />
             <Route path="/desempeño" element={<Desempeño />} />
             <Route path="/registrarAlumno" element={<RegistrarAlumno />} />   
-            <Route path="/listadocentes" element={<Listadocentes />} /> //por linkear       
+            <Route path="/listadocentes" element={<Listadocentes />} /> //por linkear    
+               
     
         </Routes>  
         </PrivateRoute>
