@@ -2,11 +2,18 @@ import React, { useState } from 'react';
 import { BiUser, BiLock, BiShow, BiHide } from 'react-icons/bi';
 
 
-const Recuperar = () => {
-  
+import Asidecon from '../../components/_asideconfi';
+
+const Recuperar1 = () => {
+  const [currentPassword, setCurrentPassword] = useState('');
+  const [newPassword, setNewPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [showCurrentPassword, setShowCurrentPassword] = useState(false);
+  const [showNewPassword, setShowNewPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+
   const handleSave = () => {
-    // Implementa la lógica para guardar la nueva contraseña
-    // Puedes validar que la contraseña actual sea correcta y que la nueva y la confirmación coincidan
+
     console.log('Contraseña guardada');
   };
 
@@ -27,23 +34,24 @@ const Recuperar = () => {
   };
 
   return (
-    <div className="bg-[#A6DCF1] h-screen flex ">
-      <Asidecon />
-      <div className="flex-1 bg-[#B3D6DD] p-20 ">
-        <div className=" bg-[#B3D6DD] p-8 rounded-md shadow-md h-full">
+    
+    
+    <div className=" bg-indigo-500  h-screen flex ">
+         <Asidecon/>
+      <div className="flex-1 bg-[#F3F3F4] p-20 ">
+        <div className=" bg-[#F3F3F4] p-8 rounded-md shadow-md h-full">
           <div className="flex items-center justify-center mb-10 text-black ">
             <BiUser className="text-5xl mr-8" />
             <h1 className="text-2xl font-bold">Julian Londoño</h1>
           </div>
-
-          <h1 className="text-black mb-8 text-3xl ">
+         
+          <h1 className="text-black mb-6">
             Aquí podrás modificar la contraseña con la que accedes.
           </h1>
           <form className="flex flex-col gap-4">
-            {/* Contraseña actual */}
-            <div className="flex flex-col items-start relative">
-              <label className="text-black text-lg mb-2">Contraseña actual</label>
-              <div className="relative w-2/5">
+            <div className="flex flex-col items-start">
+              <label className="text-black text-lg mb-6">Contraseña actual</label>
+              <div className="relative w-full">
                 <input
                   type={showCurrentPassword ? 'text' : 'password'}
                   className="w-full p-2 border rounded bg-transparent text-black pl-8 pr-4"
@@ -67,11 +75,9 @@ const Recuperar = () => {
                 <BiLock className="absolute top-1/2 left-2 transform -translate-y-1/2 text-black" />
               </div>
             </div>
-
-            {/* Contraseña nueva */}
-            <div className="flex flex-col items-start relative">
-              <label className="text-black text-lg mb-2">Contraseña nueva</label>
-              <div className="relative w-2/5">
+            <div className="flex flex-col items-start">
+              <label className="text-black text-lg mb-6">Contraseña nueva</label>
+              <div className="relative w-full">
                 <input
                   type={showNewPassword ? 'text' : 'password'}
                   className="w-full p-2 border rounded bg-transparent text-black pl-8 pr-4"
@@ -95,14 +101,12 @@ const Recuperar = () => {
                 <BiLock className="absolute top-1/2 left-2 transform -translate-y-1/2 text-black" />
               </div>
             </div>
-
-            {/* Confirmar contraseña nueva */}
-            <div className="flex flex-col items-start relative">
-              <label className="text-black text-lg mb-2">Confirmar contraseña nueva </label>
-              <div className="relative w-2/5">
+            <div className="flex flex-col items-start">
+              <label className="text-black text-lg mb-6">Confirmar contraseña nueva </label>
+              <div className="relative w-full">
                 <input
                   type={showConfirmPassword ? 'text' : 'password'}
-                  className="w-full p-2 border rounded bg-transparent text-black pl-6 pr-4"
+                  className="w-full p-2 border rounded bg-transparent text-black pl-8 pr-4"
                   placeholder="Confirma tu nueva contraseña"
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
@@ -110,7 +114,7 @@ const Recuperar = () => {
                 <div className="absolute top-1/2 right-2 transform -translate-y-1/2">
                   {showConfirmPassword ? (
                     <BiShow
-                      className="cursor-pointer text-black"
+                      className="cursor-pointer text-black "
                       onClick={() => togglePasswordVisibility('confirm')}
                     />
                   ) : (
@@ -123,12 +127,10 @@ const Recuperar = () => {
                 <BiLock className="absolute top-1/2 left-2 transform -translate-y-1/2 text-black" />
               </div>
             </div>
-
-            {/* Botón de guardar centrado */}
-            <div className="flex justify-center">
+            <div className="flex justify-end">
               <button
                 type="button"
-                className="bg-indigo-500 text-white px-4 py-2 rounded"
+                className="bg-indigo-500 text-white px-4 py-4 rounded"
                 onClick={handleSave}
               >
                 Guardar
@@ -138,7 +140,9 @@ const Recuperar = () => {
         </div>
       </div>
     </div>
+   
+   
   );
 };
 
-export default Recuperar;
+export default Recuperar1;

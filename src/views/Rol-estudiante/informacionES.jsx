@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from '../../components/layaout';
 import { BsFillPersonFill } from 'react-icons/bs';
-import Asidecon from '../../components/_asideconfi';
+
 
 const Informacion = () => {
   
