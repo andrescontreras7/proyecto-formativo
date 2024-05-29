@@ -45,6 +45,7 @@ import Infomateria from './src/views/Rol-estudiante/infomateria.jsx';
 import {NextUIProvider} from '@nextui-org/react'
 import PrivateRoute from './src/components/private.jsx';
 import RegistroAsignatura from './src/views/Rol-coordinador/Registrar_asignatura.jsx';
+import ObsEstudiante from './src/views/Rol-coordinador/ObsEstudiante.jsx';
 // Define las rutas de la app de React
 ReactDOM.createRoot(document.getElementById('root')).render(
 <React.StrictMode>
@@ -98,7 +99,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <Route path="/Cursos" element={<Cursos />} />
             <Route path="/Observadorestudiante" element={<Obser_estudiante />} />
             <Route path="/desempeño" element={<Desempeño />} />
-            <Route path="/registrarAlumno" element={<RegistrarAlumno />} />       
+            <Route path="/registrarAlumno" element={<RegistrarAlumno />} />   
+            <Route path="/ObsEstudiante" element={<ObsEstudiante />} />      
         </Routes>  
         </PrivateRoute>
       </BrowserRouter>
