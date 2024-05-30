@@ -9,12 +9,14 @@ export default function App({objeto, id}) {
   const handleOpen = () => {
     
     onOpen();
-    console.log(objeto)
+   
+  
   }
   const handleDelete = () => {
    
     console.log(`eliminar estudiante con ID: ${id}`);
   }
+  const {funcnombre} = objeto
 
 
   return (
@@ -40,7 +42,7 @@ export default function App({objeto, id}) {
         <ModalContent>
       
             <>
-              <ModalHeader className="flex flex-col gap-1 uppercase text-indigo-900 border-b-1">{objeto.estudnombre} </ModalHeader>
+              <ModalHeader className="flex flex-col gap-1 uppercase text-indigo-900 border-b-1">{funcnombre} </ModalHeader>
               
               <ModalBody>  
 

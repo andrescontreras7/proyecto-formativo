@@ -32,7 +32,9 @@ const Listado = () => {
     { name: 'ACUDIENTE', sortable: true,selector: (row) => row.acudiente ? row.acudiente.nom_acu : ''},
     { name: 'GRUPO', sortable: true, selector: (row) => row.grupo ? row.grupo.grupsalon : '' },
     {name: 'ESTADO', sortable: true, selector: (row) =>  <div className= {row.activo ? 'bg-green-400 p-2 rounded-xl text-white font-semibold' : 'bg-red-400' + ' bg-opacity-100 p-2 rounded-xl text-white font-semibold'}>    { row.activo !== null && row.activo !== undefined ? row.activo ? "Activo" : "Inactivo" : ""}  </div> },
-    { name: 'ACCIONES', sortable: true, selector: (row) =>  <button type="button" className="absolute bottom-12 right-16  font-bold px-4 rounded">  <Modal objeto={row} id={row.estudid} />   </button>},
+    
+    { name: 'ACCIONES', sortable: true, selector: (row) =>  
+    <button type="button" className="absolute bottom-12 right-16  font-bold px-4 rounded">  <Modal objeto={row} id={row.estudid} />   </button>},
    
   ];
   console.log()
@@ -70,10 +72,10 @@ const Listado = () => {
 
         </div>
         <div className=' w-full flex p-2 justify-between items-end'>
-         <div className='  shadow-md  duration-300 hover:translate-y-[-10px] hover:border-[#4A55A2]  bg-[#b3b1c5]  border border-gray-300    rounded-md  '> 
+         <div className='  shadow-md  duration-300 hover:translate-y-[-10px] hover:border-[#4A55A2]  bg-[#626cb881] border border-gray-300    rounded-md  '> 
               <div className='flex  flex-col m-auto p-4   gap-4 '>
                 <h1 className=' font-bold text-7xl text-gray-600 text-center  '> {estudiantes.length} </h1>
-                <p className='font-semibold text-gray-700 text-left '>Total de <span className='text-[#4A55A2] font-bold'>Estudiantes registrados </span></p>
+                <p className='font-semibold text-gray-700 text-left '>Total de <span className='text-[#4856bd]  font-bold'>Estudiantes registrados </span></p>
               </div>
               
       

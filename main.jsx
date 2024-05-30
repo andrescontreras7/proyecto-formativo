@@ -47,6 +47,7 @@ import PrivateRoute from './src/components/private.jsx';
 import RegistroAsignatura from './src/views/Rol-coordinador/Registrar_asignatura.jsx';
 import ObsEstudiante from './src/views/Rol-coordinador/ObsEstudiante.jsx';
 import Listadocentes from './src/views/Rol-coordinador/Listadocentes.jsx';
+import Informe from './src/views/Rol-coordinador/informe.jsx';
 // Define las rutas de la app de React
 ReactDOM.createRoot(document.getElementById('root')).render(
 <React.StrictMode>
@@ -101,8 +102,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <Route path="/Observadorestudiante" element={<Obser_estudiante />} />
             <Route path="/desempeño" element={<Desempeño />} />
             <Route path="/registrarAlumno" element={<RegistrarAlumno />} />   
-            <Route path="/ObsEstudiante" element={<ObsEstudiante />} />      
-            <Route path="/listadocentes" element={<Listadocentes />} />      
+            <Route path="/listadocentes" element={<Listadocentes />} /> //por linkear    
+            <Route path="/Informe" element={<Informe />} />
+               
     
         </Routes>  
         </PrivateRoute>
