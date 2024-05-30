@@ -58,15 +58,11 @@ const Listadocentes = () => {
       selector: (row) => row.funcrol,
       sortable: true,
     },
-    {
-      name: "Estado",
-      selector: (row) => row.estado,
-      sortable: true,
-    },
+   {name: 'Estado', sortable: true, selector: (row) =>  <div className= {row.activo ? 'bg-green-400 p-2 rounded-xl text-white font-semibold' : 'bg-red-400' + ' bg-opacity-100 p-2 rounded-xl text-white font-semibold'}>    { row.activo !== null && row.activo !== undefined ? row.activo ? "Activo" : "Inactivo" : ""}  </div> },
     {
       name: "Acciones",
       cell: (row) => (
-        <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2 mr-4">
+        <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2 mr-5 ">
           <Modal objeto={row} id={row.funcid} />
           
         </div>
