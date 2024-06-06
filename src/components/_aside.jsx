@@ -199,7 +199,7 @@ const Aside = ({rol}) => {
     
     <AnimatedCursos> 
         <li className=" hover:scale-[1.09] transition-[2s] items-center gap-2 inline-flex">
-            <BsEnvelope className='text-white  '/><Link to={'/  '} draggable="false" className="text-center text-zinc-100 text-base font-semibold" >Correo</Link>
+            <BsEnvelope className='text-white  '/><Link to={'/Correodocente  '} draggable="false" className="text-center text-zinc-100 text-base font-semibold" >Correo</Link>
         </li>
     </AnimatedCursos>
   

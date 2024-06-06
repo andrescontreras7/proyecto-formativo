@@ -1,6 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import Layout from '../../components/layaout'; // Corregido el nombre del componente importado
-
+import Layout from '../../components/layaout'; 
 const ObserAspectos = () => {
     const inputRef = useRef(null);
 

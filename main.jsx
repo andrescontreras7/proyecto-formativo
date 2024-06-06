@@ -44,10 +44,11 @@ import Tematicas2 from './src/views/Rol-estudiante/tematicas2.jsx';
 import Infomateria from './src/views/Rol-estudiante/infomateria.jsx';
 import {NextUIProvider} from '@nextui-org/react'
 import PrivateRoute from './src/components/private.jsx';
-import RegistroAsignatura from './src/views/Rol-coordinador/Registrar_asignatura.jsx';
+//import RegistroAsignatura from './src/views/Rol-coordinador/Registrar_asignatura.jsx';//
 import ObsEstudiante from './src/views/Rol-coordinador/ObsEstudiante.jsx';
 import Listadocentes from './src/views/Rol-coordinador/Listadocentes.jsx';
 import Informe from './src/views/Rol-coordinador/informe.jsx';
+import CorreoDoc from './src/views/Rol-docente/CorreoDoc.jsx';
 // Define las rutas de la app de React
 ReactDOM.createRoot(document.getElementById('root')).render(
 <React.StrictMode>
@@ -56,7 +57,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <BrowserRouter>
       <Routes>
       <Route path="/" element={<Formulario />} />
-      <Route path="/rA" element={<RegistroAsignatura/>} />
+      <Route path="/Correodocente" element={<CorreoDoc/>} />
 
       </Routes>
       <PrivateRoute>
@@ -96,13 +97,13 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <Route path="/Listado" element={<Listado />} />
             <Route path="/NotasView" element={<NotasView />} />
             <Route path="/Coordinador" element={<Coordinador />} />
-            <Route path="/Registroasistencias" element={<Registroasistencias />} /> 
+            <Route path="/Registroasistencias" element={<Registroasistencias />} /> //por linkear    
             <Route path="/Horaslabor" element={<Horaslabor />} />
             <Route path="/Cursos" element={<Cursos />} />
             <Route path="/Observadorestudiante" element={<Obser_estudiante />} />
             <Route path="/desempeño" element={<Desempeño />} />
             <Route path="/registrarAlumno" element={<RegistrarAlumno />} />   
-            <Route path="/listadocentes" element={<Listadocentes />} /> //por linkear    
+            <Route path="/listadocentes" element={<Listadocentes />} /> 
             <Route path="/Informe" element={<Informe />} />
                
     
