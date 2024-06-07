@@ -44,10 +44,16 @@ export const getAsiganturaDocente = async (auth, id) => {
   }
 }
 
+<<<<<<< HEAD
 
 export const getEstudiantesAsignatura = async (auth, id) => {
   try {
     const response = await fetch(`http://localhost:3001/appi/asignaturas-estudiantes/${id}` , {
+=======
+export const getDocente = async (auth) => {
+  try {
+    const response = await fetch(`http://localhost:3001/appi/funcionario` , {
+>>>>>>> e3243b6429376fe56feddc0e708f5b2e90effe36
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -62,6 +68,7 @@ export const getEstudiantesAsignatura = async (auth, id) => {
     const data = await response.json();
     return data;
   } catch (error) {
+<<<<<<< HEAD
     console.error('Error obteniendo las asignaturas:', error);
   }
 }
@@ -139,3 +146,8 @@ export const getAreas = async (auth) => {
 }
 
 
+=======
+    console.error('Error obteniendo los docentes:', error);
+  }
+}
+>>>>>>> e3243b6429376fe56feddc0e708f5b2e90effe36

@@ -5,7 +5,8 @@ import { HiArrowSmallLeft } from 'react-icons/hi2';
 const GestionarPermisos = () => {
   const [grado, setGrado] = useState('');
   const [jornada, setJornada] = useState('');
-  
+  const [checkedState, setCheckedState] = useState({});
+
   const handleGradoChange = (e) => setGrado(e.target.value);
   const handleJornadaChange = (e) => setJornada(e.target.value);
 
@@ -24,14 +25,29 @@ const GestionarPermisos = () => {
     { id: 8, nombre: 'Docente 8', grado: 'Segundo', jornada: 'Tarde', submenu: 'Opción 2' },
     { id: 9, nombre: 'Docente 9', grado: 'Primero', jornada: 'Mañana', submenu: 'Opción 1' },
     { id: 10, nombre: 'Docente 10', grado: 'Segundo', jornada: 'Tarde', submenu: 'Opción 2' },
-    
     // Agrega más docentes según sea necesario
   ];
 
-  const filteredDocentes = docentes.filter(docente => 
-    (grado === '' || docente.grado === grado) && 
+  const filteredDocentes = docentes.filter(docente =>
+    (grado === '' || docente.grado === grado) &&
     (jornada === '' || docente.jornada === jornada)
   );
+
+  const toggleAllCheckboxes = () => {
+    const allChecked = Object.values(checkedState).every(Boolean);
+    const newState = filteredDocentes.reduce((acc, docente) => {
+      acc[docente.id] = !allChecked;
+      return acc;
+    }, {});
+    setCheckedState(newState);
+  };
+
+  const handleCheckboxChange = (id) => {
+    setCheckedState(prevState => ({
+      ...prevState,
+      [id]: !prevState[id],
+    }));
+  };
 
   return (
     <Layout titulo="Gestionar permisos" icono={<HiArrowSmallLeft className='text-xl' />}>
@@ -59,42 +75,50 @@ const GestionarPermisos = () => {
           </div>
         </div>
         <div className='overflow-x-auto overflow-y-auto bg-white p-4 rounded-lg shadow-xl' style={{ maxHeight: '400px', boxShadow: '0px 6px 6px -3px rgba(0, 0, 0, 0.1), 0px 10px 14px 1px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(0, 0, 0, 0.07) inset' }}>
-  <table className='min-w-full'>
-    <thead>
-      <tr>
-        <th className='py-2 px-4 border-b border-gray-300 text-center'>N°</th>
-        <th className='py-2 px-4 border-b border-gray-300 text-center'>Nombre del Docente</th>
-        <th className='py-2 px-4 border-b border-gray-300 text-center'>Activar</th>
-        <th className='py-2 px-4 border-b border-gray-300 text-center'>Menú</th>
-        <th className='py-2 px-4 border-b border-gray-300 text-center'>Submenú</th>
-      </tr>
-    </thead>
-    <tbody>
-      {filteredDocentes.map(docente => (
-        <tr key={docente.id} className='hover:bg-gray-100'>
-          <td className='py-2 px-4 border-b border-gray-300 text-center'>{docente.id}</td>
-          <td className='py-2 px-4 border-b border-gray-300 text-center'>{docente.nombre}</td>
-          <td className='py-2 px-4 border-b border-gray-300 text-center'>
-            <input type="checkbox" />
-          </td>
-          <td className='py-2 px-4 border-b border-gray-300 text-center'>
-            <div className='relative'>
-              <button className='p-2 bg-gray-200 rounded'>Menú</button>
-              {/* Aquí puedes agregar un submenú desplegable */}
-            </div>
-          </td>
-          <td className='py-2 px-4 border-b border-gray-300 text-center'>{docente.submenu}</td>
-        </tr>
-      ))}
-    </tbody>
-  </table>
-</div>
-
-        <div className='flex justify-end mt-4'>
-          <button className='bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mr-10'>
+          <table className='min-w-full'>
+            <thead>
+              <tr>
+                <th className='py-2 px-4 border-b border-gray-300 text-center'>N°</th>
+                <th className='py-2 px-4 border-b border-gray-300 text-center'>Nombre del Docente</th>
+                <th className='py-2 px-4 border-b border-gray-300 text-center'>Activar</th>
+                <th className='py-2 px-4 border-b border-gray-300 text-center'>Menú</th>
+                <th className='py-2 px-4 border-b border-gray-300 text-center'>Submenú</th>
+              </tr>
+            </thead>
+            <tbody>
+              {filteredDocentes.map(docente => (
+                <tr key={docente.id} className='hover:bg-gray-100'>
+                  <td className='py-2 px-4 border-b border-gray-300 text-center'>{docente.id}</td>
+                  <td className='py-2 px-4 border-b border-gray-300 text-center'>{docente.nombre}</td>
+                  <td className='py-2 px-4 border-b border-gray-300 text-center'>
+                    <input
+                      type="checkbox"
+                      checked={checkedState[docente.id] || false}
+                      onChange={() => handleCheckboxChange(docente.id)}
+                    />
+                  </td>
+                  <td className='py-2 px-4 border-b border-gray-300 text-center'>
+                    <div className='relative'>
+                      <button className='p-2 bg-gray-200 rounded'>Menú</button>
+                      {/* Aquí puedes agregar un submenú desplegable */}
+                    </div>
+                  </td>
+                  <td className='py-2 px-4 border-b border-gray-300 text-center'>{docente.submenu}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div className='flex justify-end mt-4 mr-8'>
+          <button
+            className='bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mr-4'
+            onClick={toggleAllCheckboxes}
+          >
+            Activar/Desactivar Todos
+          </button>
+          <button className='bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded'>
             Guardar
           </button>
-          
         </div>
       </div>
     </Layout>
