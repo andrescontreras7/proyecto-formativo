@@ -173,14 +173,14 @@ const Aside = ({rol}) => {
 <ul className="flex-col  justify-start space-y-2  pl-3   gap-4 inline-flex items">
     <AnimatedCursos> 
         <li className=" hover:scale-[1.09] transition-[2s] items-center gap-2  inline-flex">
-            <LuPanelLeft className='text-white  '/><Link to={'/Docente'} draggable="false" className="text-center text-zinc-100 text-base font-semibold" >Inicio </Link>
+            <LuPanelLeft className='text-white  '/><Link to={'/Home-docente'} draggable="false" className="text-center text-zinc-100 text-base font-semibold" >Inicio </Link>
         </li>
 
     </AnimatedCursos>
    
     <AnimatedCursos> 
          <li className=" hover:scale-[1.09] transition-[2s] items-center gap-2 inline-flex">
-        <LuBookOpen className='text-white' /> <Link  to={'/Cursos'} draggable="false" className="text-center text-zinc-100 text-base font-semibold" >Mis cursos </Link>
+        <LuBookOpen className='text-white' /> <Link  to={'/Mis-cursos'} draggable="false" className="text-center text-zinc-100 text-base font-semibold" >Mis cursos </Link>
         </li>
     </AnimatedCursos>
 

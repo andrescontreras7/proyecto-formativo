@@ -17,7 +17,7 @@ const Asistenciafor = () => {
   const ModalOpen = () => {
     setModal(!modal);
   };
-  console.log(id)
+  
 
   const colu = [
     {

@@ -46,8 +46,9 @@ export default function App({objeto, id}) {
 
                 
            
-                    <ol className="p-2 flex flex-col gap-4 font-semibold uppercase">    
-                        <li className=""><button>INFORMACION</button></li>
+                    <ol className="p-2 flex flex-col gap-4 font-semibold uppercase">
+                      <input type="checkbox" />    
+                         <li className=""><button>INFORMACION</button></li>
                         <li className=""><button>EDITAR</button></li>
                         <li onClick={handleDelete} className=""><button>ELIMINAR</button></li>
                     </ol>

@@ -5,7 +5,7 @@ import { counterContext } from "../../../context/CRMcontext";
 
 const Coordinador = () => {
   const { auth } = useContext(counterContext);
-  console.log(auth)
+ 
 
   return (
     

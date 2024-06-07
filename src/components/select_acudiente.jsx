@@ -22,7 +22,7 @@ export default function AcudientesSelect({ register }) {
       {...register("acudienteFK")}
     >
       {acudientes.map((acudiente, index) => (
-        <SelectItem key={index} value={acudiente.id_acu}>
+        <SelectItem key={acudiente.id_acu} value={acudiente.id_acu}>
           {acudiente.nom_acu}
         </SelectItem>
       ))}

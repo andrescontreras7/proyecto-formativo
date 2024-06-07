@@ -12,7 +12,7 @@ const Panels = () => {
         <div className="p-2 rounded-md ">
             <h2 className="text-xl font-bold text-gray-600 bg-[#74b7fa] bg-opacity-20 p-2 uppercase  rounded-sm mb-4">Opciones</h2>
             <ul className="space-y-7 rounded- shadow-md   bg-[#74b7fa] bg-opacity-20  p-2  ">
-                        <li className="flex items-center duration-300 cursor-pointer border   border-purple-800 hover:bg-[#626cb8] hover:border-none  ">
+                        <li className="flex items-center duration-300 cursor-pointer border    hover:bg-[#626cb8] hover:border-none  ">
                             <div className='flex gap-2   items-center'>
                                 <div className=' border cursor-pointer    border-indigo-200 p-[5px] rounded-sm  '>
                                     <img className=' w-11' src="/public/registarprofesor.png" alt="Docente" draggable="false" />
@@ -23,7 +23,7 @@ const Panels = () => {
                                 </div>
                             </div>
                         </li>
-                        <li className="flex items-center duration-300 cursor-pointer border   border-pur#626cb8 hover:bg-[#626cb8] hover:border-none   ">
+                        <li className="flex items-center duration-300 cursor-pointer border   hover:bg-[#626cb8] hover:border-none   ">
                             <div className='flex gap-2   items-center'>
                                 <div className=' border cursor-pointer p-[5px] rounded-sm  '>
                                     <img className='w-11 ' src="/public/registrarasignatura.png" alt="Docente" draggable="false" />
@@ -34,7 +34,7 @@ const Panels = () => {
                                 </div>
                             </div>
                         </li>
-                        <li className="flex items-center duration-300 cursor-pointer border   border-purple-800 hover:bg-[#8EA7E9] hover:border-none ">
+                        <li className="flex items-center duration-300 cursor-pointer border    hover:bg-[#8EA7E9] hover:border-none ">
                             <div className='flex gap-2   items-center'>
                                 <div className=' border cursor-pointer    border-indigo-200 p-[5px] rounded-sm  '>
                                     <img className='w-11'  src="/public/administardocente.png" alt="Docente" draggable="false" />
@@ -45,7 +45,7 @@ const Panels = () => {
                                 </div>
                             </div>
                         </li>
-                        <Link to="/Listado" className="flex     items-center duration-300  border   border-gray-700 hover:bg-[#8EA7E9] hover:border-none hover:border-none ">
+                        <Link to="/Listado" className="flex     items-center duration-300  border    hover:bg-[#8EA7E9] hover:border-none  ">
                             <div className='flex gap-2  items-center'>
                                 <div className=' border cursor-pointer    border-indigo-200 p-[5px] rounded-sm  '>
                                 <img className='w-11' src="public\lista.png" alt="Docente" />
@@ -56,7 +56,7 @@ const Panels = () => {
                                 </div>
                             </div>
                         </Link>
-                        <Link to="/registrarAlumno" className="flex items-center duration-300 cursor-pointer border   border-gray-700 hover:bg-[#8EA7E9] hover:border-none ">
+                        <Link to="/registrarAlumno" className="flex items-center duration-300 cursor-pointer border   hover:bg-[#8EA7E9] hover:border-none ">
                             <div className='flex gap-2   items-center'>
                                 <div className=' border cursor-pointer    border-indigo-200 p-[5px] rounded-sm  '>
                                     <img className='w-11' src="/public/areas y asignaturas.png" alt="Docente" draggable="false" />
@@ -67,7 +67,7 @@ const Panels = () => {
                                 </div>
                             </div>
                         </Link>
-                        <li className="flex items-center duration-300 cursor-pointer border   border-purple-800 hover:bg-[#8EA7E9] hover:border-none ">
+                        <li className="flex items-center duration-300 cursor-pointer border    hover:bg-[#8EA7E9] hover:border-none ">
                             <div className='flex gap-2   items-center'>
                                 <div className=' border cursor-pointer    border-indigo-200 p-[5px] rounded-sm  '>
                                 <img className='w-11' src="public\r-estudiante.png" alt="Docente" />
@@ -78,7 +78,7 @@ const Panels = () => {
                                 </div>
                             </div>
                         </li>
-                        <li className="flex items-center duration-300 cursor-pointer border   border-purple-800 hover:bg-[#8EA7E9] hover:border-none ">
+                        <li className="flex items-center duration-300 cursor-pointer border   hover:bg-[#8EA7E9] hover:border-none ">
                             <div className='flex gap-2   items-center'>
                                 <div className=' border cursor-pointer    border-indigo-200 p-[5px] rounded-sm  '>
                                     <img className='w-11' src="/public/registro de asignaturas.png" alt="Docente" draggable="false" />
@@ -89,7 +89,7 @@ const Panels = () => {
                                 </div>
                             </div>
                         </li>
-                        <li className="flex items-center duration-300 cursor-pointer border   border-purple-800 hover:bg-[#8EA7E9] hover:border-none ">
+                        <li className="flex items-center duration-300 cursor-pointer border    hover:bg-[#8EA7E9] hover:border-none ">
                             <div className='flex gap-2   items-center'>
                                 <div className=' border cursor-pointer    border-indigo-200 p-[5px] rounded-sm  '>
                                      <img className='w-11' src="/public/desempeño.png" alt="Docente" draggable="false" />
