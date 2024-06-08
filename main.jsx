@@ -43,15 +43,16 @@ import RegistrarAlumno from './src/views/Rol-coordinador/registrarAlumno.jsx';
 import Tematicas2 from './src/views/Rol-estudiante/tematicas2.jsx';
 import Infomateria from './src/views/Rol-estudiante/infomateria.jsx';
 import {NextUIProvider} from '@nextui-org/react';
-import PrivateRoute from './src/components/private.jsx';
-//import RegistroAsignatura from './src/views/Rol-coordinador/Registrar_asignatura.jsx';//
+
+import RegistroAsignatura from './src/views/Rol-coordinador/Registrar_asignatura.jsx';
 import ObsEstudiante from './src/views/Rol-coordinador/ObsEstudiante.jsx';
 import Listadocentes from './src/views/Rol-coordinador/Listadocentes.jsx';
-<<<<<<< HEAD
 import ListadoEstudiantes from "./src/views/Rol-docente/listaEstudiantes.jsx";
 import Grados from './src/views/Rol-docente/grados.jsx';
 import HomeD from "./src/views/Rol-docente/Home-docente.jsx";
 import Documentos from "./src/views/Rol-docente/documentos.jsx";
+import FormTemas from './src/views/Rol-docente/formTemas.jsx';
+import ListadoAsigna from './src/views/Rol-coordinador/listadoAsignaturas.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -60,12 +61,13 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Formulario />} />
-            <Route path="/rA" element={<RegistroAsignatura/>} />
-            <Route path="/documentos" element={<Documentos/>} />
+   
+            <Route path="/Registrar-asignatura" element={<Documentos/>} />
           </Routes>
-          <PrivateRoute>
             <Routes>
               <Route path="/Home" element={<Home />} />
+              <Route path="/Listado-asignaturas" element={<ListadoAsigna />} />
+              <Route path="/registrar-temas/:asigcod" element={<FormTemas />} />
               <Route path="/grados/:id" element={<Grados />} />
               <Route path="/Cursos/:id" element={<AsignaturasDetalles />}>
                 <Route path="informacion" element={<InformacionMateria />} />
@@ -85,9 +87,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
               <Route path="/Informacion" element={<Informacion />} />
               <Route path="/Recuperar" element={<Recuperar />} />
               <Route path="/Panel" element={<Panel />} />
-              <Route path="/AsistenciasD" element={<AsistenciasD />} />
+              <Route path="/AsistenciasEstudiantes" element={<AsistenciasD />} />
               <Route path="/Calendario" element={<Calendario />} />
-              <Route path="/AsistenciasEstudiantes/:id" element={<Asistenciafor />} />
+              <Route path="/sss/:id" element={<Asistenciafor />} />
               <Route path="/Areas" element={<Tarea />} />
               <Route path="/Observador" element={<ObservadorOpc />} />
               <Route path="/RegistrarObservacion" element={<RegistroObservador />} />
@@ -108,78 +110,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
               <Route path="/listadocentes" element={<Listadocentes />} />
               <Route path="/coordinador" element={<Coordinador />} />
             </Routes>
-          </PrivateRoute>
         </BrowserRouter>
       </NextUIProvider>
     </Statecom>
   </React.StrictMode>
 );
-=======
-import Informe from './src/views/Rol-coordinador/informe.jsx';
-import CorreoDoc from './src/views/Rol-docente/CorreoDoc.jsx';
-// Define las rutas de la app de React
-ReactDOM.createRoot(document.getElementById('root')).render(
-<React.StrictMode>
-  <Statecom>
-    <NextUIProvider>
-      <BrowserRouter>
-      <Routes>
-      <Route path="/" element={<Formulario />} />
-      <Route path="/Correodocente" element={<CorreoDoc/>} />
 
-      </Routes>
-      <PrivateRoute>
-        <Routes>
-            <Route path="/Hoome" element={<Home/>} />
-            
-         
-            <Route path="/DetallesAsignatura" element={<AsignaturasDetalles />}>
-              <Route path="/DetallesAsignatura/Tematicas" element={<Tematicas2 />} />
-              <Route path="/DetallesAsignatura/Informacion" element={<InformacionMateria />} />
-              <Route path="/DetallesAsignatura/Asistencias" element={<Asistencia />} />
-              <Route path="/DetallesAsignatura/Calificaciones" element={<Calificaciones />} />
-            </Route>
-            <Route path="/Home" element={<Home />} />
-            <Route path="/Himno" element={<Himno />} />
-            <Route path="/Observaciones" element={<Observaciones />} />
-            <Route path="/Horario" element={<Horario />} />
-            <Route path="/Asignaturas" element={<Asignaturas />} />
-            <Route path="/Correo" element={<Correo />} />
-            <Route path="/Notas" element={<Notas />} />
-            <Route path="/perfil" element={<Perfil />} />
-            <Route path="/Informacion" element={<Informacion />} />
-          
-            <Route path="/Recuperar" element={<Recuperar />} />
-            <Route path="/Panel" element={<Panel />} />
-            <Route path="/AsitenciasD" element={<AsistenciasD />} />
-            <Route path="/Calendario" element={<Calendario />} />
-            <Route path="/AsistenciasEstudiantes/:id"  element={<Asistenciafor />} />
-            <Route path="/Areas" element={<Tarea />} />
-            <Route path="/Observador" element={<ObservadorOpc />} />
-            <Route path="/RegistrarObservacion" element={<RegistroObservador />} />
-            <Route path="/ObservadorGeneral" element={<ObservadorG />} />
-            <Route path="/AsistenciasDocentes" element={<AsistenciaDocente />} />
-            <Route path="/Informes" element={<InformeObservador />} />
-            <Route path="/Registrardocente" element={<Registrardocente />} />
-            <Route path="/Gestionar" element={<GestionarPermisos />} />
-            <Route path="/Listado" element={<Listado />} />
-            <Route path="/NotasView" element={<NotasView />} />
-            <Route path="/Coordinador" element={<Coordinador />} />
-            <Route path="/Registroasistencias" element={<Registroasistencias />} /> //por linkear    
-            <Route path="/Horaslabor" element={<Horaslabor />} />
-            <Route path="/Cursos" element={<Cursos />} />
-            <Route path="/Observadorestudiante" element={<Obser_estudiante />} />
-            <Route path="/desempeño" element={<Desempeño />} />
-            <Route path="/registrarAlumno" element={<RegistrarAlumno />} />   
-            <Route path="/listadocentes" element={<Listadocentes />} /> 
-            <Route path="/Informe" element={<Informe />} />
-               
-    
-        </Routes>  
-        </PrivateRoute>
-      </BrowserRouter>
-    </NextUIProvider>
-  </Statecom>
-</React.StrictMode>
-);
->>>>>>> e3243b6429376fe56feddc0e708f5b2e90effe36
+

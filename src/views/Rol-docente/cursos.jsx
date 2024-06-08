@@ -14,13 +14,15 @@ const Cursos = () => {
   useEffect(() => {
     getAsiganturaDocente(auth, decodedToken.id).then((data) => {
       setDat(data.data);
+
+
      
     });
   }, [auth]);
 
 
   return (
-    <Layout titulo=" Mis Cursos 📚" icono="">
+    <Layout titulo=" Mis asignaturas 📚" icono="">
       <div className="p-4 w-full h-[84vh] 2xl:h-[84vh]  shadow-[0_8px_10px_15px_rgba(0,0,0,0.08)] rounded-md flex flex-col lg:flex-row gap-4">
         <div className="flex-1 overflow-y-scroll">
           <div className="flex items-center gap-2 mb-4">

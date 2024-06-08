@@ -139,13 +139,13 @@ function Documentos() {
   
 
 
-          <input type="text" />
+         
           <div {...getRootProps()} style={{ border: '2px dashed #cccccc', padding: '10px', textAlign: 'center', width:"600px" }}>
             <input {...getInputProps()} />
             {
               isDragActive ?
-                <p>Seleciona el archivo aca </p> :
-                <p className='text-center flex justify-center flex-col items-center p-2 gap-2'> Arrastre el archivo aqui <BsFillFileEarmarkImageFill className='text-center size-48 text-gray-600 opacity-50' /></p>
+                <p>Seleciona la imagen  </p> :
+                <p className='text-center flex justify-center flex-col items-center p-2 gap-2'> Arrastre la imagen aca  <BsFillFileEarmarkImageFill className='text-center size-48 text-gray-600 opacity-50' />Subir imagen </p>
             }
           </div>
 

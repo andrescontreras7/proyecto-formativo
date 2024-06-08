@@ -44,16 +44,9 @@ export const getAsiganturaDocente = async (auth, id) => {
   }
 }
 
-<<<<<<< HEAD
-
-export const getEstudiantesAsignatura = async (auth, id) => {
-  try {
-    const response = await fetch(`http://localhost:3001/appi/asignaturas-estudiantes/${id}` , {
-=======
 export const getDocente = async (auth) => {
   try {
     const response = await fetch(`http://localhost:3001/appi/funcionario` , {
->>>>>>> e3243b6429376fe56feddc0e708f5b2e90effe36
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -68,12 +61,55 @@ export const getDocente = async (auth) => {
     const data = await response.json();
     return data;
   } catch (error) {
-<<<<<<< HEAD
+    console.error('Error obteniendo los docentes:', error);
+  }
+}
+
+export const getEstudiantesAsignatura = async (auth, id) => {
+  try {
+    const response = await fetch(`http://localhost:3001/appi/asignaturas-estudiantes/${id}` , {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${auth.token}`
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error('Error en la solicitud');
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+
     console.error('Error obteniendo las asignaturas:', error);
+  }
+}
+export const getAreas = async (auth) => {
+  try {
+    const response = await fetch(`http://localhost:3001/appi/area    ` , {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${auth.token}`
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error('Error en la solicitud');
+   
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error obteniendo las areas:', error);
   }
 }
 
 export const getGruposAll = async (auth, id, asigcod) => {
+
   try {
     const response = await fetch(`http://localhost:3001/appi/asignaturas-docente/grupo/${id}/${asigcod}    ` , {
       method: 'GET',
@@ -96,9 +132,32 @@ export const getGruposAll = async (auth, id, asigcod) => {
 }
 
 
+export const getTemas = async (auth, id, asigcod) => {
+
+  try {
+    const response = await fetch(`http://localhost:3001/appi/asignaturas-docente/grupo/${id}/${asigcod}    ` , {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${auth.token}`
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error('Error en la solicitud');
+   
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error obteniendo las asignaturas:', error);
+  }
+}
+
 export const getPorcentaje = async (auth, asigs) => {
   const fetches = asigs.map(asig => {
-    console.log(asig);
+  
     return fetch(`http://localhost:3001/appi/clases/porcentaje-asignaturas/${asig}`, {
       method: 'GET',
       headers: {
@@ -123,9 +182,11 @@ export const getPorcentaje = async (auth, asigs) => {
 }
 
 
-export const getAreas = async (auth) => {
+
+export const getAsignaturas = async (auth) => {
+
   try {
-    const response = await fetch(`http://localhost:3001/appi/area    ` , {
+    const response = await fetch(`http://localhost:3001/appi/asignaturas    ` , {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -141,13 +202,6 @@ export const getAreas = async (auth) => {
     const data = await response.json();
     return data;
   } catch (error) {
-    console.error('Error obteniendo las areas:', error);
+    console.error('Error obteniendo las asignaturas:', error);
   }
 }
-
-
-=======
-    console.error('Error obteniendo los docentes:', error);
-  }
-}
->>>>>>> e3243b6429376fe56feddc0e708f5b2e90effe36

@@ -13,7 +13,6 @@ const ListadoEstudiantes = () => {
   const [estudiantes, setEstudiantes] = useState([]);
   const {auth} = useContext(counterContext); 
   const {id} = useParams()
-   console.log(id)
 
 
 
@@ -25,7 +24,7 @@ const ListadoEstudiantes = () => {
   }, [auth]); 
   
 
- 
+
   
 
   return (

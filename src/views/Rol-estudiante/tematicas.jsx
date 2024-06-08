@@ -11,7 +11,7 @@ export default function App() {
       <div className="bg-[#ffffff] p-4 h-[96%] shadow-[0_8px_20px_12px_rgba(0,0,0,0.08)]  border rounded-md overflow-auto  m-2 ">
         <div className="h-full  p-2 rounde ">
           <button className="absolute top-[-70px] right-0 rounded-xl bg-blue-500 text-white p-2 flex items-center">
-            <IoAdd className="mr-2" /> Agregar
+         
           </button>
 
           

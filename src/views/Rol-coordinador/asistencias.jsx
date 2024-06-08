@@ -44,21 +44,21 @@ const AsistenciasD = () => {
 
   return (
     
-    // Usamos el componente Layaout para definir la estructura básica de la página
+
     <Layout titulo={"Asistencias estudiantes  "} icono={<HiArrowSmallLeft className='text-2xl font-bold' />}>
       <div className="overflow-y-scroll shadow-[0_8px_10px_15px_rgba(0,0,0,0.08)] w-full h-[87vh] max-2xl:h-[85vh] rounded-md">
         <div className='p-2'>
           <h1 className='font-semibold text-xl text-gray-700 p-2'>Filtros</h1>
           <hr />
           <div className='flex gap-6 mt-2 bg-[#6f99e1] bg-opacity-25 rounded-md p-4 w-auto m-10'>
-            {/* Aquí se colocan los componentes de entrada para los filtros */}
+          
             <Select register={register} des={"Selecione el grado"} name="grado"/>
             <Input/>
             <Input/>
             <Input/>
           </div>
           <div className='flex flex-wrap max-2xl:gap-2 justify-center m-auto p-2 gap-4'>
-           {/* Aquí se colocan los componentes que representan las diferentes asistencias */}
+
             {asignatura.map((asig) => (
               <Link key={asig.cod} to={`/AsistenciasEstudiantes/${asig.asigcod}`}>
                 <Componente titulo={asig.asignombre} descripcion={asig.asigdescripcion} src={asig.imagen} />
