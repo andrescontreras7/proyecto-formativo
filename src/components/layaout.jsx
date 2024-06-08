@@ -27,9 +27,9 @@ useEffect(() => {
    
 
 
-
+// 
     return (
-        <div className="flex h-[100%]  bg-[#F3F3F4] "> 
+        <div className="flex h-[100%]    bg-[#F3F3F4] "> 
             <aside className="w-[15%] max-sm:hidden  max-[1400px]:w-[17%]">
                 <Aside rol={auth.rol}    />
             </aside>

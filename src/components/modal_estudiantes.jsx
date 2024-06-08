@@ -16,7 +16,8 @@ export default function App({objeto, id}) {
    
     console.log(`eliminar estudiante con ID: ${id}`);
   }
-  const {funcnombre} = objeto
+  console.log(objeto)
+  
 
 
   return (
@@ -42,16 +43,18 @@ export default function App({objeto, id}) {
         <ModalContent>
       
             <>
-              <ModalHeader className="flex flex-col gap-1 uppercase text-indigo-900 border-b-1">{funcnombre} </ModalHeader>
+              <ModalHeader className="flex flex-col gap-1 uppercase text-indigo-900 border-b-1"> {objeto.estudiante.estudnombre} </ModalHeader>
               
               <ModalBody>  
 
                 
            
                     <ol className="p-2 flex flex-col gap-4 font-semibold uppercase">
-                      <input type="checkbox" />    
-                         <li className=""><button>INFORMACION</button></li>
-                        <li className=""><button>EDITAR</button></li>
+                     
+                         <li className=""><button>Editar esudiante</button></li>
+                        <li className=""><button>Obsevaciones</button></li>
+                        <li className=""><button>Informacion estudiante</button></li>
+
                         <li onClick={handleDelete} className=""><button>ELIMINAR</button></li>
                     </ol>
                 

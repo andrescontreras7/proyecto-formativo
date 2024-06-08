@@ -44,7 +44,7 @@ function Formulario() {
       rol: rol,
       
     })
-    rol === 3 ? navigate('/Home') : rol === 1 ? navigate('/coordinador') : rol === 2 ? navigate('/coordinador') : navigate('/home');
+    rol === 3 ? navigate('/Home') : rol === 1 ? navigate('/coordinador') : rol === 2 ? navigate('/Home-docente') : navigate('/home');
 
   
    

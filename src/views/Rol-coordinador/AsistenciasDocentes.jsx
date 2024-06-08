@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import DataTable from "react-data-table-component";
 import Layout from "../../components/layaout";
+import { FiEdit } from "react-icons/fi";
+import { HiArrowSmallLeft } from "react-icons/hi2";
+
 
 // Datos de ejemplo
 const data = [
@@ -34,30 +37,30 @@ const data = [
   },
   {
     id: 5,
-    nombre: "Juan Pérez",
-    cedula: "123456789",
-    asistencia: "Presente",
+    nombre: "Ana Gómez",
+    cedula: "987654321",
+    asistencia: "Ausente",
     registro: "2024-05-30",
   },
   {
     id: 6,
-    nombre: "Ana Gómez",
-    cedula: "987654321",
-    asistencia: "Ausente",
-    registro: "2024-05-30",
-  },
-  {
-    id: 7,
     nombre: "Juan Pérez",
     cedula: "123456789",
     asistencia: "Presente",
     registro: "2024-05-30",
   },
   {
-    id: 8,
+    id: 7,
     nombre: "Ana Gómez",
     cedula: "987654321",
     asistencia: "Ausente",
+    registro: "2024-05-30",
+  },
+  {
+    id: 8,
+    nombre: "Juan Pérez",
+    cedula: "123456789",
+    asistencia: "Presente",
     registro: "2024-05-30",
   },
   // ... otros datos
@@ -65,7 +68,7 @@ const data = [
 
 // Definición de las columnas
 const columns = [
-  { name: "No.l", selector: (row) => row.id, sortable: true },
+  { name: "No.", selector: (row) => row.id, sortable: true },
   { name: "Nombre", selector: (row) => row.nombre, sortable: true },
   { name: "Cédula", selector: (row) => row.cedula, sortable: true },
   { name: "Asistencia", selector: (row) => row.asistencia, sortable: true },
@@ -73,6 +76,14 @@ const columns = [
     name: "Registro de Asistencia",
     selector: (row) => row.registro,
     sortable: true,
+  },
+  {
+    name: "Acciones",
+    cell: (row) => (
+      <div>
+        <FiEdit onClick={() => handleEdit(row)} className="mr-2 cursor-pointer text-2xl" />
+      </div>
+    ),
   },
 ];
 
@@ -95,6 +106,11 @@ const calcularEstadisticas = (data) => {
   };
 };
 
+// Funciones para manejar acciones
+const handleEdit = (row) => {
+  alert(`Editando ${row.nombre}`);
+};
+
 // Componente principal
 const AsistenciaDocente = () => {
   const { total, presentes, retardo, porcentajeAsistencia } =
@@ -112,12 +128,13 @@ const AsistenciaDocente = () => {
   };
 
   return (
-    <Layout titulo={"Asistencia docentes"}>
+    <Layout 
+    titulo={"Asistencia docentes"}  
+    icono={<HiArrowSmallLeft className="text-2xl" />} >
       <div className="pb-2 px-10 w-full bg-[#ffffff] h-[86vh] shadow-[0_8px_20px_12px_rgba(0,0,0,0.08)] rounded-md">
         <div className="p-4">
-       
-          <div>
-          <p className="text-md">Fecha: {new Date().toLocaleDateString()}</p>
+          <div className="mb-2">
+            <p className="text-md"><strong>Fecha:</strong> {new Date().toLocaleDateString()}</p>
           </div>
           <div className="flex gap-4 mb-4">
             <select

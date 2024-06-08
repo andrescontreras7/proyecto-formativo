@@ -1,30 +1,29 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useContext } from "react";
 import { Select, SelectItem } from "@nextui-org/react";
-import s_axios from '../../config/axios';
+import { getAreas } from "../endpoints/useGet";
+import { counterContext } from "../../context/CRMcontext";
 
 export default function App({ name,register, des }) {
-  const [roles, setRoles] = useState([]);
 
+  const { auth } = useContext(counterContext);
+  const [area, setAreas] = useState([]);
   useEffect(() => {
-    s_axios.get('/roles')
-      .then(response => {
-        setRoles(response.data);
-      })
-      .catch(error => {
-        console.error('Error cargando los roles:', error);
-      });
-  }, []);
-
+    getAreas(auth).then((data) => {
+      setAreas(data.data);
+     
+    });
+  }, [auth]);
   return (
     <Select
-    label={"roles"}
+    label={"areas"}
     placeholder={des}
    
     {...register(name)}
     >
-      {roles.map((rol, index) => (
-        <SelectItem key={index} value={rol.id_rol}>
-          {rol.nombre}
+      {area.map((areas, index) => (
+       
+        <SelectItem key={areas.cod_area} value={areas.cod_area}>
+          {areas.are_nombre}
         </SelectItem>
       ))}
     </Select>

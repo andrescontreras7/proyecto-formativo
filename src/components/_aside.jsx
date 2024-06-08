@@ -67,7 +67,7 @@ const Aside = ({rol}) => {
      </AnimatedCursos>
 
      <AnimatedCursos> 
-        <Link to={'/AsitenciasD'}className="hover:scale-[1.09] transition-[2s] items-center gap-2 inline-flex">
+        <Link to={'/AsitenciasEstudiante'}className="hover:scale-[1.09] transition-[2s] items-center gap-2 inline-flex">
              <BsCalendar3 className='text-white  text-3xl lg:text-lg  '/><li draggable="false" className="text-center text-zinc-100 text-base font-semibold hidden min-[1140px]:inline-block" >Asistencia estudiante </li>
          </Link>
      </AnimatedCursos> 
@@ -174,14 +174,14 @@ const Aside = ({rol}) => {
 <ul className="flex-col  justify-start space-y-2  pl-3   gap-4 inline-flex items">
     <AnimatedCursos> 
         <li className=" hover:scale-[1.09] transition-[2s] items-center gap-2  inline-flex">
-            <LuPanelLeft className='text-white  '/><Link to={'/Docente'} draggable="false" className="text-center text-zinc-100 text-base font-semibold" >Inicio </Link>
+            <LuPanelLeft className='text-white  '/><Link to={'/Home-docente'} draggable="false" className="text-center text-zinc-100 text-base font-semibold" >Inicio </Link>
         </li>
 
     </AnimatedCursos>
    
     <AnimatedCursos> 
          <li className=" hover:scale-[1.09] transition-[2s] items-center gap-2 inline-flex">
-        <LuBookOpen className='text-white' /> <Link  to={'/Cursos'} draggable="false" className="text-center text-zinc-100 text-base font-semibold" >Mis cursos </Link>
+        <LuBookOpen className='text-white' /> <Link  to={'/Mis-cursos'} draggable="false" className="text-center text-zinc-100 text-base font-semibold" >Mis asignaturas </Link>
         </li>
     </AnimatedCursos>
 
@@ -199,7 +199,7 @@ const Aside = ({rol}) => {
     
     <AnimatedCursos> 
         <li className=" hover:scale-[1.09] transition-[2s] items-center gap-2 inline-flex">
-            <BsEnvelope className='text-white  '/><Link to={'/  '} draggable="false" className="text-center text-zinc-100 text-base font-semibold" >Correo</Link>
+            <BsEnvelope className='text-white  '/><Link to={'/Correodocente  '} draggable="false" className="text-center text-zinc-100 text-base font-semibold" >Correo</Link>
         </li>
     </AnimatedCursos>
   

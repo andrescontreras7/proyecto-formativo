@@ -119,66 +119,66 @@ const RegistroAsistencias = () => {
                             </div>
                         </div>
                         <div className="mt-20 overflow-auto border-8 border-[#c1c5da] border-azul shadow-md sm:rounded-lg max-h-80">
-    <table className="min-w-full divide-y divide-gray-200">
-        <thead className="bg-gray-100">
-            <tr>
-                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">
-                    Día
-                </th>
-                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">
-                    Hora de entrada
-                </th>
-                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">
-                    Hora de salida
-                </th>
-                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">
-                    Asistencias
-                </th>
-            </tr>
-        </thead>
-        <tbody className="bg-white divide-y divide-gray-200">
-            {/* Filas de ejemplo */}
-            {Array.from(Array(10).keys()).map((index) => (
-                <tr key={index} className="bg-white hover:bg-gray-200 transition duration-200 ease-in-out">
-                    <td className="px-6 py-4 whitespace-nowrap">
-                        <div className="text-sm font-medium text-gray-900">{index % 7 === 0 ? "Lunes" : index % 7 === 1 ? "Martes" : index % 7 === 2 ? "Miércoles" : index % 7 === 3 ? "Jueves" : index % 7 === 4 ? "Viernes" : index % 7 === 5 ? "Sábado" : "Domingo"}</div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
-                        <div className="text-sm text-gray-900">{`${(8 + index % 7).toString().padStart(2, '0')}:00 AM`}</div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
-                        <div className="text-sm text-gray-900">{`${(16 + index % 7).toString().padStart(2, '0')}:00 PM`}</div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
-                        {index % 7 === 0 ? (
-                            <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1 text-green-500" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm2.5-12a.5.5 0 00-.354.146l-3.5 3.5a.5.5 0 00.708.708L11 9.707l2.646-2.647a.5.5 0 00-.354-.853z" clip-rule="evenodd" />
-                                </svg>
-                                Presente
-                            </span>
-                        ) : index % 7 === 1 || index % 7 === 3 ? (
-                            <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm2.5-12a.5.5 0 00-.354.146l-3.5 3.5a.5.5 0 00.708.708L11 9.707l2.646-2.647a.5.5 0 00-.354-.853z" clip-rule="evenodd" />
-                                </svg>
-                                Tardanza
-                            </span>
-                        ) : (
-                            <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1 text-red-500" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm2.5-12a.5.5 0 00-.354.146l-3.5 3.5a.5.5 0 00.708.708L11 9.707l2.646-2.647a.5.5 0 00-.354-.853z" clip-rule="evenodd" />
-                                </svg>
-                                Ausente
-                            </span>
-                        )}
-                    </td>
-                </tr>
-            ))}
-            {/* Fin de filas de ejemplo */}
-        </tbody>
-    </table>
-</div>
+                            <table className="min-w-full divide-y divide-gray-200">
+                                <thead className="bg-gray-100">
+                                    <tr>
+                                        <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">
+                                            Día
+                                        </th>
+                                        <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">
+                                            Hora de entrada
+                                        </th>
+                                        <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">
+                                            Hora de salida
+                                        </th>
+                                        <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">
+                                            Asistencias
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody className="bg-white divide-y divide-gray-200">
+                                    {/* Filas de ejemplo */}
+                                    {Array.from(Array(10).keys()).map((index) => (
+                                        <tr key={index} className="bg-white hover:bg-gray-200 transition duration-200 ease-in-out">
+                                            <td className="px-6 py-4 whitespace-nowrap">
+                                                <div className="text-sm font-medium text-gray-900">{index % 7 === 0 ? "Lunes" : index % 7 === 1 ? "Martes" : index % 7 === 2 ? "Miércoles" : index % 7 === 3 ? "Jueves" : index % 7 === 4 ? "Viernes" : index % 7 === 5 ? "Sábado" : "Domingo"}</div>
+                                            </td>
+                                            <td className="px-6 py-4 whitespace-nowrap">
+                                                <div className="text-sm text-gray-900">{`${(8 + index % 7).toString().padStart(2, '0')}:00 AM`}</div>
+                                            </td>
+                                            <td className="px-6 py-4 whitespace-nowrap">
+                                                <div className="text-sm text-gray-900">{`${(16 + index % 7).toString().padStart(2, '0')}:00 PM`}</div>
+                                            </td>
+                                            <td className="px-6 py-4 whitespace-nowrap">
+                                                {index % 7 === 0 ? (
+                                                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1 text-green-500" viewBox="0 0 20 20" fill="currentColor">
+                                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm2.5-12a.5.5 0 00-.354.146l-3.5 3.5a.5.5 0 00.708.708L11 9.707l2.646-2.647a.5.5 0 00-.354-.853z" clip-rule="evenodd" />
+                                                        </svg>
+                                                        Presente
+                                                    </span>
+                                                ) : index % 7 === 1 || index % 7 === 3 ? (
+                                                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
+                                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm2.5-12a.5.5 0 00-.354.146l-3.5 3.5a.5.5 0 00.708.708L11 9.707l2.646-2.647a.5.5 0 00-.354-.853z" clip-rule="evenodd" />
+                                                        </svg>
+                                                        Tardanza
+                                                    </span>
+                                                ) : (
+                                                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1 text-red-500" viewBox="0 0 20 20" fill="currentColor">
+                                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm2.5-12a.5.5 0 00-.354.146l-3.5 3.5a.5.5 0 00.708.708L11 9.707l2.646-2.647a.5.5 0 00-.354-.853z" clip-rule="evenodd" />
+                                                        </svg>
+                                                        Ausente
+                                                    </span>
+                                                )}
+                                            </td>
+                                        </tr>
+                                    ))}
+                                    {/* Fin de filas de ejemplo */}
+                                </tbody>
+                            </table>
+                        </div>
 
 
                         {/* Fin del espacio para la tabla */}

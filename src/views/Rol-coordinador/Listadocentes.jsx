@@ -20,11 +20,14 @@ const Listadocentes = () => {
   const fetchFuncionarios = async (auth) => {
     try {
       const data = await getDocente(auth);
-      return data;
+      // mostrar los docentes por el rol 
+      const docentesFiltrados = data.data.filter(docente => docente.rolFK === 2);
+      setDocentes(docentesFiltrados);
     } catch (error) {
       console.error("Error obteniendo los funcionarios:", error);
     }
   };
+  
 
   const handleEdit = (row) => {
     console.log("Editar:", row);

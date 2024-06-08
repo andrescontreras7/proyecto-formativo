@@ -198,7 +198,7 @@ const Panels = () => {
               </Link>
 
               <Link
-                to="/"
+                to="/Listado-asignaturas"
                 className="flex items-center bg-white duration-300 cursor-pointer border  
                          border-white rounded-lg  hover:bg-[#626cb88e]  hover:border-none"
               >
@@ -216,8 +216,7 @@ const Panels = () => {
                       Asignaturas Registradas{" "}
                     </h1>
                     <p className="font-normal text-xs text-gray-800">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Unde q
+                     Ver listado de asignaturas en el sistema
                     </p>
                   </div>
                 </div>
@@ -249,7 +248,7 @@ const Panels = () => {
                 </div>
               </Link>
               <Link
-                to="/"
+                to="/registrar-asignatura"
                 className="flex items-center bg-white duration-300 cursor-pointer border  
                          border-white rounded-lg  hover:bg-[#626cb88e]  hover:border-none"
               >
@@ -268,8 +267,7 @@ const Panels = () => {
                       Registrar asignatura{" "}
                     </h1>
                     <p className="font-normal text-xs text-gray-800">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Unde q
+                     Registrar un asignatura
                     </p>
                   </div>
                 </div>

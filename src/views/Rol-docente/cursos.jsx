@@ -14,11 +14,15 @@ const Cursos = () => {
   useEffect(() => {
     getAsiganturaDocente(auth, decodedToken.id).then((data) => {
       setDat(data.data);
+
+
+     
     });
   }, [auth]);
 
+
   return (
-    <Layout titulo=" Mis Cursos 📚" icono="">
+    <Layout titulo=" Mis asignaturas 📚" icono="">
       <div className="p-4 w-full h-[84vh] 2xl:h-[84vh]  shadow-[0_8px_10px_15px_rgba(0,0,0,0.08)] rounded-md flex flex-col lg:flex-row gap-4">
         <div className="flex-1 overflow-y-scroll">
           <div className="flex items-center gap-2 mb-4">
@@ -35,18 +39,22 @@ const Cursos = () => {
           </div>
           <div className="flex flex-wrap gap-4 ">
             {dat.map((item) =>
-              item.asignaturas.length === 0 ? (
+              item.length === "" ? (
                 <p className="font-semibold text-center p-2">
                   No tienes asignaturas asociadas.
                 </p>
               ) : (
-                item.asignaturas.map((asignatura) => (
+           
+                  
                   <Componente
-                    key={asignatura.asigcod}
-                    titulo={asignatura.asignombre}
-                    descripcion={asignatura.asigdescripcion}
+                    enlace={`/grados/${item.asignatura.asigcod}`}
+                    key={item.asignatura.asigcod}
+                    titulo={item.asignatura.asignombre}
+                    descripcion={item.asignatura.asigdescripcion}
+
+                    imagen={item.asignatura.url ? item.asignatura.url : 'https://image.shutterstock.com/shutterstock/photos/1976693516/display_1500/stock-vector-no-image-available-sign-isolated-on-white-background-vector-illustration-1976693516.jpg'}
                   />
-                ))
+             
               )
             )}
           </div>
@@ -55,6 +63,7 @@ const Cursos = () => {
           <h3 className="text-xl font-bold mb-2">Barra lateral</h3>
           <p>Contenido de la barra lateral</p>
         </div>
+     
       </div>
     </Layout>
   );
