@@ -45,9 +45,11 @@ import Infomateria from './src/views/Rol-estudiante/infomateria.jsx';
 import {NextUIProvider} from '@nextui-org/react'
 import PrivateRoute from './src/components/private.jsx';
 import RegistroAsignatura from './src/views/Rol-coordinador/Registrar_asignatura.jsx';
-import ObsEstudiante from './src/views/Rol-coordinador/ObsEstudiante.jsx';
+import ObserAspectos from './src/views/Rol-coordinador/ObsEstudiante.jsx';
 import Listadocentes from './src/views/Rol-coordinador/Listadocentes.jsx';
 import Informe from './src/views/Rol-coordinador/informe.jsx';
+import FormularioConvivencia from './src/views/Rol-coordinador/formulario.jsx';
+import Calificacions from './src/views/Rol-estudiante/Calificacion.jsx';
 // Define las rutas de la app de React
 ReactDOM.createRoot(document.getElementById('root')).render(
 <React.StrictMode>
@@ -78,6 +80,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <Route path="/Correo" element={<Correo />} />
             <Route path="/Notas" element={<Notas />} />
             <Route path="/perfil" element={<Perfil />} />
+            <Route path="/Calificacions" element={<Calificacions />} />
             <Route path="/Informacion" element={<Informacion />} />
           
             <Route path="/Recuperar" element={<Recuperar />} />
@@ -102,8 +105,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <Route path="/Observadorestudiante" element={<Obser_estudiante />} />
             <Route path="/desempeño" element={<Desempeño />} />
             <Route path="/registrarAlumno" element={<RegistrarAlumno />} />   
-            <Route path="/listadocentes" element={<Listadocentes />} /> //por linkear    
+            <Route path="/listadocentes" element={<Listadocentes />} />    
             <Route path="/Informe" element={<Informe />} />
+            <Route path="/ObserAspectos" element={<ObserAspectos />} />
+            <Route path="/Formulario" element={<FormularioConvivencia />} />
                
     
         </Routes>  
