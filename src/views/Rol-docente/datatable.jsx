@@ -1,6 +1,9 @@
 import React,{useState,useEffect,useContext} from 'react';
 import DataTable from 'react-data-table-component';
 import {deleteAsignatura } from '../../endpoints/useDelete';
+import { AiOutlineCheckCircle, AiOutlineCloseCircle } from 'react-icons/ai';
+import {  FiClock } from 'react-icons/fi';
+import ModalEstudiante from '../../components/modal_estudiantes';
 
 import MenuModal from '../../components/menusAsignaturas';
 
@@ -26,12 +29,6 @@ import MenuModal from '../../components/menusAsignaturas';
 
 
 export const AsignaturasData = ({ asignaturas }) => {
-
-useEffect(() => {})
- 
-
-    
-  
 
   const asig = [
     { name: 'Nombre', sortable: true, selector: (row) => row.asigcod },
@@ -69,7 +66,65 @@ useEffect(() => {})
   );
 };
 
+export const AsistenciasData = ({ asistencias }) => {
 
+
+  const presenteCount = asistencias.filter(item => item.asistencia === 'Presente').length;
+  const retardoCount = asistencias.filter(item => item.asistencia === 'Retardo').length;
+  const ausenteCount = asistencias.filter(item => item.asistencia === 'Ausente').length;
+  const totalAsistencia = presenteCount + retardoCount + ausenteCount;
+  const porcentajeAsistencia = (presenteCount / totalAsistencia) * 100;
+
+  const Asis = [
+    {
+      name: 'id estudiante ',
+      selector: row => row.estudiante.estudid,
+    
+    },
+    {
+      name: 'Nombre',
+      selector: row => row.estudiante.estudnombre,
+    
+    },
+   
+    {
+      name: 'apellido',
+      selector: row => row.estudiante.estudapellido,
+    },
+    {
+      name: 'fecha asistencia',
+      selector: row => row.fec_asi,
+    },
+    {
+      name: 'Asistencia',
+      selector: row => row.det_asi  === true ? 'Presente' : row.det_asi === false ? 'Retardo' : 'Ausente',
+    },
+    
+  
+    {
+      name: 'Acciones',
+      cell: row => (
+        <>
+          <ModalEstudiante objeto={row} />
+        </>
+      ),
+    },
+  ];
+return(
+<DataTable
+      title="Asignaturas Registradas"
+      columns={Asis}
+      data={asistencias}
+      selectableRows
+      pagination
+      noHeader
+      striped
+      highlightOnHover
+      fixedHeader
+      
+    />
+)
+}
 
 
 export default EstudiantesDataTable;
