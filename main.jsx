@@ -42,6 +42,7 @@ import Statecom from "./src/components/Statecompo.jsx";
 import RegistrarAlumno from './src/views/Rol-coordinador/registrarAlumno.jsx';
 import Tematicas2 from './src/views/Rol-estudiante/tematicas2.jsx';
 import Infomateria from './src/views/Rol-estudiante/infomateria.jsx';
+import Calificacions from './src/views/Rol-estudiante/Calificacion.jsx';
 import {NextUIProvider} from '@nextui-org/react';
 
 import RegistroAsignatura from './src/views/Rol-coordinador/Registrar_asignatura.jsx';
@@ -85,6 +86,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
               <Route path="/Notas" element={<Notas />} />
               <Route path="/perfil" element={<Perfil />} />
               <Route path="/Informacion" element={<Informacion />} />
+              <Route path="/Calificacions" element={<Calificacions />} />
               <Route path="/Recuperar" element={<Recuperar />} />
               <Route path="/Panel" element={<Panel />} />
               <Route path="/AsistenciasEstudiantes" element={<AsistenciasD />} />

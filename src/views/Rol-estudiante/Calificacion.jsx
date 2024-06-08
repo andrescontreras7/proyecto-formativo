@@ -1,22 +1,26 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { counterContext } from '../../../context/CRMcontext';
 import Layout from '../../components/layaout';
+import { getEstudiantesAsignatura } from '../../endpoints/useGet'; // Asegúrate de que esta sea la ruta correcta
 
 const Calificacions = () => {
   const { auth } = useContext(counterContext);
   const [cursos, setCursos] = useState([]);
-  
+
   useEffect(() => {
-    // Simulación de llamada a API para obtener los cursos del usuario
     const fetchCursos = async () => {
-      // Aquí realizarías la llamada a tu API
-      const response = await fetch('https://api.example.com/usuario/cursos');
-      const data = await response.json();
-      setCursos(data);
+      try {
+        const id = auth.id;
+        const data = await getEstudiantesAsignatura(auth, id);
+        console.log(data); // Verificar los datos recibidos
+        setCursos(data || []);
+      } catch (error) {
+        console.error('Error obteniendo las asignaturas:', error);
+      }
     };
-    
+  
     fetchCursos();
-  }, []);
+  }, [auth]);
 
   return (
     <Layout>
@@ -39,17 +43,16 @@ const Calificacions = () => {
                 <thead>
                   <tr>
                     <th className="border border-gray-200 px-4 py-2">Asignatura</th>
-                    <th className="border border-gray-200 px-4 py-2">Profesor</th>
+                    
                   </tr>
                 </thead>
                 <tbody>
-                  {cursos.map((curso, index) => (
+                  {cursos.map((cursos, index) => (
                     <tr key={index}>
-                      <td className="border border-gray-200 px-4 py-2">{curso.asignatura}</td>
-                      <td className="border border-gray-200 px-4 py-2">{curso.profesor}</td>
+                      <td className="border border-gray-200 px-4 py-2">{cursos.asignatura}</td>
+                     
                     </tr>
                   ))}
-                  {/* Agrega más filas según sea necesario */}
                 </tbody>
               </table>
             </div>
