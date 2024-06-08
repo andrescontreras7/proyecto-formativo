@@ -68,8 +68,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
               <Route path="/Home" element={<Home />} />
               <Route path="/Listado-asignaturas" element={<ListadoAsigna />} />
               <Route path="/registrar-temas/:asigcod" element={<FormTemas />} />
-              <Route path="/grados/:id" element={<Grados />} />
-              <Route path="/Cursos/:id" element={<AsignaturasDetalles />}>
+              <Route path="/grados/:id/" element={<Grados />} />
+              <Route path="/Cursos/:id/:grupcod" element={<AsignaturasDetalles />}>
                 <Route path="informacion" element={<InformacionMateria />} />
                 <Route path="Tematicas" element={<Tematicas2 />} />
                 <Route path="Informacion" element={<InformacionMateria />} />

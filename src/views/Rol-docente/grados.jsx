@@ -43,7 +43,7 @@ function Grados() {
                        
                         {grupos.map((item) => (
                         
-                            <Link to={`/Cursos/${id}/informacion`} > 
+                            <Link to={`/Cursos/${id}/${item.grupo.grupcod}/informacion`} > 
                             <li className='bg-purple-500 bg-opacity-70 p-2 rounded-md w-20' key={item.grupo.grupcod}>
                                 <p>{item.grupo.grupsalon}</p>
                             </li>
