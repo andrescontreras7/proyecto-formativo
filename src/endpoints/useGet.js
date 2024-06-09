@@ -66,6 +66,7 @@ export const getDocente = async (auth) => {
 }
 
 export const getEstudiantesAsignatura = async (auth, id) => {
+  
   try {
     const response = await fetch(`http://localhost:3001/appi/asignaturas-estudiantes/${id}` , {
       method: 'GET',
@@ -208,7 +209,6 @@ export const getAsignaturas = async (auth) => {
 
 
 export const getAsistencias = async (auth, asigcod, grupcod) => {
-  console.log(asigcod, grupcod, auth)
 
   try {
     const response = await fetch(`http://localhost:3001/appi/asistenciaEstudiantes/getAll/${asigcod}/${grupcod}  ` , {
@@ -228,5 +228,28 @@ export const getAsistencias = async (auth, asigcod, grupcod) => {
     return data;
   } catch (error) {
     console.error('Error obteniendo las asistencias:', error);
+  }
+}
+
+export const getEstudiantesByGrupo = async (auth, id) => {
+  console.log(id)
+  try {
+    const response = await fetch(`http://localhost:3001/appi/asignaturas-estudiantes/All-estudiantes/${id}` , {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${auth.token}`
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error('Error en la solicitud');
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+
+    console.error('Error obteniendo los estudiantes :', error);
   }
 }

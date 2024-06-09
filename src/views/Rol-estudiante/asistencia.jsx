@@ -10,12 +10,19 @@ const Asistencia = () => {
   const [asistencias, setAsistencias] = useState([]);
   const { id, grupcod} = useParams();
   const {auth} = useContext(counterContext)
+  const [mensaje, setmensaje] = useState("");
 
 
   useEffect(() => {
     getAsistencias(auth, id, grupcod).then(res => {
 
-      setAsistencias(res.data);
+      if(res === undefined){
+        setmensaje("No hay asistencias registradas en este grupo")
+      }else{
+        setAsistencias(res.data);
+      }
+
+   
     });
 
 
@@ -29,6 +36,7 @@ const Asistencia = () => {
       <h1 className='text-center font-bold   text-[2rem] mb-8'>Asistencias del grupo  <p className='text-gray-600 text-start font-bold text-[1rem] mb-8' ><DateRangePickerHero/>  </p> </h1>
      
         <AsistenciasData asistencias={asistencias} />
+        {mensaje && <p className='text-center font-bold text-2xl text-gray-600'>{mensaje}</p>}
 
     </div>
   );
