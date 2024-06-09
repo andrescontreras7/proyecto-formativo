@@ -67,7 +67,7 @@ export const getDocente = async (auth) => {
 
 export const getEstudiantesAsignatura = async (auth, id) => {
   try {
-    const response = await fetch(`http://localhost:3001/appi/asignaturas-estudiantes/${id}` , {
+    const response = await fetch(`http://localhost:3001/appi/asignaturas-estudiantes/All-estudiantes/${id}` , {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
