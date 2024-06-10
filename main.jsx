@@ -54,6 +54,7 @@ import HomeD from "./src/views/Rol-docente/Home-docente.jsx";
 import Documentos from "./src/views/Rol-docente/documentos.jsx";
 import FormTemas from './src/views/Rol-docente/formTemas.jsx';
 import ListadoAsigna from './src/views/Rol-coordinador/listadoAsignaturas.jsx'
+import AsignaturasList from './src/views/Rol-docente/asignaturaenplataforma.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -111,6 +112,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
               <Route path="/registrarAlumno" element={<RegistrarAlumno />} />
               <Route path="/listadocentes" element={<Listadocentes />} />
               <Route path="/coordinador" element={<Coordinador />} />
+              <Route path="/AsignaturasList" element={<AsignaturasList />} />
             </Routes>
         </BrowserRouter>
       </NextUIProvider>

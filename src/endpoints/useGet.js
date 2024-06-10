@@ -6,7 +6,7 @@ export const fetchEstudiantes = async (auth) => {
     const response = await fetch('http://localhost:3001/appi/estudiante', {
       method: 'GET',
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json',     
         'Authorization': `Bearer ${auth.token}`
       }
     });
@@ -65,7 +65,7 @@ export const getDocente = async (auth) => {
   }
 }
 
-export const getEstudiantesAsignatura = async (auth, id) => {
+export const  getEstudiantesAsignatura = async (auth, id) => {
   try {
     const response = await fetch(`http://localhost:3001/appi/asignaturas-estudiantes/All-estudiantes/${id}` , {
       method: 'GET',
@@ -86,9 +86,30 @@ export const getEstudiantesAsignatura = async (auth, id) => {
     console.error('Error obteniendo las asignaturas:', error);
   }
 }
+export const getAllInformation = async (auth) => {
+  try {
+    const response = await fetch(`http://localhost:3001/appi/asignaturas-estudiantes` , {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${auth.token}`
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error('Error en la solicitud');
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+
+    console.error('Error obteniendo las asignaturas:', error);
+  }
+}
 export const getAreas = async (auth) => {
   try {
-    const response = await fetch(`http://localhost:3001/appi/area    ` , {
+    const response = await fetch(`http://localhost:3001/appi/area` , {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -186,7 +207,7 @@ export const getPorcentaje = async (auth, asigs) => {
 export const getAsignaturas = async (auth) => {
 
   try {
-    const response = await fetch(`http://localhost:3001/appi/asignaturas    ` , {
+    const response = await fetch(`http://localhost:3001/appi/asignaturas` , {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

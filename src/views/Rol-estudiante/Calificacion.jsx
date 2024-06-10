@@ -14,13 +14,8 @@ const Calificacions = () => {
   useEffect(() => {
     const fetchCursos = async () => {
       try {
-    
-  
         const data = await getEstudiantesAsignatura(auth, decodedToken.id);
         console.log(data);
-        
-  
-        
         if (Array.isArray(data.data)) {
             console.log("jhfgfhjkl")
         console.log(data.data)
@@ -35,7 +30,6 @@ const Calificacions = () => {
   
     fetchCursos();
   }, [auth]);
-  
 
   return (
     <Layout>

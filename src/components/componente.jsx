@@ -1,20 +1,20 @@
-
 import { Link } from 'react-router-dom';
 import React from 'react';
 
 export default function componente({titulo, descripcion,src, to }) {
   return (
-    <div>
-    <div to={to} className=' col-span-2 '  >
-        <button className=' col-span-full   p-4 duration-300 border hover:border-[#4A55A2] bg-[#6f99e1] bg-opacity-25  shadow-md hover:shadow-2xl   flex-col items-center   rounded-md h-[18rem] w-[19rem] '> 
-        <div className='overflow-hidden'>
-                  <img src={src} className=' size-1 w-[100%] rounded-md h-[6rem] ' alt=" " />
-            <h1 className='font-medium text-xl text-left  '>{titulo} </h1>
-        <p className='font-normal text-gray-700 text-left'> {descripcion} </p>        
+    <Link to={to} className="w-full sm:w-80 lg:w-80  p-2">
+    <div className="border hover:border-[#4A55A2] bg-[#6f99e1] bg-opacity-25  shadow-lg rounded-md overflow-hidden hover:shadow-xl transition-all duration-300  ">
+     <div className=''>
+      <img src={src} alt={titulo} className="w-full border   rounded-md h-64 object-cover" />
+     </div>
+      <div className="p-4">
+        <h2 className="font-bold text-2xl text-gray-700 uppercase mb-2">{titulo}s</h2>
+        <div className='h-12 text-nowrap'>
+          <p className="text-gray-700 font-semibold overflow-hidden text-ellipsis">{descripcion}</p>
+        </div>
       </div>
-    </button>
-</div>
-      
     </div>
-  );
+  </Link>
+ );
 }
