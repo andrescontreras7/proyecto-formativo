@@ -274,3 +274,76 @@ export const getEstudiantesByGrupo = async (auth, id) => {
     console.error('Error obteniendo los estudiantes :', error);
   }
 }
+
+
+export const getActividadesPorFuncionario = async (auth, id) => {
+  console.log(id)
+  try {
+    const response = await fetch(`http://localhost:3001/appi/evaluaciones_por_funcionario/${id}` , {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${auth.token}`
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error('Error en la solicitud');
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+
+    console.error('Error obteniendo las actividades :', error);
+  }
+}
+
+
+export const getEvaluacionesPorId = async (auth, id) => {
+  console.log(id)
+  try {
+    const response = await fetch(`http://localhost:3001/appi/evaluaciones/${id}` , {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${auth.token}`
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error('Error en la solicitud');
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+
+    console.error('Error obteniendo las actividades :', error);
+  }
+}
+
+
+
+export const getEvaluacionesEstudiantes = async (auth, id) => {
+  console.log(id)
+  try {
+    const response = await fetch(`http://localhost:3001/appi/evaluaciones_estudiantes/${id}` , {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${auth.token}`
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error('Error en la solicitud');
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+
+    console.error('Error obteniendo las actividades :', error);
+  }
+}

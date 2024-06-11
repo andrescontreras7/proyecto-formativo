@@ -6,7 +6,7 @@ import {counterContext} from '../../../context/CRMcontext';
 import { jwtDecode } from "jwt-decode";
 import { button } from '@nextui-org/react';
 import { Link } from 'react-router-dom';
-function Grados() {
+function ActividadesDetalle() {
   
     const { id } = useParams();
     const {auth} = useContext(counterContext);
@@ -62,4 +62,4 @@ function Grados() {
   );
 }
 
-export default Grados;
+export default ActividadesDetalle;
