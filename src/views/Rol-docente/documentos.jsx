@@ -52,8 +52,10 @@ function Documentos() {
   
       // Luego enviar este objeto a la función createAsignatura
       createAsignatura(auth, data).then((res) => {
+        const truee = res.data;
+
      
-        if (res.data.sucess) {
+        if (truee) {
           toast.success(res.message);
           reset();
         } else {

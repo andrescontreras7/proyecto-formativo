@@ -27,9 +27,10 @@ const Infomateria = () => {
 
 
   return (
-    <div className="h-[80vh] overflow-y-scroll">
-      <div className="grid grid-cols-1 grid-rows-6">
-        <div className="p-2 ml-4">
+    <div className="  ">
+      <div className="grid  grid-cols-1 grid-rows-1">
+      <div>
+      <div className="p-2 overflow-y-scroll ml-4">
           <h1 className="font-semibold text-gray-700 mb-2">
             Nombre de la materia
           </h1>
@@ -106,6 +107,7 @@ const Infomateria = () => {
             </button>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );

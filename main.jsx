@@ -53,6 +53,7 @@ import HomeD from "./src/views/Rol-docente/Home-docente.jsx";
 import Documentos from "./src/views/Rol-docente/documentos.jsx";
 import FormTemas from './src/views/Rol-docente/formTemas.jsx';
 import ListadoAsigna from './src/views/Rol-coordinador/listadoAsignaturas.jsx'
+import ExcusaForm from './src/views/Rol-docente/excusaForm.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -63,6 +64,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <Route path="/" element={<Formulario />} />
    
             <Route path="/Registrar-asignatura" element={<Documentos/>} />
+            <Route path="/excusaForm" element={<ExcusaForm/>} />
           </Routes>
             <Routes>
               <Route path="/Home" element={<Home />} />

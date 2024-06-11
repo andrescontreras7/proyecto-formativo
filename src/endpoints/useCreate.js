@@ -82,3 +82,55 @@ export const createTemas = async (auth, data) => {
         return { message: "Error al crear la Tematica", error: error.message };
     }
 };
+
+
+export const crearAsistencia = async (auth, datas) => {
+    console.log(datas);
+    try {
+      const response = await fetch(`http://localhost:3001/appi/asistenciaEstudiantes/create`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${auth.token}`
+        },
+        body: JSON.stringify( datas )
+      });
+  
+      if (!response.ok) {
+        throw new Error('Error en la solicitud');
+      }
+  
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error('Error registrando la asistencia:', error);
+    }
+  };
+  
+  export const createExcusas = async (auth, data) => {
+  
+   
+    try {
+        const response = await fetch('http://localhost:3001/appi/excusas/create', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${auth.token}`
+            },
+            body: JSON.stringify(data)
+        });
+
+        const responseData = await response.json();
+
+        if (response.ok) {
+            return { sucess:true, message: "Excusa creada con éxito", data: responseData };
+        } else if (response.status === 409) {
+            return { message: "Esta Excusa ya existe", data: responseData };
+        } else {
+            return { message: "Error al crear la excusa", data: responseData };
+        }
+    } catch (error) {
+        console.error('Error creando la excusa:', error);
+        return { message: "Error al crear la excusa", error: error.message };
+    }
+};

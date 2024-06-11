@@ -231,10 +231,13 @@ export const getAsistencias = async (auth, asigcod, grupcod) => {
   }
 }
 
-export const getEstudiantesByGrupo = async (auth, id) => {
-  console.log(id)
+
+
+
+export const getEstudiantesByGrupo = async (auth, id_fun, asigcod, grupoFK) => {
+
   try {
-    const response = await fetch(`http://localhost:3001/appi/asignaturas-estudiantes/All-estudiantes/${id}` , {
+    const response = await fetch(`http://localhost:3001/appi/asignaturas-docente/grupo/${id_fun}/${asigcod}/${grupoFK}` , {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -247,9 +250,35 @@ export const getEstudiantesByGrupo = async (auth, id) => {
     }
 
     const data = await response.json();
-    return data;
+    return data.data;
   } catch (error) {
 
     console.error('Error obteniendo los estudiantes :', error);
   }
 }
+
+export const getTematicasGrupo = async (auth, asigcod,id_fun, grupoFK) => {
+
+  try {
+    const response = await fetch(`http://localhost:3001/appi/Tematicas-grupos/${asigcod}/${id_fun}/${grupoFK}` , {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${auth.token}`
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error('Error en la solicitud');
+    }
+
+    const data = await response.json();
+    return data.data;
+  } catch (error) {
+
+    console.error('Error obteniendo las tematicas :', error);
+  }
+}
+
+
+

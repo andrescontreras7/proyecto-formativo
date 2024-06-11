@@ -20,7 +20,12 @@ export default function AsignaturaComponent({ objeto, id }) {
     setAll(true);
   };
 
-  const hanledEdits = () => {};
+  const hanledEdits = () => {
+
+
+
+
+  };
 
   const handleDelete = () => {
     if (isConfirming) {
@@ -36,7 +41,7 @@ export default function AsignaturaComponent({ objeto, id }) {
           });
         })
         .catch((error) => {
-          // Muestra el mensaje de error en un toast
+
           toast.error(error.message || "Ocurrió un error al cambiar el estado", {
             duration: 2000,
             position: "top-right",
@@ -60,7 +65,7 @@ export default function AsignaturaComponent({ objeto, id }) {
 
   const handleModalClose = () => {
     setAll(false); // Restablece el estado de all a false cuando se cierra el modal
-    onClose(); // Cierra el modal
+    onClose(); 
   };
 
   return (
@@ -81,7 +86,8 @@ export default function AsignaturaComponent({ objeto, id }) {
                 <div>
                   <ul>
                     <li>{objeto.asignombre}</li>
-                    {/* Mostrar más detalles aquí */}
+                    <li>{objeto.asigdescripcion} </li>
+                   
                   </ul>
                 </div>
               ) : (
