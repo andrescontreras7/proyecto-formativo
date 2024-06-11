@@ -4,6 +4,7 @@ import {deleteAsignatura } from '../../endpoints/useDelete';
 import { AiOutlineCheckCircle, AiOutlineCloseCircle } from 'react-icons/ai';
 import {  FiClock } from 'react-icons/fi';
 import ModalEstudiante from '../../components/modal_estudiantes';
+import Modal from '../../components/modal';
 
 import MenuModal from '../../components/menusAsignaturas';
 
@@ -105,7 +106,7 @@ export const AsistenciasData = ({ asistencias }) => {
       name: 'Acciones',
       cell: row => (
         <>
-          <ModalEstudiante objeto={row} />
+          <ModalEstudiante id={row.estudiante.estudid} objeto={row} />
         </>
       ),
     },
