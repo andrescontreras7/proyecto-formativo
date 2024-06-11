@@ -9,14 +9,12 @@ import { getAsiganturaDocente } from "../../endpoints/useGet";
 const Cursos = () => {
   const { auth } = useContext(counterContext);
   const decodedToken = jwtDecode(auth.token);
+ 
   const [dat, setDat] = useState([]);
 
   useEffect(() => {
     getAsiganturaDocente(auth, decodedToken.id).then((data) => {
       setDat(data.data);
-
-
-     
     });
   }, [auth]);
 

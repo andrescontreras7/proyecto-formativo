@@ -16,8 +16,7 @@ export default function App({objeto, id}) {
    
     console.log(`eliminar estudiante con ID: ${id}`);
   }
-  console.log(objeto)
-  
+
 
 
   return (
