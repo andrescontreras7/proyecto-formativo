@@ -83,28 +83,28 @@ export const createTemas = async (auth, data) => {
     }
 };
 
-// const createAreas() = async (auth, data) => {
-//     try {
-//         const response = await fetch('http://localhost:3001/appi/Tematicas/create', {
-//             method: 'POST',
-//             headers: {
-//                 'Content-Type': 'application/json',
-//                 'Authorization': `Bearer ${auth.token}`
-//             },
-//             body: JSON.stringify(data)
-//         });
+export const createAreas = async (auth, data) => {
+    try {
+        const response = await fetch('http://localhost:3001/appi/area', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${auth.token}`
+            },
+            body: JSON.stringify(data)
+        });
 
-//         const responseData = await response.json();
+        const responseData = await response.json();
 
-//         if (response.ok) {
-//             return { message: "Tematicas creada con éxito", data: responseData };
-//         } else if (response.status === 409) {
-//             return { message: "Esta  ya existe", data: responseData };
-//         } else {
-//             return { message: "Error al crear la Tematica", data: responseData };
-//         }
-//     } catch (error) {
-//         console.error('Error creando la Tematica:', error);
-//         return { message: "Error al crear la Tematica", error: error.message };
-//     }
-// };
+        if (response.ok) {
+            return { message: "Tematicas creada con éxito", data: responseData };
+        } else if (response.status === 409) {
+            return { message: "Esta  ya existe", data: responseData };
+        } else {
+            return { message: "Error al crear la Area", data: responseData };
+        }
+    } catch (error) {
+        console.error('Error creando la Tematica:', error);
+        return { message: "Error al crear la Area", error: error.message };
+    }
+};

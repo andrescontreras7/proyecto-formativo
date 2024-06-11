@@ -5,7 +5,7 @@ import { BsFillPersonFill } from 'react-icons/bs';
 
 const Informacion = () => {
   
-  const usuario = "Julian Londoño";
+  const usuario = "Julian Londoñopppppppppppppp";
 
   return (
     <Layout titulo={"Informacion del perfil"}>

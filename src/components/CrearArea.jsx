@@ -6,25 +6,26 @@ import withReactContent from "sweetalert2-react-content";
 
 const MySwal = withReactContent(Swal);
 
-const EditarArea = ({ isOpen, onClose, areaId, nombreArea, onEditar }) => {
-  const [nuevoNombreArea, setNuevoNombreArea] = useState(nombreArea);
+const CrearArea = ({ isOpen, onClose ,onCrear }) => {
+  const [nuevoNombreArea, setNuevoNombreArea] = useState();
+  const [nuevocodigoArea, setNuevocodigoArea] = useState();
 
-  const handleEditar = async () => {
+  const handleCrear = async () => {
     try {
-      await onEditar(areaId, nuevoNombreArea);
+      await onCrear(nuevocodigoArea, nuevoNombreArea);
       onClose();
       MySwal.fire({
         icon: 'success',
         title: '¡Éxito!',
-        text: 'El área se ha actualizado correctamente.'
+        text: 'El área se ha creado correctamente.'
       });
     } catch (error) {
       MySwal.fire({
         icon: 'error',
         title: 'Oops...',
-        text: 'Hubo un error al actualizar el área. Por favor, inténtalo de nuevo.'
+        text: 'Hubo un error al creado el área. Por favor, inténtalo de nuevo.'
       });
-      console.error('Error al actualizar el área:', error);
+      console.error('Error al crear el área:', error);
     }
   };
 
@@ -33,14 +34,17 @@ const EditarArea = ({ isOpen, onClose, areaId, nombreArea, onEditar }) => {
       <ModalContent>
         <>
           <ModalHeader className="flex flex-col gap-1 uppercase text-indigo-900 border-b-1">
-            Editar Área
+            Crear Área
           </ModalHeader>
           <ModalBody>
+            <label htmlFor="nuevocodigoArea" className="block mb-2">Nuevo codigo del área:</label>
+            <input type="text" id="nuevocodigoArea" value={nuevocodigoArea} onChange={(e) => setNuevocodigoArea(e.target.value)} className="w-full border border-gray-300 rounded-md px-3 py-2" />
+
             <label htmlFor="nuevoNombreArea" className="block mb-2">Nuevo nombre del área:</label>
             <input type="text" id="nuevoNombreArea" value={nuevoNombreArea} onChange={(e) => setNuevoNombreArea(e.target.value)} className="w-full border border-gray-300 rounded-md px-3 py-2" />
           </ModalBody>
           <ModalFooter>
-            <Button color="primary" variant="ghost" onPress={handleEditar}>Guardar cambios</Button>
+            <Button color="primary" variant="ghost" onPress={handleCrear}>Guardar cambios</Button>
             <Button color="secondary" variant="ghost" onPress={onClose}>Cancelar</Button>
           </ModalFooter>
         </>
@@ -49,4 +53,4 @@ const EditarArea = ({ isOpen, onClose, areaId, nombreArea, onEditar }) => {
   );
 };
 
-export default EditarArea;
+export default CrearArea;
