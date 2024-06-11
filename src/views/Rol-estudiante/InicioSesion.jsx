@@ -25,6 +25,7 @@ function Formulario() {
     const respuesta = await s_axios.post('/login', credenciales);
     const {token} = respuesta.data.token
     const rol = respuesta.data.token.rol
+    
     const name = respuesta.data.token.nombre
 
    

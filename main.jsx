@@ -42,10 +42,11 @@ import Statecom from "./src/components/Statecompo.jsx";
 import RegistrarAlumno from './src/views/Rol-coordinador/registrarAlumno.jsx';
 import Tematicas2 from './src/views/Rol-estudiante/tematicas2.jsx';
 import Infomateria from './src/views/Rol-estudiante/infomateria.jsx';
+import Calificacions from './src/views/Rol-estudiante/Calificacion.jsx';
 import {NextUIProvider} from '@nextui-org/react';
 
 import RegistroAsignatura from './src/views/Rol-coordinador/Registrar_asignatura.jsx';
-import ObsEstudiante from './src/views/Rol-coordinador/ObsEstudiante.jsx';
+import ObserAspectos from './src/views/Rol-coordinador/ObsEstudiante.jsx';
 import Listadocentes from './src/views/Rol-coordinador/Listadocentes.jsx';
 import ListadoEstudiantes from "./src/views/Rol-docente/listaEstudiantes.jsx";
 import Grados from './src/views/Rol-docente/grados.jsx';
@@ -53,6 +54,7 @@ import HomeD from "./src/views/Rol-docente/Home-docente.jsx";
 import Documentos from "./src/views/Rol-docente/documentos.jsx";
 import FormTemas from './src/views/Rol-docente/formTemas.jsx';
 import ListadoAsigna from './src/views/Rol-coordinador/listadoAsignaturas.jsx'
+import AsignaturasList from './src/views/Rol-docente/asignaturaenplataforma.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -85,6 +87,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
               <Route path="/Notas" element={<Notas />} />
               <Route path="/perfil" element={<Perfil />} />
               <Route path="/Informacion" element={<Informacion />} />
+              <Route path="/Calificacions" element={<Calificacions />} />
               <Route path="/Recuperar" element={<Recuperar />} />
               <Route path="/Panel" element={<Panel />} />
               <Route path="/AsistenciasEstudiantes" element={<AsistenciasD />} />
@@ -109,6 +112,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
               <Route path="/registrarAlumno" element={<RegistrarAlumno />} />
               <Route path="/listadocentes" element={<Listadocentes />} />
               <Route path="/coordinador" element={<Coordinador />} />
+              <Route path="/AsignaturasList" element={<AsignaturasList />} />
             </Routes>
         </BrowserRouter>
       </NextUIProvider>
