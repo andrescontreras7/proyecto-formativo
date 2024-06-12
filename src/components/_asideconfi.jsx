@@ -10,7 +10,7 @@ const Asidecon = () => {
   return (
     <>
       <div className='flex'>
-        <div className={`flex flex-col w-[233px] lg:inline-block h-screen overflow-y-scroll bg-gradient-to-t from-indigo-700 via-indigo-500 to-indigo-400 ${window.innerWidth < 768 ? 'lg:hidden' : ''}`}>
+        <div className={`flex flex-col w-[233px] lg:inline-block h-screen overflow-y-scroll bg-[#626cb8] ${window.innerWidth < 768 ? 'lg:hidden' : ''}`}>
           <Link className="justify-center items-center mb-12 mt-4 hidden lg:flex" to={'/Home'}>
             <div className="bg-indigo-600 p-4 rounded-full">
               <AiOutlineSetting className='text-white text-9xl lg:text-9xl' />

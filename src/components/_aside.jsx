@@ -151,6 +151,10 @@ const Aside = ({rol}) => {
       <li className="hover:scale-[1.09] transition-[2s] items-center gap-2 inline-flex">
       <BsQuote className='text-white  text-3xl lg:text-lg'/><Link to={'/Himno'} draggable="false" className="text-center text-zinc-100 text-base font-semibold hidden min-[1140px]:inline-block" >Himno intitucional</Link>
       </li>
+      <li className="hover:scale-[1.09] transition-[2s] items-center gap-2 inline-flex">
+          <LuCalendar className='text-white  text-3xl lg:text-lg'/><Link to={'/Horario'} draggable="false" className="text-center text-zinc-100 text-base font-semibold hidden min-[1140px]:inline-block" >Horario de clases</Link>
+      </li>
+      
       
       <li className="hover:scale-[1.09] transition-[2s] items-center gap-2 inline-flex">
       <BsGear className='text-white text-3xl lg:text-lg' /> <a href="/Recuperar " className="text-center text-zinc-100 text-base font-semibold  hidden min-[1140px]:inline-block" >Configuracion </a>
