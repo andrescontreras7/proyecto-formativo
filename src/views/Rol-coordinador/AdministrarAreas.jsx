@@ -194,7 +194,7 @@ const Calificaciones = () => {
   return (
     <Layout>
       <div className="w-full bg-[#A0BFE0] flex h-screen">
-        <div className="bg-white justify-right shadow-[0_8px_20px_20px_rgba(0,0,0,0.08)] rounded-xl m-auto w-[80%] flex-col overflow-auto h-[80%]">
+        <div className="bg-white justify-right shadow-[0_8px_20px_20px_rgba(0,0,0,0.08)] rounded-lg m-auto w-[80%] flex-col overflow-auto h-[80%]">
           <div className="mb-2 text-right border-[1px] border-gray-200 rounded-xl p-4 flex justify-between">
             <div className="flex gap-2">
               <input
@@ -214,19 +214,19 @@ const Calificaciones = () => {
             </div>
             <button
               onClick={onCrear}
-              className="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 items-right"
+              className="focus:outline-none text-white bg-indigo-700 hover:bg-indigo-800 focus:ring-4 focus:ring-indigo-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-indigo-600 dark:hover:bg-idigo-700 dark:focus:ring-indigo-800 items-right"
             >
               + Nuevo
             </button>
           </div>
-          <div className="mb-6 border-[1px] border-gray-200 rounded-xl p-4 overflow-auto max-h-[60vh]">
+          <div className="mb-6 border-[1px] border-gray-200 rounded-xl p-4 overflow-auto max-h-[60vh] rounded-lg ">
             <h3 className="font-bold mb-2">Áreas</h3>
             <table className="w-full text-left table-auto border-collapse border border-gray-200">
               <thead>
                 <tr>
                   <th className="border border-gray-200 px-4 py-2">Nombre del área</th>
                   <th className="border border-gray-200 px-4 py-2">Código del área</th>
-                  <th className="border border-gray-200 px-4 py-2">Estado</th>
+                 
                   <th className="border border-gray-200 px-4 py-2">Acción</th>
                 </tr>
               </thead>
@@ -236,7 +236,7 @@ const Calificaciones = () => {
                     <tr key={index}>
                       <td className="border border-gray-200 px-4 py-2">{curso.are_nombre}</td>
                       <td className="border border-gray-200 px-4 py-2">{curso.cod_area}</td>
-                      <td className="border border-gray-200 px-4 py-2">{curso.activo}</td>
+                     
                       <td className="border border-gray-200 px-4 py-2 gap-2 flex">
                         <ModalComponent
                           objeto={{ func: "Editar Área" }}
