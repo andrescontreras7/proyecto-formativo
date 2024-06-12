@@ -88,6 +88,7 @@ export const  getEstudiantesAsignatura = async (auth, id) => {
   }
 }
 
+
 export const getEstudiantesAsignaturas = async (auth, id) => {
   
 
@@ -400,6 +401,74 @@ export const getEvaluacionesEstudiantes = async (auth, id) => {
   console.log(id)
   try {
     const response = await fetch(`http://localhost:3001/appi/evaluaciones_estudiantes/${id}` , {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${auth.token}`
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error('Error en la solicitud');
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+
+    console.error('Error obteniendo las actividades :', error);
+  }
+}
+
+export const getAllInformation = async (auth) => {
+  
+
+  try {
+    const response = await fetch(`http://localhost:3001/appi/asignaturas-estudiantes` , {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${auth.token}`
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error('Error en la solicitud');
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+
+    console.error('Error obteniendo las asignaturas:', error);
+  }
+}
+
+export const getActividadesPorFuncionario = async (auth, id) => {
+  console.log(id)
+  try {
+    const response = await fetch(`http://localhost:3001/appi/evaluaciones_por_funcionario/${id}` , {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${auth.token}`
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error('Error en la solicitud');
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+
+    console.error('Error obteniendo las actividades :', error);
+  }
+}
+export const getActividadesDelEstudiante = async (auth, idasig,idgrupo) => {
+  try {
+    const response = await fetch(`http://localhost:3001/appi/evaluaciones_del_estudiante/${idasig}/${idgrupo}` , {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
