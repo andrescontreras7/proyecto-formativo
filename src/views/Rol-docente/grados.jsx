@@ -6,7 +6,7 @@ import {counterContext} from '../../../context/CRMcontext';
 import { jwtDecode } from "jwt-decode";
 import { button } from '@nextui-org/react';
 import { Link } from 'react-router-dom';
-function ActividadesDetalle() {
+function Grados() {
   
     const { id } = useParams();
     const {auth} = useContext(counterContext);
@@ -43,7 +43,7 @@ function ActividadesDetalle() {
                        
                         {grupos.map((item) => (
                         
-                            <Link to={`/Cursos/${id}/${item.grupo.grupcod}/informacion`} > 
+                            <Link to={`/Cursos/${id}/${item.grupo.grupcod}/Actividades`} > 
                             <li className='bg-purple-500 bg-opacity-70 p-2 rounded-md w-20' key={item.grupo.grupcod}>
                                 <p>{item.grupo.grupsalon}</p>
                             </li>
@@ -62,4 +62,4 @@ function ActividadesDetalle() {
   );
 }
 
-export default ActividadesDetalle;
+export default Grados;

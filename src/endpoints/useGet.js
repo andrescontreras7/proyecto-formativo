@@ -252,6 +252,30 @@ export const getAsistencias = async (auth, asigcod, grupcod) => {
   }
 }
 
+
+export const getEstudiante = async (auth, id) => {
+  console.log(id)
+  try {
+    const response = await fetch(`http://localhost:3001/appi/estudiante/${id}` , {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${auth.token}`
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error('Error en la solicitud');
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+
+    console.error('Error obteniendo los estudiantes :', error);
+  }
+}
+
 export const getEstudiantesByGrupo = async (auth, id) => {
   console.log(id)
   try {
@@ -299,6 +323,51 @@ export const getActividadesPorFuncionario = async (auth, id) => {
   }
 }
 
+export const getActividadesDelEstudiante = async (auth, idasig,idgrupo) => {
+  try {
+    const response = await fetch(`http://localhost:3001/appi/evaluaciones_del_estudiante/${idasig}/${idgrupo}` , {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${auth.token}`
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error('Error en la solicitud');
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+
+    console.error('Error obteniendo las actividades :', error);
+  }
+}
+
+
+export const getEvaluacionesPorEstudiante = async (auth,id_estudiante,idasig, idgrupo) => {
+  try {
+    const response = await fetch(`http://localhost:3001/appi/tarea-send/${id_estudiante}/${idasig}/${idgrupo}` , {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${auth.token}`
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error('Error en la solicitud');
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+
+    console.error('Error obteniendo las actividades :', error);
+  }
+}
+
 
 export const getEvaluacionesPorId = async (auth, id) => {
   console.log(id)
@@ -323,6 +392,28 @@ export const getEvaluacionesPorId = async (auth, id) => {
   }
 }
 
+
+export const getEvaluacionesTipos = async (auth) => {
+  try {
+    const response = await fetch(`http://localhost:3001/appi/evaluaciones_tipos` , {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${auth.token}`
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error('Error en la solicitud');
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+
+    console.error('Error obteniendo las actividades :', error);
+  }
+}
 
 
 export const getEvaluacionesEstudiantes = async (auth, id) => {

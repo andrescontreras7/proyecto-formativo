@@ -1,4 +1,4 @@
-import React, { useState,useCallback } from "react";
+import React, { useState,useCallback,useContext,useEffect } from "react";
 import { Modal, ModalContent, ModalHeader, ModalFooter, Button, ModalBody } from "@nextui-org/react";
 import { BiDotsVerticalRounded } from "react-icons/bi";
 import Swal from "sweetalert2";
@@ -6,7 +6,8 @@ import { BsFillFileEarmarkImageFill } from "react-icons/bs"
 import { useDropzone } from 'react-dropzone';
 import withReactContent from "sweetalert2-react-content";
 import axios from 'axios';
-
+import { counterContext } from "../../context/CRMcontext";
+import { getEvaluacionesTipos } from '../endpoints/useGet'; // Ensure this is the correct path
 
 const MySwal = withReactContent(Swal);
 
@@ -19,6 +20,17 @@ const CrearActividad = ({ isOpen, onClose, onCrear }) => {
   const [GrupoActividad, setGrupoActividad] = useState("");
   const [AsignaturaActividad, setAsignaturaActividad] = useState("");
   const [TipoActividad, setTipoActividad] = useState("");
+  const [listTipoActividad, setListTipoActividad] = useState([]);
+
+
+  const { auth } = useContext(counterContext);
+  useEffect(() => {
+    getEvaluacionesTipos(auth).then(res => {
+      setListTipoActividad(res);
+      console.log(res)
+    });
+
+  }, [auth]);
 
   const [errors, setErrors] = useState({});
 
@@ -48,12 +60,6 @@ const CrearActividad = ({ isOpen, onClose, onCrear }) => {
     }
     if (!FechaEntrega) {
       errors.fecha = "la fecha de la actividad es obligatorio.";
-    }
-    if (!GrupoActividad) {
-      errors.grupo = "la grupo de la actividad es obligatorio.";
-    }
-    if (!AsignaturaActividad) {
-      errors.asignatura = "la asignatura de la actividad es obligatorio.";
     }
     if (!TipoActividad) {
       errors.tipo = "la tipo de la actividad es obligatorio.";
@@ -99,10 +105,13 @@ const CrearActividad = ({ isOpen, onClose, onCrear }) => {
       console.error('Error al crear la Actividad:', error);
     }
   };
+  const handleChangeTipoActividad = (e) => {
+    setTipoActividad(e.target.value);
+  };
 
   return (
     <Modal backdrop="blur" className="" isOpen={isOpen} onClose={onClose}>
-      <ModalContent>
+      <ModalContent className="overflow-y-scroll">
         <>
           <ModalHeader className="flex flex-col gap-1 uppercase text-indigo-900 border-b-1">
             Crear Actividad
@@ -139,14 +148,7 @@ const CrearActividad = ({ isOpen, onClose, onCrear }) => {
             />
             {errors.titulo && <p className="text-red-500 text-sm">{errors.titulo}</p>}
 
-            <div {...getRootProps()} style={{ border: '2px dashed #cccccc', padding: '10px', textAlign: 'center', width:"600px" }}>
-            <input {...getInputProps()} />
-            {
-              isDragActive ?
-                <p>Seleciona la imagen  </p> :
-                <p className='text-center flex justify-center flex-col items-center p-2 gap-2'> Arrastre la imagen aca  <BsFillFileEarmarkImageFill className='text-center size-48 text-gray-600 opacity-50' />Subir imagen </p>
-            }
-          </div>
+           
             
             <label htmlFor="FechaEntrega" className="block mb-2">Fecha de Entrega:</label>
             <input
@@ -158,38 +160,27 @@ const CrearActividad = ({ isOpen, onClose, onCrear }) => {
             />
             {errors.fecha && <p className="text-red-500 text-sm">{errors.fecha}</p>}
 
-            
-            <label htmlFor="GrupoActividad" className="block mb-2">Grupo:</label>
-            <input
-              type="text"
-              id="GrupoActividad"
-              value={GrupoActividad}
-              onChange={(e) => setGrupoActividad(e.target.value)}
-              className="w-full border border-gray-300 rounded-md px-3 py-2"
-            />
-            {errors.grupo && <p className="text-red-500 text-sm">{errors.grupo}</p>}
-
-            
-            <label htmlFor="AsignaturaActividad" className="block mb-2">Asignatura:</label>
-            <input
-              type="text"
-              id="AsignaturaActividad"
-              value={AsignaturaActividad}
-              onChange={(e) => setAsignaturaActividad(e.target.value)}
-              className="w-full border border-gray-300 rounded-md px-3 py-2"
-            />
-            {errors.asignatura && <p className="text-red-500 text-sm">{errors.asignatura}</p>}
-
-            
-            <label htmlFor="TipoActividad" className="block mb-2">Tipo de la Actividad:</label>
-            <input
-              type="text"
+            <select
               id="TipoActividad"
               value={TipoActividad}
-              onChange={(e) => setTipoActividad(e.target.value)}
+              onChange={handleChangeTipoActividad}
               className="w-full border border-gray-300 rounded-md px-3 py-2"
-            />
+            >
+              <option value="">Selecciona una opción</option>
+              {listTipoActividad.map((opcion) => (
+                <option key={opcion.codigo} value={opcion.codigo}>{opcion.nombre_tipo_evaluacion}</option>
+              ))}
+            </select>
             {errors.tipo && <p className="text-red-500 text-sm">{errors.tipo}</p>}
+            <div {...getRootProps()} style={{ border: '2px dashed #cccccc', padding: '10px', textAlign: 'center', width:"400px" }}>
+            <input {...getInputProps()} />
+            {
+              isDragActive ?
+                <p>Seleciona la imagen  </p> :
+                <p className='text-center flex justify-center flex-col items-center p-2 gap-2'> Arrastre la imagen aca  <BsFillFileEarmarkImageFill 
+                className='text-center size-6 text-gray-600 opacity-50' />Subir imagen </p>
+            }
+          </div>
           </ModalBody>
           <ModalFooter>
             <Button color="primary" variant="ghost" onPress={handleCrear}>Guardar cambios</Button>

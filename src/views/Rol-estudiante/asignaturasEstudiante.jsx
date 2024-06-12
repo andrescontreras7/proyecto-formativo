@@ -4,14 +4,15 @@ import Componente from "../../components/componente"; // Import the new componen
 import { HiArrowSmallLeft } from "react-icons/hi2";
 import Layout from '../../components/layaout';
 import { BiSearch } from "react-icons/bi";
-import { getEstudiantesAsignatura } from '../../endpoints/useGet'; // Ensure this is the correct path
+import { getEstudiantesAsignatura,getEstudiante } from '../../endpoints/useGet'; // Ensure this is the correct path
 import { counterContext } from "../../../context/CRMcontext";
 import Swal from 'sweetalert2';
 import { jwtDecode } from "jwt-decode";
 import Input from '../../components/input';
 
-const Asignaturas = () => {
+const AsignaturasEstudiante = () => {
   const [asignatura, setAsignatura] = useState([]);
+  const [estudiante, setEstudiante] = useState([]);
   const { auth } = useContext(counterContext);
   const decodedToken = jwtDecode(auth.token);
 
@@ -24,6 +25,11 @@ const Asignaturas = () => {
         } else {
           console.error('Los datos de las asignaturas no son un array:', data);
         }
+
+        const dataEstudiante = await getEstudiante(auth, decodedToken.id);
+        setEstudiante(dataEstudiante.data);
+        console.log(dataEstudiante);
+
       } catch (error) {
         if (error && error.response && error.response.status === 403) {
           Swal.fire({
@@ -60,7 +66,7 @@ const Asignaturas = () => {
                   descripcion={asignatura.descripcion}
 
                   src={asignatura.url ? asignatura.url : 'https://image.shutterstock.com/shutterstock/photos/1976693516/display_1500/stock-vector-no-image-available-sign-isolated-on-white-background-vector-illustration-1976693516.jpg'}
-                  to={`/Cursos/${asignatura.asignaturaId}/76868`}
+                  to={`/AsignaturasDetallesEstudiante/${asignatura.asignaturaId}/${estudiante.grupoFK}`}
                 />
               ))}
             </div>
@@ -71,4 +77,4 @@ const Asignaturas = () => {
   );
 }
 
-export default Asignaturas;
+export default AsignaturasEstudiante;
