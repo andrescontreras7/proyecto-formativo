@@ -5,16 +5,19 @@ import { AiOutlineCheckCircle, AiOutlineCloseCircle } from 'react-icons/ai';
 import {  FiClock } from 'react-icons/fi';
 import ModalEstudiante from '../../components/modal_estudiantes';
 import Modal from '../../components/modal';
-
+import Opc from "../../components/utils/modalAsistencias";
 import MenuModal from '../../components/menusAsignaturas';
 
- const EstudiantesDataTable = ({ estudiantes }) => {
+ const EstudiantesDataTable = ({ estudiantes, asig, grupoId }) => {
+  
+
   const columns = [
     { name: 'CEDULA', sortable: true, selector: (row) => row.estudid },
     { name: 'NOMBRE', sortable: true, selector: (row) => row.estudnombre },
     { name: 'APELLIDO ESTUDIANTE ', sortable: true, selector: (row) => row.estudapellido },
     { name: 'CORREO', sortable: true,selector: (row) => row.estudcorreo },
     { name: 'TELEFONO ESTUDIANTE', sortable: true,selector: (row) => row.estudtelefono },
+    { name: 'ASISTENCIAS', sortable: true, selector: (row) =>  <button type="button" className="  font-bold  rounded">  <Opc objeto={row} id={row.estudid} asig={asig} grupo={grupoId} />   </button>},
     {name: 'ESTADO', sortable: true, selector: (row) =>  <div className= {row.activo ? 'bg-green-400 p-2 rounded-xl text-white font-semibold' : 'bg-red-400' + ' bg-opacity-100 p-2 rounded-xl text-white font-semibold'}>    { row.activo !== null && row.activo !== undefined ? row.activo ? "Activo" : "Inactivo" : ""}  </div> },
     { name: 'ACCIONES', sortable: true, selector: (row) =>  <button type="button" className="  font-bold  rounded">  <Modal objeto={row} id={row.estudid} />   </button>},
   ];
@@ -23,7 +26,7 @@ import MenuModal from '../../components/menusAsignaturas';
     <DataTable
       title="Listado  Estudiantes"
       columns={columns}
-      data={estudiantes.estudiantes}
+      data={estudiantes[0]?.grupo.estudiantes}
     />
   );
 };

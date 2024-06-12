@@ -87,7 +87,10 @@ export const  getEstudiantesAsignatura = async (auth, id) => {
     console.error('Error obteniendo las asignaturas:', error);
   }
 }
-export const getAllInformation = async (auth) => {
+
+export const getEstudiantesAsignaturas = async (auth, id) => {
+  
+
   try {
     const response = await fetch(`http://localhost:3001/appi/asignaturas-estudiantes` , {
       method: 'GET',
@@ -276,10 +279,10 @@ export const getEstudiante = async (auth, id) => {
   }
 }
 
-export const getEstudiantesByGrupo = async (auth, id) => {
-  console.log(id)
+export const getEstudiantesByGrupo = async (auth, id_fun, asigcod, grupoFK) => {
+
   try {
-    const response = await fetch(`http://localhost:3001/appi/asignaturas-estudiantes/All-estudiantes/${id}` , {
+    const response = await fetch(`http://localhost:3001/appi/asignaturas-docente/grupo/${id_fun}/${asigcod}/${grupoFK}` , {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -292,18 +295,17 @@ export const getEstudiantesByGrupo = async (auth, id) => {
     }
 
     const data = await response.json();
-    return data;
+    return data.data;
   } catch (error) {
 
     console.error('Error obteniendo los estudiantes :', error);
   }
 }
 
+export const getTematicasGrupo = async (auth, asigcod,id_fun, grupoFK) => {
 
-export const getActividadesPorFuncionario = async (auth, id) => {
-  console.log(id)
   try {
-    const response = await fetch(`http://localhost:3001/appi/evaluaciones_por_funcionario/${id}` , {
+    const response = await fetch(`http://localhost:3001/appi/Tematicas-grupos/${asigcod}/${id_fun}/${grupoFK}` , {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -316,32 +318,10 @@ export const getActividadesPorFuncionario = async (auth, id) => {
     }
 
     const data = await response.json();
-    return data;
+    return data.data;
   } catch (error) {
 
-    console.error('Error obteniendo las actividades :', error);
-  }
-}
-
-export const getActividadesDelEstudiante = async (auth, idasig,idgrupo) => {
-  try {
-    const response = await fetch(`http://localhost:3001/appi/evaluaciones_del_estudiante/${idasig}/${idgrupo}` , {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${auth.token}`
-      }
-    });
-
-    if (!response.ok) {
-      throw new Error('Error en la solicitud');
-    }
-
-    const data = await response.json();
-    return data;
-  } catch (error) {
-
-    console.error('Error obteniendo las actividades :', error);
+    console.error('Error obteniendo las tematicas :', error);
   }
 }
 

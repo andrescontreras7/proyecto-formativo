@@ -44,7 +44,6 @@ import Tematicas2 from './src/views/Rol-estudiante/tematicas2.jsx';
 import Infomateria from './src/views/Rol-estudiante/infomateria.jsx';
 import Calificacions from './src/views/Rol-estudiante/Calificacion.jsx';
 import {NextUIProvider} from '@nextui-org/react';
-
 import RegistroAsignatura from './src/views/Rol-coordinador/Registrar_asignatura.jsx';
 import ObserAspectos from './src/views/Rol-coordinador/ObsEstudiante.jsx';
 import Listadocentes from './src/views/Rol-coordinador/Listadocentes.jsx';
@@ -62,6 +61,8 @@ import AsignaturasEstudiante from './src/views/Rol-estudiante/AsignaturasEstudia
 import CalificacionesEstudiante from './src/views/Rol-estudiante/calificacionesEstudiante.jsx'
 import TareasSubidas from './src/views/Rol-estudiante/tareasSubidas.jsx'
 
+import ExcusaForm from './src/views/Rol-docente/excusaForm.jsx'
+import ResetPassword from './src/auth/resetPassword.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -70,8 +71,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Formulario />} />
+            <Route path="/reset-password"  element={<ResetPassword />} />
    
             <Route path="/Registrar-asignatura" element={<Documentos/>} />
+            <Route path="/excusaForm" element={<ExcusaForm/>} />
           </Routes>
             <Routes>
               <Route path="/Home" element={<Home />} />

@@ -6,7 +6,7 @@ import Layout from '../../components/layaout';
 
 const Home = () => {
   const { auth } = useContext(counterContext);
-  console.log(auth)
+
   const datos = [30, 50, 20];
 
   const data = {

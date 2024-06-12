@@ -15,6 +15,7 @@ export default function componente({titulo, descripcion,src, to }) {
         </div>
       </div>
     </div>
-  </Link>
+</Link>
  );
 }
+

@@ -22,7 +22,7 @@ const MainContent = () => {
 
   return (
     <Layout>
-     
+
       <main className="p-4 w-full h-[84vh] 2xl:h-[84vh] max-lg:overflow-y-scroll shadow-[0_8px_10px_15px_rgba(0,0,0,0.08)] rounded-md lg:flex-row gap-4">
         <h1 className="text-3xl font-bold mb-6 text-gray-800">Bienvenido,<span className='text-indigo-900'> {auth.nombre} 👋</span> </h1>
         <section className="grid grid-cols-3 h-[90%] grid-rows-3 gap-6">
