@@ -59,6 +59,7 @@ import ResetPassword from './src/auth/resetPassword.jsx';
 import Actividades from './src/views/Rol-docente/Actividades.jsx'
 import ActividadesDetalle from './src/views/Rol-docente/ActividadesDetalle.jsx'
 
+import RegistrarFuncionario from './src/views/Rol-coordinador/RegistrarFuncionario.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -121,6 +122,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
               <Route path="/listadocentes" element={<Listadocentes />} />
               <Route path="/coordinador" element={<Coordinador />} />
               <Route path="/AsignaturasList" element={<AsignaturasList />} />
+              <Route path="/Registrarfuncionario" element={<RegistrarFuncionario />} />
+
             </Routes>
         </BrowserRouter>
       </NextUIProvider>

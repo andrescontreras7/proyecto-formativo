@@ -15,21 +15,18 @@ const Panels = () => {
               Opciones
             </h2>
             <ul className="space-y-3 rounded-lg shadow-md   bg-[#626CB8] bg-opacity-40  p-2  ">
-              <li
-                className="flex items-center bg-white duration-300 cursor-pointer border  
-                        border-white rounded-lg  hover:bg-[#626cb88e]  hover:border-none  "
-              >
+            
+         
                 {/* <div className="flex gap-2    items-center">
                   <div className=" border cursor-pointer    border-[#626CB8]   p-[5px] rounded-lg  ml-[0.5%]  ">
                     <img
-                      className=" w-11 shadow  "
-                      src="/public/registarprofesor.png"
+                      className="w-11"
+                      src="public\RegistarProfesor.png"
                       alt="Docente"
-                      draggable="false"
                     />
                   </div>
                   <div>
-                    <h1 className="font-bold text-gray-700">
+                    <h1 className="font-medium text-[1.0rem] text-gray-900">
                       {" "}
                       Registrar docente{" "}
                     </h1>
@@ -38,9 +35,9 @@ const Panels = () => {
                     </p>
                   </div>
                 </div> */}
-              </li>
+             
               <Link
-                to="/RegistrarAlumno"
+                to="/Re<gistrarAlumno"
                 className="flex items-center bg-white duration-300 cursor-pointer border  
                          border-white rounded-lg  hover:bg-[#626cb88e]  hover:border-none"
               >
