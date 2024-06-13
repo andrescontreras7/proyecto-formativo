@@ -63,6 +63,7 @@ import TareasSubidas from './src/views/Rol-estudiante/tareasSubidas.jsx'
 
 import ExcusaForm from './src/views/Rol-docente/excusaForm.jsx'
 import ResetPassword from './src/auth/resetPassword.jsx';
+import RegistrarFuncionario from './src/views/Rol-coordinador/RegistrarFuncionario.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -136,6 +137,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
               <Route path="/listadocentes" element={<Listadocentes />} />
               <Route path="/coordinador" element={<Coordinador />} />
               <Route path="/AsignaturasList" element={<AsignaturasList />} />
+              <Route path="/Registrarfuncionario" element={<RegistrarFuncionario />} />
+
             </Routes>
         </BrowserRouter>
       </NextUIProvider>

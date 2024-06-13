@@ -4,8 +4,7 @@ import Layout from "../../components/layaout";
 import DataTable from "react-data-table-component";
 import { getDocente } from "../../endpoints/useGet";
 import { counterContext } from "../../../context/CRMcontext";
-import Modal from "../../components/modal";
-
+import Modal from "../../components/Modal_listadocente";
 const Listadocentes = () => {
   const [filterText, setFilterText] = useState("");
   const [docentes, setDocentes] = useState([]);
