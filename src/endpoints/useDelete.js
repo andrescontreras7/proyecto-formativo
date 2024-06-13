@@ -32,3 +32,22 @@ export const deleteArea = async (auth, cod_Area) => {
 
   return { message: "Tematicas creada con éxito"};
 };
+
+
+export const deleteFuncionario = async (auth, funcid) => {
+  const response = await fetch(`http://localhost:3001/appi/funcionario/delete/${funcid}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${auth.token}`
+    }
+  });
+
+  const data = await response.json();
+
+  if (!response.ok) {
+    throw new Error(data.message || "Error al eliminar el funcionario");
+  }
+
+  return data;
+};

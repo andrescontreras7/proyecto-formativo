@@ -160,3 +160,30 @@ export const createAreas = async (auth, data) => {
         return { message: "Error al crear la Area", error: error.message };
     }
 };
+
+export const createFuncionario = async (auth, data) => {
+    try {
+        const response = await fetch('http://localhost:3001/appi/funcionario/create', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${auth.token}`
+            },
+            body: JSON.stringify(data)
+        });
+
+        const responseData = await response.json();
+
+        if (response.ok) {
+            return { message: "Funcionario creado con éxito", data: responseData };
+        } else if (response.status === 409) {
+            return { message: "El correo o el ID ya existen", data: responseData };
+        } else {
+            return { message: "Error al funcionario", data: responseData };
+        }
+    } catch (error) {
+        console.error('Error creando funcionario:', error);
+        return { message: "Error al crear Funcioario", error: error.message };
+    }
+};
+

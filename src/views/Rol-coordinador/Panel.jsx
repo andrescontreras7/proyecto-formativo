@@ -13,31 +13,32 @@ const Panels = () => {
               Opciones
             </h2>
             <ul className="space-y-3 rounded-lg shadow-md   bg-[#626CB8] bg-opacity-40  p-2  ">
-              <li
+            
+            <Link
+                to="/RegistrarFuncionario"
                 className="flex items-center bg-white duration-300 cursor-pointer border  
-                        border-white rounded-lg  hover:bg-[#626cb88e]  hover:border-none  "
+                         border-white rounded-lg  hover:bg-[#626cb88e]  hover:border-none "
               >
-                <div className="flex gap-2    items-center">
-                  <div className=" border cursor-pointer    border-[#626CB8]   p-[5px] rounded-lg  ml-[0.5%]  ">
+                <div className="flex gap-2  items-center">
+                  <div className=" border cursor-pointer    border-[#626CB8]   p-[5px] rounded-lg  ml-[0.5%] py-[0.5%]  ">
                     <img
-                      className=" w-11 shadow  "
-                      src="/public/registarprofesor.png"
+                      className="w-11"
+                      src="public\RegistarProfesor.png"
                       alt="Docente"
-                      draggable="false"
                     />
                   </div>
                   <div>
-                    <h1 className="font-bold text-gray-700">
+                    <h1 className="font-medium text-[1.0rem] text-gray-900">
                       {" "}
                       Registrar docente{" "}
                     </h1>
                     <p className="font-normal text-xs text-gray-800">
-                      Lorem ipsum dolor sit amet consectetur adipisicing{" "}
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Unde q
                     </p>
                   </div>
                 </div>
-              </li>
-
+              </Link>
               <li
                 className="flex items-center bg-white duration-300 cursor-pointer border  
                          border-white rounded-lg  hover:bg-[#626cb88e]  hover:border-none  "
