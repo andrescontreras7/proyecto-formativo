@@ -65,7 +65,7 @@ const AsignaturasEstudiante = () => {
                   titulo={asignatura.asignatura.asignombre}
                   descripcion={asignatura.descripcion}
 
-                  src={asignatura.url || imagenPredeterminada}
+                  src={asignatura.asignatura.url  }
                   
                   to={`/AsignaturasDetallesEstudiante/${asignatura.asignaturaId}/${estudiante.grupoFK}/calificacionesEstudiante`}
                 />

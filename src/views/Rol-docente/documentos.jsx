@@ -68,7 +68,7 @@ function Documentos() {
   };
   return (
     <Layout >
-     <div className="bg-[#ffffff] shadow-[0_8px_20px_12px_rgba(0,0,0,0.08)] w-full h-[85vh] 2xl:h-[87vh]   rounded-md">
+     <div className="bg-[#ffffff] shadow-[0_8px_20px_12px_rgba(0,0,0,0.08)] overflow-auto w-full h-[87vh] 2xl:h-[87vh]   rounded-md">
      <Toaster
             position="top-right"
             reverseOrder={true}

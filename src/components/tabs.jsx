@@ -11,11 +11,7 @@ export default function CustomTabs() {
           title={<Link to="Asistencias">Asistencias</Link>} 
           className="tab-item"
         />
-        <Tab
-          key="Informacion"
-          title={<Link to="Informacion">Informacion</Link>} 
-          className="tab-item"
-        />
+        
         <Tab
           key="listado"
           title={<Link to="Listado-estudiantes">Listado estudiantes </Link>} 

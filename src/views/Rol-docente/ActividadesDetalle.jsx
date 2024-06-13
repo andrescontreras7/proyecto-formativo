@@ -67,8 +67,8 @@ function ActividadDetalle() {
   };
 
   return (
-      <div className="p-4 w-full h-[84vh] 2xl:h-[84vh] shadow-[0_8px_10px_15px_rgba(0,0,0,0.08)] rounded-md lg:flex-row gap-4">
-        <div className='flex p-2 '>
+      <div className="p-4 w-full h-[84vh] 2xl:h-[84vh]  shadow-[0_8px_10px_15px_rgba(0,0,0,0.08)] rounded-md lg:flex-row gap-4">
+        <div className='flex p-2 overflow-auto'>
           <h1 className='font-semibold text-gray-600 text-2xl'>
             {actividad.nombre_tipo_evaluacion}
           </h1>
