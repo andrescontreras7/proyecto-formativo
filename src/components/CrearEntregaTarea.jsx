@@ -1,22 +1,28 @@
-import React, { useState,useCallback } from "react";
-import { Modal, ModalContent, ModalHeader, ModalFooter, Button, ModalBody } from "@nextui-org/react";
-import { BiDotsVerticalRounded } from "react-icons/bi";
-import Swal from "sweetalert2";
-import { v4 as uuidv4 } from 'uuid';
-import withReactContent from "sweetalert2-react-content";
-import { BsFillFileEarmarkImageFill } from "react-icons/bs"
+import React, { useState, useCallback } from "react";
+import { Modal, ModalContent, ModalHeader, ModalFooter, Button, ModalBody, Progress } from "@nextui-org/react";
+import { BsFillFileEarmarkImageFill } from "react-icons/bs";
 import { useDropzone } from 'react-dropzone';
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 import axios from 'axios';
+import { v4 as uuidv4 } from 'uuid';
 
 const MySwal = withReactContent(Swal);
 
 const CrearEntregaTarea = ({ isOpen, onClose, onCrear }) => {
-  const [descripcionTarea, setdescripcionTarea] = useState("");
+  const [descripcionTarea, setDescripcionTarea] = useState("");
   const [errors, setErrors] = useState({});
+  const [uploadProgress, setUploadProgress] = useState(0);
+  const [isUploading, setIsUploading] = useState(false);
+
   const onDrop = useCallback(acceptedFiles => {
     console.log(acceptedFiles);
-    }, []);
-  const { getRootProps, getInputProps, isDragActive, acceptedFiles } = useDropzone({ onDrop });
+  }, []);
+
+  const { getRootProps, getInputProps, isDragActive, acceptedFiles } = useDropzone({
+    onDrop,
+    accept: ".pdf, text/plain"
+  });
 
   const validateForm = () => {
     const errors = {};
@@ -25,7 +31,7 @@ const CrearEntregaTarea = ({ isOpen, onClose, onCrear }) => {
       return;
     }
     if (!descripcionTarea) {
-      errors.nombre = "El nombre del área es obligatorio.";
+      errors.nombre = "La descripción es obligatoria.";
     }
     return errors;
   };
@@ -36,9 +42,12 @@ const CrearEntregaTarea = ({ isOpen, onClose, onCrear }) => {
       setErrors(validationErrors);
       return;
     }
-    const uuid = uuidv4();
-    try {
 
+    setIsUploading(true);
+
+    const uuid = uuidv4();
+
+    try {
       const formData = new FormData();
       formData.append('file', acceptedFiles[0]);
       formData.append('upload_preset', "react-imagenes");
@@ -47,8 +56,13 @@ const CrearEntregaTarea = ({ isOpen, onClose, onCrear }) => {
       const response = await axios.post('https://api.cloudinary.com/v1_1/YOUR_CLOUD_NAME/upload', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
+        },
+        onUploadProgress: progressEvent => {
+          const percentCompleted = Math.round((progressEvent.loaded * 100) / progressEvent.total);
+          setUploadProgress(percentCompleted);
         }
       });
+
       console.log('Archivo subido exitosamente:', response.data);
 
       await onCrear(uuid, descripcionTarea, response.data.secure_url);
@@ -56,15 +70,17 @@ const CrearEntregaTarea = ({ isOpen, onClose, onCrear }) => {
       MySwal.fire({
         icon: 'success',
         title: '¡Éxito!',
-        text: 'El área se ha creado correctamente.'
+        text: 'La tarea se ha creado correctamente.'
       });
     } catch (error) {
       MySwal.fire({
         icon: 'error',
         title: 'Oops...',
-        text: 'Hubo un error al crear el área. Por favor, inténtalo de nuevo.'
+        text: 'Hubo un error al crear la tarea. Por favor, inténtalo de nuevo.'
       });
-      console.error('Error al crear el área:', error);
+      console.error('Error al crear la tarea:', error);
+    } finally {
+      setIsUploading(false);
     }
   };
 
@@ -76,25 +92,34 @@ const CrearEntregaTarea = ({ isOpen, onClose, onCrear }) => {
             Subir Tarea
           </ModalHeader>
           <ModalBody>
-
-            <label htmlFor="descripcionTarea" className="block mb-2">Descripcion:</label>
+            <label htmlFor="descripcionTarea" className="block mb-2">Descripción de la Tarea:</label>
             <input
               type="text"
               id="descripcionTarea"
               value={descripcionTarea}
-              onChange={(e) => setdescripcionTarea(e.target.value)}
+              onChange={(e) => setDescripcionTarea(e.target.value)}
               className="w-full border border-gray-300 rounded-md px-3 py-2"
             />
             {errors.nombre && <p className="text-red-500 text-sm">{errors.nombre}</p>}
 
-            <div {...getRootProps()} style={{ border: '2px dashed #cccccc', padding: '10px', textAlign: 'center', width:"400px" }}>
-            <input {...getInputProps()} />
-            {
-              isDragActive ?
-                <p>Seleciona el archivo  </p> :
-                <p className='text-center flex justify-center flex-col items-center p-2 gap-2'> Arrastre el archivo aca  <BsFillFileEarmarkImageFill className='text-center size-48 text-gray-600 opacity-50' />Subir Archivo </p>
-            }
-          </div>
+            <div {...getRootProps()} style={{ border: '2px dashed #cccccc', padding: '10px', textAlign: 'center', width: "400px", margin: '20px auto' }}>
+              <input {...getInputProps()} />
+              {
+                isDragActive ?
+                  <p>Suelta el archivo aquí...</p> :
+                  <p className='text-center flex justify-center flex-col items-center p-2 gap-2'>
+                    Arrastra un archivo PDF o de texto aquí <BsFillFileEarmarkImageFill className='text-center size-48 text-gray-600 opacity-50' />
+                    Subir Archivo
+                  </p>
+              }
+            </div>
+
+            {isUploading && (
+              <div className="text-center">
+                <Progress value={uploadProgress} />
+                <p>{uploadProgress}% completado</p>
+              </div>
+            )}
 
           </ModalBody>
           <ModalFooter>

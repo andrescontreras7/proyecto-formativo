@@ -46,7 +46,7 @@ const AsignaturasEstudiante = () => {
 
     consulta();
   }, [auth]);
-
+  const imagenPredeterminada = '/public/economia.jpg';
   return (
     <Layout titulo={"Asignaturas "} icono={<HiArrowSmallLeft className='text-xl' />} >
       <div className="bg-[#ffffff] shadow-[0_8px_20px_12px_rgba(0,0,0,0.08)] w-full h-[85vh] 2xl:h-[87vh] flex justify-center rounded-md">
@@ -65,7 +65,8 @@ const AsignaturasEstudiante = () => {
                   titulo={asignatura.asignatura.asignombre}
                   descripcion={asignatura.descripcion}
 
-                  src={asignatura.url ? asignatura.url : 'https://image.shutterstock.com/shutterstock/photos/1976693516/display_1500/stock-vector-no-image-available-sign-isolated-on-white-background-vector-illustration-1976693516.jpg'}
+                  src={asignatura.url || imagenPredeterminada}
+                  
                   to={`/AsignaturasDetallesEstudiante/${asignatura.asignaturaId}/${estudiante.grupoFK}/calificacionesEstudiante`}
                 />
               ))}
