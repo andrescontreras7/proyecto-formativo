@@ -56,6 +56,9 @@ import ListadoAsigna from './src/views/Rol-coordinador/listadoAsignaturas.jsx'
 import AsignaturasList from './src/views/Rol-docente/asignaturaenplataforma.jsx'
 import ExcusaForm from './src/views/Rol-docente/excusaForm.jsx'
 import ResetPassword from './src/auth/resetPassword.jsx';
+import Actividades from './src/views/Rol-docente/Actividades.jsx'
+import ActividadesDetalle from './src/views/Rol-docente/ActividadesDetalle.jsx'
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -91,6 +94,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
               <Route path="/perfil" element={<Perfil />} />
               <Route path="/Informacion" element={<Informacion />} />
               <Route path="/Calificacions" element={<Calificacions />} />
+              <Route path="/Actividades" element={<Actividades />} />
+              <Route path="/ActividadesDetalle/:id/" element={<ActividadesDetalle />} />
               <Route path="/Recuperar" element={<Recuperar />} />
               <Route path="/Panel" element={<Panel />} />
               <Route path="/AsistenciasEstudiantes" element={<AsistenciasD />} />

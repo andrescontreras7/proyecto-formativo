@@ -6,7 +6,9 @@ import { Link } from "react-router-dom";
 const Panels = () => {
   return (
     <Layout titulo={"Panel de control"}>
-      <div className="grid grid-cols-4 grid-rows-3 max-lg:grid-rows-6  gap-4 p-2 w-full h-[86vh] max-2xl:h-[84vh]  shadow-[0_8px_10px_15px_rgba(0,0,0,0.08)] justify-center rounded-md">
+        
+        <div className="w-full h-screen grid grid-cols-4 grid-rows-3 max-lg:grid-rows-6 gap-4 p-2 max-2xl:h-[84vh] shadow-[0_8px_10px_15px_rgba(0,0,0,0.08)] justify-center rounded-md">
+
         <div className="col-span-2 row-span-4 overflow-auto ">
           <div className="p-2 rounded-md ">
             <h2 className="text-xl font-bold text-gray-600 bg-[#626CB8] bg-opacity-40 p-2 uppercase  rounded-lg mb-4">
@@ -17,7 +19,7 @@ const Panels = () => {
                 className="flex items-center bg-white duration-300 cursor-pointer border  
                         border-white rounded-lg  hover:bg-[#626cb88e]  hover:border-none  "
               >
-                <div className="flex gap-2    items-center">
+                {/* <div className="flex gap-2    items-center">
                   <div className=" border cursor-pointer    border-[#626CB8]   p-[5px] rounded-lg  ml-[0.5%]  ">
                     <img
                       className=" w-11 shadow  "
@@ -32,21 +34,21 @@ const Panels = () => {
                       Registrar docente{" "}
                     </h1>
                     <p className="font-normal text-xs text-gray-800">
-                      Lorem ipsum dolor sit amet consectetur adipisicing{" "}
+                      Registrar un docente{" "}
                     </p>
                   </div>
-                </div>
+                </div> */}
               </li>
-
-              <li
+              <Link
+                to="/RegistrarAlumno"
                 className="flex items-center bg-white duration-300 cursor-pointer border  
-                         border-white rounded-lg  hover:bg-[#626cb88e]  hover:border-none  "
+                         border-white rounded-lg  hover:bg-[#626cb88e]  hover:border-none"
               >
                 <div className="flex gap-2   items-center">
-                  <div className=" border cursor-pointer    border-[#626CB8]   p-[5px] rounded-lg  ml-[0.5%] py-[0.5%]   ">
+                  <div className=" border cursor-pointer    border-[#626CB8]   p-[5px] rounded-lg  ml-[0.5%] py-[0.5%]">
                     <img
-                      className="w-11 "
-                      src="/public/registrarasignatura.png"
+                      className="w-11"
+                      src="/public/estudiante 1.png"
                       alt="Docente"
                       draggable="false"
                     />
@@ -54,15 +56,16 @@ const Panels = () => {
                   <div>
                     <h1 className="font-medium text-[1.0rem] text-gray-900">
                       {" "}
-                      Administrar asignaturas{" "}
+                      Registar alumno{" "}
                     </h1>
-                    <p className="font-normal text-xs text-gray-900">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Unde q
+                    <p className="font-normal text-xs text-gray-800">
+                      Registo del alumnoo
                     </p>
                   </div>
                 </div>
-              </li>
+              </Link>
+
+              
 
               <Link
                 to="/Listado"
@@ -81,11 +84,10 @@ const Panels = () => {
                   <div>
                     <h1 className="font-medium text-[1.0rem] text-gray-900">
                       {" "}
-                      Administrar docente{" "}
+                      Administrar estudiante{" "}
                     </h1>
                     <p className="font-normal text-xs text-gray-800">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Unde q
+                      Ver Administrar  estudiante
                     </p>
                   </div>
                 </div>
@@ -110,8 +112,7 @@ const Panels = () => {
                       Listado de estudiante{" "}
                     </h1>
                     <p className="font-normal text-xs text-gray-800">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Unde q
+                      Listado de todos los estudiante
                     </p>
                   </div>
                 </div>
@@ -136,15 +137,14 @@ const Panels = () => {
                       Listado de docente{" "}
                     </h1>
                     <p className="font-normal text-xs text-gray-800">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Unde q
+                    Listado de los docente
                     </p>
                   </div>
                 </div>
               </Link>
 
               <Link
-                to="/"
+                to="/Areas"
                 className="flex items-center bg-white duration-300 cursor-pointer border  
                          border-white rounded-lg  hover:bg-[#626cb88e]  hover:border-none"
               >
@@ -160,42 +160,16 @@ const Panels = () => {
                   <div>
                     <h1 className="font-medium text-[1.0rem] text-gray-900">
                       {" "}
-                      Administrar Areas{" "}
+                      Administrar Areas{""}
                     </h1>
                     <p className="font-normal text-xs text-gray-800">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Unde q
+                      Administrar las areas
                     </p>
                   </div>
                 </div>
               </Link>
 
-              <Link
-                to="/RegistrarAlumno"
-                className="flex items-center bg-white duration-300 cursor-pointer border  
-                         border-white rounded-lg  hover:bg-[#626cb88e]  hover:border-none"
-              >
-                <div className="flex gap-2   items-center">
-                  <div className=" border cursor-pointer    border-[#626CB8]   p-[5px] rounded-lg  ml-[0.5%] py-[0.5%]">
-                    <img
-                      className="w-11"
-                      src="/public/estudiante 1.png"
-                      alt="Docente"
-                      draggable="false"
-                    />
-                  </div>
-                  <div>
-                    <h1 className="font-medium text-[1.0rem] text-gray-900">
-                      {" "}
-                      Registar alumno{" "}
-                    </h1>
-                    <p className="font-normal text-xs text-gray-800">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Unde q
-                    </p>
-                  </div>
-                </div>
-              </Link>
+             
 
               <Link
                 to="/Listado-asignaturas"
@@ -222,31 +196,7 @@ const Panels = () => {
                 </div>
               </Link>
 
-              <Link
-                to="/"
-                className="flex items-center bg-white duration-300 cursor-pointer border  
-                         border-white rounded-lg  hover:bg-[#626cb88e]  hover:border-none"
-              >
-                <div className="flex gap-2   items-center">
-                  <div className="border cursor-pointer    border-[#626CB8]   p-[5px] rounded-lg  ml-[0.5%] py-[0.5%] ">
-                    <img
-                      className="w-11"
-                      src="/public/desempeño.png"
-                      alt="Docente"
-                      draggable="false"
-                    />
-                  </div>
-                  <div>
-                    <h1 className="font-medium text-[1.0rem] text-gray-900">
-                      Estudiantes por desempeño
-                    </h1>
-                    <p className="font-normal text-xs text-gray-800">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Unde q
-                    </p>
-                  </div>
-                </div>
-              </Link>
+             
               <Link
                 to="/registrar-asignatura"
                 className="flex items-center bg-white duration-300 cursor-pointer border  
@@ -272,7 +222,7 @@ const Panels = () => {
                   </div>
                 </div>
               </Link>
-              <Link
+              {/* <Link
                 to="/"
                 className="flex items-center bg-white duration-300 cursor-pointer border  
                          border-white rounded-lg  hover:bg-[#626cb88e]  hover:border-none"
@@ -297,9 +247,9 @@ const Panels = () => {
                     </p>
                   </div>
                 </div>
-              </Link>
+              </Link> */}
 
-              <Link
+              {/* <Link
                 to="/informe"
                 className="flex items-center bg-white duration-300 cursor-pointer border  
                          border-white rounded-lg  hover:bg-[#626cb88e]  hover:border-none"
@@ -323,11 +273,11 @@ const Panels = () => {
                     </p>
                   </div>
                 </div>
-              </Link>
+              </Link>  */}
             </ul>
           </div>
         </div>
-        <div className="col-span-1 max-lg:col-start-3 max-lg:col-end-5 rounded-md    bg-[#e4e2ed]  shadow-md row-span-2">
+         <div className="col-span-1 max-lg:col-start-3 max-lg:col-end-5 rounded-md    bg-[#e4e2ed]  shadow-md row-span-2">
           <div className="p-4">
             <div>
               <h1>caja 21</h1>
@@ -342,8 +292,10 @@ const Panels = () => {
         </div>
         <div className="col-start-3 shadow-md bg-[#e4e2ed]  row-auto max-lg:col-start-3 max-lg:col-end-5 rounded-md overflow-auto">
           <div className="p-4 rounded-lg">Caja 2</div>
-        </div>
+        </div> 
       </div>
+      
+
     </Layout>
   );
 };

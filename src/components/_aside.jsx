@@ -35,7 +35,7 @@ const Aside = ({rol}) => {
   return (
 <>
 
-<div className='  h-full  w-full  '>
+<div className='  h-full  w-full bg-[#626cb8] '>
 
 
  
@@ -113,19 +113,10 @@ const Aside = ({rol}) => {
 
       </AnimatedCursos>
      
-      <AnimatedCursos> 
-           <li className=" hover:scale-[1.09] transition-[2s] items-center gap-2 inline-flex">
-          <BiUser className='text-white text-3xl lg:text-lg' /> <Link  to={'/perfil'} draggable="false" className="text-center text-zinc-100 text-base font-semibold hidden min-[1140px]:inline-block" >Usuario </Link>
-          </li>
-      </AnimatedCursos>
+      
 
     
 
-      <AnimatedCursos> 
-          <li className="hover:scale-[1.09] transition-[2s] items-center gap-2 inline-flex">
-              <BsCalendar3 className='text-white  text-3xl lg:text-lg'/><Link to={'/Calendario'} draggable="false" className="text-center text-zinc-100 text-base font-semibold hidden min-[1140px]:inline-block" >Calendario </Link>
-          </li>
-      </AnimatedCursos> 
       
       <AnimatedCursos> 
           <li className=" hover:scale-[1.09] transition-[2s] items-center gap-2 inline-flex">
@@ -133,21 +124,12 @@ const Aside = ({rol}) => {
           </li>
       </AnimatedCursos>
     
-      <li className="hover:scale-[1.09] transition-[2s] items-center gap-2 inline-flex">
-          <LiaPenSolid className='text-white  text-3xl lg:text-lg'/><Link to={'/Observaciones'} draggable="false" className="text-center text-zinc-100 text-base font-semibold hidden min-[1140px]:inline-block" >Observaciones</Link>
       
-        
-      </li>
       <li className="hover:scale-[1.09] transition-[2s] items-center gap-2 inline-flex">
             <LuBookOpen className='text-white  text-3xl lg:text-lg'/> <Link to={'/Asignaturas'} draggable="false" className="text-center text-zinc-100 text-base font-semibold hidden min-[1140px]:inline-block" >Mis asignaturas </Link>
         </li>
           
-      <li className="hover:scale-[1.09] transition-[2s] items-center gap-2 inline-flex">
-          <BsEnvelope className='text-white  text-3xl lg:text-lg'/> <Link to={'/correo'} draggable="false" className="text-center text-zinc-100 text-base font-semibold hidden min-[1140px]:inline-block" >Correo</Link>
-      </li>
-      <li className="hover:scale-[1.09] transition-[2s] items-center gap-2 inline-flex">
-          <LuCalendar className='text-white  text-3xl lg:text-lg'/><Link to={'/Horario'} draggable="false" className="text-center text-zinc-100 text-base font-semibold hidden min-[1140px]:inline-block" >Horario de clases</Link>
-      </li>
+      
       <li className="hover:scale-[1.09] transition-[2s] items-center gap-2 inline-flex">
       <BsQuote className='text-white  text-3xl lg:text-lg'/><Link to={'/Himno'} draggable="false" className="text-center text-zinc-100 text-base font-semibold hidden min-[1140px]:inline-block" >Himno intitucional</Link>
       </li>
@@ -189,11 +171,7 @@ const Aside = ({rol}) => {
         </li>
     </AnimatedCursos>
 
-    <AnimatedCursos> 
-        <li className="hover:scale-[1.09] transition-[2s] items-center gap-2 inline-flex">
-            <BsCalendar3 className='text-white  '/> <Link to={'/  '} draggable="false" className="text-center text-zinc-100 text-base font-semibold" >Calendario </Link>
-        </li>
-    </AnimatedCursos>
+   
 
     <AnimatedCursos> 
         <li className=" hover:scale-[1.09] transition-[2s] items-center gap-2 inline-flex">
@@ -201,15 +179,7 @@ const Aside = ({rol}) => {
         </li>
     </AnimatedCursos>
     
-    <AnimatedCursos> 
-        <li className=" hover:scale-[1.09] transition-[2s] items-center gap-2 inline-flex">
-            <BsEnvelope className='text-white  '/><Link to={'/Correodocente  '} draggable="false" className="text-center text-zinc-100 text-base font-semibold" >Correo</Link>
-        </li>
-    </AnimatedCursos>
-  
-    <li className="hover:scale-[1.09] transition-[2s] items-center gap-2 inline-flex">
-    <LiaPenSolid className='text-white ' /> <Link to={'/Observadorestudiante'}  draggable="false"className="text-center text-zinc-100 text-base font-semibold font-semibold" >Observador</Link>
-    </li>
+    
     
     <li className="hover:scale-[1.09] transition-[2s] items-center gap-2 inline-flex">
         <BsQuote className='text-white  '/> <Link to={'/  '} draggable="false" className="text-center text-zinc-100 text-base font-semibold" >Himno institucional</Link>

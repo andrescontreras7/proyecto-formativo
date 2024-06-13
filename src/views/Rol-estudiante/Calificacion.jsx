@@ -56,18 +56,18 @@ const Calificacions = () => {
                   </tr>
                 </thead>
                 <tbody>
-  {Array.isArray(cursos) ? (
-    cursos.map((curso, index) => (
-      <tr key={index}>
-        <td className="border border-gray-200 px-4 py-2">{curso.asignatura.asignombre}</td>
-      </tr>
-    ))
-  ) : (
-    <tr>
-      <td colSpan="1">No hay cursos disponibles</td>
-    </tr>
-  )}
-</tbody>
+                  {Array.isArray(cursos) ? (
+                    cursos.map((curso, index) => (
+                      <tr key={index}>
+                        <td className="border border-gray-200 px-4 py-2">{curso.asignatura.asignombre}</td>
+                      </tr>
+                    ))
+                  ) : (
+                    <tr>
+                      <td colSpan="1">No hay cursos disponibles</td>
+                    </tr>
+                  )}
+                </tbody>
               </table>
             </div>
           </div>

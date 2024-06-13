@@ -160,3 +160,30 @@ export const createAreas = async (auth, data) => {
         return { message: "Error al crear la Area", error: error.message };
     }
 };
+
+
+export const createActividad = async (auth, data) => {
+    try {
+        const response = await fetch('http://localhost:3001/appi/evaluaciones/create', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${auth.token}`
+            },
+            body: JSON.stringify(data)
+        });
+
+        const responseData = await response.json();
+
+        if (response.ok) {
+            return { message: "Actividad creada con éxito", data: responseData };
+        } else if (response.status === 409) {
+            return { message: "Esta  ya existe", data: responseData };
+        } else {
+            return { message: "Error al crear la Actividad", data: responseData };
+        }
+    } catch (error) {
+        console.error('Error creando la Actividad:', error);
+        return { message: "Error al crear la Actividad", error: error.message };
+    }
+};
