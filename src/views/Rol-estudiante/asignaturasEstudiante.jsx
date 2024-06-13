@@ -66,7 +66,7 @@ const AsignaturasEstudiante = () => {
                   descripcion={asignatura.descripcion}
 
                   src={asignatura.url ? asignatura.url : 'https://image.shutterstock.com/shutterstock/photos/1976693516/display_1500/stock-vector-no-image-available-sign-isolated-on-white-background-vector-illustration-1976693516.jpg'}
-                  to={`/AsignaturasDetallesEstudiante/${asignatura.asignaturaId}/${estudiante.grupoFK}`}
+                  to={`/AsignaturasDetallesEstudiante/${asignatura.asignaturaId}/${estudiante.grupoFK}/calificacionesEstudiante`}
                 />
               ))}
             </div>
