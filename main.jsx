@@ -58,8 +58,13 @@ import ExcusaForm from './src/views/Rol-docente/excusaForm.jsx'
 import ResetPassword from './src/auth/resetPassword.jsx';
 import Actividades from './src/views/Rol-docente/Actividades.jsx'
 import ActividadesDetalle from './src/views/Rol-docente/ActividadesDetalle.jsx'
+import AsignaturasDetallesEstudiante from './src/views/Rol-estudiante/AsignaturasDetallesEstudiante.jsx'
+import AsignaturasEstudiante from './src/views/Rol-estudiante/AsignaturasEstudiante.jsx'
+import CalificacionesEstudiante from './src/views/Rol-estudiante/calificacionesEstudiante.jsx'
+import TareasSubidas from './src/views/Rol-estudiante/tareasSubidas.jsx'
 
 import RegistrarFuncionario from './src/views/Rol-coordinador/RegistrarFuncionario.jsx';
+import AsignaturaDocente from './src/views/Rol-coordinador/docente_asignatura.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -69,6 +74,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Routes>
             <Route path="/" element={<Formulario />} />
             <Route path="/reset-password"  element={<ResetPassword />} />
+            <Route path="/asignatura-docente"  element={<AsignaturaDocente />} />
    
             <Route path="/Registrar-asignatura" element={<Documentos/>} />
             <Route path="/excusaForm" element={<ExcusaForm/>} />
@@ -85,18 +91,29 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                 <Route path="Asistencias" element={<Asistencia />} />
                 <Route path="Calificaciones" element={<Calificaciones />} />
                 <Route path="Listado-estudiantes" element={<ListadoEstudiantes />} />
+                <Route path="Actividades" element={<Actividades />} />
+                <Route path="ActividadesDetalle/:idACT" element={<ActividadesDetalle />} />
               </Route>
+              <Route path="/AsignaturasDetallesEstudiante/:idasig/:idgrupo" element={<AsignaturasDetallesEstudiante />} >
+                <Route path="calificacionesEstudiante" element={<CalificacionesEstudiante />} />
+                <Route path="tareasSubidas" element={<TareasSubidas />} />
+              </Route>
+
+
+
+
               <Route path="/Himno" element={<Himno />} />
               <Route path="/Observaciones" element={<Observaciones />} />
               <Route path="/Horario" element={<Horario />} />
               <Route path="/Asignaturas" element={<Asignaturas />} />
+              <Route path="/AsignaturasEstudiante" element={<AsignaturasEstudiante />} />
+
               <Route path="/Correo" element={<Correo />} />
               <Route path="/Notas" element={<Notas />} />
               <Route path="/perfil" element={<Perfil />} />
               <Route path="/Informacion" element={<Informacion />} />
               <Route path="/Calificacions" element={<Calificacions />} />
-              <Route path="/Actividades" element={<Actividades />} />
-              <Route path="/ActividadesDetalle/:id/" element={<ActividadesDetalle />} />
+
               <Route path="/Recuperar" element={<Recuperar />} />
               <Route path="/Panel" element={<Panel />} />
               <Route path="/AsistenciasEstudiantes" element={<AsistenciasD />} />

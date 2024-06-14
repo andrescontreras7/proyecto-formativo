@@ -126,7 +126,7 @@ const Aside = ({rol}) => {
     
       
       <li className="hover:scale-[1.09] transition-[2s] items-center gap-2 inline-flex">
-            <LuBookOpen className='text-white  text-3xl lg:text-lg'/> <Link to={'/Asignaturas'} draggable="false" className="text-center text-zinc-100 text-base font-semibold hidden min-[1140px]:inline-block" >Mis asignaturas </Link>
+            <LuBookOpen className='text-white  text-3xl lg:text-lg'/> <Link to={'/AsignaturasEstudiante'} draggable="false" className="text-center text-zinc-100 text-base font-semibold hidden min-[1140px]:inline-block" >Mis asignaturas </Link>
         </li>
           
       

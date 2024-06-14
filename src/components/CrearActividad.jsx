@@ -1,12 +1,12 @@
-import React, { useState,useCallback } from "react";
-import { Modal, ModalContent, ModalHeader, ModalFooter, Button, ModalBody } from "@nextui-org/react";
-import { BiDotsVerticalRounded } from "react-icons/bi";
-import Swal from "sweetalert2";
-import { BsFillFileEarmarkImageFill } from "react-icons/bs"
+import React, { useState, useCallback, useContext, useEffect } from "react";
+import { Modal, ModalContent, ModalHeader, ModalFooter, Button, ModalBody, Progress } from "@nextui-org/react";
+import { BsFillFileEarmarkImageFill } from "react-icons/bs";
 import { useDropzone } from 'react-dropzone';
+import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import axios from 'axios';
-
+import { counterContext } from "../../context/CRMcontext";
+import { getEvaluacionesTipos } from '../endpoints/useGet'; // Asegúrate de que esta sea la ruta correcta
 
 const MySwal = withReactContent(Swal);
 
@@ -14,18 +14,33 @@ const CrearActividad = ({ isOpen, onClose, onCrear }) => {
   const [CodigoActividad, setCodigoActividad] = useState("");
   const [TituloActividad, setTituloActividad] = useState("");
   const [DescripcionActividad, setDescripcionActividad] = useState("");
-  const [URLActividad, setURLActividad] = useState("");
   const [FechaEntrega, setFechaEntrega] = useState("");
   const [GrupoActividad, setGrupoActividad] = useState("");
   const [AsignaturaActividad, setAsignaturaActividad] = useState("");
   const [TipoActividad, setTipoActividad] = useState("");
+  const [listTipoActividad, setListTipoActividad] = useState([]);
+  const [uploadProgress, setUploadProgress] = useState(0);
+  const [isUploading, setIsUploading] = useState(false);
+
+  const { auth } = useContext(counterContext);
+
+  useEffect(() => {
+    getEvaluacionesTipos(auth).then(res => {
+      setListTipoActividad(res);
+      console.log(res);
+    });
+  }, [auth]);
 
   const [errors, setErrors] = useState({});
 
   const onDrop = useCallback(acceptedFiles => {
     console.log(acceptedFiles);
-    }, []);
-  const { getRootProps, getInputProps, isDragActive, acceptedFiles } = useDropzone({ onDrop });
+  }, []);
+  
+  const { getRootProps, getInputProps, isDragActive, acceptedFiles } = useDropzone({
+    onDrop,
+    accept: ".pdf, text/plain"
+  });
 
   const validateForm = () => {
     const errors = {};
@@ -41,24 +56,18 @@ const CrearActividad = ({ isOpen, onClose, onCrear }) => {
       errors.codigo = "El código del área solo puede contener números.";
     }
     if (!TituloActividad) {
-      errors.titulo = "El titulo de la actividad es obligatorio.";
+      errors.titulo = "El título de la actividad es obligatorio.";
     }
     if (!DescripcionActividad) {
-      errors.descripcion = "la descripcion de la actividad es obligatorio.";
+      errors.descripcion = "La descripción de la actividad es obligatoria.";
     }
     if (!FechaEntrega) {
-      errors.fecha = "la fecha de la actividad es obligatorio.";
-    }
-    if (!GrupoActividad) {
-      errors.grupo = "la grupo de la actividad es obligatorio.";
-    }
-    if (!AsignaturaActividad) {
-      errors.asignatura = "la asignatura de la actividad es obligatorio.";
+      errors.fecha = "La fecha de entrega es obligatoria.";
     }
     if (!TipoActividad) {
-      errors.tipo = "la tipo de la actividad es obligatorio.";
+      errors.tipo = "El tipo de actividad es obligatorio.";
     }
-    
+
     return errors;
   };
 
@@ -69,8 +78,9 @@ const CrearActividad = ({ isOpen, onClose, onCrear }) => {
       return;
     }
 
-    try {
+    setIsUploading(true); // Comienza la carga
 
+    try {
       const formData = new FormData();
       formData.append('file', acceptedFiles[0]);
       formData.append('upload_preset', "react-imagenes");
@@ -79,11 +89,16 @@ const CrearActividad = ({ isOpen, onClose, onCrear }) => {
       const response = await axios.post('https://api.cloudinary.com/v1_1/YOUR_CLOUD_NAME/upload', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
+        },
+        onUploadProgress: progressEvent => {
+          const percentCompleted = Math.round((progressEvent.loaded * 100) / progressEvent.total);
+          setUploadProgress(percentCompleted);
         }
       });
+      
       console.log('Archivo subido exitosamente:', response.data);
 
-      await onCrear(CodigoActividad,TituloActividad,DescripcionActividad,FechaEntrega,GrupoActividad,AsignaturaActividad,TipoActividad,response.data.secure_url);
+      await onCrear(CodigoActividad, TituloActividad, DescripcionActividad, FechaEntrega, GrupoActividad, AsignaturaActividad, TipoActividad, response.data.secure_url);
       onClose();
       MySwal.fire({
         icon: 'success',
@@ -97,12 +112,18 @@ const CrearActividad = ({ isOpen, onClose, onCrear }) => {
         text: 'Hubo un error al crear la Actividad. Por favor, inténtalo de nuevo.'
       });
       console.error('Error al crear la Actividad:', error);
+    } finally {
+      setIsUploading(false); // Finaliza la carga
     }
+  };
+
+  const handleChangeTipoActividad = (e) => {
+    setTipoActividad(e.target.value);
   };
 
   return (
     <Modal backdrop="blur" className="" isOpen={isOpen} onClose={onClose}>
-      <ModalContent>
+      <ModalContent className="overflow-y-scroll">
         <>
           <ModalHeader className="flex flex-col gap-1 uppercase text-indigo-900 border-b-1">
             Crear Actividad
@@ -118,7 +139,7 @@ const CrearActividad = ({ isOpen, onClose, onCrear }) => {
             />
             {errors.codigo && <p className="text-red-500 text-sm">{errors.codigo}</p>}
 
-            <label htmlFor="TituloActividad" className="block mb-2">Titulo de la Actividad:</label>
+            <label htmlFor="TituloActividad" className="block mb-2">Título de la Actividad:</label>
             <input
               type="text"
               id="TituloActividad"
@@ -128,8 +149,7 @@ const CrearActividad = ({ isOpen, onClose, onCrear }) => {
             />
             {errors.titulo && <p className="text-red-500 text-sm">{errors.titulo}</p>}
 
-            
-            <label htmlFor="DescripcionActividad" className="block mb-2">Descripcion de la Actividad:</label>
+            <label htmlFor="DescripcionActividad" className="block mb-2">Descripción de la Actividad:</label>
             <input
               type="text"
               id="DescripcionActividad"
@@ -137,17 +157,8 @@ const CrearActividad = ({ isOpen, onClose, onCrear }) => {
               onChange={(e) => setDescripcionActividad(e.target.value)}
               className="w-full border border-gray-300 rounded-md px-3 py-2"
             />
-            {errors.titulo && <p className="text-red-500 text-sm">{errors.titulo}</p>}
+            {errors.descripcion && <p className="text-red-500 text-sm">{errors.descripcion}</p>}
 
-            <div {...getRootProps()} style={{ border: '2px dashed #cccccc', padding: '10px', textAlign: 'center', width:"600px" }}>
-            <input {...getInputProps()} />
-            {
-              isDragActive ?
-                <p>Seleciona la imagen  </p> :
-                <p className='text-center flex justify-center flex-col items-center p-2 gap-2'> Arrastre la imagen aca  <BsFillFileEarmarkImageFill className='text-center size-48 text-gray-600 opacity-50' />Subir imagen </p>
-            }
-          </div>
-            
             <label htmlFor="FechaEntrega" className="block mb-2">Fecha de Entrega:</label>
             <input
               type="date"
@@ -158,38 +169,35 @@ const CrearActividad = ({ isOpen, onClose, onCrear }) => {
             />
             {errors.fecha && <p className="text-red-500 text-sm">{errors.fecha}</p>}
 
-            
-            <label htmlFor="GrupoActividad" className="block mb-2">Grupo:</label>
-            <input
-              type="text"
-              id="GrupoActividad"
-              value={GrupoActividad}
-              onChange={(e) => setGrupoActividad(e.target.value)}
-              className="w-full border border-gray-300 rounded-md px-3 py-2"
-            />
-            {errors.grupo && <p className="text-red-500 text-sm">{errors.grupo}</p>}
-
-            
-            <label htmlFor="AsignaturaActividad" className="block mb-2">Asignatura:</label>
-            <input
-              type="text"
-              id="AsignaturaActividad"
-              value={AsignaturaActividad}
-              onChange={(e) => setAsignaturaActividad(e.target.value)}
-              className="w-full border border-gray-300 rounded-md px-3 py-2"
-            />
-            {errors.asignatura && <p className="text-red-500 text-sm">{errors.asignatura}</p>}
-
-            
-            <label htmlFor="TipoActividad" className="block mb-2">Tipo de la Actividad:</label>
-            <input
-              type="text"
+            <label htmlFor="TipoActividad" className="block mb-2">Tipo de Actividad:</label>
+            <select
               id="TipoActividad"
               value={TipoActividad}
-              onChange={(e) => setTipoActividad(e.target.value)}
+              onChange={handleChangeTipoActividad}
               className="w-full border border-gray-300 rounded-md px-3 py-2"
-            />
+            >
+              <option value="">Selecciona una opción</option>
+              {listTipoActividad.map((opcion) => (
+                <option key={opcion.codigo} value={opcion.codigo}>{opcion.nombre_tipo_evaluacion}</option>
+              ))}
+            </select>
             {errors.tipo && <p className="text-red-500 text-sm">{errors.tipo}</p>}
+
+            <div {...getRootProps()} style={{ border: '2px dashed #cccccc', padding: '10px', textAlign: 'center', width: "400px" }}>
+              <input {...getInputProps()} />
+              {
+                isDragActive ?
+                  <p>Selecciona la imagen</p> :
+                  <p className='text-center flex justify-center flex-col items-center p-2 gap-2'>Arrastra la imagen aquí <BsFillFileEarmarkImageFill className='text-center size-6 text-gray-600 opacity-50' /> Subir imagen</p>
+              }
+            </div>
+            
+            {isUploading && (
+              <div className="mt-4">
+                <Progress value={uploadProgress} />
+                <p className="text-center mt-2">{uploadProgress}% completado</p>
+              </div>
+            )}
           </ModalBody>
           <ModalFooter>
             <Button color="primary" variant="ghost" onPress={handleCrear}>Guardar cambios</Button>

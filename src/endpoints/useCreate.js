@@ -161,6 +161,33 @@ export const createAreas = async (auth, data) => {
     }
 };
 
+export const createFuncionario = async (auth, data) => {
+    try {
+        const response = await fetch('http://localhost:3001/appi/funcionario/create', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${auth.token}`
+            },
+            body: JSON.stringify(data)
+        });
+
+        const responseData = await response.json();
+
+        if (response.ok) {
+            return { message: "Funcionario creado con éxito", data: responseData };
+        } else if (response.status === 409) {
+            return { message: "El correo o el ID ya existen", data: responseData };
+        } else {
+            return { message: "Error al funcionario", data: responseData };
+        }
+    } catch (error) {
+        console.error('Error creando funcionario:', error);
+        return { message: "Error al crear Funcioario", error: error.message };
+    }
+};
+
+
 
 export const createActividad = async (auth, data) => {
     try {
@@ -188,9 +215,10 @@ export const createActividad = async (auth, data) => {
     }
 };
 
-export const createFuncionario = async (auth, data) => {
+
+export const createTarea = async (auth, data) => {
     try {
-        const response = await fetch('http://localhost:3001/appi/funcionario/create', {
+        const response = await fetch('http://localhost:3001/appi/tarea-send/create', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -202,15 +230,41 @@ export const createFuncionario = async (auth, data) => {
         const responseData = await response.json();
 
         if (response.ok) {
-            return { message: "Funcionario creado con éxito", data: responseData };
+            return { message: "Actividad creada con éxito", data: responseData };
         } else if (response.status === 409) {
-            return { message: "El correo o el ID ya existen", data: responseData };
+            return { message: "Esta  ya existe", data: responseData };
         } else {
-            return { message: "Error al funcionario", data: responseData };
+            return { message: "Error al crear la Actividad", data: responseData };
         }
     } catch (error) {
-        console.error('Error creando funcionario:', error);
-        return { message: "Error al crear Funcioario", error: error.message };
+        console.error('Error creando la Actividad:', error);
+        return { message: "Error al crear la Actividad", error: error.message };
     }
 };
 
+
+export const createAsignaturaDocente = async (auth, data) =>{
+    try {
+        const response = await fetch('http://localhost:3001/appi/asignaturas-docente/create', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${auth.token}`
+            },
+            body: JSON.stringify(data)
+        });
+        const responseData = await response.json();
+        if (response.ok) {
+            return { message: "Asignatura creada con éxito", data: responseData };
+       
+        } else {
+            return { message: "Error al crear la asignatura", data: responseData };
+        }
+        
+    } catch (error) {
+        console.error('Error creando la asignatura:', error);
+        return { message: "Error al crear la asignatura", error: error.message };
+    }
+
+
+}
