@@ -229,27 +229,27 @@ const Calificaciones = () => {
     <Layout>
       <div className="w-full flex flex-col items-center h-screen p-6">
         <div className="w-full  bg-[#ffffff] flex justify-between mb-4">
-          <div className="flex gap-2">
+          <div className="flex gap-2  bg-opacity-25">
             <input
               type="text"
               placeholder="Filtrar por nombre"
               value={filtroNombre}
               onChange={(e) => setFiltroNombre(e.target.value)}
-              className="border border-gray-300 rounded-md px-3 py-2"
+              className="border border-gray-300 rounded-lg text-sm px-5 py-2"
             />
             <input
               type="text"
               placeholder="Filtrar por código"
               value={filtroCodigo}
               onChange={(e) => setFiltroCodigo(e.target.value)}
-              className="border border-gray-300 rounded-md px-3 py-2"
+              className="border border-gray-300 rounded-lg text-sm px-3 py-2"
             />
           </div>
           <button
             onClick={onCrear}
-            className="focus:outline-none text-white bg-indigo-700 hover:bg-indigo-800 focus:ring-4 focus:ring-indigo-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800"
+            className="focus:outline-none text-white  bg-purple-500 bg-opacity-70 focus:ring-4 focus:ring-indigo-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800"
           >
-            + Nuevo
+            + AGREGAR UNA NUEVA AREA
           </button>
         </div>
         <div className="w-full h-full">
