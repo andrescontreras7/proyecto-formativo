@@ -131,4 +131,4 @@ return(
 }
 
 
-export default EstudiantesDataTable;
+export default EstudiantesDataTable;  

@@ -54,6 +54,8 @@ import Documentos from "./src/views/Rol-docente/documentos.jsx";
 import FormTemas from './src/views/Rol-docente/formTemas.jsx';
 import ListadoAsigna from './src/views/Rol-coordinador/listadoAsignaturas.jsx'
 import AsignaturasList from './src/views/Rol-docente/asignaturaenplataforma.jsx'
+import ExcusaForm from './src/views/Rol-docente/excusaForm.jsx'
+import ResetPassword from './src/auth/resetPassword.jsx';
 import Actividades from './src/views/Rol-docente/Actividades.jsx'
 import ActividadesDetalle from './src/views/Rol-docente/ActividadesDetalle.jsx'
 import AsignaturasDetallesEstudiante from './src/views/Rol-estudiante/AsignaturasDetallesEstudiante.jsx'
@@ -61,9 +63,8 @@ import AsignaturasEstudiante from './src/views/Rol-estudiante/AsignaturasEstudia
 import CalificacionesEstudiante from './src/views/Rol-estudiante/calificacionesEstudiante.jsx'
 import TareasSubidas from './src/views/Rol-estudiante/tareasSubidas.jsx'
 
-import ExcusaForm from './src/views/Rol-docente/excusaForm.jsx'
-import ResetPassword from './src/auth/resetPassword.jsx';
 import RegistrarFuncionario from './src/views/Rol-coordinador/RegistrarFuncionario.jsx';
+import AsignaturaDocente from './src/views/Rol-coordinador/docente_asignatura.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -73,6 +74,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Routes>
             <Route path="/" element={<Formulario />} />
             <Route path="/reset-password"  element={<ResetPassword />} />
+            <Route path="/asignatura-docente"  element={<AsignaturaDocente />} />
    
             <Route path="/Registrar-asignatura" element={<Documentos/>} />
             <Route path="/excusaForm" element={<ExcusaForm/>} />

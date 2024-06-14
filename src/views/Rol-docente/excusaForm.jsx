@@ -28,7 +28,7 @@ export default function ExcusaForm() {
       'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
     ];
 
-    if (acceptedFiles[0].size > 20000000) { // 20MB
+    if (acceptedFiles[0].size > 5000000) { // 20MB
       alert("El archivo es demasiado grande. Por favor, selecciona un archivo de menos de 20MB.");
       return;
     }

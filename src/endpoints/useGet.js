@@ -68,7 +68,7 @@ export const getDocente = async (auth) => {
 
 export const  getEstudiantesAsignatura = async (auth, id) => {
   try {
-    const response = await fetch(`http://localhost:3001/appi/asignaturas-estudiantes/All-estudiantes/${id}` , {
+    const response = await fetch(`http://localhost:3001/appi/asignaturas-estudiantes/details-estudents/${id}` , {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -138,6 +138,28 @@ export const getGruposAll = async (auth, id, asigcod) => {
 
   try {
     const response = await fetch(`http://localhost:3001/appi/asignaturas-docente/grupo/${id}/${asigcod}    ` , {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${auth.token}`
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error('Error en la solicitud');
+   
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error obteniendo las asignaturas:', error);
+  }
+}
+export const getGrupos = async (auth) => {
+
+  try {
+    const response = await fetch(`http://localhost:3001/appi/grupo    ` , {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -445,7 +467,7 @@ export const getAllInformation = async (auth) => {
 }
 
 export const getActividadesPorFuncionario = async (auth, id) => {
-  console.log(id)
+
   try {
     const response = await fetch(`http://localhost:3001/appi/evaluaciones_por_funcionario/${id}` , {
       method: 'GET',
