@@ -227,6 +227,7 @@ const Calificaciones = () => {
 
   return (
     <Layout>
+      
       <div className="w-full flex flex-col items-center h-screen p-6">
         <div className="w-full  bg-[#ffffff] flex justify-between mb-4">
           <div className="flex gap-2  bg-opacity-25">

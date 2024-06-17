@@ -47,7 +47,7 @@ const Panels = () => {
                 
               </Link>
               <Link
-                to="/Registrarlumno"
+                to="/RegistrarAlumno"
                 className="flex items-center bg-white duration-300 cursor-pointer border  
                          border-white rounded-lg  hover:bg-[#626cb88e]  hover:border-none "
               >
@@ -182,7 +182,7 @@ const Panels = () => {
               </Link>
 
               <Link
-                to="/Areas"
+                to="/AdministrarAreas"
                 className="flex items-center bg-white duration-300 cursor-pointer border  
                          border-white rounded-lg  hover:bg-[#626cb88e]  hover:border-none"
               >
