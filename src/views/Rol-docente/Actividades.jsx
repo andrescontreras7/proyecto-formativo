@@ -54,10 +54,10 @@ const Actividades = () => {
     console.log("Eliminar actividad: ", actividad);
   };
 
-  const handleCrear = async (TituloActividad,DescripcionActividad,FechaEntrega,GrupoActividad,AsignaturaActividad,TipoActividad,URLActividad) => {
+  const handleCrear = async (CodigoActividad,TituloActividad,DescripcionActividad,FechaEntrega,GrupoActividad,AsignaturaActividad,TipoActividad,URLActividad) => {
     try {
       const nuevosDatos = {
-     
+        codigo : CodigoActividad,
         nombre_tipo_evaluacion: TituloActividad ,
         descripcion: DescripcionActividad,
         url: URLActividad,
