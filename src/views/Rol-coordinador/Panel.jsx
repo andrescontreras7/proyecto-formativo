@@ -56,7 +56,7 @@ const Panels = () => {
                   <div className=" border cursor-pointer    border-[#626CB8]   p-[5px] rounded-lg  ml-[0.5%] py-[0.5%]  ">
                     <img
                       className="w-11"
-                      src="public\estudiante 1.png"
+                      src="public\alumno.png"
                       alt="Docente"
                     />
                   </div>
