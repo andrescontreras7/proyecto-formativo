@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Layout from "../../components/layaout";
-import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { counterContext } from "../../../context/CRMcontext";
 import { createFuncionario } from "../../endpoints/useCreate";
 import { Toaster, toast } from "react-hot-toast";
+import { getFuncionario } from "../../endpoints/useGet";
 
 export default function RegistrarFuncionario() {
   const {
@@ -15,6 +15,23 @@ export default function RegistrarFuncionario() {
     formState: { errors },
   } = useForm();
   const { auth } = useContext(counterContext);
+  const [jefesArea, setJefesArea] = useState([]);
+
+  useEffect(() => {
+    fetchFuncionarios(auth);
+  }, [auth]);
+
+  const fetchFuncionarios = async (auth) => {
+    try {
+      const data = await getFuncionario(auth);
+      const jefesAreaFiltrados = data.data.filter(
+        (funcionario) => funcionario.rolFK === 1
+      );
+      setJefesArea(jefesAreaFiltrados);
+    } catch (error) {
+      console.error("Error obteniendo los funcionarios:", error);
+    }
+  };
 
   const onSubmit = async (data) => {
     data.funcrol = "docente"; // Asignamos el valor "docente" al campo funcrol
@@ -33,13 +50,8 @@ export default function RegistrarFuncionario() {
   return (
     <Layout titulo={"Registrar docente"}>
       <div className="bg-white shadow-md w-full h-[85vh] 2xl:h-[87vh] flex justify-center rounded-md">
-        <form
-          onSubmit={handleSubmit(onSubmit)}
-          className="w-3/4 space-y-8 mt-10"
-        >
-          <h2 className="text-2xl font-semibold text-center">
-            Registrar docente
-          </h2>
+        <form onSubmit={handleSubmit(onSubmit)} className="w-3/4 space-y-8 mt-10">
+          <h2 className="text-2xl font-semibold text-center">Registrar docente</h2>
           <Toaster
             position="top-right"
             reverseOrder={true}
@@ -53,10 +65,7 @@ export default function RegistrarFuncionario() {
           />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="flex flex-col">
-              <label
-                className="text-sm font-medium text-gray-700"
-                htmlFor="funcnombre"
-              >
+              <label className="text-sm font-medium text-gray-700" htmlFor="funcnombre">
                 Nombre del funcionario
               </label>
               <input
@@ -81,10 +90,7 @@ export default function RegistrarFuncionario() {
               )}
             </div>
             <div className="flex flex-col">
-              <label
-                className="text-sm font-medium text-gray-700"
-                htmlFor="funcapellido"
-              >
+              <label className="text-sm font-medium text-gray-700" htmlFor="funcapellido">
                 Apellido del funcionario
               </label>
               <input
@@ -105,19 +111,14 @@ export default function RegistrarFuncionario() {
                 })}
               />
               {errors.funcapellido && (
-                <p className="text-red-500 mt-1">
-                  {errors.funcapellido.message}
-                </p>
+                <p className="text-red-500 mt-1">{errors.funcapellido.message}</p>
               )}
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="flex flex-col">
-              <label
-                className="text-sm font-medium text-gray-700"
-                htmlFor="funcid"
-              >
+              <label className="text-sm font-medium text-gray-700" htmlFor="funcid">
                 Cédula
               </label>
               <input
@@ -139,10 +140,7 @@ export default function RegistrarFuncionario() {
             </div>
 
             <div className="flex flex-col">
-              <label
-                className="text-sm font-medium text-gray-700"
-                htmlFor="funccorreo"
-              >
+              <label className="text-sm font-medium text-gray-700" htmlFor="funccorreo">
                 Correo
               </label>
               <input
@@ -164,10 +162,7 @@ export default function RegistrarFuncionario() {
               )}
             </div>
             <div className="flex flex-col">
-              <label
-                className="text-sm font-medium text-gray-700"
-                htmlFor="telefono"
-              >
+              <label className="text-sm font-medium text-gray-700" htmlFor="telefono">
                 Teléfono
               </label>
               <input
@@ -191,10 +186,7 @@ export default function RegistrarFuncionario() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="flex flex-col">
-              <label
-                className="text-sm font-medium text-gray-700"
-                htmlFor="passwordFuncionario"
-              >
+              <label className="text-sm font-medium text-gray-700" htmlFor="passwordFuncionario">
                 Contraseña
               </label>
               <input
@@ -211,16 +203,11 @@ export default function RegistrarFuncionario() {
                 })}
               />
               {errors.passwordFuncionario && (
-                <p className="text-red-500 mt-1">
-                  {errors.passwordFuncionario.message}
-                </p>
+                <p className="text-red-500 mt-1">{errors.passwordFuncionario.message}</p>
               )}
             </div>
             <div className="flex flex-col">
-              <label
-                className="text-sm font-medium text-gray-700"
-                htmlFor="confirmar"
-              >
+              <label className="text-sm font-medium text-gray-700" htmlFor="confirmar">
                 Confirmar contraseña
               </label>
               <input
@@ -239,30 +226,24 @@ export default function RegistrarFuncionario() {
                 <p className="text-red-500 mt-1">{errors.confirmar.message}</p>
               )}
             </div>
-          
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="flex flex-col">
-              <label
-                className="text-sm font-medium text-gray-700"
-                htmlFor="jefe_areaFK"
-              >
+            <div className="flex flex-col ">
+              <label className="text-sm font-medium text-gray-700" htmlFor="jefe_areaFK">
                 Jefe de área
               </label>
-              <input
+              <select
                 id="jefe_areaFK"
                 className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                type="number"
-                placeholder="Jefe de área"
                 {...register("jefe_areaFK", {
                   required: "El campo jefe de área es requerido",
-                  pattern: {
-                    value: /^[0-9]*$/,
-                    message: "El campo jefe de área no es válido",
-                  },
                 })}
-              />
+              >
+                <option value="">Selecciona un jefe de área</option>
+                {jefesArea.map((jefe) => (
+                  <option key={jefe.funcid} value={jefe.funcid}>
+                    {`${jefe.funcnombre} ${jefe.funcapellido}`}
+                  </option>
+                ))}
+              </select>
               {errors.jefe_areaFK && (
                 <p className="text-red-500 mt-1">
                   {errors.jefe_areaFK.message}
@@ -274,10 +255,11 @@ export default function RegistrarFuncionario() {
           <input
             className="w-full p-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
             type="submit"
-            value="Agregar docente"
+            value="Registrar docente"
           />
         </form>
       </div>
     </Layout>
   );
 }
+

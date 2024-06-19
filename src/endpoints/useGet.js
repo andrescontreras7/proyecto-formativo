@@ -64,7 +64,26 @@ export const getDocente = async (auth) => {
     console.error('Error obteniendo los docentes:', error);
   }
 }
+export const getFuncionario = async (auth) => {
+  try {
+    const response = await fetch(`http://localhost:3001/appi/funcionario` , {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${auth.token}`
+      }
+    });
 
+    if (!response.ok) {
+      throw new Error('Error en la solicitud');
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error obteniendo los fucionarios:', error);
+  }
+}
 
 export const  getEstudiantesAsignatura = async (auth, id) => {
   try {
