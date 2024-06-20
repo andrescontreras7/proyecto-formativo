@@ -95,7 +95,7 @@ const Actividades = () => {
       <div className="flex flex-col gap-2 w-full h-[96%] p-2 rounded-md mt-2">
         <nav className="w-full">
           <div className="flex items-center justify-between">
-            <button onClick={onCrear} className="focus:outline-none text-white bg-indigo-700 hover:bg-indigo-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
+            <button onClick={onCrear} className="focus:outline-none text-white bg-indigo-600 hover:bg-indigo-500 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
               + Nuevo
             </button>
             <div className="flex items-center space-x-2">

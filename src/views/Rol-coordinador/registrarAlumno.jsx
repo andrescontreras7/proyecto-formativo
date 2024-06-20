@@ -39,9 +39,7 @@ export default function RegistrarAlumno() {
           onSubmit={handleSubmit(onSubmit)}
           className="w-3/4 space-y-8 mt-10"
         >
-          <h2 className="text-2xl font-semibold text-center">
-            Registro de Alumno
-          </h2>
+          
           <Toaster
             position="top-right"
             reverseOrder={true}
@@ -243,7 +241,7 @@ export default function RegistrarAlumno() {
             />
           </div>
           <input
-            className="w-full p-2 bg-blue-700 text-white rounded-md"
+            className="w-full p-2 bg-indigo-500 text-white rounded-md"
             type="submit"
             value="Agregar estudiante"
           />

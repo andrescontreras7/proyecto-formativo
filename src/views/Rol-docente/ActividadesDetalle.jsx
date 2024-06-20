@@ -102,7 +102,7 @@ function ActividadDetalle() {
                     <td className="border border-gray-200 px-4 py-2">{item.nota}</td>
                     <td className="border border-gray-200 px-4 py-2">{ item.fec_envio }</td> {/* Formato de fecha */}
                     <td className="border border-gray-200 px-4 py-2">
-                      <button onClick={() => onCrear(item.uid)} className="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 items-right">
+                      <button onClick={() => onCrear(item.uid)} className="focus:outline-none text-white bg-indigo-700 hover:bg-indigo-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 items-right">
                         Calificar
                       </button>
                     </td>
