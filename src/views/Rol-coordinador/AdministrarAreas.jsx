@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { counterContext } from "../../../context/CRMcontext";
 import Layout from "../../components/layaout";
-import {jwtDecode} from "jwt-decode";
+import { jwtDecode } from "jwt-decode";
 import { getAreas } from "../../endpoints/useGet";
 import { updateArea } from "../../endpoints/useEditar";
 import { createAreas } from "../../endpoints/useCreate";
@@ -12,6 +12,7 @@ import { BiDotsVerticalRounded } from "react-icons/bi";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import CrearArea from "../../components/CrearArea";
+import DataTable from 'react-data-table-component';
 
 const MySwal = withReactContent(Swal);
 
@@ -191,71 +192,83 @@ const Calificaciones = () => {
     String(curso.cod_area).toLowerCase().includes(filtroCodigo.toLowerCase())
   );
 
+  const columns = [
+    {
+      name: 'Nombre del área',
+      selector: row => row.are_nombre,
+      sortable: true,
+    },
+    {
+      name: 'Código del área',
+      selector: row => row.cod_area,
+      sortable: true,
+    },
+    {
+      name: 'Acción',
+      cell: row => (
+        <ModalComponent
+          objeto={{ func: "Editar Área" }}
+          id={row.cod_area}
+          onEliminar={eliminarArea}
+          onEditar={() => onEditar(row)}
+          onCrear={() => onCrear()}
+        />
+      ),
+    },
+  ];
+
+  const customStyles = {
+    headCells: {
+      style: {
+        fontWeight: 'bold',
+      },
+    },
+  };
+
   return (
     <Layout>
-      <div className="w-full bg-[#A0BFE0] flex h-screen">
-        <div className="bg-white justify-right shadow-[0_8px_20px_20px_rgba(0,0,0,0.08)] rounded-lg m-auto w-[80%] flex-col overflow-auto h-[80%]">
-          <div className="mb-2 text-right border-[1px] border-gray-200 rounded-xl p-4 flex justify-between">
-            <div className="flex gap-2">
-              <input
-                type="text"
-                placeholder="Filtrar por nombre"
-                value={filtroNombre}
-                onChange={(e) => setFiltroNombre(e.target.value)}
-                className="border border-gray-300 rounded-md px-3 py-2"
-              />
-              <input
-                type="text"
-                placeholder="Filtrar por código"
-                value={filtroCodigo}
-                onChange={(e) => setFiltroCodigo(e.target.value)}
-                className="border border-gray-300 rounded-md px-3 py-2"
-              />
-            </div>
-            <button
-              onClick={onCrear}
-              className="focus:outline-none text-white bg-indigo-700 hover:bg-indigo-800 focus:ring-4 focus:ring-indigo-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-indigo-600 dark:hover:bg-idigo-700 dark:focus:ring-indigo-800 items-right"
-            >
-              + Nuevo
-            </button>
+      
+      <div className="w-full flex flex-col items-center h-screen p-6">
+        <div className="w-full  bg-[#ffffff] flex justify-between mb-4">
+          <div className="flex gap-2  bg-opacity-25">
+            <input
+              type="text"
+              placeholder="Filtrar por nombre"
+              value={filtroNombre}
+              onChange={(e) => setFiltroNombre(e.target.value)}
+              className="border border-gray-300 rounded-lg text-sm px-5 py-2"
+            />
+            <input
+              type="text"
+              placeholder="Filtrar por código"
+              value={filtroCodigo}
+              onChange={(e) => setFiltroCodigo(e.target.value)}
+              className="border border-gray-300 rounded-lg text-sm px-3 py-2"
+            />
           </div>
-          <div className="mb-6 border-[1px] border-gray-200 rounded-xl p-4 overflow-auto max-h-[60vh] rounded-lg ">
-            <h3 className="font-bold mb-2">Áreas</h3>
-            <table className="w-full text-left table-auto border-collapse border border-gray-200">
-              <thead>
-                <tr>
-                  <th className="border border-gray-200 px-4 py-2">Nombre del área</th>
-                  <th className="border border-gray-200 px-4 py-2">Código del área</th>
-                 
-                  <th className="border border-gray-200 px-4 py-2">Acción</th>
-                </tr>
-              </thead>
-              <tbody>
-                {Array.isArray(filteredCursos) && filteredCursos.length > 0 ? (
-                  filteredCursos.map((curso, index) => (
-                    <tr key={index}>
-                      <td className="border border-gray-200 px-4 py-2">{curso.are_nombre}</td>
-                      <td className="border border-gray-200 px-4 py-2">{curso.cod_area}</td>
-                     
-                      <td className="border border-gray-200 px-4 py-2 gap-2 flex">
-                        <ModalComponent
-                          objeto={{ func: "Editar Área" }}
-                          id={curso.cod_area}
-                          onEliminar={eliminarArea}
-                          onEditar={() => onEditar(curso)}
-                          onCrear={() => onCrear()}
-                        />
-                      </td>
-                    </tr>
-                  ))
-                ) : (
-                  <tr>
-                    <td colSpan="4">No hay cursos disponibles</td>
-                  </tr>
-                )}
-              </tbody>
-            </table>
-          </div>
+          <button
+            onClick={onCrear}
+            className="focus:outline-none text-white  bg-purple-500 bg-opacity-70 focus:ring-4 focus:ring-indigo-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800"
+          >
+            + AGREGAR UNA NUEVA AREA
+          </button>
+        </div>
+        <div className="w-full h-full">
+          <DataTable
+            columns={columns}
+            data={filteredCursos}
+            pagination
+            highlightOnHover
+            customStyles={customStyles}
+            noDataComponent="No hay áreas disponibles"
+            paginationComponentOptions={{
+              rowsPerPageText: 'Filas por página',
+              rangeSeparatorText: 'de',
+              noRowsPerPage: false,
+              selectAllRowsItem: true,
+              selectAllRowsItemText: 'Todos',
+            }}
+          />
         </div>
       </div>
 
