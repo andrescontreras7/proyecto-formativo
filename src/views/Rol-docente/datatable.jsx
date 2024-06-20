@@ -8,6 +8,11 @@ import Modal from '../../components/modal';
 import Opc from "../../components/utils/modalAsistencias";
 import MenuModal from '../../components/menusAsignaturas';
 
+const handleRowSelected = (state) => {
+  const selectedRows = state.selectedRows;
+  // Aquí puedes manejar las filas seleccionadas, por ejemplo, marcar la asistencia
+};
+
  const EstudiantesDataTable = ({ estudiantes, asig, grupoId }) => {
   
 
@@ -19,14 +24,15 @@ import MenuModal from '../../components/menusAsignaturas';
     { name: 'TELEFONO ESTUDIANTE', sortable: true,selector: (row) => row.estudtelefono },
     { name: 'ASISTENCIAS', sortable: true, selector: (row) =>  <button type="button" className="  font-bold  rounded">  <Opc objeto={row} id={row.estudid} asig={asig} grupo={grupoId} />   </button>},
     {name: 'ESTADO', sortable: true, selector: (row) =>  <div className= {row.activo ? 'bg-green-400 p-2 rounded-xl text-white font-semibold' : 'bg-red-400' + ' bg-opacity-100 p-2 rounded-xl text-white font-semibold'}>    { row.activo !== null && row.activo !== undefined ? row.activo ? "Activo" : "Inactivo" : ""}  </div> },
-    { name: 'ACCIONES', sortable: true, selector: (row) =>  <button type="button" className="  font-bold  rounded">  <Modal objeto={row} id={row.estudid} />   </button>},
-  ];
-
+    { name: 'ACCIONES', sortable: true, selector: (row) =>  <button type="button" className="  font-bold  rounded">  <Modal estudiantes={selectedStudents} asig={asig} grupo={grupoId} />   </button>},
+  ]
   return (
     <DataTable
       title="Listado  Estudiantes"
       columns={columns}
       data={estudiantes[0]?.grupo.estudiantes}
+      selectableRows // Esto permite la selección de filas
+      onSelectedRowsChange={handleRowSelected} 
     />
   );
 };

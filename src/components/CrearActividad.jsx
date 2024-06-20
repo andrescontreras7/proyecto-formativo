@@ -97,7 +97,8 @@ const CrearActividad = ({ isOpen, onClose, onCrear }) => {
       });
       
       console.log('Archivo subido exitosamente:', response.data);
-
+      console.log('HEREE 2')
+      console.log(TipoActividad)
       await onCrear(CodigoActividad, TituloActividad, DescripcionActividad, FechaEntrega, GrupoActividad, AsignaturaActividad, TipoActividad, response.data.secure_url);
       onClose();
       MySwal.fire({

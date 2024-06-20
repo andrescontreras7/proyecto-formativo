@@ -243,7 +243,7 @@ export default function RegistrarAlumno() {
             />
           </div>
           <input
-            className="w-full p-2 bg-blue-700 text-white rounded-md"
+            className="w-full p-2 bg-indigo-500 text-white rounded-md"
             type="submit"
             value="Agregar estudiante"
           />

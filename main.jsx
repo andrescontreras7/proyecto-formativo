@@ -187,5 +187,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         </BrowserRouter>
       </NextUIProvider>
     </Statecom>
+    
   </React.StrictMode>
 );
