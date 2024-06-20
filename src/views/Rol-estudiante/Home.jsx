@@ -7,20 +7,7 @@ import Layout from '../../components/layaout';
 const Home = () => {
   const { auth } = useContext(counterContext);
 
-  const datos = [30, 50, 20];
-
-  const data = {
-    labels: ['faltas', 'asitencias', 'tardanzas'],
-    datasets: [
-      {
-        data: datos,
-        backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)'],
-        borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)'],
-        borderWidth: 1,
-      },
-    ],
-  };
-
+ 
   return (
 <>
 <Layout titulo={""} >
@@ -63,7 +50,7 @@ const Home = () => {
               <div  className=' p-4 row-span-3 shadow-md  max-sm:col-span-1 max-2xl:row-span-3 max-2xl:col-start-3 max-2xl:row-start-1  duration-300  hover:border-[#4A55A2]    bg-[#74b7fa] bg-opacity-20    border border-gray-300    rounded-md   '> 
               <h1 className='font-medium text-xl text-center mb-4    '>Tus asistencias </h1>
               <div className='m-2  '>
-              <Doughnut data={data}  />;
+            
                  
                 </div>
               </div>

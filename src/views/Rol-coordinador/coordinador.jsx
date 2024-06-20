@@ -6,8 +6,9 @@ import { counterContext } from "../../../context/CRMcontext";
 const Coordinador = () => {
   const { auth } = useContext(counterContext);
  
-
   return (
+
+    
     
     
   <Layout titulo={""} >
@@ -44,6 +45,7 @@ const Coordinador = () => {
                 </div>
               </div>
               
+                 
               <div className=' flex shadow-md  duration-300 hover:translate-y-[-10px] hover:border-[#4A55A2]  bg-[#E2EDEA]  border border-gray-300    rounded-md  '> 
                 <div className='flex flex-col m-auto p-4   gap-4 '>
                   <h1 className=' font-bold text-4xl text-gray-600 text-left  '>20</h1>

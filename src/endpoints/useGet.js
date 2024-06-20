@@ -509,3 +509,25 @@ export const getActividadesDelEstudiante = async (auth, idasig,idgrupo) => {
     console.error('Error obteniendo las actividades :', error);
   }
 }
+
+export const getActividadUsers = async (month) => {
+  try {
+    const response = await fetch(`http://localhost:3001/user_activity?month=${month}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        // Aquí podrías incluir otros headers si son necesarios
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error('Error en la solicitud');
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error obteniendo las actividades:', error);
+    throw error; // Re-lanza el error para manejarlo en el componente React o donde sea que llames a esta función
+  }
+};

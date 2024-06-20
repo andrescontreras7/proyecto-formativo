@@ -14,7 +14,7 @@ export default function App({objeto, id}) {
   }
   const handleDelete = () => {
    
-    console.log(`eliminar estudiante con ID: ${id}`);
+    console.log(`eliminar estudiante con IsssssssD: ${id}`);
   }
 
 

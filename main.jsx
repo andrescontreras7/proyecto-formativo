@@ -62,9 +62,11 @@ import AsignaturasDetallesEstudiante from './src/views/Rol-estudiante/Asignatura
 import AsignaturasEstudiante from './src/views/Rol-estudiante/AsignaturasEstudiante.jsx'
 import CalificacionesEstudiante from './src/views/Rol-estudiante/calificacionesEstudiante.jsx'
 import TareasSubidas from './src/views/Rol-estudiante/tareasSubidas.jsx'
-
+import Estadisticas from './src/views/Rol-coordinador/estadisticas.jsx';
 import RegistrarFuncionario from './src/views/Rol-coordinador/RegistrarFuncionario.jsx';
 import AsignaturaDocente from './src/views/Rol-coordinador/docente_asignatura.jsx';
+import InfoEstudiantes from './src/views/Rol-coordinador/InfoEstudiantes.jsx';
+import Informe from './src/views/Rol-coordinador/informe.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -75,6 +77,18 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <Route path="/" element={<Formulario />} />
             <Route path="/reset-password"  element={<ResetPassword />} />
             <Route path="/asignatura-docente"  element={<AsignaturaDocente />} />
+            <Route path="/Estas"  element={<Estadisticas />} />
+            <Route path="/InformacionEstudiantes/:id"  element={<InfoEstudiantes />}>
+
+            <Route path="InformacionGeneral"  element={<Informe />} />
+            <Route path="estadisticas"  element={<Estadisticas />} />
+            
+            
+            
+            
+            
+            
+            </Route>
    
             <Route path="/Registrar-asignatura" element={<Documentos/>} />
             <Route path="/excusaForm" element={<ExcusaForm/>} />

@@ -34,11 +34,10 @@ const Listado = () => {
     {name: 'ESTADO', sortable: true, selector: (row) =>  <div className= {row.activo ? 'bg-green-400 p-2 rounded-xl text-white font-semibold' : 'bg-red-400' + ' bg-opacity-100 p-2 rounded-xl text-white font-semibold'}>    { row.activo !== null && row.activo !== undefined ? row.activo ? "Activo" : "Inactivo" : ""}  </div> },
     
     { name: 'ACCIONES', sortable: true, selector: (row) =>  
-    <button type="button" className="absolute bottom-12 right-16  font-bold px-4 rounded">  <Modal objeto={row} id={row.estudid} />   </button>},
+    <button type="button" className="flex  right-16  font-bold px-4 rounded">  <Modal objeto={row} id={row.estudid} />   </button>},
    
   ];
-  console.log()
-  
+
 
   return (
     <Layout titulo={"Listado de estudiantes"} icono={<FiArrowLeft className='text-2xl font-bold' />}>
