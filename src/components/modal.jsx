@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import {Modal, ModalContent, ModalHeader, ModalFooter, Button, useDisclosure, ModalBody, input} from "@nextui-org/react";
 import { BiDotsVerticalRounded } from "react-icons/bi";
+import { useNavigate } from "react-router-dom";
 export default function App({objeto, id}) {
   const {isOpen, onOpen, onClose} = useDisclosure();
   const [data, setData] = useState(["pedro", "modal"]);
   const [estudiantes, setEstudiantes] = useState(false);
+  const navigate = useNavigate(); 
+
  
 
   const handleOpen = () => {
@@ -20,6 +23,11 @@ export default function App({objeto, id}) {
 
 
       
+  }
+  const info = (identificacion) => {
+    console.log(`informacion estudiante con ID: ${identificacion}`);
+    navigate(`/InformacionEstudiantes/${identificacion} `)
+
   }
   const handleDelete = () => {
    
@@ -51,7 +59,13 @@ export default function App({objeto, id}) {
         <ModalContent>
       
             <>
-              <ModalHeader className="flex flex-col gap-1 uppercase text-indigo-900 border-b-1">{funcnombre} </ModalHeader>
+              <ModalHeader className="flex flex-col gap-1 uppercase text-indigo-900 border-b-1"> {
+                
+                  objeto.estudnombre? objeto.estudnombre : objeto.funcnombre
+                
+                
+                
+                } </ModalHeader>
               
               <ModalBody>  
 
@@ -59,7 +73,7 @@ export default function App({objeto, id}) {
                   estudiantes ? <div> <label htmlFor="">digite name</label> <input value={objeto.estudnombre} type="text"  /></div> : 
                   <ol className="p-2 flex flex-col gap-4 font-semibold uppercase">
                     <input type="checkbox" />    
-                       <li className=""><button>INFORMACION</button></li>
+                       <li onClick={() => info(objeto.estudid)} className=""><button>INFORMACION</button></li>
                       <li onClick={handleEdit} className=""><button>EDITAR</button></li>
                       <li onClick={handleDelete} className=""><button>ELIMINAR</button></li>
                   </ol>

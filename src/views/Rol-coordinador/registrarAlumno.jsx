@@ -33,13 +33,15 @@ export default function RegistrarAlumno() {
   };
 
   return (
-    <Layout titulo={"Registro de usuarios"}>
+    <Layout titulo={"Registro de alumno"}>
       <div className="bg-[#ffffff] shadow-[0_8px_20px_12px_rgba(0,0,0,0.08)] w-full h-[85vh] 2xl:h-[87vh] flex justify-center rounded-md">
         <form
           onSubmit={handleSubmit(onSubmit)}
           className="w-3/4 space-y-8 mt-10"
         >
-          
+          <h2 className="text-2xl font-semibold text-center">
+            Registrar alumno
+          </h2>
           <Toaster
             position="top-right"
             reverseOrder={true}

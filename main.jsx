@@ -52,22 +52,23 @@ import ListadoEstudiantes from "./src/views/Rol-docente/listaEstudiantes.jsx";
 import Grados from "./src/views/Rol-docente/grados.jsx";
 import HomeD from "./src/views/Rol-docente/Home-docente.jsx";
 import Documentos from "./src/views/Rol-docente/documentos.jsx";
-import FormTemas from "./src/views/Rol-docente/formTemas.jsx";
-import ListadoAsigna from "./src/views/Rol-coordinador/listadoAsignaturas.jsx";
-import AsignaturasList from "./src/views/Rol-docente/asignaturaenplataforma.jsx";
-import ExcusaForm from "./src/views/Rol-docente/excusaForm.jsx";
-import ResetPassword from "./src/auth/resetPassword.jsx";
-import Actividades from "./src/views/Rol-docente/Actividades.jsx";
-import ActividadesDetalle from "./src/views/Rol-docente/ActividadesDetalle.jsx";
-import AsignaturasDetallesEstudiante from "./src/views/Rol-estudiante/AsignaturasDetallesEstudiante.jsx";
-import AsignaturasEstudiante from "./src/views/Rol-estudiante/AsignaturasEstudiante.jsx";
-import CalificacionesEstudiante from "./src/views/Rol-estudiante/calificacionesEstudiante.jsx";
-import TareasSubidas from "./src/views/Rol-estudiante/tareasSubidas.jsx";
-import AdministrarAreas from "./src/views/Rol-coordinador/AdministrarAreas.jsx";
-
-import RegistrarFuncionario from "./src/views/Rol-coordinador/RegistrarFuncionario.jsx";
-import AsignaturaDocente from "./src/views/Rol-coordinador/docente_asignatura.jsx";
-
+import FormTemas from './src/views/Rol-docente/formTemas.jsx';
+import ListadoAsigna from './src/views/Rol-coordinador/listadoAsignaturas.jsx'
+import AsignaturasList from './src/views/Rol-docente/asignaturaenplataforma.jsx'
+import ExcusaForm from './src/views/Rol-docente/excusaForm.jsx'
+import ResetPassword from './src/auth/resetPassword.jsx';
+import Actividades from './src/views/Rol-docente/Actividades.jsx'
+import ActividadesDetalle from './src/views/Rol-docente/ActividadesDetalle.jsx'
+import AsignaturasDetallesEstudiante from './src/views/Rol-estudiante/AsignaturasDetallesEstudiante.jsx'
+import AsignaturasEstudiante from './src/views/Rol-estudiante/AsignaturasEstudiante.jsx'
+import CalificacionesEstudiante from './src/views/Rol-estudiante/calificacionesEstudiante.jsx'
+import TareasSubidas from './src/views/Rol-estudiante/tareasSubidas.jsx'
+import Estadisticas from './src/views/Rol-coordinador/estadisticas.jsx';
+import RegistrarFuncionario from './src/views/Rol-coordinador/RegistrarFuncionario.jsx';
+import AsignaturaDocente from './src/views/Rol-coordinador/docente_asignatura.jsx';
+import InfoEstudiantes from './src/views/Rol-coordinador/InfoEstudiantes.jsx';
+import Informe from './src/views/Rol-coordinador/informe.jsx';
+import EstadisticasUsuario from "./src/views/Rol-coordinador/Estadisticasbyid.jsx";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Statecom>
@@ -75,11 +76,23 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Formulario />} />
-            <Route path="/reset-password" element={<ResetPassword />} />
-            <Route path="/asignatura-docente" element={<AsignaturaDocente />} />
+            <Route path="/reset-password"  element={<ResetPassword />} />
+            <Route path="/asignatura-docente"  element={<AsignaturaDocente />} />
+            <Route path="/Estas"  element={<Estadisticas />} />
+            <Route path="/InformacionEstudiantes/:id"  element={<InfoEstudiantes />}>
 
-            <Route path="/Registrar-asignatura" element={<Documentos />} />
-            <Route path="/excusaForm" element={<ExcusaForm />} />
+            <Route path="InformacionGeneral"  element={<Informe />} />
+            <Route path="estadisticas"  element={<EstadisticasUsuario />} />
+            
+            
+            
+            
+            
+            
+            </Route>
+   
+            <Route path="/Registrar-asignatura" element={<Documentos/>} />
+            <Route path="/excusaForm" element={<ExcusaForm/>} />
           </Routes>
           <Routes>
             <Route path="/Home" element={<Home />} />
@@ -171,10 +184,11 @@ ReactDOM.createRoot(document.getElementById("root")).render(
               path="/Registrarfuncionario"
               element={<RegistrarFuncionario />}
             />
-            <Route path="/Administrarareas" element={<AdministrarAreas />} />
+       
           </Routes>
         </BrowserRouter>
       </NextUIProvider>
     </Statecom>
+    
   </React.StrictMode>
 );

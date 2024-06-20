@@ -1,7 +1,7 @@
 import React from "react";
 import { Tabs, Tab } from "@nextui-org/react";
 import { Link } from "react-router-dom";
-
+import 'chart.js/auto';
 export default function CustomTabs() {
   return (
     <div className="p-2">

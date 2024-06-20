@@ -37,7 +37,7 @@ const Panels = () => {
                       Registrar docente{""}
                     </h1>
                     <p className="font-normal text-xs text-gray-800">
-                      Lorem ipsum dolor sit amet consectetur adipisicing{" "}
+                       Registrar docente{" "}
                     </p>
                   </div>
                 </div>
@@ -51,31 +51,30 @@ const Panels = () => {
                 className="flex items-center bg-white duration-300 cursor-pointer border  
                          border-white rounded-lg  hover:bg-[#626cb88e]  hover:border-none "
               >
-              <li
-                className="flex items-center bg-white duration-300 cursor-pointer border  
-                         border-white rounded-lg  hover:bg-[#626cb88e]  hover:border-none"
-              >
-                <div className="flex gap-2   items-center">
-                  <div className=" border cursor-pointer    border-[#626CB8]   p-[5px] rounded-lg  ml-[0.5%] py-[0.5%]">
+                <li>
+                <div className="flex gap-2  items-center">
+                  <div className=" border cursor-pointer    border-[#626CB8]   p-[5px] rounded-lg  ml-[0.5%] py-[0.5%]  ">
                     <img
                       className="w-11"
-                      src="/public/estudiante 1.png"
+                      src="public\alumno.png"
                       alt="Docente"
-                      draggable="false"
                     />
                   </div>
                   <div className="w-56">
                     <h1 className="font-medium text-[1.0rem] text-gray-900">
-                    
-                      Registar alumno 
+                      {""}
+                   
+                      Registrar alumno{""}
                     </h1>
                     <p className="font-normal text-xs text-gray-800">
-                      Registo del alumnoo
+                      Registrar alumno{" "}
                     </p>
                   </div>
                 </div>
-                
               </li>
+
+ 
+                
               </Link>
 
 
@@ -113,7 +112,7 @@ const Panels = () => {
                   <div className="border cursor-pointer    border-[#626CB8]   p-[5px] rounded-lg  ml-[0.5%] py-[0.7%]  ">
                     <img
                       className="w-11"
-                      src="/public/administardocente.png"
+                      src="/public/asignaturas.png"
                       alt="Docente"
                       draggable="false"
                     />
