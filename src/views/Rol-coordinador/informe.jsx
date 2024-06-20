@@ -1,56 +1,73 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { getEstudiante } from '../../endpoints/useGet';
+import { getEstudiante, getEstudiantesAsignatura } from '../../endpoints/useGet';
 import {counterContext} from '../../../context/CRMcontext'
 import { useParams } from 'react-router-dom';
-
-
-
-
-   
 
 const Informe = () => {
   const {auth } = useContext(counterContext);
   const [estudiante, setEstudiante] = useState({})
-const {id } = useParams()
+  const [Asignaturas, setAsignaturas] = useState([])
+  const {id } = useParams()
 
-
-   useEffect(() => {
+  useEffect(() => {
     getEstudiante(auth,id).then(data => {
-      console.log(data)
       setEstudiante(data.data)
-  })
-   },[auth])
+    })
 
-   const {estudid, estudnombre, estudapellido} = estudiante
+    getEstudiantesAsignatura(auth,id).then(data => {
+      data.data.map(item => {
+        setAsignaturas(prevAsignaturas => [
+          ...prevAsignaturas,
+          { nombre: item.asignatura.asignombre, codigo: item.asignatura.asigcod }
+        ])
+      })
+    })
+  },[auth])
 
+  const {estudid, estudnombre, estudapellido, estudtelefono, estudcorreo} = estudiante
 
   return (
-    <div>
-     <div>
-     <h1 className='text-gray-700 font-black uper text-xl text-center  m-2'>
-      Informacion 
+    <div className='p-4'>
+      <h1 className='text-gray-700 font-black text-xl text-center mb-4'>
+        Informacion 
       </h1>
-      <hr />
-
-
-     </div>
-
-<div className='border grid grid-cols-3  m-2'>
-  <div className='col-span-full row-span-full'>
-    <ul className='w-full '>
-      <h1 className='font-semibold text-indigo-800 '>Informacion General</h1>
-      <li className='p-2 font-normal'>
-        Nombre Estudiante :
-        <span className='ml-2 uppercase '>{estudnombre} </span>
-      </li>
-      <li className='p-2 font-normal'>
-        Apellido del Estudiante :
-        <span className='ml-2 uppercase '>{estudapellido} </span>
-      </li>
-    </ul>
-    
-  </div>
-</div>
+      <div className='border grid grid-cols-2 gap-4'>
+        <div>
+          <h2 className='font-semibold text-indigo-800 mb-2'>Informacion General</h2>
+          <ul>
+            <li className='p-2 font-normal'>
+              Nombre Estudiante :
+              <span className='ml-2 uppercase '>{estudnombre} </span>
+            </li>
+            <li className='p-2 font-normal'>
+              Apellido del Estudiante :
+              <span className='ml-2 uppercase '>{estudapellido} </span>
+            </li>
+            <li className='p-2 font-normal'>
+              correo del Estudiante :
+              <span className='ml-2 uppercase '>{estudcorreo} </span>
+            </li>
+            <li className='p-2 font-normal'>
+              telefono del Estudiante :
+              <span className='ml-2 uppercase '>{estudtelefono} </span>
+            </li>
+            <li className='p-2 font-normal'>
+              Apellido del Estudiante :
+              <span className='ml-2 uppercase '>{estudapellido} </span>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h2 className='font-semibold text-indigo-800 mb-2'>Asignaturas del estudiante</h2>
+          <ul>
+            {Asignaturas.map((asignatura, index) => (
+              <li key={index} className='p-2 font-normal'>
+                {asignatura.nombre} ({asignatura.codigo})
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </div>
   );
 };

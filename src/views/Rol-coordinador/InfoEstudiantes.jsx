@@ -15,13 +15,11 @@ const {auth } = useContext(counterContext);
 const {id } = useParams()
 
 
-    getEstudiante(auth,id).then(data => {
-        console.log(data)
-    })
+ 
   return (
     <div className='h-screen'>
     <nav className='flex  justify-center h-[20%] w-screen '>
-       <div className='border border-gray-700 mt-2 flex justify-center items-center h-[90%] w-[90%] '>
+       <div className='shadow-md rounded-md mt-2 flex justify-center items-center h-[90%] w-[90%] '>
        <Tabs aria-label="Tabs" className='p-2'>
         <Tab
           key="Asistencias"
@@ -29,11 +27,7 @@ const {id } = useParams()
           className="tab-item"
         />
         
-        <Tab
-          key="listado"
-          title={<Link to="Listado-estudiantes">Listado estudiantes </Link>} 
-          className="tab-item"
-        />
+     
         <Tab
           key="Actividades"
           title={<Link to="InformacionGeneral">Informacion general </Link>} 

@@ -15,6 +15,8 @@ import Asistencia from "./src/views/Rol-estudiante/asistencia.jsx";
 import Himno from "./src/views/Rol-estudiante/himno.jsx";
 import Calificaciones from "./src/views/Rol-estudiante/calificaciones.jsx";
 import Notas from "./src/views/Rol-estudiante/notas.jsx";
+import NotasEstudiante from "./src/views/Rol-estudiante/notasEstudiante.jsx";
+
 import Perfil from "./src/views/Rol-estudiante/perfil.jsx";
 import Informacion from "./src/views/Rol-estudiante/informacionES.jsx";
 import Panel from "./src/views/Rol-coordinador/Panel.jsx";
@@ -66,7 +68,7 @@ import RegistrarFuncionario from './src/views/Rol-coordinador/RegistrarFuncionar
 import AsignaturaDocente from './src/views/Rol-coordinador/docente_asignatura.jsx';
 import InfoEstudiantes from './src/views/Rol-coordinador/InfoEstudiantes.jsx';
 import Informe from './src/views/Rol-coordinador/informe.jsx';
-
+import EstadisticasUsuario from "./src/views/Rol-coordinador/Estadisticasbyid.jsx";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Statecom>
@@ -80,7 +82,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             <Route path="/InformacionEstudiantes/:id"  element={<InfoEstudiantes />}>
 
             <Route path="InformacionGeneral"  element={<Informe />} />
-            <Route path="estadisticas"  element={<Estadisticas />} />
+            <Route path="estadisticas"  element={<EstadisticasUsuario />} />
             
             
             
@@ -137,7 +139,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             />
 
             <Route path="/Correo" element={<Correo />} />
-            <Route path="/Notas" element={<Notas />} />
+            <Route path="/Notas" element={<NotasEstudiante />} />
             <Route path="/perfil" element={<Perfil />} />
             <Route path="/Informacion" element={<Informacion />} />
             <Route path="/Calificacions" element={<Calificacions />} />
