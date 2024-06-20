@@ -37,9 +37,7 @@ export default function RegistrarFuncionario() {
           onSubmit={handleSubmit(onSubmit)}
           className="w-3/4 space-y-8 mt-10"
         >
-          <h2 className="text-2xl font-semibold text-center">
-            Registrar docente
-          </h2>
+          
           <Toaster
             position="top-right"
             reverseOrder={true}
@@ -272,7 +270,7 @@ export default function RegistrarFuncionario() {
           </div>
 
           <input
-            className="w-full p-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
+            className="w-full p-2 bg-indigo-500 text-white rounded-md hover:bg-indigo-600 transition-colors"
             type="submit"
             value="Agregar docente"
           />
