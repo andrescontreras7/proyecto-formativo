@@ -4,7 +4,7 @@ import ComponenteActividad from "../../components/componenteActividad"; // Impor
 import { HiArrowSmallLeft } from "react-icons/hi2";
 import Layout from '../../components/layaout';
 import { BiSearch } from "react-icons/bi";
-import { getActividadesPorFuncionario } from '../../endpoints/useGet'; // Ensure this is the correct path
+import { getActividadesPorFuncionario,getEvaluacionesPorGrupoAsigDocente } from '../../endpoints/useGet'; // Ensure this is the correct path
 import { createActividad } from '../../endpoints/useCreate'; // Ensure this is the correct path
 import { counterContext } from "../../../context/CRMcontext";
 import Swal from 'sweetalert2';
@@ -27,7 +27,7 @@ const Actividades = () => {
     console.log(grupcod)
     const consulta = async () => {
       try {
-        const data = await getActividadesPorFuncionario(auth, decodedToken.id); 
+        const data = await getEvaluacionesPorGrupoAsigDocente(auth,id,grupcod, decodedToken.id); 
         if (data && Array.isArray(data)) {
             setActividades(data);
         } else {
